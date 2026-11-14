@@ -1,7 +1,7 @@
 {
   "departure": "2026-11-17T08:30:00-05:00",
   "checked_on_utc": "2026-11-14",
-  "source": "TravelTime API",
+  "source": "Mixed: TravelTime API and Google Maps manual lookup; see each CSV row.",
   "origin_method": "Census ZCTA internal points from data/areas.csv",
   "destinations": [
     {
@@ -135,7 +135,19 @@
       }
     }
   ],
-  "row_statuses": [
+  "limitations": [
+    "Area-level estimates, not door-to-door promises.",
+    "Blank minutes are missing/unreachable, never zero or invented.",
+    "Routes are searched up to four hours.",
+    "Rutgers shuttle coverage must be checked separately.",
+    "TravelTime estimates may differ from Google Maps and live traffic.",
+    "Original API durations were not independently checked for identical handling of initial waiting. Display the row source; exact cross-source comparisons may differ.",
+    "Unchecked API blanks mean no result returned by the provider, not proof that no transit route exists.",
+    "Only two manually checked rows have no transit route shown: Piscataway to College Ave and Piscataway to Busch.",
+    "North Brunswick and Somerset to College Ave, plus retained Somerset to Newark, have durations over 120 minutes; flag for review.",
+    "Campus bus coverage is unconfirmed; do not claim all Rutgers buses are definitely absent."
+  ],
+  "original_api_row_statuses": [
     {
       "zip": "08901",
       "destination": "Rutgers College Ave campus",
@@ -425,11 +437,439 @@
       "status": "ok"
     }
   ],
-  "limitations": [
-    "Area-level estimates, not door-to-door promises.",
-    "Blank minutes are missing/unreachable, never zero or invented.",
-    "Routes are searched up to four hours.",
-    "Rutgers shuttle coverage must be checked separately.",
-    "TravelTime estimates may differ from Google Maps and live traffic."
-  ]
+  "row_statuses": [
+    {
+      "zip": "08901",
+      "destination": "Rutgers College Ave campus",
+      "mode": "drive",
+      "status": "api_estimate",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "9.6",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08901",
+      "destination": "Rutgers College Ave campus",
+      "mode": "transit",
+      "status": "manual_result",
+      "evidence": "User-provided Google Maps screenshot; elapsed time from 08:30 to earliest arrival visible.",
+      "original_api_minutes": "35.9",
+      "source": "Google Maps manual lookup"
+    },
+    {
+      "zip": "08901",
+      "destination": "Rutgers Busch campus",
+      "mode": "drive",
+      "status": "api_estimate",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "11.6",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08901",
+      "destination": "Rutgers Busch campus",
+      "mode": "transit",
+      "status": "api_estimate",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "46.9",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08901",
+      "destination": "Newark Penn Station",
+      "mode": "drive",
+      "status": "api_estimate",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "41.5",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08901",
+      "destination": "Newark Penn Station",
+      "mode": "transit",
+      "status": "api_estimate",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "71.1",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08904",
+      "destination": "Rutgers College Ave campus",
+      "mode": "drive",
+      "status": "api_estimate",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "11.0",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08904",
+      "destination": "Rutgers College Ave campus",
+      "mode": "transit",
+      "status": "manual_result",
+      "evidence": "User-provided Google Maps screenshot; elapsed time from 08:30 to earliest arrival visible.",
+      "original_api_minutes": "68.2",
+      "source": "Google Maps manual lookup"
+    },
+    {
+      "zip": "08904",
+      "destination": "Rutgers Busch campus",
+      "mode": "drive",
+      "status": "api_estimate",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "12.6",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08904",
+      "destination": "Rutgers Busch campus",
+      "mode": "transit",
+      "status": "api_estimate",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "46.9",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08904",
+      "destination": "Newark Penn Station",
+      "mode": "drive",
+      "status": "api_estimate",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "42.4",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08904",
+      "destination": "Newark Penn Station",
+      "mode": "transit",
+      "status": "api_estimate",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "51.1",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08854",
+      "destination": "Rutgers College Ave campus",
+      "mode": "drive",
+      "status": "api_estimate",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "10.6",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08854",
+      "destination": "Rutgers College Ave campus",
+      "mode": "transit",
+      "status": "no_transit_route_shown",
+      "evidence": "User reported no Google Maps transit route for this exact origin/destination.",
+      "original_api_minutes": "",
+      "source": "Google Maps manual lookup"
+    },
+    {
+      "zip": "08854",
+      "destination": "Rutgers Busch campus",
+      "mode": "drive",
+      "status": "api_estimate",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "10.2",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08854",
+      "destination": "Rutgers Busch campus",
+      "mode": "transit",
+      "status": "no_transit_route_shown",
+      "evidence": "Walking-only Google Maps result; user confirmed same result after correcting destination to API coordinates.",
+      "original_api_minutes": "",
+      "source": "Google Maps manual lookup"
+    },
+    {
+      "zip": "08854",
+      "destination": "Newark Penn Station",
+      "mode": "drive",
+      "status": "api_estimate",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "46.2",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08854",
+      "destination": "Newark Penn Station",
+      "mode": "transit",
+      "status": "not_verified_no_api_result",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08817",
+      "destination": "Rutgers College Ave campus",
+      "mode": "drive",
+      "status": "api_estimate",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "14.2",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08817",
+      "destination": "Rutgers College Ave campus",
+      "mode": "transit",
+      "status": "manual_result",
+      "evidence": "User-provided Google Maps screenshot; elapsed time from 08:30 to earliest arrival visible.",
+      "original_api_minutes": "",
+      "source": "Google Maps manual lookup"
+    },
+    {
+      "zip": "08817",
+      "destination": "Rutgers Busch campus",
+      "mode": "drive",
+      "status": "api_estimate",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "15.8",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08817",
+      "destination": "Rutgers Busch campus",
+      "mode": "transit",
+      "status": "not_verified_no_api_result",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08817",
+      "destination": "Newark Penn Station",
+      "mode": "drive",
+      "status": "api_estimate",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "37.0",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08817",
+      "destination": "Newark Penn Station",
+      "mode": "transit",
+      "status": "not_verified_no_api_result",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08840",
+      "destination": "Rutgers College Ave campus",
+      "mode": "drive",
+      "status": "api_estimate",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "21.6",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08840",
+      "destination": "Rutgers College Ave campus",
+      "mode": "transit",
+      "status": "manual_result",
+      "evidence": "User-provided Google Maps screenshot; elapsed time from 08:30 to earliest arrival visible.",
+      "original_api_minutes": "68.2",
+      "source": "Google Maps manual lookup"
+    },
+    {
+      "zip": "08840",
+      "destination": "Rutgers Busch campus",
+      "mode": "drive",
+      "status": "api_estimate",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "22.4",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08840",
+      "destination": "Rutgers Busch campus",
+      "mode": "transit",
+      "status": "api_estimate",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "46.9",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08840",
+      "destination": "Newark Penn Station",
+      "mode": "drive",
+      "status": "api_estimate",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "34.4",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08840",
+      "destination": "Newark Penn Station",
+      "mode": "transit",
+      "status": "api_estimate",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "35.1",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08902",
+      "destination": "Rutgers College Ave campus",
+      "mode": "drive",
+      "status": "api_estimate",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "17.9",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08902",
+      "destination": "Rutgers College Ave campus",
+      "mode": "transit",
+      "status": "manual_result_review_long_trip",
+      "evidence": "User-provided Google Maps screenshot; elapsed time from 08:30 to earliest arrival visible.",
+      "original_api_minutes": "",
+      "source": "Google Maps manual lookup"
+    },
+    {
+      "zip": "08902",
+      "destination": "Rutgers Busch campus",
+      "mode": "drive",
+      "status": "api_estimate",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "21.4",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08902",
+      "destination": "Rutgers Busch campus",
+      "mode": "transit",
+      "status": "not_verified_no_api_result",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08902",
+      "destination": "Newark Penn Station",
+      "mode": "drive",
+      "status": "api_estimate",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "48.3",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08902",
+      "destination": "Newark Penn Station",
+      "mode": "transit",
+      "status": "not_verified_no_api_result",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08816",
+      "destination": "Rutgers College Ave campus",
+      "mode": "drive",
+      "status": "api_estimate",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "18.2",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08816",
+      "destination": "Rutgers College Ave campus",
+      "mode": "transit",
+      "status": "manual_result",
+      "evidence": "User-provided Google Maps screenshot; elapsed time from 08:30 to earliest arrival visible.",
+      "original_api_minutes": "54.5",
+      "source": "Google Maps manual lookup"
+    },
+    {
+      "zip": "08816",
+      "destination": "Rutgers Busch campus",
+      "mode": "drive",
+      "status": "api_estimate",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "19.8",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08816",
+      "destination": "Rutgers Busch campus",
+      "mode": "transit",
+      "status": "api_estimate",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "76.9",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08816",
+      "destination": "Newark Penn Station",
+      "mode": "drive",
+      "status": "api_estimate",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "45.4",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08816",
+      "destination": "Newark Penn Station",
+      "mode": "transit",
+      "status": "api_estimate",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "85.1",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08873",
+      "destination": "Rutgers College Ave campus",
+      "mode": "drive",
+      "status": "api_estimate",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "17.8",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08873",
+      "destination": "Rutgers College Ave campus",
+      "mode": "transit",
+      "status": "manual_result_review_long_trip",
+      "evidence": "User-provided Google Maps screenshot; elapsed time from 08:30 to earliest arrival visible.",
+      "original_api_minutes": "",
+      "source": "Google Maps manual lookup"
+    },
+    {
+      "zip": "08873",
+      "destination": "Rutgers Busch campus",
+      "mode": "drive",
+      "status": "api_estimate",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "21.7",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08873",
+      "destination": "Rutgers Busch campus",
+      "mode": "transit",
+      "status": "not_verified_no_api_result",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08873",
+      "destination": "Newark Penn Station",
+      "mode": "drive",
+      "status": "api_estimate",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "54.6",
+      "source": "TravelTime API"
+    },
+    {
+      "zip": "08873",
+      "destination": "Newark Penn Station",
+      "mode": "transit",
+      "status": "api_estimate_review_long_trip",
+      "evidence": "Original TravelTime result retained. No additional manual check.",
+      "original_api_minutes": "199.1",
+      "source": "TravelTime API"
+    }
+  ],
+  "manual_review_method": "Google Maps results supplied by user for 2026-11-17 at 08:30 America/New_York. Manual minutes are elapsed time from requested 08:30 start to earliest arrival visible in supplied results, including pre-departure waiting. Not an independent exhaustive route search."
 }
