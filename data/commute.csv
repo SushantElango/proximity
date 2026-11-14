@@ -12,17 +12,17 @@ zip,destination,mode,minutes,depart_time,checked_on,source
 08904,Newark Penn Station,drive,42.4,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
 08904,Newark Penn Station,transit,51.1,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
 08854,Rutgers College Ave campus,drive,10.6,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
-08854,Rutgers College Ave campus,transit,,2026-11-17T08:30:00-05:00,2026-11-14,Google Maps manual lookup
+08854,Rutgers College Ave campus,transit,Not found,2026-11-17T08:30:00-05:00,2026-11-14,Google Maps manual lookup
 08854,Rutgers Busch campus,drive,10.2,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
-08854,Rutgers Busch campus,transit,,2026-11-17T08:30:00-05:00,2026-11-14,Google Maps manual lookup
+08854,Rutgers Busch campus,transit,Not found,2026-11-17T08:30:00-05:00,2026-11-14,Google Maps manual lookup
 08854,Newark Penn Station,drive,46.2,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
-08854,Newark Penn Station,transit,,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08854,Newark Penn Station,transit,Not found,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
 08817,Rutgers College Ave campus,drive,14.2,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
 08817,Rutgers College Ave campus,transit,63,2026-11-17T08:30:00-05:00,2026-11-14,Google Maps manual lookup
 08817,Rutgers Busch campus,drive,15.8,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
-08817,Rutgers Busch campus,transit,,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08817,Rutgers Busch campus,transit,Not found,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
 08817,Newark Penn Station,drive,37.0,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
-08817,Newark Penn Station,transit,,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08817,Newark Penn Station,transit,Not found,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
 08840,Rutgers College Ave campus,drive,21.6,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
 08840,Rutgers College Ave campus,transit,32,2026-11-17T08:30:00-05:00,2026-11-14,Google Maps manual lookup
 08840,Rutgers Busch campus,drive,22.4,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
@@ -32,9 +32,9 @@ zip,destination,mode,minutes,depart_time,checked_on,source
 08902,Rutgers College Ave campus,drive,17.9,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
 08902,Rutgers College Ave campus,transit,157,2026-11-17T08:30:00-05:00,2026-11-14,Google Maps manual lookup
 08902,Rutgers Busch campus,drive,21.4,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
-08902,Rutgers Busch campus,transit,,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08902,Rutgers Busch campus,transit,Not found,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
 08902,Newark Penn Station,drive,48.3,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
-08902,Newark Penn Station,transit,,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08902,Newark Penn Station,transit,Not found,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
 08816,Rutgers College Ave campus,drive,18.2,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
 08816,Rutgers College Ave campus,transit,54,2026-11-17T08:30:00-05:00,2026-11-14,Google Maps manual lookup
 08816,Rutgers Busch campus,drive,19.8,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
@@ -44,6 +44,6 @@ zip,destination,mode,minutes,depart_time,checked_on,source
 08873,Rutgers College Ave campus,drive,17.8,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
 08873,Rutgers College Ave campus,transit,283,2026-11-17T08:30:00-05:00,2026-11-14,Google Maps manual lookup
 08873,Rutgers Busch campus,drive,21.7,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
-08873,Rutgers Busch campus,transit,,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08873,Rutgers Busch campus,transit,Not found,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
 08873,Newark Penn Station,drive,54.6,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
 08873,Newark Penn Station,transit,199.1,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
