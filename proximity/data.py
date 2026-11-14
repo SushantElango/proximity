@@ -140,6 +140,14 @@ def _depart(value: str) -> str:
     return f"{d:%a} {d:%H:%M}"
 
 
+def _column_value(df: pd.DataFrame, column: str) -> str:
+    """The latest non-blank value of an optional column, or '' when the column is absent."""
+    if column not in df.columns:
+        return ""
+    values = sorted(v for v in df[column].dropna().astype(str).str.strip().unique() if v)
+    return values[-1] if values else ""
+
+
 def _label(demo: int, real_label: str) -> str:
     return LABEL_DEMO if int(demo) == 1 else real_label
 
@@ -236,7 +244,9 @@ def build_area_facts(bundle: DataBundle) -> list[AreaFacts]:
                 facts.places[cat] = Fact(
                     value=float(len(rows)),
                     label=_label(1 if is_demo else 0, LABEL_DATASET),
-                    source="PLACEHOLDER - not real data" if is_demo else "OpenStreetMap via Overpass",
+                    source="PLACEHOLDER - not real data" if is_demo else (_column_value(places, "source") or "OpenStreetMap via Overpass"),
+                    as_of=_column_value(places, "fetched_on"),
+                    note=(f"within {float(radius):,.0f} m of the area's centre point" if (radius := _column_value(places, "radius_m")) else ""),
                 )
 
         areas.append(facts)

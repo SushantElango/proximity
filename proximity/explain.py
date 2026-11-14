@@ -59,16 +59,31 @@ def why_matched(r: AreaResult, limit: int = 2) -> list[str]:
     return lines
 
 
-def main_compromise(r: AreaResult) -> str:
+def main_compromise(r: AreaResult, matches: list[AreaResult] | None = None) -> str:
+    """The priority where this area stands worst. `matches` are the eligible areas, for rent wording."""
     if not any(c.evaluated for c in r.components):
         return "Nothing could be evaluated for this area."
     worst = _compromise(r)
     if worst is None:
         return "No compromise among the priorities we could evaluate."
+    if worst.kind == "rent" and worst.met:
+        left = worst.limit - worst.raw
+        money = f"{fmt_value(worst)}/mo (leaves ${left:,.0f} of your ${worst.limit:,.0f})"
+        rents = [m.component("rent").raw for m in (matches or []) if m.component("rent") and m.component("rent").raw is not None]
+        in_matches = any(m.area == r.area for m in (matches or []))
+        if in_matches and len(rents) > 1 and worst.raw >= max(rents):
+            return f"Most expensive of your matches: {money}"
+        return f"Rent is on the high side: {money}"
     text = _sentence(worst)
     if worst.met:
-        text += ". Most other areas do better on this"
+        # Only claim "most areas do better" when that is true of the numbers.
+        text += ". Most other areas do better on this" if worst.relative < 0.5 else ". This is its weakest point"
     return text
+
+
+def fit_or_dash(r: AreaResult) -> str:
+    """Ineligible areas have no Fit to show."""
+    return "Fit —" if r.status == INELIGIBLE else fit(r.score)
 
 
 def headline(r: AreaResult) -> str:
@@ -152,11 +167,12 @@ def what_changed(diff: dict, limit: int = 4) -> list[str]:
             continue
         if new is None:
             reason = m["reasons"][0] if m["reasons"] else "it no longer meets a must-have"
-            notes.append(f"**{area}** (was #{old}) is no longer eligible because {because}: {reason}.")
+            state = "is now unverified" if m["new_status"] == UNVERIFIED else "is no longer eligible"
+            notes.append(f"**{area}** (was #{old}) {state} because {because}: {reason}.")
             continue
         scores = f" ({fit(m['old_score'])} → {m['new_score'] * 100:.0f})"
         if old is None:
-            notes.append(f"**{area}** is now eligible at #{new} because {because}.")
+            notes.append(f"**{area}** is now a match at #{new} because {because}.")
             continue
         went_up = new < old
         text = f"**{area}** moved {'up' if went_up else 'down'} from #{old} to #{new}{scores}"

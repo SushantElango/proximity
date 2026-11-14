@@ -105,8 +105,10 @@ def test_missing_value_is_not_a_match_and_missing_must_have_is_unverified():
     assert r.component("rent").met is None and r.component("rent").score is None
     # Unverified areas rank after every verified eligible area.
     ranked = score_areas(areas, make_profile())
-    eligible_ranks = [x.rank for x in ranked if x.status == ELIGIBLE]
-    assert r.rank > max(eligible_ranks)
+    assert r.rank is None  # only eligible areas are ranked
+    statuses = [x.status for x in ranked]
+    assert statuses.index(UNVERIFIED) > max(i for i, s in enumerate(statuses) if s == ELIGIBLE)
+    assert [x.rank for x in ranked if x.status == ELIGIBLE] == [1, 2]
 
 
 def test_weight_change_moves_ranking_in_expected_direction():
@@ -215,3 +217,31 @@ def test_flagged_commute_makes_a_must_have_unverified_with_the_flag_as_reason():
     assert "Unusual: please verify" in r.reasons[0]
     assert r.component(f"commute:{CAMPUS}").score is None
     assert any("Unusual: please verify" in m for m in r.missing)
+
+
+def test_late_night_note_is_listed_for_every_area_when_newark_is_a_destination():
+    from proximity.models import LATE_NIGHT_NOTE
+
+    results = score_areas(make_areas(), make_profile())
+    assert all(r.unchecked == [LATE_NIGHT_NOTE] for r in results)
+    no_newark = make_profile()
+    no_newark.destinations = no_newark.destinations[:1]
+    assert all(r.unchecked == [] for r in score_areas(make_areas(), no_newark))
+
+
+def test_ineligible_fit_is_a_dash_and_rent_compromise_names_the_most_expensive_match():
+    from proximity.explain import fit_or_dash, main_compromise
+
+    areas = [
+        area("Cheap", 1200, 20, 40, 3),
+        area("Dear", 1550, 20, 40, 3),
+        area("Too Dear", 1900, 20, 40, 3),
+    ]
+    profile = make_profile()
+    profile.rent_importance = "Must-have"
+    results = score_areas(areas, profile)
+    got = by_area(results)
+    matches = [r for r in results if r.status == ELIGIBLE]
+    assert fit_or_dash(got["Too Dear"]) == "Fit —"
+    assert fit_or_dash(got["Cheap"]).startswith("Fit ") and "—" not in fit_or_dash(got["Cheap"])
+    assert main_compromise(got["Dear"], matches) == "Most expensive of your matches: $1,550/mo (leaves $50 of your $1,600)"

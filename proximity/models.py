@@ -64,6 +64,11 @@ EVENT_TAG_GROUPS: dict[str, str] = {
 }
 LOCAL_EVENTS_LABEL = "Local events"
 
+# Commute lookups all depart on a weekday morning. Priya's trip home from her
+# late shift has not been looked up, and the app says so on every area.
+NEWARK = "Newark Penn Station"
+LATE_NIGHT_NOTE = "Late-night trip home from Newark: not checked"
+
 
 class DestinationPref(BaseModel):
     name: str

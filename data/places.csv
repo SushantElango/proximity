@@ -1,0 +1,656 @@
+zip,category,name,lat,lon,osm_id,osm_tag,detail,radius_m,fetched_on,source
+08816,grocery,7-Eleven,40.4182113,-74.4107633,node/6938658518,shop=convenience,,1500,2026-11-14,OpenStreetMap via Overpass API
+08816,grocery,Wawa,40.4359258,-74.422139,way/518598900,shop=convenience,,1500,2026-11-14,OpenStreetMap via Overpass API
+08816,library,East Brunswick Public Library,40.4173296,-74.4204475,way/168556182,amenity=library,,1500,2026-11-14,OpenStreetMap via Overpass API
+08816,live_music,,40.437663,-74.4274267,way/518598912,amenity=bar,,1500,2026-11-14,OpenStreetMap via Overpass API
+08816,park,,40.4171183,-74.4116804,way/478155200,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08816,park,Butterfly Park/Great Oak Park,40.4192185,-74.4022628,way/39681460,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08816,park,Veterans Park,40.4181975,-74.4197172,way/1053998172,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08816,place_of_worship,,40.4343853,-74.423511,node/4635380947,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08816,place_of_worship,,40.419555,-74.410081,way/1150674837,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08816,place_of_worship,,40.4324369,-74.4225164,way/518595913,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08816,place_of_worship,,40.4344015,-74.4235647,way/518595935,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08816,place_of_worship,Aldersgate United Methodist Church,40.420662,-74.4195952,node/357737086,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08816,place_of_worship,Calvary Korean United Methodist Church,40.4195509,-74.4187619,node/357737090,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08816,place_of_worship,East Brunswick Baptist Church,40.4337053,-74.4223911,way/518595928,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08816,place_of_worship,East Brunswick Jewish Center,40.4288889,-74.4230556,node/357746763,amenity=place_of_worship,,1500,2026-11-14,OpenStreetMap via Overpass API
+08816,place_of_worship,Nativity Evangelical Lutheran Church,40.4239953,-74.4204286,node/357737100,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08816,place_of_worship,Our Saviour's Lutheran Church,40.4405556,-74.4075,node/357746770,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08816,place_of_worship,Saint Bartholomew's Roman Catholic Church,40.4326061,-74.4220954,node/357737103,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08816,place_of_worship,Young Israel of East Brunswick,40.4238535,-74.4245739,way/351485718,amenity=place_of_worship,religion=jewish,1500,2026-11-14,OpenStreetMap via Overpass API
+08816,place_of_worship,​Christian Fellowship Church,40.4236524,-74.4209843,way/494266672,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08816,restaurant,East Brunswick Chinese,40.4181745,-74.4110851,node/6938658516,amenity=restaurant,cuisine=chinese,1500,2026-11-14,OpenStreetMap via Overpass API
+08816,restaurant,Sandy's Pizza,40.4182072,-74.4109564,node/6938658517,amenity=restaurant,cuisine=pizza,1500,2026-11-14,OpenStreetMap via Overpass API
+08816,sports,,40.4229238,-74.4035529,way/1524008732,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08816,sports,,40.422926,-74.4033881,way/1524008733,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08816,sports,,40.4326976,-74.4006099,way/311483902,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08816,sports,,40.4316341,-74.4002249,way/311483903,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08816,sports,,40.4315988,-74.4013302,way/311483905,leisure=pitch,,1500,2026-11-14,OpenStreetMap via Overpass API
+08816,sports,,40.4327138,-74.4198744,way/518595937,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,cafe,,40.5101518,-74.4099196,node/14170825822,amenity=cafe,cuisine=coffee_shop,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,cafe,Birdies and Lattes,40.5126549,-74.4065705,node/13205991751,amenity=cafe,,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,cafe,Gong Cha,40.5149661,-74.3767032,node/13151544820,amenity=cafe,cuisine=bubble_tea,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,cafe,HeyTea,40.5126069,-74.4078628,node/4540216589,amenity=cafe,cuisine=bubble_tea,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,cafe,Mango Mango Dessert,40.5125486,-74.4077863,node/10067372171,amenity=cafe,cuisine=asian;dessert,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,cafe,Mi Tea,40.513102,-74.4051649,node/10816478620,amenity=cafe,cuisine=bubble_tea,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,cafe,Molly Tea,40.5131798,-74.4059451,node/13821672603,amenity=cafe,cuisine=bubble_tea,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,grocery,,40.5174536,-74.3998497,node/537129828,shop=convenience,,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,grocery,,40.5054952,-74.3946132,node/6524693643,shop=supermarket,,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,grocery,,40.5039525,-74.4000522,way/204706656,shop=convenience,,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,grocery,7-Eleven,40.5035894,-74.385795,way/1188522507,shop=convenience,,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,grocery,99 Ranch Market,40.5068237,-74.3975082,node/10067360820,shop=supermarket,cuisine=asian,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,grocery,Delta Food Mart,40.5117123,-74.4080052,way/1464919281,shop=convenience,,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,grocery,H Mart,40.5134408,-74.4076806,node/7024812183,shop=supermarket,cuisine=asian,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,grocery,Kam Man Food,40.5150995,-74.3774686,way/204422941,shop=supermarket,cuisine=asian,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,grocery,ShopRite,40.5120181,-74.383828,way/201337633,shop=supermarket,,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,grocery,Sto Express,40.5130495,-74.4052894,node/10816478610,shop=convenience,,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,grocery,Sunoco,40.5108341,-74.3865266,way/204706613,shop=convenience,,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,grocery,Tiger Mart,40.5044322,-74.3975233,way/204706702,shop=convenience,,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,grocery,Wawa,40.5062716,-74.3933176,node/10822986366,shop=convenience,,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,grocery,Welsh Farms Food Mart,40.5128435,-74.4054478,node/9557016428,shop=convenience,,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,gym,Planet Fitness,40.507154,-74.3952293,node/10962574045,leisure=fitness_centre,,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,library,Edison Public Library - Main Library,40.5174632,-74.408179,way/262966155,amenity=library,,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,park,Central Avenue Park,40.5259376,-74.3970949,node/357737600,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,park,Ellmyer Park,40.5050233,-74.4062287,way/791851107,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,park,Old Post Park,40.5048503,-74.3867236,way/42913469,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,park,Papaianni Park,40.5245204,-74.4002193,way/39835346,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,park,Stelton Park,40.5157231,-74.4070147,way/1568600761,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,place_of_worship,BAPS Shri Swaminarayan Mandir,40.5035913,-74.3814725,way/699488614,amenity=place_of_worship,religion=hindu,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,place_of_worship,Church of Jesus Christ,40.5117329,-74.4086851,way/1464919265,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,place_of_worship,Edison Spanish Seventh-Day Adventist Church,40.5017264,-74.3938609,way/1188522543,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,place_of_worship,Guardian Angels Church,40.5023155,-74.3964902,way/1188523431,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,place_of_worship,Lord of Hope Presbyterian Church,40.5175,-74.3880556,node/357746730,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,place_of_worship,Saint Matthew's Roman Catholic Church,40.5102778,-74.3980556,node/357746727,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,place_of_worship,Stelton Baptist Church,40.5169759,-74.4070512,way/338547152,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,,40.5031115,-74.388868,node/13032111409,amenity=restaurant,cuisine=chinese,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,,40.5140908,-74.3839574,node/14113463466,amenity=restaurant,cuisine=vietnamese,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,,40.506789,-74.3982758,node/3482647732,amenity=restaurant,,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,,40.5152072,-74.4012046,way/201339645,amenity=restaurant,,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,,40.5219188,-74.3927059,way/288862486,amenity=restaurant,cuisine=vietnamese,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,Authentic Shang Hai Dumpling,40.5148372,-74.3769972,node/13151544825,amenity=restaurant,cuisine=chinese,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,B2J Fish Soup,40.5148831,-74.3768991,node/13151544826,amenity=restaurant,cuisine=chinese,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,Boom Boom Chicken,40.5130705,-74.408311,node/4540216586,amenity=restaurant,cuisine=korean;asian,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,Cap't Loui,40.5133498,-74.4057728,node/13821672602,amenity=restaurant,cuisine=seafood,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,Chongqing Wharf,40.5247514,-74.3884502,way/201571164,amenity=restaurant,cuisine=chinese;hotpot;barbecue,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,Coco Malaysian & Thai Cuisine,40.513914,-74.4047294,node/10067360818,amenity=restaurant,cuisine=asian;malaysian;thai,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,Crab House,40.5127223,-74.407027,node/13205991750,amenity=restaurant,cuisine=seafood,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,Crazy Burrito,40.5128814,-74.4029404,node/537481037,amenity=restaurant,,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,Dduk Dabang Korean Street Food,40.5132394,-74.4081692,node/10979836046,amenity=restaurant,cuisine=korean,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,Delhi Garden,40.5104637,-74.4096036,node/13436334222,amenity=restaurant,cuisine=indian,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,Dun Huang,40.5121395,-74.4076489,node/10067372169,amenity=restaurant,cuisine=noodle;chinese,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,Edison Pizza,40.5031273,-74.3887685,node/13032111408,amenity=restaurant,cuisine=pizza,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,Elixir Bar & Grill,40.5011864,-74.3925856,way/1188522539,amenity=restaurant,,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,Happy Lamb Hot Pot,40.5127533,-74.4080373,node/4540216587,amenity=restaurant,cuisine=hotpot,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,Hawaii Station,40.508815,-74.3908028,node/10962574047,amenity=restaurant,cuisine=international,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,Hot Space,40.5132411,-74.4080196,node/10816478613,amenity=restaurant,,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,JiBeiChuan Rice Noodle,40.5149044,-74.3768496,node/13151544824,amenity=restaurant,cuisine=noodle,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,Keum Ho Jung,40.5161544,-74.376862,node/2160423740,amenity=restaurant,cuisine=korean,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,Korean Buffet Picnic Garden,40.5137234,-74.4073243,node/10816478615,amenity=restaurant,,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,La Bagel,40.5136776,-74.4052571,node/10067360819,amenity=restaurant,cuisine=bagel,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,Le Peep,40.5072806,-74.3938713,node/3482647733,amenity=restaurant,cuisine=breakfast,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,Lúa Vietnamese Cuisine,40.512632,-74.4066219,node/10816478621,amenity=restaurant,cuisine=vietnamese,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,Meet Fresh,40.5125069,-74.407729,node/10067372172,amenity=restaurant,cuisine=taiwanese,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,Miss Flower Hotpot,40.5069991,-74.3964331,node/10894538306,amenity=restaurant,cuisine=chinese,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,NewDa Noodles,40.5151974,-74.4013268,node/4540216590,amenity=restaurant,cuisine=noodle,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,Noodles Plus,40.5125877,-74.3837563,node/11292212282,amenity=restaurant,cuisine=noodle,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,Noodles Time,40.5140022,-74.4046014,node/14319907549,amenity=restaurant,cuisine=noodle,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,Outback Steakhouse,40.5052659,-74.3974615,way/175748053,amenity=restaurant,cuisine=american;steak,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,Paris Baguette,40.5129216,-74.4082865,node/4540226513,amenity=restaurant,cuisine=bread,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,Skylark Diner,40.5077406,-74.3910441,way/204706676,amenity=restaurant,,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,Spice 24,40.5126885,-74.4079562,node/4540216588,amenity=restaurant,cuisine=asian,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,Tasty Moment,40.5123188,-74.4074382,node/10067372170,amenity=restaurant,cuisine=chinese,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,The Madina Fountain BBQ & Grill,40.5128881,-74.4054213,node/10816478618,amenity=restaurant,cuisine=indian,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,Tofu House,40.5131891,-74.4081104,node/4540216585,amenity=restaurant,cuisine=asian,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,Ugly Dumpling,40.506015,-74.3962737,node/10962574042,amenity=restaurant,cuisine=chinese,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,Wu's Fish House,40.5126664,-74.4069476,node/13205991749,amenity=restaurant,cuisine=seafood,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,Yi Pin Xiang Restaurant,40.5130187,-74.4053441,node/10816478611,amenity=restaurant,cuisine=chinese,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,Zhangliang Malatang,40.5141337,-74.4044604,node/14319907548,amenity=restaurant,cuisine=hotpot,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,restaurant,Zia Lisa Pizza,40.5129271,-74.4029576,node/537481039,amenity=restaurant,,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,sports,,40.5190682,-74.3815658,way/1105681130,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,sports,,40.519416,-74.380995,way/1105681131,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,sports,,40.5160265,-74.3895691,way/1105681979,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,sports,,40.5148881,-74.3862349,way/1105682242,leisure=pitch,sport=swimming,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,sports,,40.5153418,-74.3927544,way/1180091182,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,sports,,40.509903,-74.3968615,way/1180092444,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,sports,,40.5066152,-74.4021579,way/1442897260,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,sports,,40.5161635,-74.4102394,way/1464919197,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,sports,,40.5152761,-74.4098426,way/1464919198,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,sports,,40.5222757,-74.4042214,way/1498353286,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,sports,,40.5223668,-74.4040938,way/1498353287,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,sports,,40.5224558,-74.403969,way/1498353288,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,sports,,40.5227863,-74.4035013,way/1498353290,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,sports,,40.5051031,-74.4058433,way/295732277,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,sports,,40.5258717,-74.3952347,way/338547139,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,sports,,40.5274329,-74.3960077,way/338547140,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,sports,,40.5226728,-74.4036591,way/338547142,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,sports,,40.523065,-74.4021277,way/338547144,leisure=pitch,sport=american_football,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,sports,,40.5221861,-74.4043455,way/338547145,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,sports,,40.5066045,-74.4015361,way/345344656,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,sports,,40.5141889,-74.3889699,way/351301364,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,sports,,40.5135643,-74.3879726,way/351301367,leisure=pitch,,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,sports,,40.5153988,-74.3886854,way/351301368,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,sports,,40.5146903,-74.3899545,way/351301369,leisure=pitch,sport=american_football,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,sports,,40.512944,-74.3868539,way/968312826,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,sports,,40.5130613,-74.3867759,way/968312827,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,sports,,40.5131786,-74.3866979,way/968312828,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,sports,,40.5132959,-74.38662,way/968312829,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08817,sports,,40.5134133,-74.386542,way/968312830,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,cafe,AKIHI,40.5413024,-74.3614374,node/12737498556,amenity=cafe,cuisine=bubble_tea;ice_cream,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,cafe,Boba Tea Time,40.542289,-74.362053,node/12737498550,amenity=cafe,cuisine=bubble_tea,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,cafe,Brewed Awakening,40.5416944,-74.3616764,node/4539570682,amenity=cafe,cuisine=american,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,cafe,Cai's Cafe,40.5418939,-74.361467,node/12523227193,amenity=cafe,cuisine=coffee_shop,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,cafe,Gong Cha,40.5345484,-74.3472348,node/8640503664,amenity=cafe,cuisine=bubble_tea,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,cafe,Ligaya Grounds,40.5437423,-74.3713911,node/14166246340,amenity=cafe,cuisine=filipino,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,cafe,MOTW Coffee & Pastries,40.5408688,-74.3660866,node/13433102252,amenity=cafe,cuisine=coffee_shop,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,cafe,Starbucks,40.5393576,-74.3692319,way/1317047543,amenity=cafe,cuisine=coffee_shop,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,grocery,Krauszer's Food Store,40.5433796,-74.3711712,node/3639354734,shop=convenience,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,grocery,Lotte Plaza Market,40.5345896,-74.3477739,node/8640478624,shop=supermarket,cuisine=asian,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,grocery,Metuchen News,40.5425656,-74.3622443,node/12737534923,shop=convenience,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,grocery,Quick In Food Store,40.5411847,-74.3610236,node/13911037836,shop=convenience,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,grocery,Whole Foods Market,40.5398441,-74.3659894,way/698958702,shop=supermarket,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,gym,,40.5400488,-74.3617679,node/14020802961,leisure=fitness_centre,sport=yoga,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,gym,Club Pilates,40.5401691,-74.3678841,node/12811873847,leisure=fitness_centre,sport=pilates,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,gym,EZ Fit Personal Training,40.5439489,-74.3485139,node/13078306957,leisure=fitness_centre,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,gym,Hot Yoga Revolution - Metuchen,40.5408731,-74.3631546,node/13732324890,leisure=fitness_centre,sport=yoga,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,gym,Isolation Fitness LLC,40.5387266,-74.3605334,node/13918887211,leisure=fitness_centre,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,gym,KING Strength,40.5420775,-74.3636295,node/13087028701,leisure=fitness_centre,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,library,Metuchen Public Library,40.5449969,-74.3613859,way/195888317,amenity=library,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,live_music,Hailey's Harp & Pub,40.5413316,-74.3611024,node/12741617799,amenity=pub,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,live_music,The Parlor at Hailey's,40.5416007,-74.3605501,node/14070960004,amenity=bar,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,park,,40.5371576,-74.3620729,way/39649047,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,park,,40.5380915,-74.3696779,way/39835397,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,park,,40.5350932,-74.353554,way/40164594,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,park,Center Street Park,40.5472719,-74.3693514,way/187680301,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,park,Franklin Park,40.5425999,-74.3663892,way/583545938,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,park,Hampton Park,40.5376264,-74.3723087,way/675484058,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,park,Horse Trough Triangle,40.5464204,-74.3590512,way/426401322,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,park,Kentnor Street Park,40.5363543,-74.3699796,way/469273644,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,park,Memorial Park,40.5375316,-74.3649162,way/193305295,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,park,Myrtle-Charles Park,40.5328558,-74.3534152,way/40164593,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,park,Oakland Park,40.5442463,-74.3499196,way/39681344,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,park,Olmezer Park,40.5504805,-74.3665681,way/187680299,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,park,Roosevelt Park,40.5470507,-74.3396689,way/530053374,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,park,Thomas Mundy Peterson Park,40.5427385,-74.3618813,way/1476260232,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,park,Thomas Park,40.5354801,-74.3633036,way/193305297,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,park,Vidas Park,40.541117,-74.3715677,way/40139588,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,park,Woodwild Park,40.5482601,-74.3578501,way/164657767,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,place_of_worship,,40.5459133,-74.3698142,way/204440461,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,place_of_worship,Bethel African Methodist Episcopal Church,40.5431598,-74.3690384,node/357738338,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,place_of_worship,Centenary United Methodist Church,40.5444648,-74.3537012,node/357738360,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,place_of_worship,First Baptist Metuchen,40.5497781,-74.3527405,way/195741404,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,place_of_worship,First Presbyterian Church of Metuchen,40.54062,-74.3594159,way/197525401,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,place_of_worship,New Hope Baptist Church,40.5396531,-74.3731077,node/357738277,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,place_of_worship,Reformed Church of Metuchen,40.5346794,-74.3635271,way/197535143,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,place_of_worship,Saint Francis of Assisi Cathedral,40.5455925,-74.3633476,way/155917374,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,place_of_worship,Saint Luke's Episcopal Church,40.5463413,-74.3596332,way/197531470,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,place_of_worship,Second Baptist Church,40.5439931,-74.3673717,node/357738285,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,place_of_worship,"Shree Ram Mandir, Inc.",40.5394324,-74.3590686,way/755562754,amenity=place_of_worship,religion=hindu,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,place_of_worship,Temple Neve Sholom,40.5480664,-74.3533807,node/357738353,amenity=place_of_worship,religion=jewish,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,,40.5413359,-74.3673864,way/204592472,amenity=restaurant,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,Antonio's Brick Oven Pizza,40.5427189,-74.3623385,node/12737534925,amenity=restaurant,cuisine=pizza,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,Bonney's BBQ,40.5408762,-74.361159,node/12988895947,amenity=restaurant,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,Cafe Paris,40.5423998,-74.3621283,node/12737534912,amenity=restaurant,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,Che Pizza,40.5409355,-74.3632079,node/14203620893,amenity=restaurant,cuisine=pizza,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,Civile Cucina Italiana,40.5331744,-74.3587733,node/12206460997,amenity=restaurant,cuisine=italian,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,Duke's Steakhouse,40.541603,-74.3616171,node/12737498554,amenity=restaurant,cuisine=steak_house,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,East Hana Sushi,40.5405689,-74.3673439,node/10213225684,amenity=restaurant,cuisine=sushi;japanese,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,Fire & Flavor Original Portuguese BBQ,40.5410431,-74.3672208,node/13433317633,amenity=restaurant,cuisine=portuguese;barbecue,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,Fusha Asian Bistro 'N' Sushi,40.5428831,-74.3620987,node/12988895940,amenity=restaurant,cuisine=asian,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,Hatch 44 Café,40.5414207,-74.3625707,way/203804548,amenity=restaurant,cuisine=brunch,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,Joey D's Pizza,40.5470255,-74.3709777,node/9916158219,amenity=restaurant,cuisine=pizza,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,Khorasan Kabab,40.5423152,-74.3643007,node/13085678758,amenity=restaurant,cuisine=afghan,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,La Rosa Pizza,40.5407149,-74.3654162,node/10213225685,amenity=restaurant,cuisine=pizza,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,Latin Port,40.5406958,-74.3653208,way/203804536,amenity=restaurant,cuisine=spanish,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,MOAAZ Mediterranean Grill,40.5423285,-74.3617371,node/12737444924,amenity=restaurant,cuisine=mediterranean,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,Mangia Toscano,40.542111,-74.3615957,node/12737444922,amenity=restaurant,cuisine=italian,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,Maria's Brunch,40.5416452,-74.3679425,way/203804659,amenity=restaurant,cuisine=brunch,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,Menya Ramen House,40.5411539,-74.3613355,node/13043843631,amenity=restaurant,cuisine=ramen,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,Metuchen Diner,40.5411306,-74.3651868,way/202426616,amenity=restaurant,cuisine=american,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,Metuchen Inn,40.545627,-74.3601693,way/1444378886,amenity=restaurant,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,Meximodo,40.5408878,-74.3627795,way/698958707,amenity=restaurant,cuisine=mexican,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,Namkeen,40.5415767,-74.3612535,node/12523227198,amenity=restaurant,cuisine=pakistani,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,Nauti Crab,40.5416704,-74.3619745,node/2077549205,amenity=restaurant,cuisine=cajun,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,Phattra Thai,40.5422381,-74.3616806,node/12737444920,amenity=restaurant,cuisine=thai,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,Pink Lotus,40.5423369,-74.362081,node/12737498551,amenity=restaurant,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,Pita Grill and Creperie,40.5402246,-74.3677878,node/10413778283,amenity=restaurant,cuisine=mediterranean,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,Ram & Rooster,40.5413531,-74.3673589,node/12189356234,amenity=restaurant,cuisine=chinese;american,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,Rio of Japan,40.5465069,-74.3706311,node/9916158220,amenity=restaurant,cuisine=japanese,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,Salad House,40.5403482,-74.367764,node/12292251189,amenity=restaurant,cuisine=salad,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,Sumiyaki Japan,40.54061,-74.3652549,node/12189260159,amenity=restaurant,cuisine=japanese,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,Sushi Suzuki,40.5416145,-74.3621714,node/9351831337,amenity=restaurant,cuisine=sushi,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,Terzo,40.5417447,-74.3624974,node/13050046764,amenity=restaurant,cuisine=italian,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,The Greek on Main,40.5417565,-74.3617194,node/9351831336,amenity=restaurant,cuisine=greek,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,The Orchid,40.5427505,-74.3623579,node/12737534922,amenity=restaurant,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,Tribos peri peri,40.5412405,-74.3613949,node/4539570681,amenity=restaurant,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,Wood Stack Pizza + Kitchen,40.538398,-74.3645423,way/204067145,amenity=restaurant,cuisine=pizza,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,bb.q Chicken,40.5343048,-74.347179,node/8640503660,amenity=restaurant,cuisine=korean;chicken,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,restaurant,​AwesomeYo's Kitchen,40.5418644,-74.3630665,node/13508118222,amenity=restaurant,cuisine=cake,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5509867,-74.347646,node/12320787194,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5528119,-74.3535271,way/1067305422,leisure=pitch,sport=athletics,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5433829,-74.351435,way/1137960660,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5434743,-74.3513007,way/1137960661,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5435631,-74.3511664,way/1137960662,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5436519,-74.3510321,way/1137960663,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5437417,-74.3508964,way/1137960664,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5438315,-74.350765,way/1137960665,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5538286,-74.3528001,way/1167849855,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5542381,-74.3521064,way/1167849856,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5420633,-74.3414935,way/1169665069,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5449,-74.3488443,way/1285984080,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5476539,-74.357932,way/1328391801,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5464024,-74.3435861,way/1378145772,leisure=sports_centre,sport=swimming,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5335968,-74.3533118,way/1429063016,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5338084,-74.3533297,way/1429063017,leisure=pitch,sport=softball,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5331106,-74.3530487,way/1429063018,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5318978,-74.3531344,way/1429063022,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5367659,-74.3694321,way/1554525785,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5412711,-74.3572956,way/204067151,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5313686,-74.3631764,way/204080812,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5378936,-74.3724563,way/204440414,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5375114,-74.3730236,way/204440457,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5377053,-74.3720057,way/204440474,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5415705,-74.372033,way/204440475,leisure=pitch,sport=softball,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5421303,-74.3416934,way/254251019,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5304356,-74.3616868,way/297286750,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5528697,-74.3527433,way/297376534,leisure=pitch,sport=american_football,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5531567,-74.3557856,way/297376535,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5543761,-74.352818,way/297376537,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5536665,-74.352363,way/297376538,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5448035,-74.3668395,way/297391066,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5442822,-74.3499264,way/297560408,leisure=pitch,sport=softball,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5452264,-74.3485272,way/297560417,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5504951,-74.3667813,way/297561569,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5419309,-74.3426128,way/316899211,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5405581,-74.371951,way/317312188,leisure=pitch,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.531917,-74.3532574,way/469273640,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,,40.5340215,-74.353324,way/469273643,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,Brenner Family Field,40.5512873,-74.3726617,way/352408813,leisure=pitch,sport=american_football,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,Edgar Park,40.5310729,-74.3629467,way/195995564,leisure=pitch,,1500,2026-11-14,OpenStreetMap via Overpass API
+08840,sports,YMCA,40.5337526,-74.3630721,way/197535141,leisure=sports_centre,,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,library,Piscataway John F. Kennedy Memorial Library,40.5366962,-74.4713969,way/261988817,amenity=library,,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,park,,40.5295494,-74.4781498,way/39680849,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,park,Byrne Park,40.5430998,-74.4467429,way/162623678,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,park,Castle Pointe Park,40.5376952,-74.459794,way/588458173,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,place_of_worship,Christ United Methodist Church,40.5381495,-74.4702544,way/292116501,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,place_of_worship,Muslim Center of Middlesex,40.5295875,-74.4685166,way/457786213,amenity=place_of_worship,religion=muslim,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5428643,-74.4474119,node/1744913469,leisure=sports_centre,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5427706,-74.4465697,node/1744913483,leisure=sports_centre,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5475926,-74.4750843,way/1067633512,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.547662,-74.4748922,way/1067633513,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5477319,-74.4746948,way/1067633514,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5472971,-74.4749005,way/1067633515,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5473665,-74.4747084,way/1067633516,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5474365,-74.4745109,way/1067633517,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5313726,-74.4552808,way/250911604,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5305265,-74.4752607,way/251534956,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5304565,-74.4754739,way/251534957,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5336583,-74.4767032,way/251534970,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5339653,-74.4758211,way/251534971,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5476046,-74.4708283,way/298682338,leisure=pitch,sport=american_football,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5410277,-74.4638864,way/327353045,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5414842,-74.463085,way/327353046,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5401092,-74.4640274,way/327353048,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5405256,-74.4623165,way/327353049,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5403173,-74.4631709,way/327353050,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5428845,-74.4653848,way/327524854,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5351028,-74.4750576,way/327524855,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5357778,-74.4754129,way/327524856,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5375215,-74.4605117,way/352442831,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5336066,-74.4751041,way/368204102,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5332551,-74.476191,way/368204104,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5438241,-74.4690066,way/441718191,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.545682,-74.4675837,way/441718192,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5450608,-74.4674359,way/441718193,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5443665,-74.4694083,way/441718194,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5452794,-74.4684765,way/441718195,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5336993,-74.4786318,way/548490568,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5300069,-74.4578305,way/583074248,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5426396,-74.4686351,way/944005230,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5453466,-74.4667732,way/944005231,leisure=pitch,sport=softball,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5447965,-74.4681551,way/944005232,leisure=pitch,sport=softball,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5447708,-74.4694063,way/944005233,leisure=pitch,sport=softball,1500,2026-11-14,OpenStreetMap via Overpass API
+08854,sports,,40.5375511,-74.4603438,way/944005249,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08873,library,Franklin Township Library,40.4980444,-74.5255097,way/554788959,amenity=library,,1500,2026-11-14,OpenStreetMap via Overpass API
+08873,park,Middlebush Park,40.5025676,-74.5229049,way/675438909,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08873,place_of_worship,Mandir Ananda,40.5071849,-74.5369032,node/1833703553,amenity=place_of_worship,religion=hindu,1500,2026-11-14,OpenStreetMap via Overpass API
+08873,place_of_worship,Middlebush Reformed Church,40.4972349,-74.5284165,way/973287892,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08873,place_of_worship,Swaminarayan Mandir,40.4954879,-74.5228092,way/185936548,amenity=place_of_worship,religion=hindu,1500,2026-11-14,OpenStreetMap via Overpass API
+08873,restaurant,Corner Cafe & Grill,40.4957842,-74.5251952,way/1303811066,amenity=restaurant,cuisine=burger;sandwich;pancake;coffee_shop;american,1500,2026-11-14,OpenStreetMap via Overpass API
+08873,restaurant,Stage House,40.4971668,-74.5267001,node/1833707863,amenity=restaurant,cuisine=american,1500,2026-11-14,OpenStreetMap via Overpass API
+08873,sports,,40.5023523,-74.5168302,way/1524009510,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08873,sports,,40.5022477,-74.5167235,way/1524009511,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08873,sports,,40.5027619,-74.5217948,way/467837224,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08873,sports,,40.5035074,-74.5207947,way/467837225,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08873,sports,,40.5035881,-74.5228439,way/467837226,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08873,sports,,40.5035235,-74.5236651,way/467837227,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08873,sports,,40.5034643,-74.5245216,way/467837228,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08873,sports,,40.5027404,-74.5220123,way/467837229,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08873,sports,,40.5023963,-74.5238735,way/467837230,leisure=pitch,sport=american_football,1500,2026-11-14,OpenStreetMap via Overpass API
+08873,sports,,40.5023284,-74.5250877,way/467837231,leisure=pitch,sport=american_football,1500,2026-11-14,OpenStreetMap via Overpass API
+08873,sports,,40.5026849,-74.5223745,way/675439827,leisure=pitch,sport=skateboard,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,cafe,Bagel Nosh,40.4948418,-74.4436903,node/4449522010,amenity=cafe,,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,cafe,Cook Cafe,40.4790454,-74.4315647,node/4435485825,amenity=cafe,cuisine=american,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,cafe,DC Bagels,40.484622,-74.4367903,node/12368701513,amenity=cafe,cuisine=bagel;coffee_shop;sandwich,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,cafe,Douglass Cafe,40.484603,-74.436566,node/4435479834,amenity=cafe,cuisine=burger;sandwich;breakfast,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,cafe,Haraz Coffee House,40.4958958,-74.443952,node/12773319202,amenity=cafe,cuisine=coffee_shop;middle_eastern,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,cafe,Khyber Coffee & Tea House,40.4957327,-74.4449213,node/12773319203,amenity=cafe,cuisine=coffee_shop,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,cafe,Semicolon Cafe,40.4948275,-74.4439934,node/4449522011,amenity=cafe,cuisine=coffee_shop,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,grocery,,40.4914746,-74.4565423,way/1451157619,shop=convenience,,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,grocery,7-Eleven,40.4950427,-74.4440608,node/4439275223,shop=convenience,,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,grocery,7-Eleven,40.4916318,-74.4430815,node/4449958286,shop=convenience,,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,grocery,Bravo,40.4912608,-74.4423296,way/201332055,shop=supermarket,,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,grocery,George Street Co-op,40.4917718,-74.4450055,way/442694555,shop=supermarket,,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,grocery,International Supermarket,40.483571,-74.448608,way/975113381,shop=supermarket,,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,grocery,Park Convenience,40.4879022,-74.439602,node/4404545496,shop=convenience,,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,grocery,Tiger Mart,40.4873173,-74.4405192,way/412163885,shop=convenience,,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,grocery,Tiger Mart,40.488253,-74.4365768,way/972612954,shop=convenience,,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,gym,RJW Fitness & Wellness Center,40.495405,-74.447195,node/6071477080,leisure=fitness_centre,sport=swimming;fitness;yoga;weightlifting,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,gym,Yoga Healing Consortium / Garden of Healing,40.4958313,-74.4436982,node/13820986717,leisure=fitness_centre,sport=yoga,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,library,Chang Science Library,40.4808333,-74.435,node/367692870,amenity=library,,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,library,Mabel Smith Douglass Library,40.4857255,-74.4356559,way/251381606,amenity=library,,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,library,New Brunswick Free Public Library,40.4913782,-74.445393,way/366742174,amenity=library,,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,live_music,George Street Ale House,40.495682,-74.4442097,node/3990102721,amenity=pub,cuisine=burger,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,live_music,Harvest Moon Brewery and Cafe,40.496179,-74.4443377,node/549671007,amenity=pub,,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,live_music,Tavern on George,40.494967,-74.4437215,node/4417115698,amenity=bar,,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,live_music,The Court Tavern,40.4956555,-74.4451856,way/654788857,amenity=bar,,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,park,,40.4816394,-74.4606908,way/40139292,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,park,,40.4962405,-74.4419318,way/441863911,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,park,,40.4932921,-74.443178,way/589089566,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,park,,40.494125,-74.4485781,way/593848369,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,park,,40.4913241,-74.4551156,way/688027170,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,park,Baker Park,40.4779154,-74.4529955,way/40369577,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,park,Donaldson Park,40.4903612,-74.4247682,way/37747750,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,park,Elmer B Boyd Park,40.492243,-74.4353376,way/39680709,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,park,Joyce Kilmer Park,40.4879963,-74.4542866,way/39680278,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,park,Kilmer Square Park,40.4964578,-74.4439834,way/444222341,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,park,Liberty Square Park,40.494259,-74.4423177,way/575566967,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,park,Monument Square Park,40.4933764,-74.4437573,way/277741693,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,park,Pittman Park,40.4845296,-74.4441594,way/39680528,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,park,Recreation Park,40.4785733,-74.4425708,way/39680284,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,place_of_worship,,40.4921053,-74.4408447,way/412246180,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,place_of_worship,Anshe Emeth Memorial Temple,40.485523,-74.4516039,way/245680365,amenity=place_of_worship,religion=jewish,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,place_of_worship,Bayard Street Presbyterian Church,40.4939277,-74.4480034,node/357747233,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,place_of_worship,Bayard Street Presbyterian Church,40.4940585,-74.4480401,way/589089564,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,place_of_worship,Christ Episcopal Church,40.4958949,-74.4425873,way/187564921,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,place_of_worship,Church of God in Christ,40.4841667,-74.4466667,node/357747260,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,place_of_worship,Congregation Ahavas Achim Synagogue,40.494363,-74.4415503,node/357747235,amenity=place_of_worship,religion=jewish,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,place_of_worship,Congregation Ojave Methodist Synagogue,40.4917181,-74.4441388,way/277742500,amenity=place_of_worship,religion=jewish,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,place_of_worship,Ebenezer Baptist Church,40.4856212,-74.4490991,way/412246200,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,place_of_worship,Emanuel Evangelical Lutheran Church,40.4927946,-74.4459981,way/277742504,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,place_of_worship,First Baptist Church,40.4866157,-74.4501043,way/412847112,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,place_of_worship,First Methodist Church,40.4936111,-74.4430556,node/357747246,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,place_of_worship,First Reformed Church,40.495037,-74.4423598,way/201332044,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,place_of_worship,Iglesia De Dios Peniel,40.4941667,-74.4472222,node/357746852,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,place_of_worship,Livingston Avenue Reformed Church,40.4893458,-74.447524,way/412246185,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,place_of_worship,Messiah Pentecostal Church of God,40.4891787,-74.4434504,node/357737139,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,place_of_worship,Nativity of the Blessed Virgin Mary Church,40.4907016,-74.4461333,way/412840492,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,place_of_worship,New Brunswick Friends Meeting,40.481671,-74.4410871,way/604056787,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,place_of_worship,Poile Zedek Synagogue,40.4943682,-74.4414995,way/201332052,amenity=place_of_worship,religion=jewish,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,place_of_worship,Sacred Heart Church,40.4865926,-74.4424625,node/357737159,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,place_of_worship,Saint Alban's Episcopal Church,40.4841667,-74.4505556,node/357746844,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,place_of_worship,Saint John the Baptist Roman Catholic Church,40.4890776,-74.4397974,node/357737162,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,place_of_worship,Saint John the Evangelist Church,40.4881014,-74.4401369,node/357737166,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,place_of_worship,Saint Mary of Mount Virgin Church,40.4834032,-74.4496925,way/412246204,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,place_of_worship,Seventh Day Adventist Church,40.4824893,-74.4559278,way/412847117,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,place_of_worship,Sharon Baptist Church,40.4805178,-74.446218,way/975113390,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,place_of_worship,Suydam Street Reformed Church,40.4904466,-74.4492226,way/412246188,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,place_of_worship,Tabernacle Baptist Church,40.4900699,-74.441497,way/412840488,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,place_of_worship,Voorhees Chapel,40.4865754,-74.435646,way/182887273,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,restaurant,,40.4753751,-74.4476498,node/14320114797,amenity=restaurant,cuisine=barbecue,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,restaurant,,40.4954764,-74.445141,way/654788859,amenity=restaurant,cuisine=mexican,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,restaurant,Blackthorn Restaurant & Irish Pub,40.4962823,-74.442444,node/8679935275,amenity=restaurant,cuisine=irish;pub,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,restaurant,Buns N Shakes,40.4957413,-74.4447433,node/12760501101,amenity=restaurant,cuisine=american,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,restaurant,Catherine Lombardi Restaurant,40.4937875,-74.4438215,node/4459403322,amenity=restaurant,cuisine=italian,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,restaurant,Cuzin's Seafood Clam Bar,40.4967304,-74.4425781,node/1982259924,amenity=restaurant,,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,restaurant,Destination Dogs,40.494726,-74.4481891,way/593848371,amenity=restaurant,cuisine=hot_dog,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,restaurant,Douglass Pizza & Grill,40.4920107,-74.4433774,node/12824067006,amenity=restaurant,cuisine=pizza,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,restaurant,Fiesta Mexican Restaurant,40.4941505,-74.4438429,node/4459403321,amenity=restaurant,cuisine=mexican,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,restaurant,Filippo's Famous Pizza,40.4939119,-74.4437893,node/4459403327,amenity=restaurant,cuisine=pizza,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,restaurant,Gyro Xpress,40.4957036,-74.4438864,node/4439275215,amenity=restaurant,cuisine=greek,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,restaurant,Hotoke,40.4946011,-74.4439478,node/4449522021,amenity=restaurant,cuisine=asian,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,restaurant,INC American Bar and Kitchen,40.4925987,-74.4435589,node/4449958284,amenity=restaurant,cuisine=american,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,restaurant,Legacy Grounds Coffee,40.4943501,-74.444935,node/11158118044,amenity=restaurant,,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,restaurant,My Way Korean Restaurant,40.494647,-74.4436434,node/4449522024,amenity=restaurant,cuisine=korean,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,restaurant,Noodle Is Calling,40.4947867,-74.4439827,node/4449522012,amenity=restaurant,cuisine=chinese,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,restaurant,Old Man Rafferty's,40.4965713,-74.4438038,node/1982259435,amenity=restaurant,,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,restaurant,Panico's Brick Oven Pizza,40.4958601,-74.443715,way/1074626881,amenity=restaurant,cuisine=pizza,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,restaurant,Ramen Nagomi,40.4943855,-74.4447143,node/4540216593,amenity=restaurant,cuisine=japanese,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,restaurant,Roosterspin,40.4963612,-74.4453925,node/13198498238,amenity=restaurant,cuisine=korean,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,restaurant,Salt Seafood & Oyster Bar,40.4961099,-74.4436322,node/1982192262,amenity=restaurant,cuisine=italian,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,restaurant,Shalimar Halal Gyro Grill,40.4946031,-74.4436313,node/4449522026,amenity=restaurant,cuisine=indian,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,restaurant,Stage Left,40.4937169,-74.4438958,node/4220203491,amenity=restaurant,cuisine=american,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,restaurant,Steakhouse 85,40.4961772,-74.4433077,node/1982193491,amenity=restaurant,cuisine=steak_house,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,restaurant,Taka Taka Street Greek,40.4953017,-74.4437738,node/4439275225,amenity=restaurant,cuisine=greek,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,restaurant,Teri Teri Japanese Restaurant,40.4950488,-74.443747,node/4439275226,amenity=restaurant,cuisine=japanese,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,restaurant,The Frog and The Peach,40.4950169,-74.4408148,way/201332094,amenity=restaurant,cuisine=american,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,restaurant,The Original Picken Chicken,40.4895022,-74.4417001,node/4449958322,amenity=restaurant,cuisine=chicken,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,restaurant,indochine,40.4953854,-74.4437952,node/4439275217,amenity=restaurant,cuisine=vietnamese,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,sports,,40.490332,-74.4388668,way/1432666185,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,sports,,40.4781445,-74.4340286,way/1539905260,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,sports,,40.478161,-74.4338647,way/1539905261,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,sports,,40.4781784,-74.4337012,way/1539905262,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,sports,,40.4777829,-74.4338254,way/230397865,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,sports,,40.4883912,-74.4287086,way/344305111,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,sports,,40.4884004,-74.4284883,way/344305113,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,sports,,40.4840892,-74.4449321,way/412163891,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,sports,,40.4839517,-74.4447162,way/412163892,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,sports,,40.4776799,-74.4334298,way/444997757,leisure=pitch,sport=beachvolleyball,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,sports,,40.4774671,-74.4349091,way/467837219,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,sports,,40.4773998,-74.4361268,way/467837220,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,sports,,40.478165,-74.4526789,way/479816654,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,sports,,40.4777191,-74.453539,way/479816655,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,sports,,40.4782698,-74.4533171,way/479816656,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,sports,,40.4823291,-74.4594855,way/479818446,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,sports,,40.4826684,-74.4601014,way/479818447,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,sports,,40.4879354,-74.4537085,way/479828235,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,sports,,40.4814313,-74.4603108,way/479828486,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,sports,,40.4879548,-74.4546859,way/479979818,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,sports,,40.4913754,-74.4476308,way/626719032,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,sports,,40.4858395,-74.4508697,way/628407567,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,sports,,40.4856918,-74.450675,way/628407568,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,sports,Ballfield 1,40.489897,-74.4274496,way/345647200,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,sports,Cook-Douglass Recreation Center,40.4785548,-74.4326704,way/251381465,leisure=sports_centre,sport=multi,1500,2026-11-14,OpenStreetMap via Overpass API
+08901,sports,Soccer 1,40.4892608,-74.4261174,way/475723418,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,cafe,Starbucks,40.4357151,-74.5047925,node/12549196804,amenity=cafe,cuisine=coffee_shop,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,grocery,$1 Power,40.4350143,-74.4898793,node/9033587587,shop=convenience,,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,grocery,ShopRite,40.4336202,-74.4898422,way/168556192,shop=supermarket,,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,grocery,ShopRite,40.4336166,-74.4898547,way/175497683,shop=supermarket,,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,gym,Planet Fitness,40.4348809,-74.4899333,node/9033587586,leisure=fitness_centre,sport=fitness,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,gym,Retro Fitness,40.4464481,-74.5017515,node/5425340074,leisure=fitness_centre,,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,live_music,North Brunswick Pub,40.4516163,-74.49116,way/975759758,amenity=pub,,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,park,North Brunswick Community Park,40.4417339,-74.4874325,way/479822682,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,park,Renaissance Park,40.4319377,-74.4993791,way/40145905,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,place_of_worship,Georges Road Baptist Church,40.4331613,-74.4862642,node/357722331,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,restaurant,,40.4335184,-74.4875336,node/14112863636,amenity=restaurant,cuisine=thai,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,restaurant,,40.4367746,-74.482716,node/14112863646,amenity=restaurant,cuisine=indian,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,restaurant,Buffalo Wild Wings,40.4465103,-74.4992882,way/200447935,amenity=restaurant,cuisine=wings,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,restaurant,CAVA,40.4381663,-74.5053575,node/13002609363,amenity=restaurant,cuisine=mediterranean,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,restaurant,Goodfood by Uzma,40.4472917,-74.4965202,node/2104372962,amenity=restaurant,cuisine=pakistani,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,restaurant,Greene Turtle,40.4374722,-74.5040866,way/1414925708,amenity=restaurant,cuisine=american,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,restaurant,Labebe,40.4364174,-74.4834539,node/3572577393,amenity=restaurant,cuisine=seafood;steak_house,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,restaurant,LongHorn Steakhouse,40.445996,-74.4998187,way/176354282,amenity=restaurant,cuisine=steak_house,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,restaurant,Mirchi,40.4446357,-74.5013618,node/2104380969,amenity=restaurant,cuisine=indian,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,restaurant,Ninja Sushi Japanese Fusion,40.4526022,-74.4927779,node/11030042439,amenity=restaurant,,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,restaurant,North Brunswick Pizza,40.434406,-74.4898043,node/9033587583,amenity=restaurant,cuisine=pizza,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,restaurant,Pizza Hut,40.4463168,-74.4994644,way/176354284,amenity=restaurant,cuisine=pizza,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,restaurant,Seafood Empire,40.4474912,-74.4979299,node/1868859323,amenity=restaurant,cuisine=chinese,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,restaurant,Shalimar,40.4445193,-74.5015174,node/2104381287,amenity=restaurant,cuisine=indian,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,restaurant,Tikka Masala Indian Fusion,40.4347877,-74.4898606,node/13138442016,amenity=restaurant,cuisine=indian,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,sports,,40.441694,-74.49028,way/1208584566,leisure=pitch,sport=batting_cage,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,sports,,40.4417321,-74.4903324,way/1208584567,leisure=pitch,sport=batting_cage,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,sports,,40.4417641,-74.4903993,way/1208584568,leisure=pitch,sport=batting_cage,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,sports,,40.4418069,-74.4904608,way/1208584569,leisure=pitch,sport=batting_cage,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,sports,,40.4367819,-74.4873945,way/1429272815,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,sports,,40.4474146,-74.5026308,way/1507526904,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,sports,,40.4474226,-74.5024662,way/1507526905,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,sports,,40.443846,-74.5062947,way/456675549,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,sports,,40.4473768,-74.5022615,way/470806669,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,sports,,40.441259,-74.4896386,way/479822690,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,sports,,40.4416403,-74.4887894,way/479822691,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,sports,,40.4409799,-74.4881105,way/479822692,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,sports,,40.4404747,-74.4891951,way/479822693,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,sports,,40.4429753,-74.489261,way/479822695,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,sports,,40.4436882,-74.4904756,way/479822696,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,sports,,40.4444365,-74.4915439,way/479822697,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,sports,,40.4429996,-74.4922631,way/479822698,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,sports,,40.4420447,-74.4923061,way/479822699,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,sports,,40.4421291,-74.4868864,way/479822700,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,sports,,40.4394221,-74.4830739,way/479822701,leisure=pitch,sport=cricket,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,sports,,40.4321441,-74.4991626,way/479822779,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,sports,,40.4319809,-74.4982093,way/479822780,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,sports,,40.4317015,-74.5003085,way/479822781,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,sports,,40.4309918,-74.4982475,way/757725345,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,sports,,40.4308526,-74.4982116,way/757725346,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,sports,,40.4279526,-74.4925023,way/757725353,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,sports,,40.4438423,-74.5065057,way/944376304,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,sports,,40.4438334,-74.5066778,way/944376305,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,sports,,40.4376464,-74.4922863,way/976352230,leisure=sports_centre,sport=swimming,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,sports,,40.4378679,-74.4933302,way/976352235,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,sports,,40.4367373,-74.4876737,way/976414350,leisure=sports_centre,sport=swimming,1500,2026-11-14,OpenStreetMap via Overpass API
+08902,sports,,40.4308055,-74.4929335,way/996685559,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,cafe,Akihi Bubble Tea,40.4988936,-74.4280655,node/13174045803,amenity=cafe,cuisine=bubble_tea,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,cafe,Bagel Nosh,40.4948418,-74.4436903,node/4449522010,amenity=cafe,,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,cafe,Haraz Coffee House,40.4958958,-74.443952,node/12773319202,amenity=cafe,cuisine=coffee_shop;middle_eastern,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,cafe,MeeTU,40.4981033,-74.4318762,node/12856033579,amenity=cafe,cuisine=bubble_tea,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,cafe,Penstock Coffee Roasters,40.4988115,-74.4276164,node/4209657018,amenity=cafe,cuisine=cafe;coffee_shop,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,grocery,,40.505414,-74.4166486,node/13151914752,shop=convenience,,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,grocery,Ellinikon,40.498651,-74.4309229,way/345344666,shop=supermarket,cuisine=greek;coffee_shop;pastry,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,grocery,FreshMart,40.5010268,-74.4167897,way/318899378,shop=convenience,,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,grocery,Glatt 8,40.5057462,-74.4162359,way/344301780,shop=supermarket,,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,grocery,Krauzer's,40.5015435,-74.4188122,way/318899375,shop=convenience,,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,grocery,Park Deli,40.4979648,-74.4328474,node/12856033552,shop=convenience,cuisine=deli;sandwich,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,grocery,Race Mart,40.507081,-74.4145418,way/344301784,shop=convenience,,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,grocery,Racemart,40.4976583,-74.4338741,way/922739553,shop=convenience,,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,grocery,Superfresh,40.4992918,-74.4247469,way/154418200,shop=supermarket,,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,gym,Kinetics NJ,40.4999695,-74.4260971,node/13184346758,leisure=fitness_centre,sport=fitness,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,gym,McKenna's Gym,40.4983724,-74.4343584,way/345344660,leisure=fitness_centre,sport=fitness;weightlifting,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,gym,The Studio @ 808 Fitness Center,40.5016488,-74.4211239,node/1432326233,leisure=fitness_centre,,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,gym,Yoga Healing Consortium / Garden of Healing,40.4958313,-74.4436982,node/13820986717,leisure=fitness_centre,sport=yoga,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,library,Highland Park Public Library,40.5016697,-74.4240056,way/753052019,amenity=library,,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,live_music,George Street Ale House,40.495682,-74.4442097,node/3990102721,amenity=pub,cuisine=burger,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,live_music,Harvest Moon Brewery and Cafe,40.496179,-74.4443377,node/549671007,amenity=pub,,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,live_music,K Cafe,40.5038315,-74.4189407,way/318899355,amenity=nightclub,,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,live_music,Park Pub,40.5011222,-74.4141951,way/1395123990,amenity=pub,,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,live_music,"Pino's Gift Basket Shoppe, Wine Cellar & Lounge",40.5001356,-74.4261587,node/10066996574,amenity=bar,,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,live_music,Tavern on George,40.494967,-74.4437215,node/4417115698,amenity=bar,,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,park,,40.4992404,-74.4378112,way/1420787029,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,park,,40.4962405,-74.4419318,way/441863911,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,park,,40.4986139,-74.4458113,way/589089567,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,park,,40.4992165,-74.4463238,way/608442201,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,park,Donaldson Park,40.4903612,-74.4247682,way/37747750,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,park,Elmer B Boyd Park,40.492243,-74.4353376,way/39680709,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,park,Johnson Park,40.5058337,-74.4507164,way/583519110,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,park,Kilmer Square Park,40.4964578,-74.4439834,way/444222341,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,park,Liberty Square Park,40.494259,-74.4423177,way/575566967,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,park,Molimock-Graff Park,40.500104,-74.4151274,way/738036354,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,park,Schenkmeyer Park,40.5108718,-74.4229743,relation/19381825,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,park,Veterans Park,40.5009781,-74.4226666,way/749255139,leisure=park,,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,place_of_worship,,40.4921053,-74.4408447,way/412246180,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,place_of_worship,Ateres Shlomo,40.5076635,-74.4178689,way/1433109447,amenity=place_of_worship,religion=jewish,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,place_of_worship,Christ Episcopal Church,40.4958949,-74.4425873,way/187564921,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,place_of_worship,Congregation Agudath Israel,40.504881,-74.4174648,way/318899354,amenity=place_of_worship,religion=jewish,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,place_of_worship,Congregation Ahavas Achim,40.4950917,-74.4318999,way/733116868,amenity=place_of_worship,religion=jewish,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,place_of_worship,Congregation Ahavas Achim Synagogue,40.494363,-74.4415503,node/357747235,amenity=place_of_worship,religion=jewish,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,place_of_worship,Congregation Ahavas Yisrael,40.5080199,-74.4130509,way/1416434099,amenity=place_of_worship,religion=jewish,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,place_of_worship,Congregation Etz Ahaim,40.4994609,-74.4293506,way/183524953,amenity=place_of_worship,religion=jewish,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,place_of_worship,Congregation Ohav Emeth,40.5003036,-74.4256214,way/178769626,amenity=place_of_worship,religion=jewish,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,place_of_worship,Congregation Ohr Torah,40.5085376,-74.4293769,way/475054303,amenity=place_of_worship,religion=jewish,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,place_of_worship,First Baptist Church,40.4988836,-74.4300838,way/184336928,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,place_of_worship,First Reformed Church,40.495037,-74.4423598,way/201332044,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,place_of_worship,Highland Park Conservative Temple,40.496598,-74.4265441,way/178769624,amenity=place_of_worship,religion=jewish,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,place_of_worship,Poile Zedek Synagogue,40.4943682,-74.4414995,way/201332052,amenity=place_of_worship,religion=jewish,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,place_of_worship,Reformed Church of Highland Park,40.4979358,-74.4293691,way/734478364,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,place_of_worship,Saint Mary of Zyrovicy Belarusian Autocephalous Orthodox Church,40.4984208,-74.4364829,way/349631949,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,place_of_worship,Saint Paul the Apostle Roman Catholic Church,40.5003939,-74.4233919,way/737113794,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,place_of_worship,St. Theresa of the Infant Jesus Church,40.5000375,-74.4116083,way/1416396267,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,place_of_worship,Trinity United Methodist Church,40.5019925,-74.4268101,way/184339057,amenity=place_of_worship,religion=christian,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,418 Burgers,40.4998512,-74.4252504,node/11115127044,amenity=restaurant,cuisine=burger,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,798 BBQ,40.5054461,-74.4166053,node/14144792351,amenity=restaurant,cuisine=barbecue,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Asian Garden,40.5015831,-74.4159118,node/1432326228,amenity=restaurant,,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Blackthorn Restaurant & Irish Pub,40.4962823,-74.442444,node/8679935275,amenity=restaurant,cuisine=irish;pub,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Blendz Cafe,40.5007726,-74.4238894,node/13188974318,amenity=restaurant,cuisine=juice;salad,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Bridge Turkish & Mediterranean Grill,40.4995797,-74.4272973,way/201339649,amenity=restaurant,cuisine=mediterranean;turkish,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Chef Ge,40.5055111,-74.416517,node/13151914750,amenity=restaurant,cuisine=chinese,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Chef Tan,40.5005377,-74.4245195,node/1432326226,amenity=restaurant,cuisine=chinese,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,China Lee,40.4989935,-74.4289567,node/12856273554,amenity=restaurant,cuisine=chinese,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,China Star,40.4983363,-74.4331069,node/10067106609,amenity=restaurant,cuisine=chinese,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Cuzin's Seafood Clam Bar,40.4967304,-74.4425781,node/1982259924,amenity=restaurant,,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Dee Dee's Pizza,40.5011019,-74.4232242,node/1432326238,amenity=restaurant,cuisine=pizza,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Dish Cafe,40.4997176,-74.4267112,node/10067195409,amenity=restaurant,,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Edison Diner,40.4973423,-74.4119842,way/318899611,amenity=restaurant,,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,El Sol,40.4990598,-74.4275372,way/737320585,amenity=restaurant,cuisine=mexican,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Ellinikon,40.498651,-74.4309229,way/345344666,amenity=restaurant,cuisine=greek;coffee_shop;pastry,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Fashion Pot BBQ,40.499834,-74.4252983,node/13180570954,amenity=restaurant,cuisine=chinese,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Garden Burrito,40.4979434,-74.4333427,node/12856033556,amenity=restaurant,cuisine=mexican,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Grill House,40.4981522,-74.4315281,node/12856033568,amenity=restaurant,cuisine=mediterranean,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Gyro Xpress,40.4957036,-74.4438864,node/4439275215,amenity=restaurant,cuisine=greek,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Hunan Manor,40.4991145,-74.4285723,node/4540216592,amenity=restaurant,cuisine=asian,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Jerusalem Pizza,40.4990083,-74.4288994,node/9048929061,amenity=restaurant,cuisine=pizza;falafel,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,La Casita,40.5002718,-74.4252934,way/344532500,amenity=restaurant,cuisine=mexican,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,La Rosa Pizzeria,40.5011001,-74.4181057,way/318899376,amenity=restaurant,cuisine=pizza,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Laila Sweets,40.4996778,-74.4268555,node/13184346756,amenity=restaurant,cuisine=dessert,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Malatang Story,40.5054828,-74.4165569,node/13151914753,amenity=restaurant,cuisine=chinese,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Merey,40.4981696,-74.4311881,way/1100708459,amenity=restaurant,cuisine=venezuelan;arepas,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Midori Sushi,40.4990933,-74.428633,node/11881626538,amenity=restaurant,cuisine=japanese,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Mr. Chuan Chuan Hot Pot Skewers,40.5055392,-74.4164784,node/13151914751,amenity=restaurant,cuisine=chinese,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Mr. Pi's Sushi,40.4993522,-74.4282922,way/674972304,amenity=restaurant,cuisine=japanese;sushi,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,My Way Korean Restaurant,40.494647,-74.4436434,node/4449522024,amenity=restaurant,cuisine=korean,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Okie Pokii Cafe,40.4982096,-74.4342853,node/10067011042,amenity=restaurant,cuisine=japanese;poke;sushi,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Old Man Rafferty's,40.4965713,-74.4438038,node/1982259435,amenity=restaurant,,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Pad Thai,40.4988673,-74.4294766,way/820249080,amenity=restaurant,cuisine=thai,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Panico's Brick Oven Pizza,40.4958601,-74.443715,way/1074626881,amenity=restaurant,cuisine=pizza,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Park Deli,40.4979648,-74.4328474,node/12856033552,amenity=restaurant,cuisine=deli;sandwich,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Pithari Taverna,40.5006887,-74.4219751,way/184336935,amenity=restaurant,cuisine=greek,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Salt Seafood & Oyster Bar,40.4961099,-74.4436322,node/1982192262,amenity=restaurant,cuisine=italian,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Shalimar Halal Gyro Grill,40.4946031,-74.4436313,node/4449522026,amenity=restaurant,cuisine=indian,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Shanghai Dumpling,40.5075529,-74.4138631,node/6914370351,amenity=restaurant,cuisine=chinese,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Smash and Spice,40.4996205,-74.4269436,node/13821672601,amenity=restaurant,,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Steakhouse 85,40.4961772,-74.4433077,node/1982193491,amenity=restaurant,cuisine=steak_house,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Sultan Wok Asian Express,40.5009177,-74.4235253,node/8679991554,amenity=restaurant,cuisine=chinese;japanese;sushi;thai,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Taka Taka Street Greek,40.4953017,-74.4437738,node/4439275225,amenity=restaurant,cuisine=greek,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,Teri Teri Japanese Restaurant,40.4950488,-74.443747,node/4439275226,amenity=restaurant,cuisine=japanese,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,The Frog and The Peach,40.4950169,-74.4408148,way/201332094,amenity=restaurant,cuisine=american,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,The Vegan Spot,40.4999493,-74.4261544,node/13184346757,amenity=restaurant,cuisine=smoothie;sandwich;salad,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,restaurant,indochine,40.4953854,-74.4437952,node/4439275217,amenity=restaurant,cuisine=vietnamese,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,,40.4910859,-74.4244177,relation/14592694,leisure=sports_centre,,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,,40.506576,-74.4287377,way/1410967116,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,,40.5113588,-74.4229882,way/1416760466,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,,40.490332,-74.4388668,way/1432666185,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,,40.5100222,-74.4155732,way/1435922583,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,,40.5110836,-74.4232036,way/1498352445,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,,40.5111067,-74.4230339,way/1498352446,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,,40.5111308,-74.422862,way/1498352447,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,,40.5124409,-74.420592,way/310600910,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,,40.5119253,-74.4208287,way/310600912,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,,40.511753,-74.4218125,way/310600914,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,,40.5110614,-74.4233737,way/310600918,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,,40.5127609,-74.4199947,way/310600921,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,,40.503771,-74.4272601,way/310603809,leisure=pitch,sport=american_football,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,,40.4903596,-74.423954,way/344305089,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,,40.4897076,-74.4231087,way/344305090,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,,40.4883912,-74.4287086,way/344305111,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,,40.4884004,-74.4284883,way/344305113,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,,40.490287,-74.4203505,way/344305121,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,,40.5084524,-74.4360989,way/345344658,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,,40.5054374,-74.44209,way/352426864,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,,40.4900732,-74.4235536,way/475723427,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,,40.507212,-74.4442941,way/475732029,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,,40.5040732,-74.4263775,way/479980071,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,,40.5092552,-74.4328435,way/730782548,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,,40.5054545,-74.4366922,way/730952487,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,,40.5055545,-74.4367692,way/730952488,leisure=pitch,sport=basketball,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,,40.5101407,-74.4351082,way/733935118,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,,40.4911204,-74.4241378,way/968245328,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,,40.4912376,-74.4242163,way/968245329,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,,40.4909342,-74.4246191,way/968245330,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,,40.4910512,-74.4246975,way/968245331,leisure=pitch,sport=tennis,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,,40.5091168,-74.4415862,way/972099267,leisure=sports_centre,sport=swimming,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,Ballfield 1,40.489897,-74.4274496,way/345647200,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,Ballfield 2,40.4897467,-74.425587,way/475723417,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,Ballfield 5,40.4905469,-74.4208664,way/344305125,leisure=pitch,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,Edison Boys Baseball Leauge,40.5126814,-74.4203488,way/39681174,leisure=sports_centre,sport=baseball,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,Soccer 1,40.4892608,-74.4261174,way/475723418,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,Soccer 2,40.4915366,-74.4234445,way/475723428,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,Soccer 4,40.4915532,-74.4214793,way/475723439,leisure=pitch,sport=soccer,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,Softball 1,40.506023,-74.4436209,way/475732027,leisure=pitch,sport=softball,1500,2026-11-14,OpenStreetMap via Overpass API
+08904,sports,Softball 2,40.5065982,-74.4432548,way/475732028,leisure=pitch,sport=softball,1500,2026-11-14,OpenStreetMap via Overpass API

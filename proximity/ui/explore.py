@@ -31,6 +31,7 @@ from ..models import (
 )
 from ..scoring import (
     ELIGIBLE,
+    INELIGIBLE,
     UNVERIFIED,
     AreaResult,
     diff_rankings,
@@ -175,7 +176,7 @@ def _pin_tip(r: AreaResult) -> tuple[str, str]:
     if r.status == ELIGIBLE:
         return f"#{r.rank} · {ex.fit(r.score)}", ex.headline(r)
     if r.status == UNVERIFIED:
-        return f"#{r.rank} · {ex.fit(r.score)} · Unverified", "; ".join(r.reasons)
+        return f"Unverified · {ex.fit(r.score)}", "; ".join(r.reasons)
     return "Not eligible", "; ".join(r.reasons)
 
 
@@ -205,7 +206,8 @@ def _map(results: list[AreaResult], facts: dict[str, AreaFacts], selected: str |
             color, radius = _INELIGIBLE_COLOR, 8
         rows.append({
             "area": r.area, "lat": f.lat, "lon": f.lon, "color": color, "radius": radius,
-            "number": str(r.rank) if r.rank is not None else "",  # same numbers as the < > arrows
+            # Same numbers as the < > arrows. Unverified areas are not ranked, so they show "?".
+            "number": str(r.rank) if r.rank is not None else ("?" if r.status == UNVERIFIED else ""),
             "number_size": 18 if r.area in top else 14,
             "tip1": _pin_tip(r)[0],
             "tip2": _pin_tip(r)[1],
@@ -262,27 +264,40 @@ def _select(area: str) -> None:
     st.session_state["selected_area"] = area
 
 
-def _match_nav(selected: AreaResult, ranked: list[AreaResult]) -> None:
-    """< Match 2 of 6 > : steps through the matches in rank order."""
-    idx = next((i for i, r in enumerate(ranked) if r.area == selected.area), None)
+def _match_nav(selected: AreaResult, matches: list[AreaResult]) -> None:
+    """< Match 2 of 3 > : steps through the eligible matches in rank order."""
+    idx = next((i for i, r in enumerate(matches) if r.area == selected.area), None)
     prev_col, mid, next_col = st.columns([1, 3, 1], vertical_alignment="center")
     if idx is None:
         prev_area = None
-        next_area = ranked[0].area if ranked else None
-        label = "Not a match"
+        next_area = matches[0].area if matches else None
+        label = "Unverified area" if selected.status == UNVERIFIED else "Not a match"
     else:
-        prev_area = ranked[idx - 1].area if idx > 0 else None
-        next_area = ranked[idx + 1].area if idx + 1 < len(ranked) else None
-        label = f"Match {idx + 1} of {len(ranked)}"
+        prev_area = matches[idx - 1].area if idx > 0 else None
+        next_area = matches[idx + 1].area if idx + 1 < len(matches) else None
+        label = f"Match {idx + 1} of {len(matches)}"
     prev_col.button(
         "", icon=":material/chevron_left:", key="match_prev", help="Previous match", use_container_width=True,
         disabled=prev_area is None, on_click=_select, args=(prev_area,),
     )
     mid.html(f'<div style="text-align:center;font-weight:600">{escape(label)}</div>')
     next_col.button(
-        "", icon=":material/chevron_right:", key="match_next", help="Next match", use_container_width=True,
-        disabled=next_area is None, on_click=_select, args=(next_area,),
+        "", icon=":material/chevron_right:", key="match_next", help="Next match" if idx is not None else "Go to match 1",
+        use_container_width=True, disabled=next_area is None, on_click=_select, args=(next_area,),
     )
+
+
+def _unverified_list(unverified: list[AreaResult], selected: AreaResult | None) -> None:
+    """Areas a must-have could not be checked for. Listed apart from the matches, unranked."""
+    st.markdown("**:gray[:material/help:] Unverified**")
+    st.caption("A must-have has no usable data for these, so they are not ranked.")
+    for r in unverified:
+        current = selected is not None and r.area == selected.area
+        st.button(
+            r.area, key=f"unverified_{r.area}", use_container_width=True, disabled=current,
+            on_click=_select, args=(r.area,),
+        )
+        st.caption("; ".join(r.reasons))
 
 
 def _rent_block(r: AreaResult) -> None:
@@ -304,9 +319,12 @@ def _rent_block(r: AreaResult) -> None:
         st.caption("Zillow index: Not checked / no data")
 
 
-def _match_card(r: AreaResult, n_areas: int) -> None:
+def _match_card(r: AreaResult, n_areas: int, matches: list[AreaResult]) -> None:
     _rank_title(r.rank, r.area, size="1.3rem")
-    st.progress(min(1.0, max(0.0, r.score)), text=f"**{ex.fit(r.score)}** · {ex.fit_scope(n_areas)}")
+    if r.status == INELIGIBLE:
+        st.progress(0.0, text=f"**{ex.fit_or_dash(r)}** · not eligible, so no fit is shown")
+    else:
+        st.progress(min(1.0, max(0.0, r.score)), text=f"**{ex.fit(r.score)}** · {ex.fit_scope(n_areas)}")
     st.markdown(f"**{ex.headline(r)}**")
     if r.status != ELIGIBLE:
         (st.warning if r.status == UNVERIFIED else st.error)(ex.status_note(r))
@@ -316,14 +334,14 @@ def _match_card(r: AreaResult, n_areas: int) -> None:
     st.markdown("\n".join(f"- {b}" for b in bullets) if bullets else "- No evaluated priority was met.")
     counts = [c.fact for c in r.components if c.kind == "interest" and c.fact is not None]
     if counts:
-        labels = sorted({f.label for f in counts})
-        st.caption(" ".join(badge(x) for x in labels) + " place counts · " + counts[0].source)
+        st.caption("Place counts: " + fact_caption(counts[0]))
 
     st.markdown("**:orange[:material/balance:] Main compromise**")
-    st.markdown(f"- {ex.main_compromise(r)}")
+    st.markdown(f"- {ex.main_compromise(r, matches)}")
 
     st.markdown("**:gray[:material/help:] Missing / not checked**")
-    st.markdown("\n".join(f"- {m}" for m in r.missing) if r.missing else "- Nothing missing for your priorities")
+    not_checked = r.missing + r.unchecked
+    st.markdown("\n".join(f"- {m}" for m in not_checked) if not_checked else "- Nothing missing for your priorities")
 
     _rent_block(r)
 
@@ -404,7 +422,8 @@ def render(areas: list[AreaFacts], events: list[Event], issues: list[str], place
             profile = profile_form(available_interests)
 
     results = score_areas(areas, profile)
-    ranked = [r for r in results if r.rank is not None]
+    matches = [r for r in results if r.status == ELIGIBLE]
+    unverified = [r for r in results if r.status == UNVERIFIED]
 
     # Re-rank: compare with the profile from the previous run.
     current = profile.model_dump()
@@ -418,7 +437,8 @@ def render(areas: list[AreaFacts], events: list[Event], issues: list[str], place
 
     names = [r.area for r in results]
     if st.session_state.get("selected_area") not in names:
-        st.session_state["selected_area"] = ranked[0].area if ranked else (names[0] if names else None)
+        first = matches or unverified
+        st.session_state["selected_area"] = first[0].area if first else (names[0] if names else None)
     selected = next((r for r in results if r.area == st.session_state["selected_area"]), None)
 
     with center:
@@ -437,7 +457,7 @@ def render(areas: list[AreaFacts], events: list[Event], issues: list[str], place
             if clicked and clicked != st.session_state["selected_area"]:
                 st.session_state["selected_area"] = clicked
                 st.rerun()
-        legend = "Numbers match the arrows on the right · orange = top 3 · blue = other matches · grey = unverified, or not eligible (no number). Hover a pin for why; click to open it."
+        legend = "Numbers match the arrows on the right · orange = top 3 · blue = other matches · grey ? = unverified · plain grey = not eligible. Hover a pin for why; click to open it."
         if placeholders:
             legend = f"{badge(LABEL_DEMO)} Placeholders, not real: {', '.join(placeholders)}. " + legend
         st.caption(legend)
@@ -446,8 +466,11 @@ def render(areas: list[AreaFacts], events: list[Event], issues: list[str], place
         with st.container(height=PANEL_HEIGHT, border=False):
             if selected is not None:
                 with st.container(border=True):
-                    _match_nav(selected, ranked)
-                    _match_card(selected, len(results))
+                    _match_nav(selected, matches)
+                    _match_card(selected, len(results), matches)
+                if unverified:
+                    with st.container(border=True):
+                        _unverified_list(unverified, selected)
                 with st.container(border=True):
                     _hot_news(selected, events, profile)
 
@@ -455,9 +478,10 @@ def render(areas: list[AreaFacts], events: list[Event], issues: list[str], place
         table = pd.DataFrame([
             {
                 "Rank": f"#{r.rank}" if r.rank else "—",
+
                 "Area": r.area,
                 "Status": r.status,
-                "Fit": f"{r.score * 100:.0f}",
+                "Fit": ex.fit_or_dash(r).replace("Fit ", ""),
                 "Priorities": f"meets {r.met} of {r.evaluated} evaluated ({r.total} total)",
                 "Note": "; ".join(r.reasons),
             }

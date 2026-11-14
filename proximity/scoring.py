@@ -15,7 +15,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Optional
 
-from .models import BEDROOM_LABELS, INTERESTS, WEIGHTS, AreaFacts, Fact, Profile
+from .models import BEDROOM_LABELS, INTERESTS, LATE_NIGHT_NOTE, NEWARK, WEIGHTS, AreaFacts, Fact, Profile
 
 ELIGIBLE = "Eligible"
 UNVERIFIED = "Unverified"
@@ -59,7 +59,9 @@ class AreaResult:
     total: int = 0
     met: int = 0
     missing: list[str] = field(default_factory=list)
-    rank: Optional[int] = None  # None for ineligible areas
+    # Things nobody has looked up at all. Shown with the missing list; not part of the Fit.
+    unchecked: list[str] = field(default_factory=list)
+    rank: Optional[int] = None  # 1..N for eligible areas, None for unverified and ineligible
     rent_basis: str = ""  # "HUD" or "Zillow"
     rent_other: Optional[Fact] = None  # the second rent source, shown alongside
 
@@ -212,6 +214,7 @@ def score_areas(areas: list[AreaFacts], profile: Profile) -> list[AreaResult]:
                 total=len(comps),
                 met=sum(1 for c in done if c.met),
                 missing=[f"{c.label}: {c.flag}" if c.flag else c.label for c in comps if not c.evaluated],
+                unchecked=[LATE_NIGHT_NOTE] if any(d.name == NEWARK for d in profile.destinations) else [],
                 rent_basis=basis,
                 rent_other=other,
             )
@@ -220,15 +223,17 @@ def score_areas(areas: list[AreaFacts], profile: Profile) -> list[AreaResult]:
 
 
 def rank(results: list[AreaResult]) -> list[AreaResult]:
-    """Verified areas first, then unverified, then ineligible. Ties break by name."""
+    """Eligible areas first (ranked 1..N), then unverified, then ineligible. Ties break by name."""
     ordered = sorted(results, key=lambda r: (_STATUS_ORDER[r.status], -round(r.score, 9), r.area))
     n = 0
     for r in ordered:
-        if r.status == INELIGIBLE:
-            r.rank = None
-        else:
+        # Only verified, eligible areas are matches and get a rank. Unverified
+        # areas are listed after them, unranked, until their data is checked.
+        if r.status == ELIGIBLE:
             n += 1
             r.rank = n
+        else:
+            r.rank = None
     return ordered
 
 
