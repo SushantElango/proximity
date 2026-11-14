@@ -1,0 +1,49 @@
+zip,destination,mode,minutes,depart_time,checked_on,source
+08901,Rutgers College Ave campus,drive,9.6,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08901,Rutgers College Ave campus,transit,35.9,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08901,Rutgers Busch campus,drive,11.6,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08901,Rutgers Busch campus,transit,46.9,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08901,Newark Penn Station,drive,41.5,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08901,Newark Penn Station,transit,71.1,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08904,Rutgers College Ave campus,drive,11.0,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08904,Rutgers College Ave campus,transit,68.2,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08904,Rutgers Busch campus,drive,12.6,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08904,Rutgers Busch campus,transit,46.9,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08904,Newark Penn Station,drive,42.4,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08904,Newark Penn Station,transit,51.1,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08854,Rutgers College Ave campus,drive,10.6,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08854,Rutgers College Ave campus,transit,,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08854,Rutgers Busch campus,drive,10.2,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08854,Rutgers Busch campus,transit,,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08854,Newark Penn Station,drive,46.2,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08854,Newark Penn Station,transit,,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08817,Rutgers College Ave campus,drive,14.2,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08817,Rutgers College Ave campus,transit,,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08817,Rutgers Busch campus,drive,15.8,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08817,Rutgers Busch campus,transit,,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08817,Newark Penn Station,drive,37.0,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08817,Newark Penn Station,transit,,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08840,Rutgers College Ave campus,drive,21.6,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08840,Rutgers College Ave campus,transit,68.2,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08840,Rutgers Busch campus,drive,22.4,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08840,Rutgers Busch campus,transit,46.9,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08840,Newark Penn Station,drive,34.4,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08840,Newark Penn Station,transit,35.1,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08902,Rutgers College Ave campus,drive,17.9,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08902,Rutgers College Ave campus,transit,,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08902,Rutgers Busch campus,drive,21.4,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08902,Rutgers Busch campus,transit,,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08902,Newark Penn Station,drive,48.3,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08902,Newark Penn Station,transit,,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08816,Rutgers College Ave campus,drive,18.2,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08816,Rutgers College Ave campus,transit,54.5,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08816,Rutgers Busch campus,drive,19.8,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08816,Rutgers Busch campus,transit,76.9,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08816,Newark Penn Station,drive,45.4,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08816,Newark Penn Station,transit,85.1,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08873,Rutgers College Ave campus,drive,17.8,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08873,Rutgers College Ave campus,transit,,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08873,Rutgers Busch campus,drive,21.7,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08873,Rutgers Busch campus,transit,,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08873,Newark Penn Station,drive,54.6,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API
+08873,Newark Penn Station,transit,199.1,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API

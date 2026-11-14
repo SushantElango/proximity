@@ -1,0 +1,435 @@
+{
+  "departure": "2026-11-17T08:30:00-05:00",
+  "checked_on_utc": "2026-11-14",
+  "source": "TravelTime API",
+  "origin_method": "Census ZCTA internal points from data/areas.csv",
+  "destinations": [
+    {
+      "id": "college_ave",
+      "label": "Rutgers College Ave campus",
+      "query": "126 College Avenue, New Brunswick, New Jersey, USA",
+      "coords": {
+        "lat": 40.5026327,
+        "lng": -74.452505
+      },
+      "geocoding_match": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -74.452505,
+            40.5026327
+          ]
+        },
+        "properties": {
+          "name": "College Avenue Student Center, 126, College Avenue, New Brunswick, Middlesex County, New Jersey, 08901, United States",
+          "label": "College Avenue Student Center, 126, College Avenue, New Brunswick, Middlesex County, New Jersey, 08901, United States",
+          "category": "building",
+          "type": "university",
+          "score": 1e-05,
+          "house_number": "126",
+          "street": "College Avenue",
+          "county": "Middlesex County",
+          "macroregion": "New Jersey",
+          "city": "New Brunswick",
+          "country": "United States",
+          "country_code": "USA",
+          "postcode": "08901",
+          "features": {
+            "public_transport": {
+              "date_start": "2026-10-30T00:00:00-04:00",
+              "date_end": "2027-01-02T00:00:00-05:00"
+            },
+            "cross_country_modes": [],
+            "fares": false,
+            "postcodes": false
+          }
+        }
+      }
+    },
+    {
+      "id": "busch",
+      "label": "Rutgers Busch campus",
+      "query": "604 Bartholomew Road, Piscataway, New Jersey, USA",
+      "coords": {
+        "lat": 40.5233303,
+        "lng": -74.4588618
+      },
+      "geocoding_match": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -74.4588618,
+            40.5233303
+          ]
+        },
+        "properties": {
+          "name": "Busch Student Center, 604, Bartholomew Road, Piscataway Township, Middlesex County, New Jersey, 08854, United States",
+          "label": "Busch Student Center, 604, Bartholomew Road, Piscataway Township, Middlesex County, New Jersey, 08854, United States",
+          "category": "building",
+          "type": "yes",
+          "score": 1e-05,
+          "house_number": "604",
+          "street": "Bartholomew Road",
+          "county": "Middlesex County",
+          "macroregion": "New Jersey",
+          "city": "Piscataway Township",
+          "town": "Piscataway Township",
+          "country": "United States",
+          "country_code": "USA",
+          "postcode": "08854",
+          "features": {
+            "public_transport": {
+              "date_start": "2026-10-30T00:00:00-04:00",
+              "date_end": "2027-01-02T00:00:00-05:00"
+            },
+            "cross_country_modes": [],
+            "fares": false,
+            "postcodes": false
+          }
+        }
+      }
+    },
+    {
+      "id": "newark_penn",
+      "label": "Newark Penn Station",
+      "query": "Newark Penn Station, Newark, New Jersey, USA",
+      "coords": {
+        "lat": 40.7344963,
+        "lng": -74.163855
+      },
+      "geocoding_match": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -74.163855,
+            40.7344963
+          ]
+        },
+        "properties": {
+          "name": "Newark Penn Station, Penn Station Buses, The Ironbound, Newark, Essex County, New Jersey, 07102, United States",
+          "label": "Newark Penn Station, Penn Station Buses, The Ironbound, Newark, Essex County, New Jersey, 07102, United States",
+          "category": "railway",
+          "type": "station",
+          "score": 0.45,
+          "street": "Penn Station Buses",
+          "county": "Essex County",
+          "macroregion": "New Jersey",
+          "city": "Newark",
+          "town": "The Ironbound",
+          "country": "United States",
+          "country_code": "USA",
+          "postcode": "07102",
+          "features": {
+            "public_transport": {
+              "date_start": "2026-10-30T00:00:00-04:00",
+              "date_end": "2027-01-02T00:00:00-05:00"
+            },
+            "cross_country_modes": [],
+            "fares": false,
+            "postcodes": false
+          }
+        }
+      }
+    }
+  ],
+  "row_statuses": [
+    {
+      "zip": "08901",
+      "destination": "Rutgers College Ave campus",
+      "mode": "drive",
+      "status": "ok"
+    },
+    {
+      "zip": "08901",
+      "destination": "Rutgers Busch campus",
+      "mode": "drive",
+      "status": "ok"
+    },
+    {
+      "zip": "08901",
+      "destination": "Newark Penn Station",
+      "mode": "drive",
+      "status": "ok"
+    },
+    {
+      "zip": "08904",
+      "destination": "Rutgers College Ave campus",
+      "mode": "drive",
+      "status": "ok"
+    },
+    {
+      "zip": "08904",
+      "destination": "Rutgers Busch campus",
+      "mode": "drive",
+      "status": "ok"
+    },
+    {
+      "zip": "08904",
+      "destination": "Newark Penn Station",
+      "mode": "drive",
+      "status": "ok"
+    },
+    {
+      "zip": "08854",
+      "destination": "Rutgers College Ave campus",
+      "mode": "drive",
+      "status": "ok"
+    },
+    {
+      "zip": "08854",
+      "destination": "Rutgers Busch campus",
+      "mode": "drive",
+      "status": "ok"
+    },
+    {
+      "zip": "08854",
+      "destination": "Newark Penn Station",
+      "mode": "drive",
+      "status": "ok"
+    },
+    {
+      "zip": "08817",
+      "destination": "Rutgers College Ave campus",
+      "mode": "drive",
+      "status": "ok"
+    },
+    {
+      "zip": "08817",
+      "destination": "Rutgers Busch campus",
+      "mode": "drive",
+      "status": "ok"
+    },
+    {
+      "zip": "08817",
+      "destination": "Newark Penn Station",
+      "mode": "drive",
+      "status": "ok"
+    },
+    {
+      "zip": "08840",
+      "destination": "Rutgers College Ave campus",
+      "mode": "drive",
+      "status": "ok"
+    },
+    {
+      "zip": "08840",
+      "destination": "Rutgers Busch campus",
+      "mode": "drive",
+      "status": "ok"
+    },
+    {
+      "zip": "08840",
+      "destination": "Newark Penn Station",
+      "mode": "drive",
+      "status": "ok"
+    },
+    {
+      "zip": "08902",
+      "destination": "Rutgers College Ave campus",
+      "mode": "drive",
+      "status": "ok"
+    },
+    {
+      "zip": "08902",
+      "destination": "Rutgers Busch campus",
+      "mode": "drive",
+      "status": "ok"
+    },
+    {
+      "zip": "08902",
+      "destination": "Newark Penn Station",
+      "mode": "drive",
+      "status": "ok"
+    },
+    {
+      "zip": "08816",
+      "destination": "Rutgers College Ave campus",
+      "mode": "drive",
+      "status": "ok"
+    },
+    {
+      "zip": "08816",
+      "destination": "Rutgers Busch campus",
+      "mode": "drive",
+      "status": "ok"
+    },
+    {
+      "zip": "08816",
+      "destination": "Newark Penn Station",
+      "mode": "drive",
+      "status": "ok"
+    },
+    {
+      "zip": "08873",
+      "destination": "Rutgers College Ave campus",
+      "mode": "drive",
+      "status": "ok"
+    },
+    {
+      "zip": "08873",
+      "destination": "Rutgers Busch campus",
+      "mode": "drive",
+      "status": "ok"
+    },
+    {
+      "zip": "08873",
+      "destination": "Newark Penn Station",
+      "mode": "drive",
+      "status": "ok"
+    },
+    {
+      "zip": "08901",
+      "destination": "Rutgers College Ave campus",
+      "mode": "transit",
+      "status": "ok"
+    },
+    {
+      "zip": "08901",
+      "destination": "Rutgers Busch campus",
+      "mode": "transit",
+      "status": "ok"
+    },
+    {
+      "zip": "08901",
+      "destination": "Newark Penn Station",
+      "mode": "transit",
+      "status": "ok"
+    },
+    {
+      "zip": "08904",
+      "destination": "Rutgers College Ave campus",
+      "mode": "transit",
+      "status": "ok"
+    },
+    {
+      "zip": "08904",
+      "destination": "Rutgers Busch campus",
+      "mode": "transit",
+      "status": "ok"
+    },
+    {
+      "zip": "08904",
+      "destination": "Newark Penn Station",
+      "mode": "transit",
+      "status": "ok"
+    },
+    {
+      "zip": "08854",
+      "destination": "Rutgers College Ave campus",
+      "mode": "transit",
+      "status": "unreachable_within_4_hours"
+    },
+    {
+      "zip": "08854",
+      "destination": "Rutgers Busch campus",
+      "mode": "transit",
+      "status": "unreachable_within_4_hours"
+    },
+    {
+      "zip": "08854",
+      "destination": "Newark Penn Station",
+      "mode": "transit",
+      "status": "unreachable_within_4_hours"
+    },
+    {
+      "zip": "08817",
+      "destination": "Rutgers College Ave campus",
+      "mode": "transit",
+      "status": "unreachable_within_4_hours"
+    },
+    {
+      "zip": "08817",
+      "destination": "Rutgers Busch campus",
+      "mode": "transit",
+      "status": "unreachable_within_4_hours"
+    },
+    {
+      "zip": "08817",
+      "destination": "Newark Penn Station",
+      "mode": "transit",
+      "status": "unreachable_within_4_hours"
+    },
+    {
+      "zip": "08840",
+      "destination": "Rutgers College Ave campus",
+      "mode": "transit",
+      "status": "ok"
+    },
+    {
+      "zip": "08840",
+      "destination": "Rutgers Busch campus",
+      "mode": "transit",
+      "status": "ok"
+    },
+    {
+      "zip": "08840",
+      "destination": "Newark Penn Station",
+      "mode": "transit",
+      "status": "ok"
+    },
+    {
+      "zip": "08902",
+      "destination": "Rutgers College Ave campus",
+      "mode": "transit",
+      "status": "unreachable_within_4_hours"
+    },
+    {
+      "zip": "08902",
+      "destination": "Rutgers Busch campus",
+      "mode": "transit",
+      "status": "unreachable_within_4_hours"
+    },
+    {
+      "zip": "08902",
+      "destination": "Newark Penn Station",
+      "mode": "transit",
+      "status": "unreachable_within_4_hours"
+    },
+    {
+      "zip": "08816",
+      "destination": "Rutgers College Ave campus",
+      "mode": "transit",
+      "status": "ok"
+    },
+    {
+      "zip": "08816",
+      "destination": "Rutgers Busch campus",
+      "mode": "transit",
+      "status": "ok"
+    },
+    {
+      "zip": "08816",
+      "destination": "Newark Penn Station",
+      "mode": "transit",
+      "status": "ok"
+    },
+    {
+      "zip": "08873",
+      "destination": "Rutgers College Ave campus",
+      "mode": "transit",
+      "status": "unreachable_within_4_hours"
+    },
+    {
+      "zip": "08873",
+      "destination": "Rutgers Busch campus",
+      "mode": "transit",
+      "status": "unreachable_within_4_hours"
+    },
+    {
+      "zip": "08873",
+      "destination": "Newark Penn Station",
+      "mode": "transit",
+      "status": "ok"
+    }
+  ],
+  "limitations": [
+    "Area-level estimates, not door-to-door promises.",
+    "Blank minutes are missing/unreachable, never zero or invented.",
+    "Routes are searched up to four hours.",
+    "Rutgers shuttle coverage must be checked separately.",
+    "TravelTime estimates may differ from Google Maps and live traffic."
+  ]
+}
