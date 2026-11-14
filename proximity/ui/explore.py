@@ -9,6 +9,7 @@ import pydeck as pdk
 import streamlit as st
 
 from .. import explain as ex
+from ..maplayout import fit_view, place_labels
 from ..models import (
     BEDROOM_LABELS,
     DESTINATIONS,
@@ -49,6 +50,12 @@ _UNVERIFIED_COLOR = [150, 150, 150]
 _INELIGIBLE_COLOR = [200, 200, 200]
 
 MAP_HEIGHT = 600
+NOTE_SHRINK = 150  # the map gives up this much height while "What changed" is showing
+
+PERSONA_SUMMARY = (
+    "Rutgers junior sharing a 2-bed, classes on College Ave, works in Newark until 10:30pm Tue/Thu, "
+    "no car, $1,600."
+)
 PANEL_HEIGHT = 640  # side panels scroll inside this height so the page fits one screen
 
 
@@ -102,7 +109,7 @@ def profile_form(available_interests: list[str]) -> Profile:
     base_int = {i.category: i for i in base.interests}
 
     st.markdown("### Your profile")
-    st.caption("Starts as Priya, our demo renter. Change anything and your matches update.")
+    persona = st.empty()  # filled in below, once we know whether the profile is still Priya's
 
     with st.container(border=True):
         st.markdown("**:material/payments: Rent**")
@@ -151,24 +158,46 @@ def profile_form(available_interests: list[str]) -> Profile:
                 st.caption("Not checked / no data for this interest yet. It will not count as a match.")
             interests.append(InterestPref(category=cat, importance=importance))
 
-    return Profile(
+    profile = Profile(
         budget=int(budget), bedroom=bedroom, rent_importance=rent_importance,
         destinations=destinations, interests=interests,
     )
+    if profile == base:
+        persona.markdown(f"**Priya:** {PERSONA_SUMMARY}")
+    else:
+        persona.caption("Edited from Priya's profile. Reload the page to start again as Priya.")
+    return profile
 
 
 # --------------------------------------------------------------------------
 # Map
 # --------------------------------------------------------------------------
 
+def _pin_tip(r: AreaResult) -> str:
+    """Tooltip body: rank and fit, or the reason the pin is grey."""
+    if r.status == ELIGIBLE:
+        return f"#{r.rank} · {ex.fit(r.score)}<br/>{escape(ex.headline(r))}"
+    if r.status == UNVERIFIED:
+        return f"#{r.rank} · {ex.fit(r.score)} · Unverified<br/>" + "<br/>".join(escape(x) for x in r.reasons)
+    return "Not eligible<br/>" + "<br/>".join(escape(x) for x in r.reasons)
+
+
 def _map(results: list[AreaResult], facts: dict[str, AreaFacts], selected: str | None, height: int = MAP_HEIGHT) -> str | None:
     """Draw all areas. Returns the area the user clicked, if any."""
     top = {r.area: r.rank for r in top_matches(results)}
+    located = [r for r in results if facts[r.area].lat is not None and facts[r.area].lon is not None]
+    if not located:
+        st.info("No area coordinates available, so the map cannot be drawn.")
+        return None
+
+    # Fit to a deliberately small map so every pin is in view on a laptop, and
+    # place the name labels where no pin or other label is in the way.
+    lat0, lon0, zoom = fit_view([(facts[r.area].lat, facts[r.area].lon) for r in located], 600, MAP_HEIGHT - NOTE_SHRINK)
+    offsets = place_labels([(r.area, facts[r.area].lat, facts[r.area].lon) for r in located], zoom)
+
     rows = []
-    for r in results:
+    for r in located:
         f = facts[r.area]
-        if f.lat is None or f.lon is None:
-            continue
         if r.area in top:
             color, radius = _TOP_COLOR, 16
         elif r.status == ELIGIBLE:
@@ -180,20 +209,19 @@ def _map(results: list[AreaResult], facts: dict[str, AreaFacts], selected: str |
         rows.append({
             "area": r.area, "lat": f.lat, "lon": f.lon, "color": color, "radius": radius,
             "number": str(top[r.area]) if r.area in top else "",
-            "status": r.status if r.rank is None else f"#{r.rank} · {r.status}",
+            "tip": _pin_tip(r),
+            "label": r.area if r.area in offsets else "",
+            "offset": list(offsets.get(r.area, (0, 0))),
             "line": [20, 20, 20] if r.area == selected else [255, 255, 255],
             "line_width": 4 if r.area == selected else 2,
         })
-    if not rows:
-        st.info("No area coordinates available, so the map cannot be drawn.")
-        return None
 
     df = pd.DataFrame(rows)
     layers = [
         pdk.Layer(
-            "TextLayer", id="names", data=df, get_position="[lon, lat]", get_text="area",
-            get_size=13, get_color=[30, 30, 30], get_pixel_offset=[0, 30],
-            background=True, get_background_color=[255, 255, 255, 225], background_padding=[5, 3],
+            "TextLayer", id="names", data=df[df["label"] != ""], get_position="[lon, lat]", get_text="label",
+            get_size=13, get_color=[30, 30, 30], get_pixel_offset="offset",
+            background=True, get_background_color=[255, 255, 255, 235], background_padding=[5, 3],
             get_text_anchor="'middle'", get_alignment_baseline="'center'",
         ),
         pdk.Layer(
@@ -210,19 +238,21 @@ def _map(results: list[AreaResult], facts: dict[str, AreaFacts], selected: str |
         ),
     ]
     deck = pdk.Deck(
-        map_style=None,
-        initial_view_state=pdk.ViewState(
-            latitude=float(df["lat"].mean()), longitude=float(df["lon"].mean()), zoom=10.9,
-        ),
+        # A basemap with no place names, so the only labels are ours.
+        map_style=pdk.map_styles.CARTO_LIGHT_NO_LABELS,
+        initial_view_state=pdk.ViewState(latitude=lat0, longitude=lon0, zoom=zoom),
         layers=layers,
-        tooltip={"text": "{area}\n{status}"},
+        tooltip={
+            "html": "<b>{area}</b><br/>{tip}",
+            "style": {"backgroundColor": "#1F2328", "color": "#fff", "fontSize": "13px", "borderRadius": "6px", "maxWidth": "280px"},
+        },
     )
     event = st.pydeck_chart(deck, on_select="rerun", selection_mode="single-object", key="area_map", height=height)
     try:
         picked = event.selection.objects.get("areas", [])
         return picked[0]["area"] if picked else None
     except (AttributeError, KeyError, IndexError, TypeError):
-        return None  # selection not available: the card buttons still work
+        return None  # selection not available: the arrows still work
 
 
 # --------------------------------------------------------------------------
@@ -275,9 +305,10 @@ def _rent_block(r: AreaResult) -> None:
         st.caption("Zillow index: Not checked / no data")
 
 
-def _match_card(r: AreaResult) -> None:
+def _match_card(r: AreaResult, n_areas: int) -> None:
     _rank_title(r.rank, r.area, size="1.3rem")
-    st.progress(min(1.0, max(0.0, r.score)), text=f"**Match {r.score * 100:.0f}/100** · {ex.headline(r).lower()}")
+    st.progress(min(1.0, max(0.0, r.score)), text=f"**{ex.fit(r.score)}** · {ex.fit_scope(n_areas)}")
+    st.markdown(f"**{ex.headline(r)}**")
     if r.status != ELIGIBLE:
         (st.warning if r.status == UNVERIFIED else st.error)(ex.status_note(r))
 
@@ -396,14 +427,14 @@ def render(areas: list[AreaFacts], events: list[Event], issues: list[str], place
             st.error("\n\n".join(ex.no_eligible_message(info)), icon=":material/block:")
 
         # Shrink the map a little when the note is showing, so the page still fits one screen.
-        clicked = _map(results, facts, st.session_state["selected_area"], height=MAP_HEIGHT - 120 if notes else MAP_HEIGHT)
+        clicked = _map(results, facts, st.session_state["selected_area"], height=MAP_HEIGHT - NOTE_SHRINK if notes else MAP_HEIGHT)
         # The map remembers its selection across reruns, so act only on a new click.
         if clicked != st.session_state.get("last_map_click"):
             st.session_state["last_map_click"] = clicked
             if clicked and clicked != st.session_state["selected_area"]:
                 st.session_state["selected_area"] = clicked
                 st.rerun()
-        legend = "Numbered orange = top 3 · blue = other matches · grey = unverified or not eligible. Click an area to open it."
+        legend = "Numbered orange = top 3 · blue = other matches · grey = unverified or not eligible. Hover a pin for why; click to open it."
         if placeholders:
             legend = f"{badge(LABEL_DEMO)} Placeholders, not real: {', '.join(placeholders)}. " + legend
         st.caption(legend)
@@ -413,7 +444,7 @@ def render(areas: list[AreaFacts], events: list[Event], issues: list[str], place
             if selected is not None:
                 with st.container(border=True):
                     _match_nav(selected, ranked)
-                    _match_card(selected)
+                    _match_card(selected, len(results))
                 with st.container(border=True):
                     _hot_news(selected, events, profile)
 
@@ -423,7 +454,7 @@ def render(areas: list[AreaFacts], events: list[Event], issues: list[str], place
                 "Rank": f"#{r.rank}" if r.rank else "—",
                 "Area": r.area,
                 "Status": r.status,
-                "Match": f"{r.score * 100:.0f}/100",
+                "Fit": f"{r.score * 100:.0f}",
                 "Priorities": f"meets {r.met} of {r.evaluated} evaluated ({r.total} total)",
                 "Note": "; ".join(r.reasons),
             }

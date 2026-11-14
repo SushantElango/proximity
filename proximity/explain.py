@@ -94,6 +94,15 @@ def _standing_text(driver: dict) -> str:
     return f"{what} ranks {s['position']} of {n} eligible areas with data"
 
 
+def fit(score: float) -> str:
+    """The fit score as shown everywhere: a whole number out of 100."""
+    return f"Fit {score * 100:.0f}"
+
+
+def fit_scope(n_areas: int) -> str:
+    return f"relative to the {n_areas} areas"
+
+
 def _supports(driver: dict, went_up: bool) -> bool:
     """Only quote the standing when it actually explains the direction of the move."""
     s = driver.get("standing")
@@ -103,30 +112,46 @@ def _supports(driver: dict, went_up: bool) -> bool:
     return top_half if went_up else not top_half
 
 
-def what_changed(diff: dict, limit: int = 3) -> list[str]:
-    """Short notes for a re-rank, each tied to a number."""
+def what_changed(diff: dict, limit: int = 4) -> list[str]:
+    """Notes for a re-rank, each tied to a number. Always returns at least one line."""
     changes = diff["profile_changes"]
     if not changes:
-        return []
+        return ["Your profile changed, but nothing that affects the ranking."]
     because = " and ".join(c["text"] for c in changes[:2])
-    interesting = set(diff["top_before"]) | set(diff["top_after"])
-    moves = [m for m in diff["moves"] if m["area"] in interesting]
-    dropped = [m["area"] for m in moves if m["new_rank"] is None]
+    if len(changes) > 2:
+        because += f" (and {len(changes) - 2} more change{'s' if len(changes) > 3 else ''})"
+
+    moves = list(diff["moves"])
+    dropped = [m["area"] for m in moves if m["new_rank"] is None and m["old_rank"] is not None]
     # Areas that dropped out come first: they usually explain the other moves.
     moves.sort(key=lambda m: (m["new_rank"] is not None, m["new_rank"] or 0, m["area"]))
+
+    if not moves:
+        note = f"The order stayed the same after {because}."
+        leader = diff.get("leader")
+        if leader and leader in diff.get("scores", {}):
+            old, new = diff["scores"][leader]
+            if round(old * 100) != round(new * 100):
+                note += f" **{leader}** is still #1 ({fit(old)} → {new * 100:.0f})."
+            else:
+                note += f" **{leader}** is still #1 ({fit(new)})."
+        return [note]
 
     notes: list[str] = []
     for m in moves[:limit]:
         area, old, new = m["area"], m["old_rank"], m["new_rank"]
+        if new is None and old is None:
+            continue
         if new is None:
             reason = m["reasons"][0] if m["reasons"] else "it no longer meets a must-have"
             notes.append(f"**{area}** (was #{old}) is no longer eligible because {because}: {reason}.")
             continue
+        scores = f" ({fit(m['old_score'])} → {m['new_score'] * 100:.0f})"
         if old is None:
             notes.append(f"**{area}** is now eligible at #{new} because {because}.")
             continue
         went_up = new < old
-        text = f"**{area}** moved {'up' if went_up else 'down'} from #{old} to #{new}"
+        text = f"**{area}** moved {'up' if went_up else 'down'} from #{old} to #{new}{scores}"
         if m["driver"] and _supports(m["driver"], went_up):
             text += f" because {because}; {_standing_text(m['driver'])}"
         elif went_up and dropped:
@@ -136,9 +161,10 @@ def what_changed(diff: dict, limit: int = 3) -> list[str]:
         if m["new_status"] == UNVERIFIED and m["old_status"] != UNVERIFIED:
             text += f". It is now unverified ({m['reasons'][0]})"
         notes.append(text + ".")
-    if not notes:
-        notes.append(f"The top 3 stayed the same after {because}. Scores shifted, but not enough to change the order.")
-    return notes
+    extra = len(moves) - limit
+    if extra > 0:
+        notes.append(f"{extra} other area{'s' if extra > 1 else ''} also changed position.")
+    return notes or [f"The order stayed the same after {because}."]
 
 
 def no_eligible_message(info: dict) -> list[str]:
