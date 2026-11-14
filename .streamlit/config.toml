@@ -10,3 +10,7 @@ paddingTop = "1.5rem"
 
 [browser]
 gatherUsageStats = false
+
+[client]
+# Hides the Deploy button and the developer menu.
+toolbarMode = "minimal"

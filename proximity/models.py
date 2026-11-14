@@ -126,6 +126,9 @@ class AreaFacts:
     rent_zillow: Optional[Fact] = None
     # (destination, mode) -> minutes
     commute: dict[tuple[str, str], Fact] = field(default_factory=dict)
+    # (destination, mode) -> why a reported value was set aside, e.g. an implausible time.
+    # A flagged value is never used: it counts as missing until someone verifies it.
+    commute_flags: dict[tuple[str, str], str] = field(default_factory=dict)
     # category -> count of places. A missing key means "not checked", not zero.
     places: dict[str, Fact] = field(default_factory=dict)
 
@@ -137,7 +140,7 @@ def demo_profile() -> Profile:
         bedroom="shared2br",
         rent_importance="Important",
         destinations=[
-            DestinationPref(name="Rutgers College Ave", mode="transit", max_minutes=35, importance="Must-have"),
+            DestinationPref(name="Rutgers College Ave", mode="transit", max_minutes=40, importance="Must-have"),
             DestinationPref(name="Newark Penn Station", mode="transit", max_minutes=80, importance="Important"),
         ],
         interests=[

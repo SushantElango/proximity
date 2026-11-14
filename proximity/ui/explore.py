@@ -111,8 +111,7 @@ def profile_form(available_interests: list[str]) -> Profile:
     st.markdown("### Your profile")
     persona = st.empty()  # filled in below, once we know whether the profile is still Priya's
 
-    with st.container(border=True):
-        st.markdown("**:material/payments: Rent**")
+    with st.expander("Rent", expanded=True, icon=":material/payments:"):
         bedroom = st.selectbox(
             "Housing", list(BEDROOM_LABELS), index=list(BEDROOM_LABELS).index(base.bedroom),
             format_func=BEDROOM_LABELS.get, key="bedroom",
@@ -122,8 +121,7 @@ def profile_form(available_interests: list[str]) -> Profile:
         st.caption("Your budget is always a hard limit.")
 
     destinations: list[DestinationPref] = []
-    with st.container(border=True):
-        st.markdown("**:material/commute: Where you need to get to**")
+    with st.expander("Where you need to get to", expanded=False, icon=":material/commute:"):
         for name in DESTINATIONS:
             d = base_dest.get(name)
             if st.checkbox(name, value=d is not None, key=f"dest_on_{name}"):
@@ -144,8 +142,7 @@ def profile_form(available_interests: list[str]) -> Profile:
                 )
 
     interests: list[InterestPref] = []
-    with st.container(border=True):
-        st.markdown("**:material/local_activity: What you want nearby**")
+    with st.expander("What you want nearby", expanded=False, icon=":material/local_activity:"):
         options = [k for k in INTERESTS if k != "place_of_worship"] + ["place_of_worship"]
         chosen = st.multiselect(
             "Interests", options, default=[i.category for i in base.interests],
@@ -173,18 +170,18 @@ def profile_form(available_interests: list[str]) -> Profile:
 # Map
 # --------------------------------------------------------------------------
 
-def _pin_tip(r: AreaResult) -> str:
-    """Tooltip body: rank and fit, or the reason the pin is grey."""
+def _pin_tip(r: AreaResult) -> tuple[str, str]:
+    """Tooltip lines: rank and fit, or the reason the pin is grey."""
     if r.status == ELIGIBLE:
-        return f"#{r.rank} · {ex.fit(r.score)}<br/>{escape(ex.headline(r))}"
+        return f"#{r.rank} · {ex.fit(r.score)}", ex.headline(r)
     if r.status == UNVERIFIED:
-        return f"#{r.rank} · {ex.fit(r.score)} · Unverified<br/>" + "<br/>".join(escape(x) for x in r.reasons)
-    return "Not eligible<br/>" + "<br/>".join(escape(x) for x in r.reasons)
+        return f"#{r.rank} · {ex.fit(r.score)} · Unverified", "; ".join(r.reasons)
+    return "Not eligible", "; ".join(r.reasons)
 
 
 def _map(results: list[AreaResult], facts: dict[str, AreaFacts], selected: str | None, height: int = MAP_HEIGHT) -> str | None:
     """Draw all areas. Returns the area the user clicked, if any."""
-    top = {r.area: r.rank for r in top_matches(results)}
+    top = {r.area for r in top_matches(results)}
     located = [r for r in results if facts[r.area].lat is not None and facts[r.area].lon is not None]
     if not located:
         st.info("No area coordinates available, so the map cannot be drawn.")
@@ -201,15 +198,17 @@ def _map(results: list[AreaResult], facts: dict[str, AreaFacts], selected: str |
         if r.area in top:
             color, radius = _TOP_COLOR, 16
         elif r.status == ELIGIBLE:
-            color, radius = _OTHER_COLOR, 9
+            color, radius = _OTHER_COLOR, 13
         elif r.status == UNVERIFIED:
-            color, radius = _UNVERIFIED_COLOR, 9
+            color, radius = _UNVERIFIED_COLOR, 13
         else:
             color, radius = _INELIGIBLE_COLOR, 8
         rows.append({
             "area": r.area, "lat": f.lat, "lon": f.lon, "color": color, "radius": radius,
-            "number": str(top[r.area]) if r.area in top else "",
-            "tip": _pin_tip(r),
+            "number": str(r.rank) if r.rank is not None else "",  # same numbers as the < > arrows
+            "number_size": 18 if r.area in top else 14,
+            "tip1": _pin_tip(r)[0],
+            "tip2": _pin_tip(r)[1],
             "label": r.area if r.area in offsets else "",
             "offset": list(offsets.get(r.area, (0, 0))),
             "line": [20, 20, 20] if r.area == selected else [255, 255, 255],
@@ -233,7 +232,7 @@ def _map(results: list[AreaResult], facts: dict[str, AreaFacts], selected: str |
         ),
         pdk.Layer(
             "TextLayer", id="numbers", data=df[df["number"] != ""], get_position="[lon, lat]",
-            get_text="number", get_size=18, get_color=[255, 255, 255], font_weight=700,
+            get_text="number", get_size="number_size", get_color=[255, 255, 255], font_weight=700,
             get_text_anchor="'middle'", get_alignment_baseline="'center'", parameters={"depthTest": False},
         ),
     ]
@@ -243,7 +242,7 @@ def _map(results: list[AreaResult], facts: dict[str, AreaFacts], selected: str |
         initial_view_state=pdk.ViewState(latitude=lat0, longitude=lon0, zoom=zoom),
         layers=layers,
         tooltip={
-            "html": "<b>{area}</b><br/>{tip}",
+            "html": "<b>{area}</b><br/>{tip1}<br/>{tip2}",
             "style": {"backgroundColor": "#1F2328", "color": "#fff", "fontSize": "13px", "borderRadius": "6px", "maxWidth": "280px"},
         },
     )
@@ -315,6 +314,10 @@ def _match_card(r: AreaResult, n_areas: int) -> None:
     st.markdown("**:green[:material/check_circle:] Why it matched**")
     bullets = ex.why_matched(r)
     st.markdown("\n".join(f"- {b}" for b in bullets) if bullets else "- No evaluated priority was met.")
+    counts = [c.fact for c in r.components if c.kind == "interest" and c.fact is not None]
+    if counts:
+        labels = sorted({f.label for f in counts})
+        st.caption(" ".join(badge(x) for x in labels) + " place counts · " + counts[0].source)
 
     st.markdown("**:orange[:material/balance:] Main compromise**")
     st.markdown(f"- {ex.main_compromise(r)}")
@@ -328,7 +331,7 @@ def _match_card(r: AreaResult, n_areas: int) -> None:
         st.caption(f"ZIP {r.zip} · {r.status} · {ex.coverage(r).lower()}")
         for c in r.components:
             if c.met is None:
-                st.markdown(f":gray[:material/help:] {c.label}: **Not checked / no data** · :gray[{c.importance}]")
+                st.markdown(f":gray[:material/help:] {c.label}: **{c.flag or 'Not checked / no data'}** · :gray[{c.importance}]")
                 continue
             icon = ":green[:material/check_circle:]" if c.met else ":red[:material/cancel:]"
             st.markdown(f"{icon} {ex._sentence(c)} · :gray[{c.importance}]")
@@ -434,7 +437,7 @@ def render(areas: list[AreaFacts], events: list[Event], issues: list[str], place
             if clicked and clicked != st.session_state["selected_area"]:
                 st.session_state["selected_area"] = clicked
                 st.rerun()
-        legend = "Numbered orange = top 3 · blue = other matches · grey = unverified or not eligible. Hover a pin for why; click to open it."
+        legend = "Numbers match the arrows on the right · orange = top 3 · blue = other matches · grey = unverified, or not eligible (no number). Hover a pin for why; click to open it."
         if placeholders:
             legend = f"{badge(LABEL_DEMO)} Placeholders, not real: {', '.join(placeholders)}. " + legend
         st.caption(legend)

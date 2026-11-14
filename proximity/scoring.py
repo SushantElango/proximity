@@ -39,6 +39,7 @@ class Component:
     # "main compromise" only, never to rank.
     relative: Optional[float] = None
     fact: Optional[Fact] = None
+    flag: str = ""  # why a reported value was set aside (shown in place of 'no data')
 
     @property
     def evaluated(self) -> bool:
@@ -122,6 +123,7 @@ def _build_components(area: AreaFacts, areas: list[AreaFacts], profile: Profile)
             unit="min",
             limit=float(d.max_minutes),
             fact=area.commute.get(key),
+            flag=area.commute_flags.get(key, ""),
         )
         if c.fact is not None:
             values = [a.commute[key].value for a in areas if key in a.commute]
@@ -173,7 +175,7 @@ def check_eligibility(components: list[Component]) -> tuple[str, list[str]]:
         if not hard:
             continue
         if c.raw is None:
-            unknown.append(f"{c.label}: not checked / no data")
+            unknown.append(f"{c.label}: {c.flag or 'not checked / no data'}")
         elif c.kind == "rent" and c.raw > c.limit:
             failed.append(f"{c.label} is {_fmt(c)}, over your ${c.limit:,.0f} budget")
         elif c.kind == "commute" and c.raw > c.limit:
@@ -209,7 +211,7 @@ def score_areas(areas: list[AreaFacts], profile: Profile) -> list[AreaResult]:
                 evaluated=len(done),
                 total=len(comps),
                 met=sum(1 for c in done if c.met),
-                missing=[c.label for c in comps if not c.evaluated],
+                missing=[f"{c.label}: {c.flag}" if c.flag else c.label for c in comps if not c.evaluated],
                 rent_basis=basis,
                 rent_other=other,
             )

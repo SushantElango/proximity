@@ -6,6 +6,8 @@ looked up or assumed about a place.
 """
 from __future__ import annotations
 
+import math
+
 from .scoring import INELIGIBLE, UNVERIFIED, AreaResult, Component
 
 
@@ -43,12 +45,18 @@ def _compromise(r: AreaResult) -> Component | None:
     return worst if worst.weight * (1 - worst.relative) > 0 else None
 
 
-def why_matched(r: AreaResult, limit: int = 3) -> list[str]:
-    """Up to 3 bullets: the met priorities that added most to the score."""
+def why_matched(r: AreaResult, limit: int = 2) -> list[str]:
+    """The strongest met rent/commute priorities, then a count for every selected interest."""
     skip = _compromise(r)
-    good = [c for c in r.components if c.evaluated and c.met and c is not skip]
+    good = [c for c in r.components if c.kind != "interest" and c.evaluated and c.met and c is not skip]
     good.sort(key=lambda c: (-(c.weight * c.relative), -c.weight, c.key))
-    return [_sentence(c) for c in good[:limit]]
+    lines = [_sentence(c) for c in good[:limit]]
+    for c in r.components:
+        if c.kind != "interest":
+            continue
+        # Every interest the user picked is listed, including zero and "no data".
+        lines.append(_sentence(c) if c.evaluated else f"{c.label}: not checked / no data")
+    return lines
 
 
 def main_compromise(r: AreaResult) -> str:
@@ -182,7 +190,7 @@ def no_eligible_message(info: dict) -> list[str]:
         if s["kind"] == "rent":
             lines.append(f"**Try relaxing:** raise your budget to ${s['needed']:,.0f}. That makes {s['area']} eligible.")
         elif s["kind"] == "commute":
-            lines.append(f"**Try relaxing:** allow {s['needed']:.0f} min for {s['label'].lower()}. That makes {s['area']} eligible.")
+            lines.append(f"**Try relaxing:** allow {math.ceil(s['needed'])} min for {s['label'][0].lower() + s['label'][1:]}. That makes {s['area']} eligible.")
         else:
             lines.append(f"**Try relaxing:** change {s['label']} from Must-have to Important. That makes {s['area']} eligible.")
     elif info["conflicts"]:

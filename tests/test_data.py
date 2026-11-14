@@ -78,3 +78,42 @@ def test_events_are_grouped_and_bad_rows_are_dropped(tmp_path):
     assert by_title["Fair"].group == "local"
     assert all(e.label == LABEL_MANUAL and e.url.startswith("https://") for e in events)
     assert len(issues) == 2  # the row with no URL and the row for an unknown area
+
+
+def test_collected_destination_names_and_times_are_normalised(tmp_path):
+    setup(tmp_path)
+    write(
+        tmp_path, "commute.csv",
+        "zip,destination,mode,minutes,depart_time,checked_on,source\n"
+        "08901,Rutgers College Ave campus,transit,35.9,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API\n"
+        "08901,Rutgers Busch campus,transit,,2026-11-17T08:30:00-05:00,2026-11-14,TravelTime API\n",
+    )
+    alpha = build_area_facts(load_all(tmp_path))[0]
+    fact = alpha.commute[("Rutgers College Ave", "transit")]
+    assert fact.value == 35.9 and fact.note == "departing Tue 08:30"
+    assert ("Rutgers Busch", "transit") not in alpha.commute  # blank minutes stay missing
+
+
+def test_not_found_is_missing_and_long_transit_is_flagged_not_used(tmp_path):
+    setup(tmp_path)
+    row = "08901,{d},{mode},{m},2026-11-17T08:30:00-05:00,2026-11-14,{src}\n"
+    write(
+        tmp_path, "commute.csv",
+        "zip,destination,mode,minutes,depart_time,checked_on,source\n"
+        + row.format(d="Rutgers College Ave campus", mode="transit", m="Not found", src="Google Maps manual lookup")
+        + row.format(d="Rutgers Busch campus", mode="transit", m="157", src="Google Maps manual lookup")
+        + row.format(d="Rutgers Busch campus", mode="drive", m="157", src="TravelTime API")
+        + row.format(d="Newark Penn Station", mode="transit", m="120", src="TravelTime API"),
+    )
+    alpha = build_area_facts(load_all(tmp_path))[0]
+    # "Not found" is missing: no fact and no flag.
+    assert ("Rutgers College Ave", "transit") not in alpha.commute
+    assert ("Rutgers College Ave", "transit") not in alpha.commute_flags
+    # Over 120 min by transit: flagged, and never available as a number.
+    assert ("Rutgers Busch", "transit") not in alpha.commute
+    assert alpha.commute_flags[("Rutgers Busch", "transit")].startswith("Unusual: please verify")
+    # The rule is transit only, and 120 itself is allowed.
+    assert alpha.commute[("Rutgers Busch", "drive")].value == 157
+    assert alpha.commute[("Newark Penn Station", "transit")].value == 120
+    # Each row keeps its own source.
+    assert alpha.commute[("Rutgers Busch", "drive")].source == "TravelTime API"

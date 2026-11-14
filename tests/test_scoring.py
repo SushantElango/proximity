@@ -184,3 +184,34 @@ def test_what_changed_always_gives_a_note_for_any_priority_change():
         notes = what_changed(diff_rankings(score_areas(areas, base), score_areas(areas, p), base, p))
         assert len(notes) >= 1 and all(n.strip() for n in notes)
         assert "you " in notes[0]  # names what the user changed
+
+
+def test_why_matched_lists_a_count_for_every_selected_interest():
+    from proximity.explain import why_matched
+    from proximity.models import INTERESTS
+
+    areas = make_areas()
+    for a in areas:
+        a.places["cafe"] = f(0)  # checked, none found
+    profile = make_profile()
+    profile.interests = [
+        InterestPref(category="gym"), InterestPref(category="cafe"), InterestPref(category="library"),
+    ]
+    lines = why_matched(by_area(score_areas(areas, profile))["Near Campus"])
+    assert any("**3** gyms" in x for x in lines)
+    assert any("**No** cafes" in x for x in lines)  # a zero is shown, not hidden
+    assert any(INTERESTS["library"] in x and "no data" in x for x in lines)  # never a made-up count
+
+
+def test_flagged_commute_makes_a_must_have_unverified_with_the_flag_as_reason():
+    areas = make_areas()
+    a = areas[0]
+    a.commute.pop((CAMPUS, "transit"))
+    a.commute_flags[(CAMPUS, "transit")] = "Unusual: please verify (157 min reported by test)"
+    profile = make_profile()
+    profile.destinations[0].importance = "Must-have"
+    r = by_area(score_areas(areas, profile))[a.area]
+    assert r.status == UNVERIFIED
+    assert "Unusual: please verify" in r.reasons[0]
+    assert r.component(f"commute:{CAMPUS}").score is None
+    assert any("Unusual: please verify" in m for m in r.missing)

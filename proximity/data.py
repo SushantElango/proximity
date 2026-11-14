@@ -29,6 +29,16 @@ from .models import (
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 PLACEHOLDER_SUBDIR = "placeholder"
 
+# A transit time above this is treated as a likely lookup error, not a fact.
+UNUSUAL_TRANSIT_MINUTES = 120
+UNUSUAL_TEXT = "Unusual: please verify"
+
+# Names used in collected files -> the destination names the app uses.
+DESTINATION_ALIASES: dict[str, str] = {
+    "Rutgers College Ave campus": "Rutgers College Ave",
+    "Rutgers Busch campus": "Rutgers Busch",
+}
+
 # file -> required columns (CLAUDE.md section 5). `demo` is optional, default 0.
 SCHEMAS: dict[str, list[str]] = {
     "areas.csv": ["area", "zip", "lat", "lon"],
@@ -119,6 +129,17 @@ def _text(value) -> str:
     return "" if pd.isna(value) else str(value)
 
 
+def _depart(value: str) -> str:
+    """'2026-11-17T08:30:00-05:00' -> 'Tue 08:30'. Plain times like '22:30' pass through."""
+    if "T" not in value:
+        return value
+    try:
+        d = pd.Timestamp(value)
+    except (ValueError, TypeError):
+        return value
+    return f"{d:%a} {d:%H:%M}"
+
+
 def _label(demo: int, real_label: str) -> str:
     return LABEL_DEMO if int(demo) == 1 else real_label
 
@@ -182,14 +203,22 @@ def build_area_facts(bundle: DataBundle) -> list[AreaFacts]:
 
         com = t["commute.csv"]
         crows = com[com["zip"] == z].copy()
+        # Anything that is not a number ("Not found", blanks) becomes missing, never a value.
         crows["minutes_num"] = pd.to_numeric(crows["minutes"], errors="coerce")
         crows = crows[crows["minutes_num"].notna()]
+        crows["destination"] = crows["destination"].replace(DESTINATION_ALIASES)
         for (dest, mode), grp in crows.groupby(["destination", "mode"]):
             # Several departure times: use the slowest, so we never over-promise.
             r = grp.sort_values("minutes_num").iloc[-1]
-            note = f"departing {_text(r['depart_time'])}" if _text(r["depart_time"]) else ""
+            note = f"departing {_depart(_text(r['depart_time']))}" if _text(r["depart_time"]) else ""
             if len(grp) > 1:
                 note = (note + "; " if note else "") + f"slowest of {len(grp)} lookups"
+            if mode == "transit" and float(r["minutes_num"]) > UNUSUAL_TRANSIT_MINUTES:
+                # Not used as a number anywhere. The area is unverified on this until checked.
+                facts.commute_flags[(dest, mode)] = (
+                    f"{UNUSUAL_TEXT} ({float(r['minutes_num']):.0f} min reported by {_text(r['source']) or 'unknown source'})"
+                )
+                continue
             facts.commute[(dest, mode)] = Fact(
                 value=float(r["minutes_num"]),
                 label=_label(r["demo"], LABEL_ESTIMATE),
