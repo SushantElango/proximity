@@ -4,6 +4,9 @@ Rules this module enforces:
 - A missing file, column or value becomes "no data". It never becomes a number.
 - Every fact carries a label (Dataset / Estimate / Demo data), source and date.
 - Rows with demo=1 are placeholders and are always labeled "Demo data".
+- A real file in data/ always wins. If it is absent, the matching file in
+  data/placeholder/ is used and every row is forced to demo=1. So dropping
+  the real commute.csv into data/ switches the app over with no code change.
 """
 from __future__ import annotations
 
@@ -13,14 +16,18 @@ from pathlib import Path
 import pandas as pd
 
 from .models import (
+    EVENT_TAG_GROUPS,
     LABEL_DATASET,
     LABEL_DEMO,
     LABEL_ESTIMATE,
+    SHARED_2BR_NOTE,
     AreaFacts,
+    Event,
     Fact,
 )
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
+PLACEHOLDER_SUBDIR = "placeholder"
 
 # file -> required columns (CLAUDE.md section 5). `demo` is optional, default 0.
 SCHEMAS: dict[str, list[str]] = {
@@ -29,6 +36,17 @@ SCHEMAS: dict[str, list[str]] = {
     "rent_zillow.csv": ["zip", "zori", "month", "source"],
     "commute.csv": ["zip", "destination", "mode", "minutes", "depart_time", "checked_on", "source"],
     "places.csv": ["zip", "category", "name", "lat", "lon", "osm_id"],
+    "events_curated.csv": ["zip_or_area", "interest", "title", "date", "venue", "url", "collected_on"],
+}
+
+# What each table feeds, in words, for the "placeholder in use" notice.
+TABLE_WORDS: dict[str, str] = {
+    "areas.csv": "area locations",
+    "rent_hud.csv": "HUD rent",
+    "rent_zillow.csv": "Zillow rent",
+    "commute.csv": "commute times",
+    "places.csv": "place counts",
+    "events_curated.csv": "events",
 }
 
 
@@ -36,6 +54,7 @@ SCHEMAS: dict[str, list[str]] = {
 class DataBundle:
     tables: dict[str, pd.DataFrame] = field(default_factory=dict)
     issues: list[str] = field(default_factory=list)  # shown in the UI, never hidden
+    placeholders: list[str] = field(default_factory=list)  # tables containing demo=1 rows
 
 
 def _clean_zip(series: pd.Series) -> pd.Series:
@@ -47,8 +66,12 @@ def load_table(name: str, data_dir: Path = DATA_DIR) -> tuple[pd.DataFrame, list
     columns = SCHEMAS[name]
     empty = pd.DataFrame(columns=columns + ["demo"])
     path = data_dir / name
+    from_placeholder = False
     if not path.exists():
-        return empty, [f"{name}: file not found, treated as no data"]
+        path = data_dir / PLACEHOLDER_SUBDIR / name
+        from_placeholder = True
+        if not path.exists():
+            return empty, [f"{name}: file not found, treated as no data"]
     try:
         df = pd.read_csv(path, dtype=str, keep_default_na=True)
     except Exception as exc:  # unreadable file must not crash the demo
@@ -64,6 +87,8 @@ def load_table(name: str, data_dir: Path = DATA_DIR) -> tuple[pd.DataFrame, list
     if "demo" not in df.columns:
         df["demo"] = "0"
     df["demo"] = pd.to_numeric(df["demo"], errors="coerce").fillna(0).astype(int)
+    if from_placeholder:
+        df["demo"] = 1  # anything from data/placeholder/ is never presented as real
     if "zip" in df.columns:
         df = df[df["zip"].notna()].copy()
         df["zip"] = _clean_zip(df["zip"])
@@ -79,6 +104,8 @@ def load_all(data_dir: Path = DATA_DIR) -> DataBundle:
         df, issues = load_table(name, data_dir)
         bundle.tables[name] = df
         bundle.issues.extend(issues)
+        if len(df) and int(df["demo"].max()) == 1:
+            bundle.placeholders.append(name)
     return bundle
 
 
@@ -128,6 +155,16 @@ def build_area_facts(bundle: DataBundle) -> list[AreaFacts]:
                         source=_text(r["source"]),
                         as_of=_text(r["as_of"]),
                     )
+            # A room in a shared 2-bed: half the 2-bed rent. An estimate, labeled as one.
+            two_bed = _num(r["fmr_2br"])
+            if two_bed is not None:
+                facts.rent_hud["shared2br"] = Fact(
+                    value=float(round(two_bed / 2)),
+                    label=_label(r["demo"], LABEL_ESTIMATE),
+                    source=_text(r["source"]),
+                    as_of=_text(r["as_of"]),
+                    label_detail=SHARED_2BR_NOTE,
+                )
 
         zil = t["rent_zillow.csv"]
         zrows = zil[zil["zip"] == z].sort_values("month")
@@ -136,7 +173,7 @@ def build_area_facts(bundle: DataBundle) -> list[AreaFacts]:
             value = _num(r["zori"])
             if value is not None:
                 facts.rent_zillow = Fact(
-                    value=value,
+                    value=float(round(value)),  # whole dollars
                     label=_label(r["demo"], LABEL_DATASET),
                     source=_text(r["source"]),
                     as_of=_text(r["month"]),
@@ -175,3 +212,38 @@ def build_area_facts(bundle: DataBundle) -> list[AreaFacts]:
 
         areas.append(facts)
     return areas
+
+
+def build_events(bundle: DataBundle) -> tuple[list[Event], list[str]]:
+    """Curated events, keyed to an area ZIP. Rows without a URL or a known area are dropped and reported."""
+    df = bundle.tables.get("events_curated.csv")
+    areas = bundle.tables["areas.csv"]
+    known_zips = set(areas["zip"])
+    name_to_zip = {str(n).strip().lower(): z for n, z in zip(areas["area"], areas["zip"])}
+    events: list[Event] = []
+    issues: list[str] = []
+    if df is None:
+        return events, issues
+    for i, r in df.iterrows():
+        title, url = _text(r["title"]), _text(r["url"])
+        where = _text(r["zip_or_area"])
+        candidate = where.split(".")[0].zfill(5) if where.replace(".", "").isdigit() else name_to_zip.get(where.lower())
+        if candidate not in known_zips:
+            issues.append(f"events_curated.csv row {i + 2}: area '{where}' not recognised, row skipped")
+            continue
+        if not title or not url.lower().startswith(("http://", "https://")):
+            issues.append(f"events_curated.csv row {i + 2}: missing title or source URL, row skipped")
+            continue
+        date = pd.to_datetime(_text(r["date"]), errors="coerce")
+        events.append(Event(
+            zip=candidate,
+            group=EVENT_TAG_GROUPS.get(_text(r["interest"]).lower(), "local"),
+            title=title,
+            date="" if pd.isna(date) else date.strftime("%Y-%m-%d"),
+            venue=_text(r["venue"]),
+            url=url,
+            collected_on=_text(r["collected_on"]),
+            label=LABEL_DEMO if int(r["demo"]) == 1 else "Manually collected",
+        ))
+    events.sort(key=lambda e: (e.date == "", e.date, e.title))
+    return events, issues

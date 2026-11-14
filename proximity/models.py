@@ -14,8 +14,15 @@ Importance = Literal["Must-have", "Important", "Nice"]
 IMPORTANCE_LEVELS: list[str] = ["Nice", "Important", "Must-have"]
 WEIGHTS: dict[str, int] = {"Must-have": 3, "Important": 2, "Nice": 1}
 
-Bedroom = Literal["0br", "1br", "2br"]
-BEDROOM_LABELS: dict[str, str] = {"0br": "Studio", "1br": "1 bedroom", "2br": "2 bedroom"}
+Bedroom = Literal["shared2br", "0br", "1br", "2br"]
+BEDROOM_LABELS: dict[str, str] = {
+    "shared2br": "Room in a shared 2-bed",
+    "0br": "Studio",
+    "1br": "1 bedroom",
+    "2br": "2 bedroom",
+}
+# Shown next to the Estimate label wherever the shared-room rent appears.
+SHARED_2BR_NOTE = "2-bed rent split in half"
 
 Mode = Literal["transit", "drive"]
 
@@ -43,6 +50,19 @@ LABEL_LIVE = "Live"
 LABEL_DATASET = "Dataset"
 LABEL_ESTIMATE = "Estimate"
 LABEL_DEMO = "Demo data"
+LABEL_MANUAL = "Manually collected"
+
+# Tag in events_curated.csv -> the group it is shown under. "local" is not an
+# interest the user picks; it is always shown as "Local events".
+EVENT_TAG_GROUPS: dict[str, str] = {
+    "jazz": "live_music",
+    "live_music": "live_music",
+    "fitness": "gym",
+    "sports": "sports",
+    "culture": "local",
+    "community": "local",
+}
+LOCAL_EVENTS_LABEL = "Local events"
 
 
 class DestinationPref(BaseModel):
@@ -75,6 +95,22 @@ class Fact:
     source: str = ""
     as_of: str = ""
     note: str = ""
+    label_detail: str = ""  # shown with the label, e.g. "Estimate: 2-bed rent split in half"
+    as_of_word: str = "as of"
+
+
+@dataclass(frozen=True)
+class Event:
+    """One manually collected event. Every event has a source URL."""
+
+    zip: str
+    group: str  # an interest key, or "local"
+    title: str
+    date: str  # ISO date, or "" when not given
+    venue: str
+    url: str
+    collected_on: str
+    label: str = LABEL_MANUAL
 
 
 @dataclass
@@ -98,7 +134,7 @@ def demo_profile() -> Profile:
     """Priya, the demo persona from the pitch script."""
     return Profile(
         budget=1600,
-        bedroom="1br",
+        bedroom="shared2br",
         rent_importance="Important",
         destinations=[
             DestinationPref(name="Rutgers College Ave", mode="transit", max_minutes=35, importance="Must-have"),

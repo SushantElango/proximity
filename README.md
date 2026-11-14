@@ -3,7 +3,7 @@
 **Proximity is power.** Find neighborhoods that fit your life, not just your budget.
 Built at HackPrinceton Fall 2026 for students and early-career renters moving near Rutgers–New Brunswick, NJ.
 
-> Status: layer 1 of 4. The numbers in `data/` are currently **placeholders** (every row is marked `demo=1` and shown as "Demo data" in the app). They are not real.
+> Status: layer 1 of 4. Rent, area locations and events are real data. **Commute times and place counts are still placeholders**, shown as "Demo data" in the app, and are not real.
 
 ## What works now
 
@@ -27,7 +27,6 @@ We match on places, travel time and rent only. Nothing in the app describes who 
 ```bash
 python -m venv .venv
 .venv/Scripts/python -m pip install -r requirements.txt   # macOS/Linux: .venv/bin/python
-.venv/Scripts/python scripts/make_demo_data.py            # only if data/ is empty
 .venv/Scripts/python -m streamlit run app.py
 .venv/Scripts/python -m pytest -q
 ```
@@ -36,14 +35,19 @@ python -m venv .venv
 
 | File | Source | Status |
 |---|---|---|
-| `areas.csv` | Census ZCTA Gazetteer | placeholder |
-| `rent_hud.csv` | HUD FY2026 Small Area FMRs | placeholder |
-| `rent_zillow.csv` | Zillow Observed Rent Index | placeholder |
-| `commute.csv` | Manual Google Maps lookups | placeholder |
-| `places.csv` | OpenStreetMap via Overpass | placeholder |
+| `data/areas.csv` | Census ZCTA Gazetteer (internal point) | real |
+| `data/rent_hud.csv` | HUD FY2026 Small Area Fair Market Rents, dated 2026-05-21 | real |
+| `data/rent_zillow.csv` | Zillow Observed Rent Index (smoothed, all homes plus multifamily), 2026-09 | real |
+| `data/events_curated.csv` | Collected by hand from venue and town pages on 2026-11-14; every row links to its source | real |
+| `data/commute.csv` | Manual Google Maps lookups | not collected yet; `data/placeholder/commute.csv` is used |
+| `data/places.csv` | OpenStreetMap via Overpass | not collected yet; `data/placeholder/places.csv` is used |
+
+The app reads `data/<file>.csv` first and falls back to `data/placeholder/<file>.csv` only when the real file is absent. Anything from the placeholder folder is labeled "Demo data".
+
+"Room in a shared 2-bed" is an estimate: the HUD 2-bedroom rent split in half.
 
 ## Limitations
 
-- Placeholder data until the collected files are added.
+- Commute times and place counts are placeholders until those files are collected, so the ranking is not real yet.
 - The map background needs an internet connection; the markers and everything else work offline.
 - Events ("Hot News"), free-text profiles and the compare table are not built yet.

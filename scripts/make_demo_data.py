@@ -1,20 +1,21 @@
-"""Write PLACEHOLDER CSVs into data/ so the app runs before real data arrives.
+"""Write PLACEHOLDER commute and place data into data/placeholder/.
 
-Every row is marked demo=1 and shows as "Demo data" in the UI. The numbers are
-round and made up on purpose. Replace each file with Siddhesh's real one (same
-columns; the demo column can be dropped) and the labels switch automatically.
+The app reads data/<file>.csv first. Only when that file is absent does it fall
+back to data/placeholder/<file>.csv, and then every row shows as "Demo data".
+So when the real data/commute.csv or data/places.csv arrives, the app switches
+over by itself and these files are ignored.
 
-Some values are left out deliberately so the "no data" paths are exercised.
+The numbers here are round and made up on purpose. Some are left out so the
+"no data" paths are exercised.
 
 Run:  python scripts/make_demo_data.py
-It refuses to overwrite a file that contains any real (demo=0) rows.
 """
 from __future__ import annotations
 
 import csv
 from pathlib import Path
 
-DATA = Path(__file__).resolve().parent.parent / "data"
+DATA = Path(__file__).resolve().parent.parent / "data" / "placeholder"
 SRC = "PLACEHOLDER - not real data"
 
 # area, zip, approx lat, approx lon (rough map positions only)
@@ -26,23 +27,8 @@ AREAS = [
     ("Metuchen", "08840", 40.54, -74.36),
     ("North Brunswick", "08902", 40.44, -74.48),
     ("East Brunswick", "08816", 40.43, -74.41),
-    ("Somerset (Franklin Twp)", "08873", 40.50, -74.50),
+    ("Somerset", "08873", 40.50, -74.50),
 ]
-
-# zip -> (studio, 1br, 2br). Piscataway and Somerset have no HUD row on purpose.
-HUD = {
-    "08901": (1400, 1550, 1900),
-    "08904": (1300, 1450, 1800),
-    "08817": (1350, 1500, 1850),
-    "08840": (1400, 1500, 1900),
-    "08902": (1250, 1400, 1750),
-    "08816": (1500, 1700, 2100),
-}
-# Piscataway has no Zillow row either, so its rent is fully "not checked".
-ZILLOW = {
-    "08901": 1650, "08904": 1500, "08817": 1600, "08840": 1650,
-    "08902": 1500, "08816": 1800, "08873": 1650,
-}
 
 # zip -> minutes by transit: (College Ave, Busch, Newark Penn). None = not checked.
 TRANSIT = {
@@ -102,21 +88,7 @@ def _write(name: str, header: list[str], rows: list[list]) -> None:
 
 
 def main() -> None:
-    DATA.mkdir(exist_ok=True)
-    (DATA / "cache").mkdir(exist_ok=True)
-
-    _write("areas.csv", ["area", "zip", "lat", "lon"], [list(a) for a in AREAS])
-
-    _write(
-        "rent_hud.csv",
-        ["zip", "fmr_0br", "fmr_1br", "fmr_2br", "source", "as_of"],
-        [[z, *v, SRC, "2026-11-14"] for z, v in HUD.items()],
-    )
-    _write(
-        "rent_zillow.csv",
-        ["zip", "zori", "month", "source"],
-        [[z, v, "2026-10", SRC] for z, v in ZILLOW.items()],
-    )
+    DATA.mkdir(parents=True, exist_ok=True)
 
     commute = []
     for mode, table in (("transit", TRANSIT), ("drive", DRIVE)):

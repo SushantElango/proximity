@@ -1,6 +1,7 @@
 """Explore view, three columns: Prompt Zone | Map | selected match + Hot News."""
 from __future__ import annotations
 
+from datetime import date, datetime
 from html import escape
 
 import pandas as pd
@@ -17,8 +18,11 @@ from ..models import (
     LABEL_DEMO,
     LABEL_ESTIMATE,
     LABEL_LIVE,
+    LABEL_MANUAL,
+    LOCAL_EVENTS_LABEL,
     AreaFacts,
     DestinationPref,
+    Event,
     Fact,
     InterestPref,
     Profile,
@@ -35,7 +39,9 @@ from ..scoring import (
 )
 
 ACCENT = "#D9480F"
-_BADGE_COLOR = {LABEL_LIVE: "green", LABEL_DATASET: "blue", LABEL_ESTIMATE: "violet", LABEL_DEMO: "orange"}
+_BADGE_COLOR = {
+    LABEL_LIVE: "green", LABEL_DATASET: "blue", LABEL_ESTIMATE: "violet", LABEL_DEMO: "orange", LABEL_MANUAL: "gray",
+}
 
 _TOP_COLOR = [217, 72, 15]
 _OTHER_COLOR = [70, 100, 150]
@@ -46,19 +52,20 @@ MAP_HEIGHT = 600
 PANEL_HEIGHT = 640  # side panels scroll inside this height so the page fits one screen
 
 
-def badge(label: str) -> str:
+def badge(label: str, detail: str = "") -> str:
     """Markdown badge for a data label. Every number in the UI gets one."""
-    return f":{_BADGE_COLOR.get(label, 'gray')}-badge[{label}]"
+    text = f"{label}: {detail}" if detail else label
+    return f":{_BADGE_COLOR.get(label, 'gray')}-badge[{text}]"
 
 
 def fact_caption(fact: Fact | None) -> str:
     if fact is None:
         return "Not checked / no data"
-    parts = [badge(fact.label)]
+    parts = [badge(fact.label, fact.label_detail)]
     if fact.source:
         parts.append(fact.source)
     if fact.as_of:
-        parts.append(f"as of {fact.as_of}")
+        parts.append(f"{fact.as_of_word} {fact.as_of}")
     if fact.note:
         parts.append(fact.note)
     return " · ".join(parts)
@@ -99,12 +106,11 @@ def profile_form(available_interests: list[str]) -> Profile:
 
     with st.container(border=True):
         st.markdown("**:material/payments: Rent**")
-        c1, c2 = st.columns(2)
-        budget = c1.number_input("Budget ($/mo)", min_value=500, max_value=6000, value=base.budget, step=50, key="budget")
-        bedroom = c2.selectbox(
-            "Bedrooms", list(BEDROOM_LABELS), index=list(BEDROOM_LABELS).index(base.bedroom),
+        bedroom = st.selectbox(
+            "Housing", list(BEDROOM_LABELS), index=list(BEDROOM_LABELS).index(base.bedroom),
             format_func=BEDROOM_LABELS.get, key="bedroom",
         )
+        budget = st.number_input("Budget ($/mo)", min_value=500, max_value=6000, value=base.budget, step=50, key="budget")
         rent_importance = _importance("Room under budget matters", base.rent_importance, "rent_importance")
         st.caption("Your budget is always a hard limit.")
 
@@ -206,7 +212,7 @@ def _map(results: list[AreaResult], facts: dict[str, AreaFacts], selected: str |
     deck = pdk.Deck(
         map_style=None,
         initial_view_state=pdk.ViewState(
-            latitude=float(df["lat"].mean()), longitude=float(df["lon"].mean()), zoom=11.1,
+            latitude=float(df["lat"].mean()), longitude=float(df["lon"].mean()), zoom=10.9,
         ),
         layers=layers,
         tooltip={"text": "{area}\n{status}"},
@@ -255,7 +261,12 @@ def _rent_block(r: AreaResult) -> None:
     if rent is None or rent.fact is None:
         st.markdown("**Rent estimate:** Not checked / no data")
         return
-    basis = "HUD Fair Market Rent" if r.rent_basis == "HUD" else "Zillow Observed Rent Index"
+    if r.rent_basis != "HUD":
+        basis = "Zillow Observed Rent Index"
+    elif rent.fact.label_detail:
+        basis = "half of the HUD 2-bed Fair Market Rent"
+    else:
+        basis = "HUD Fair Market Rent"
     st.markdown(f"**Rent estimate: ${rent.raw:,.0f}/mo** · {basis}")
     st.caption(fact_caption(rent.fact))
     if r.rent_other is not None:
@@ -293,12 +304,43 @@ def _match_card(r: AreaResult) -> None:
             st.caption(fact_caption(c.fact))
 
 
-def _hot_news(r: AreaResult) -> None:
+def _event_date(iso: str) -> str:
+    if not iso:
+        return "Date not given"
+    d = datetime.strptime(iso, "%Y-%m-%d")
+    return f"{d:%a} {d:%b} {d.day}"
+
+
+def _hot_news(r: AreaResult, events: list[Event], profile: Profile) -> None:
+    """Curated events for this area. Only real, sourced rows are shown; gaps stay empty."""
     st.markdown("**:material/local_fire_department: Hot News**")
-    st.caption(
-        f"Events and places in {r.area} that match your interests will show here in the next build. "
-        "Nothing appears until it comes from a real source."
-    )
+    here = [e for e in events if e.zip == r.zip]
+    if not here:
+        st.caption("No curated events yet.")
+        return
+    today = date.today().isoformat()
+    upcoming = [e for e in here if not e.date or e.date >= today]
+    if not upcoming:
+        st.caption("No upcoming curated events.")
+        return
+
+    wanted = [i.category for i in profile.interests]
+    groups = [(cat, INTERESTS.get(cat, cat)) for cat in wanted] + [("local", LOCAL_EVENTS_LABEL)]
+    shown = 0
+    for key, label in groups:
+        rows = [e for e in upcoming if e.group == key]
+        if not rows:
+            continue
+        st.markdown(f"**{label}**")
+        for e in rows:
+            shown += 1
+            title = e.title.replace("[", "(").replace("]", ")")
+            venue = f" · {e.venue}" if e.venue else ""
+            st.markdown(f"[{title}]({e.url})  \n:gray[{_event_date(e.date)}{venue}]")
+        collected = sorted({e.collected_on for e in rows if e.collected_on})
+        st.caption(f"{badge(rows[0].label)} from the linked pages" + (f" · collected {collected[-1]}" if collected else ""))
+    if not shown:
+        st.caption("No curated events for your interests yet.")
 
 
 # --------------------------------------------------------------------------
@@ -313,7 +355,7 @@ _PAGE_CSS = """
 """
 
 
-def render(areas: list[AreaFacts], issues: list[str]) -> None:
+def render(areas: list[AreaFacts], events: list[Event], issues: list[str], placeholders: list[str]) -> None:
     st.html(_PAGE_CSS)
     facts = {a.area: a for a in areas}
     available_interests = sorted({cat for a in areas for cat in a.places})
@@ -362,8 +404,8 @@ def render(areas: list[AreaFacts], issues: list[str]) -> None:
                 st.session_state["selected_area"] = clicked
                 st.rerun()
         legend = "Numbered orange = top 3 · blue = other matches · grey = unverified or not eligible. Click an area to open it."
-        if any(a.demo for a in areas):
-            legend = f"{badge(LABEL_DEMO)} Placeholder numbers, not real. " + legend
+        if placeholders:
+            legend = f"{badge(LABEL_DEMO)} Placeholders, not real: {', '.join(placeholders)}. " + legend
         st.caption(legend)
 
     with right:
@@ -373,7 +415,7 @@ def render(areas: list[AreaFacts], issues: list[str]) -> None:
                     _match_nav(selected, ranked)
                     _match_card(selected)
                 with st.container(border=True):
-                    _hot_news(selected)
+                    _hot_news(selected, events, profile)
 
     with st.expander("See all 8 areas in a table"):
         table = pd.DataFrame([
