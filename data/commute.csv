@@ -1,0 +1,48 @@
+zip,destination,mode,minutes,depart_time,checked_on,source,demo
+08901,Rutgers College Ave,transit,10,08:30,2026-11-14,PLACEHOLDER - not real data,1
+08901,Rutgers Busch,transit,20,08:30,2026-11-14,PLACEHOLDER - not real data,1
+08901,Newark Penn Station,transit,80,22:30,2026-11-14,PLACEHOLDER - not real data,1
+08904,Rutgers College Ave,transit,15,08:30,2026-11-14,PLACEHOLDER - not real data,1
+08904,Rutgers Busch,transit,25,08:30,2026-11-14,PLACEHOLDER - not real data,1
+08904,Newark Penn Station,transit,70,22:30,2026-11-14,PLACEHOLDER - not real data,1
+08854,Rutgers College Ave,transit,25,08:30,2026-11-14,PLACEHOLDER - not real data,1
+08854,Rutgers Busch,transit,10,08:30,2026-11-14,PLACEHOLDER - not real data,1
+08854,Newark Penn Station,transit,75,22:30,2026-11-14,PLACEHOLDER - not real data,1
+08817,Rutgers College Ave,transit,25,08:30,2026-11-14,PLACEHOLDER - not real data,1
+08817,Rutgers Busch,transit,30,08:30,2026-11-14,PLACEHOLDER - not real data,1
+08817,Newark Penn Station,transit,60,22:30,2026-11-14,PLACEHOLDER - not real data,1
+08840,Rutgers College Ave,transit,30,08:30,2026-11-14,PLACEHOLDER - not real data,1
+08840,Rutgers Busch,transit,35,08:30,2026-11-14,PLACEHOLDER - not real data,1
+08840,Newark Penn Station,transit,40,22:30,2026-11-14,PLACEHOLDER - not real data,1
+08902,Rutgers College Ave,transit,30,08:30,2026-11-14,PLACEHOLDER - not real data,1
+08902,Rutgers Busch,transit,40,08:30,2026-11-14,PLACEHOLDER - not real data,1
+08816,Rutgers College Ave,transit,40,08:30,2026-11-14,PLACEHOLDER - not real data,1
+08816,Rutgers Busch,transit,50,08:30,2026-11-14,PLACEHOLDER - not real data,1
+08816,Newark Penn Station,transit,80,22:30,2026-11-14,PLACEHOLDER - not real data,1
+08873,Rutgers College Ave,transit,35,08:30,2026-11-14,PLACEHOLDER - not real data,1
+08873,Rutgers Busch,transit,30,08:30,2026-11-14,PLACEHOLDER - not real data,1
+08873,Newark Penn Station,transit,85,22:30,2026-11-14,PLACEHOLDER - not real data,1
+08901,Rutgers College Ave,drive,5,08:30,2026-11-14,PLACEHOLDER - not real data,1
+08901,Rutgers Busch,drive,10,08:30,2026-11-14,PLACEHOLDER - not real data,1
+08901,Newark Penn Station,drive,40,22:30,2026-11-14,PLACEHOLDER - not real data,1
+08904,Rutgers College Ave,drive,10,08:30,2026-11-14,PLACEHOLDER - not real data,1
+08904,Rutgers Busch,drive,10,08:30,2026-11-14,PLACEHOLDER - not real data,1
+08904,Newark Penn Station,drive,40,22:30,2026-11-14,PLACEHOLDER - not real data,1
+08854,Rutgers College Ave,drive,15,08:30,2026-11-14,PLACEHOLDER - not real data,1
+08854,Rutgers Busch,drive,5,08:30,2026-11-14,PLACEHOLDER - not real data,1
+08854,Newark Penn Station,drive,45,22:30,2026-11-14,PLACEHOLDER - not real data,1
+08817,Rutgers College Ave,drive,15,08:30,2026-11-14,PLACEHOLDER - not real data,1
+08817,Rutgers Busch,drive,15,08:30,2026-11-14,PLACEHOLDER - not real data,1
+08817,Newark Penn Station,drive,35,22:30,2026-11-14,PLACEHOLDER - not real data,1
+08840,Rutgers College Ave,drive,20,08:30,2026-11-14,PLACEHOLDER - not real data,1
+08840,Rutgers Busch,drive,20,08:30,2026-11-14,PLACEHOLDER - not real data,1
+08840,Newark Penn Station,drive,30,22:30,2026-11-14,PLACEHOLDER - not real data,1
+08902,Rutgers College Ave,drive,15,08:30,2026-11-14,PLACEHOLDER - not real data,1
+08902,Rutgers Busch,drive,20,08:30,2026-11-14,PLACEHOLDER - not real data,1
+08902,Newark Penn Station,drive,45,22:30,2026-11-14,PLACEHOLDER - not real data,1
+08816,Rutgers College Ave,drive,20,08:30,2026-11-14,PLACEHOLDER - not real data,1
+08816,Rutgers Busch,drive,25,08:30,2026-11-14,PLACEHOLDER - not real data,1
+08816,Newark Penn Station,drive,45,22:30,2026-11-14,PLACEHOLDER - not real data,1
+08873,Rutgers College Ave,drive,15,08:30,2026-11-14,PLACEHOLDER - not real data,1
+08873,Rutgers Busch,drive,15,08:30,2026-11-14,PLACEHOLDER - not real data,1
+08873,Newark Penn Station,drive,50,22:30,2026-11-14,PLACEHOLDER - not real data,1
