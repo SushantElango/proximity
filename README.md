@@ -17,8 +17,9 @@ Built at HackPrinceton Fall 2026 for students and early-career renters moving ne
 Code decides, with no AI involved in scoring:
 
 1. **Eligibility.** Rent must fit the budget, and every must-have commute must be within its limit. If a must-have has no data, the area is shown as *Unverified* and ranked after all verified areas.
-2. **Score.** Each priority gets a 0 to 1 score (commute and place counts are compared across areas, rent by room under budget), weighted Must-have 3, Important 2, Nice 1.
-3. **Missing data** never counts as a match and never raises a score. The app reports how many priorities were evaluated.
+2. **Fit.** Each priority gets a 0 to 1 value (commute and place counts are compared across the 8 areas, rent by room under budget), weighted Must-have 3, Important 2, Nice 1. The result is shown as "Fit 56 · relative to the 8 areas". It ranks these areas against each other; it is not an absolute grade.
+3. **Priorities met** is reported separately ("Meets 5 of 6 evaluated priorities").
+4. **Missing data** never counts as met and never raises the Fit.
 
 We match on places, travel time and rent only. Nothing in the app describes who lives in an area.
 

@@ -370,6 +370,8 @@ def diff_rankings(before: list[AreaResult], after: list[AreaResult], profile_bef
             "old_status": o.status,
             "new_status": r.status,
             "reasons": r.reasons,
+            "old_score": o.score,
+            "new_score": r.score,
             "driver": None,
         }
         if r.rank is not None and o.rank is not None:
@@ -396,6 +398,8 @@ def diff_rankings(before: list[AreaResult], after: list[AreaResult], profile_bef
     return {
         "profile_changes": changes,
         "moves": moves,
+        "scores": {r.area: (old[r.area].score, r.score) for r in after if r.area in old},
+        "leader": next((r.area for r in after if r.rank == 1), None),
         "top_before": [r.area for r in top_matches(before)],
         "top_after": [r.area for r in top_matches(after)],
     }

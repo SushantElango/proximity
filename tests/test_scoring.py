@@ -157,3 +157,30 @@ def test_scoring_does_not_mutate_inputs():
     snapshot = copy.deepcopy(areas)
     score_areas(areas, make_profile())
     assert areas == snapshot
+
+
+def test_what_changed_always_gives_a_note_for_any_priority_change():
+    from proximity.explain import what_changed
+
+    areas = make_areas()
+    base = make_profile()
+    variants = []
+    for change in ("budget", "rent_importance", "campus_max", "gym_importance", "drop_gym", "newark_importance"):
+        p = make_profile()
+        if change == "budget":
+            p.budget = 1650
+        elif change == "rent_importance":
+            p.rent_importance = "Important"
+        elif change == "campus_max":
+            p.destinations[0].max_minutes = 40
+        elif change == "gym_importance":
+            p.interests[0].importance = "Important"
+        elif change == "drop_gym":
+            p.interests = []
+        else:
+            p.destinations[1].importance = "Must-have"
+        variants.append(p)
+    for p in variants:
+        notes = what_changed(diff_rankings(score_areas(areas, base), score_areas(areas, p), base, p))
+        assert len(notes) >= 1 and all(n.strip() for n in notes)
+        assert "you " in notes[0]  # names what the user changed
