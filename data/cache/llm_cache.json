@@ -1,0 +1,162 @@
+{
+ "1f642e4eb7e17a8ecaafbe662f1189f7": {
+  "kind": "draft",
+  "output": {
+   "bedroom": "shared2br",
+   "budget": 1600,
+   "destinations": [
+    {
+     "importance": "Must-have",
+     "max_minutes": 40,
+     "mode": "transit",
+     "name": "Rutgers College Ave"
+    },
+    {
+     "importance": "Important",
+     "max_minutes": 80,
+     "mode": "transit",
+     "name": "Newark Penn Station"
+    }
+   ],
+   "interests": [
+    {
+     "category": "live_music",
+     "importance": "Important"
+    },
+    {
+     "category": "gym",
+     "importance": "Nice"
+    },
+    {
+     "category": "sports",
+     "importance": "Nice"
+    }
+   ],
+   "question": "",
+   "reasons": [
+    {
+     "field": "budget",
+     "reason": "You mentioned you can pay $1,600 a month."
+    },
+    {
+     "field": "bedroom",
+     "reason": "You are sharing a 2-bedroom with a roommate."
+    },
+    {
+     "field": "rent_importance",
+     "reason": "Set to Important by default based on your budget."
+    },
+    {
+     "field": "destination:Rutgers College Ave",
+     "reason": "You attend classes on College Ave and rely on public transit."
+    },
+    {
+     "field": "destination:Newark Penn Station",
+     "reason": "You work in Newark on Tuesdays and Thursdays using transit."
+    },
+    {
+     "field": "interest:live_music",
+     "reason": "You mentioned loving live music."
+    },
+    {
+     "field": "interest:gym",
+     "reason": "You mentioned wanting a gym nearby."
+    },
+    {
+     "field": "interest:sports",
+     "reason": "You mentioned wanting somewhere to play sports."
+    }
+   ],
+   "rent_importance": "Important"
+  },
+  "text": "I'm a Rutgers junior sharing a 2-bed with a roommate. I have classes on College Ave and I work in Newark until 10:30pm on Tuesdays and Thursdays, and I don't have a car. I can pay $1,600 a month, and I love live music, plus a gym and somewhere to play sports."
+ },
+ "7d3c21ae368fb14472ba2c941bf259b6": {
+  "kind": "refine",
+  "output": {
+   "bedroom": "shared2br",
+   "budget": 1600,
+   "destinations": [
+    {
+     "importance": "Must-have",
+     "max_minutes": 40,
+     "mode": "transit",
+     "name": "Rutgers College Ave"
+    },
+    {
+     "importance": "Must-have",
+     "max_minutes": 80,
+     "mode": "transit",
+     "name": "Newark Penn Station"
+    }
+   ],
+   "interests": [
+    {
+     "category": "live_music",
+     "importance": "Important"
+    },
+    {
+     "category": "gym",
+     "importance": "Nice"
+    },
+    {
+     "category": "sports",
+     "importance": "Nice"
+    }
+   ],
+   "question": "",
+   "reasons": [
+    {
+     "field": "destination:Newark Penn Station",
+     "reason": "You increased the importance of your travel time to Newark Penn Station."
+    }
+   ],
+   "rent_importance": "Important"
+  },
+  "text": "Getting to Newark matters more than gyms"
+ },
+ "af614a9520f4bf696b96f3d8af840fc5": {
+  "kind": "refine",
+  "output": {
+   "bedroom": "shared2br",
+   "budget": 1800,
+   "destinations": [
+    {
+     "importance": "Must-have",
+     "max_minutes": 40,
+     "mode": "transit",
+     "name": "Rutgers College Ave"
+    },
+    {
+     "importance": "Must-have",
+     "max_minutes": 80,
+     "mode": "transit",
+     "name": "Newark Penn Station"
+    }
+   ],
+   "interests": [
+    {
+     "category": "live_music",
+     "importance": "Important"
+    },
+    {
+     "category": "gym",
+     "importance": "Nice"
+    },
+    {
+     "category": "sports",
+     "importance": "Nice"
+    }
+   ],
+   "question": "",
+   "reasons": [
+    {
+     "field": "budget",
+     "reason": "You updated your budget ceiling to $1,800."
+    }
+   ],
+   "rent_importance": "Important"
+  },
+  "text": "Actually I could stretch to $1,800 if it's walkable to music venues"
+ }
+}

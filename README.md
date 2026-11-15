@@ -3,15 +3,26 @@
 **Proximity is power.** Find neighborhoods that fit your life, not just your budget.
 Built at HackPrinceton Fall 2026 for students and early-career renters moving near Rutgers–New Brunswick, NJ.
 
-> Status: layers 1 and 2 of 4. All data in the app is real: rent, area locations, commute times, events and place counts. `data/placeholder/` is only a fallback if a file goes missing.
+> Status: layers 1 to 3 of 4. All data in the app is real: rent, area locations, commute times, events and place counts.
 
 ## What works now
 
-- A profile form (budget, bedroom type, destinations, travel mode, max commute, interests, importance per item).
+- A landing page: describe your situation in your own words, or load Priya's example.
+- An editable profile (housing, budget, destinations, travel mode, max commute, interests, importance per item). Edits take effect when you click Apply.
+- A refine box: type something like "Getting to Newark matters more than gyms", see the proposed changes as a table with a reason for each, then Apply or Cancel.
 - 8 candidate areas on a map, with the top 3 matches numbered.
 - A card per match: why it matched, the main compromise, what is missing, and the rent estimate with its source.
 - Hot News for the selected area: upcoming curated events and nearby OpenStreetMap places for each interest you picked, plus local events. Every item links to its source.
 - Change any setting and the ranking recomputes, with a "What changed" note that gives the reason.
+
+## Where AI is used, and where it is not
+
+- Gemini (`gemini-3.5-flash`) turns your words into proposed profile changes. Each proposal is labeled "AI suggestion" and nothing changes until you click Apply.
+- Its answer must match a strict schema. Unknown fields, unknown places or out-of-range values discard the whole answer.
+- If the model is slow (over 8 seconds), unavailable or wrong, a keyword parser takes over and the proposal is labeled "Keyword match". The app works with no key at all.
+- AI never scores or ranks. Eligibility, Fit and the order are plain Python.
+- Requests about who lives in an area ("safe", "families", a nationality) are never sent to the model. The app replies that it matches on commute, budget, places and events only.
+- The three demo inputs are cached in `data/cache/llm_cache.json`, so the demo runs offline. `DEMO_MODE=1` forbids network calls.
 
 ## How matching works
 
@@ -55,4 +66,4 @@ The app reads `data/<file>.csv` first and falls back to `data/placeholder/<file>
 - Commute lookups all depart on a weekday morning. A late-night trip home from Newark has not been checked, and the app says so on every area.
 - Commute values that are not numbers ("Not found") count as missing. Transit times over 120 minutes are flagged "Unusual: please verify" and are not used.
 - The map background needs an internet connection; the markers and everything else work offline.
-- Live Ticketmaster events, free-text profiles and the compare table are not built yet.
+- Live Ticketmaster events and the compare table are not built yet.

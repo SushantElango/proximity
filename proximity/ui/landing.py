@@ -9,9 +9,11 @@ from ..refine import AI, DEMOGRAPHIC_REPLY, NOT_UNDERSTOOD, starter_profile
 from . import session
 
 PITCH = "Find where to live by how you actually live"
+# Priya's own words. This exact text is cached, so the landing demo works offline.
 EXAMPLE = (
-    "Rutgers junior sharing a 2-bed, classes on College Ave, I work in Newark until 10:30pm Tue/Thu, "
-    "no car, $1,600 a month, love live music, a gym and sports."
+    "I'm a Rutgers junior sharing a 2-bed with a roommate. I have classes on College Ave and I work in Newark "
+    "until 10:30pm on Tuesdays and Thursdays, and I don't have a car. I can pay $1,600 a month, and I love "
+    "live music, plus a gym and somewhere to play sports."
 )
 AI_DRAFT_LABEL = "AI draft — check and edit before results."
 KEYWORD_DRAFT_LABEL = "Draft from your words — check and edit before results."
@@ -35,7 +37,7 @@ def _describe() -> None:
     if not text:
         st.session_state["landing_message"] = "Write a sentence or two first, or try Priya's example."
         return
-    proposal = draft_profile(text)
+    proposal = draft_profile(text).proposal
     if proposal.message == DEMOGRAPHIC_REPLY and not proposal.changes:
         st.session_state["landing_message"] = DEMOGRAPHIC_REPLY
         return
