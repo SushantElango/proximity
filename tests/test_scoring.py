@@ -230,7 +230,7 @@ def test_compare_rows_have_the_same_rows_for_every_area_and_never_a_blank():
         assert list(row) == [""] + names
         assert all(str(v).strip() for v in row.values())
     labels = [row[""] for row in rows]
-    assert labels[0].startswith("Fit") and "Rent estimate ($/mo)" in labels and labels[-1] == "Missing / not checked"
+    assert labels[0] == "Rank" and "Rent estimate ($/mo)" in labels and labels[-1] == "Missing / not checked"
     gym = next(row for row in rows if "gym" in row[""].lower())
     assert gym["No Gym Data"] == "Not checked / no data"
     assert compare_rows([]) == []

@@ -269,11 +269,11 @@ def profile_form(available_interests: list[str], applied: Profile) -> None:
 # --------------------------------------------------------------------------
 
 def _pin_tip(r: AreaResult) -> tuple[str, str]:
-    """Tooltip lines: rank and fit, or the reason the pin is grey."""
+    """Tooltip lines: rank, or the reason the pin is grey."""
     if r.status == ELIGIBLE:
-        return f"#{r.rank} · {ex.fit(r.score)}", ex.headline(r)
+        return f"#{r.rank}", ex.headline(r)
     if r.status == UNVERIFIED:
-        return f"Unverified · {ex.fit(r.score)}", "; ".join(r.reasons)
+        return "Unverified", "; ".join(r.reasons)
     return "Not eligible", "; ".join(r.reasons)
 
 
@@ -418,10 +418,7 @@ def _rent_block(r: AreaResult) -> None:
 
 def _match_card(r: AreaResult, n_areas: int, matches: list[AreaResult]) -> None:
     _rank_title(r.rank, r.area, size="1.3rem")
-    if r.status == INELIGIBLE:
-        st.progress(0.0, text=f"**{ex.fit_or_dash(r)}** · not eligible, so no fit is shown")
-    else:
-        st.progress(min(1.0, max(0.0, r.score)), text=f"**{ex.fit(r.score)}** · {ex.fit_scope(n_areas)}")
+    # No score is shown: areas are presented as a ranking only.
     st.markdown(f"**{ex.headline(r)}**")
     if r.status != ELIGIBLE:
         (st.warning if r.status == UNVERIFIED else st.error)(ex.status_note(r))
@@ -634,7 +631,6 @@ def render(
 
                 "Area": r.area,
                 "Status": r.status,
-                "Fit": ex.fit_or_dash(r).replace("Fit ", ""),
                 "Priorities": f"meets {r.met} of {r.evaluated} evaluated ({r.total} total)",
                 "Note": "; ".join(r.reasons),
             }

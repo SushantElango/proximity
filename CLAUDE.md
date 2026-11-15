@@ -207,6 +207,8 @@ Written Sat Nov 14, 23:20 ET. Code is at commit `6463870` on `main`, in sync wit
 - Compare table for the top matches (`compare_rows` in `proximity/explain.py`, an expander under the map).
 - Full demo script checked offline with `DEMO_MODE=1` (set it in the shell; it is read before `.env` is loaded, so putting it in `.env` does nothing).
 
+- **The Fit number is no longer shown anywhere** (Sushant's call: a score like "Fit 65" reads as an imperfect match). The app shows ranks only; the score is still computed in `scoring.py` to decide the order. Numbers such as "73" in these notes are internal.
+
 ### Not started
 
 1. **Siddhesh's parser test cases.** His 10 sentences and the refusal case were never pasted into the request (it still held the placeholder text). Add them to `tests/test_refine.py`. Where a sentence needs a field the profile does not have, the expected result is "I couldn't map that", not a new field.

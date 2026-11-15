@@ -153,11 +153,7 @@ def what_changed(diff: dict, limit: int = 4) -> list[str]:
         note = f"The order stayed the same after {because}."
         leader = diff.get("leader")
         if leader and leader in diff.get("scores", {}):
-            old, new = diff["scores"][leader]
-            if round(old * 100) != round(new * 100):
-                note += f" **{leader}** is still #1 ({fit(old)} → {new * 100:.0f})."
-            else:
-                note += f" **{leader}** is still #1 ({fit(new)})."
+            note += f" **{leader}** is still #1."
         return [note]
 
     notes: list[str] = []
@@ -170,12 +166,11 @@ def what_changed(diff: dict, limit: int = 4) -> list[str]:
             state = "is now unverified" if m["new_status"] == UNVERIFIED else "is no longer eligible"
             notes.append(f"**{area}** (was #{old}) {state} because {because}: {reason}.")
             continue
-        scores = f" ({fit(m['old_score'])} → {m['new_score'] * 100:.0f})"
         if old is None:
             notes.append(f"**{area}** is now a match at #{new} because {because}.")
             continue
         went_up = new < old
-        text = f"**{area}** moved {'up' if went_up else 'down'} from #{old} to #{new}{scores}"
+        text = f"**{area}** moved {'up' if went_up else 'down'} from #{old} to #{new}"
         if m["driver"] and _supports(m["driver"], went_up):
             text += f" because {because}; {_standing_text(m['driver'])}"
         elif went_up and dropped:
@@ -200,7 +195,7 @@ def compare_rows(matches: list[AreaResult]) -> list[dict]:
     """
     if not matches:
         return []
-    rows: list[dict] = [{"": "Fit (relative to all areas)"} | {r.area: fit_or_dash(r).replace("Fit ", "") for r in matches}]
+    rows: list[dict] = [{"": "Rank"} | {r.area: f"#{r.rank}" if r.rank else "Not ranked" for r in matches}]
     by_area = {r.area: {c.key: c for c in r.components} for r in matches}
     seen: list[tuple[str, str, str]] = []  # (key, label, kind) in the first area's order, then any extras
     for r in matches:
