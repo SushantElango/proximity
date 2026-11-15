@@ -291,3 +291,11 @@ def test_show_places_toggle_is_off_by_default_and_safe_to_turn_on():
     assert any("Places counted in Metuchen" in str(h.value) for h in at.html)
     at.toggle(key="show_places").set_value(False).run()
     assert not at.exception, at.exception
+
+
+def test_satellite_switch_is_off_by_default_and_safe_to_turn_on():
+    at = open_priya()
+    assert at.toggle(key="satellite").value is False
+    at.toggle(key="satellite").set_value(True).run()
+    assert not at.exception, at.exception
+    assert any("USGS" in c.value for c in at.caption)
