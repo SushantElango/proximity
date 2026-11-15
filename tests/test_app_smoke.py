@@ -45,14 +45,29 @@ def test_landing_page_loads():
 def test_priya_example_opens_results():
     at = open_priya()
     assert not at.error, [e.value for e in at.error]
+    assert at.session_state["last_prompt"]
+    assert at.text_area(key="explore_prompt").value == at.session_state["last_prompt"]
 
 
 def test_free_text_does_not_crash():
     at = start()
+    text = "Rutgers junior, no car, $1,600/month for a 1-bedroom, love jazz bars and a gym."
     at.text_area(key="landing_text").set_value(
-        "Rutgers junior, no car, $1,600/month for a 1-bedroom, love jazz bars and a gym."
+        text
     ).run()
     click(at, "Find my neighborhood")
+    assert at.session_state["last_prompt"] == text
+    assert at.text_area(key="explore_prompt").value == text
+
+
+def test_explore_description_updates_the_profile():
+    at = open_priya()
+    text = "I work in Newark, no car, $1,800/month and I need a gym."
+    at.text_area(key="explore_prompt").set_value(text).run()
+    click(at, "Update my matches")
+    assert at.session_state["last_prompt"] == text
+    assert at.session_state["profile"]["budget"] == 1800
+    assert any(i["category"] == "gym" for i in at.session_state["profile"]["interests"])
 
 
 def test_empty_text_does_not_crash():

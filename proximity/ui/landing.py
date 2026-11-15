@@ -26,6 +26,7 @@ def _reset_results() -> None:
 
 def _try_priya() -> None:
     """Loads Priya instantly. No API call."""
+    st.session_state["last_prompt"] = EXAMPLE
     _reset_results()
     session.set_profile(demo_profile())
     session.go(session.EXPLORE)
@@ -44,8 +45,7 @@ def _open_results(proposal) -> None:
     session.go(session.EXPLORE)
 
 
-def _describe() -> None:
-    text = (st.session_state.get("landing_text") or "").strip()
+def _process_description(text: str) -> None:
     st.session_state["landing_message"] = ""
     st.session_state.pop("clarify", None)
     if not text:
@@ -63,16 +63,45 @@ def _describe() -> None:
     _open_results(draft.proposal)
 
 
+def _describe() -> None:
+    text = (st.session_state.get("landing_text") or "").strip()
+    st.session_state["last_prompt"] = text
+    _process_description(text)
+
+
+def update_from_explore() -> None:
+    text = (st.session_state.get("explore_prompt") or "").strip()
+    st.session_state["last_prompt"] = text
+    _process_description(text)
+
+
 def _answer() -> None:
     pending = st.session_state.get("clarify")
     if not pending:
         return
     answer = (st.session_state.get("clarify_answer") or "").strip()
+    text = (pending["text"].strip() + " " + answer).strip()
+    st.session_state["last_prompt"] = text
     draft = answer_question(pending["text"], answer)
     if draft.proposal.message == DEMOGRAPHIC_REPLY and not draft.proposal.changes:
         st.session_state["landing_message"] = DEMOGRAPHIC_REPLY
         return
     _open_results(draft.proposal)
+
+
+def render_clarification() -> None:
+    pending = st.session_state.get("clarify")
+    if not pending:
+        return
+    with st.container(border=True):
+        st.markdown(f"**One quick question:** {pending['question']}")
+        st.text_input(
+            "Your answer", key="clarify_answer", label_visibility="collapsed",
+            placeholder="For example: classes on College Ave most days, by bus",
+        )
+        c, d = st.columns(2)
+        c.button("Continue", type="primary", use_container_width=True, key="clarify_go", on_click=_answer)
+        d.button("Skip", use_container_width=True, key="clarify_skip", on_click=_answer, help="Carry on without answering")
 
 
 def render(accent: str) -> None:
@@ -95,15 +124,7 @@ def render(accent: str) -> None:
         b.button("Try Priya's example", use_container_width=True, on_click=_try_priya)
         pending = st.session_state.get("clarify")
         if pending:
-            with st.container(border=True):
-                st.markdown(f"**One quick question:** {pending['question']}")
-                st.text_input(
-                    "Your answer", key="clarify_answer", label_visibility="collapsed",
-                    placeholder="For example: classes on College Ave most days, by bus",
-                )
-                c, d = st.columns(2)
-                c.button("Continue", type="primary", use_container_width=True, key="clarify_go", on_click=_answer)
-                d.button("Skip", use_container_width=True, key="clarify_skip", on_click=_answer, help="Carry on without answering")
+            render_clarification()
         message = st.session_state.get("landing_message")
         if message:
             st.warning(message)

@@ -45,6 +45,7 @@ from ..scoring import (
     score_areas,
     top_matches,
 )
+from . import landing
 
 ACCENT = "#D9480F"
 _BADGE_COLOR = {
@@ -196,6 +197,18 @@ def profile_form(available_interests: list[str], applied: Profile) -> None:
     top.markdown("### Your profile")
     restart.button("Start over", key="start_over", on_click=_start_over, use_container_width=True)
     head = st.container()  # filled in below, once the pending profile is known
+
+    st.session_state.setdefault("explore_prompt", st.session_state.get("last_prompt", ""))
+    with st.expander("Your description", expanded=True):
+        st.text_area("Your description", key="explore_prompt", label_visibility="collapsed", height=110)
+        st.button(
+            "Update my matches", type="primary", use_container_width=True,
+            key="update_matches", on_click=landing.update_from_explore,
+        )
+        st.caption("This replaces the profile edits below.")
+        if st.session_state.get("landing_message"):
+            st.warning(st.session_state["landing_message"])
+        landing.render_clarification()
 
     with st.form("refine_form", border=True):
         st.text_input(
