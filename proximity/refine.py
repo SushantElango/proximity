@@ -59,7 +59,8 @@ TRANSIT_WORDS = ["transit", "public transport", "public transportation", "bus", 
 # "make X more important", "X matters less", "prioritize X", "give X more weight"
 _PRIORITY = re.compile(
     r"\b(?:(more|less)\s+(?:important|weight|priority|of a priority)|matters?\s+(more|less)|"
-    r"(prioriti[sz]e|focus on|care more about|raise|increase|bump up)|(deprioriti[sz]e|care less about|lower|decrease))\b"
+    r"(prioriti[sz]e|focus on|care more about|(?:raise|increase|bump up) (?:the )?(?:importance|priority|weight))|"
+    r"(deprioriti[sz]e|care less about|(?:lower|decrease|reduce) (?:the )?(?:importance|priority|weight)))\b"
 )
 
 # People, not places. Any of these means the request is about who lives somewhere.

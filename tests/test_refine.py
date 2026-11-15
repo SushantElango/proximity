@@ -182,3 +182,16 @@ def test_already_at_the_limit_says_so_instead_of_not_understood():
     p = keyword_refine("make gyms less important", demo_profile())  # gyms are already Nice
     assert not p.changes
     assert p.message != NOT_UNDERSTOOD and "lowest" in p.message and "Gyms" in p.message
+
+
+@pytest.mark.parametrize("text", ["I want lower rent", "lower commute times please", "raise my budget to $1,800"])
+def test_lower_or_raise_about_a_value_does_not_change_importance(text):
+    base = demo_profile()
+    p = keyword_refine(text, base)
+    assert p.profile.rent_importance == base.rent_importance
+    assert [d.importance for d in p.profile.destinations] == [d.importance for d in base.destinations]
+
+
+def test_lower_the_importance_of_x_still_works():
+    p = keyword_refine("lower the importance of getting to Newark", demo_profile())
+    assert dest(p.profile, NEWARK).importance == "Nice"
