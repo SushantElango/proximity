@@ -115,9 +115,27 @@ def test_description_without_budget_leaves_budget_empty_and_rent_informational()
     assert "Optional — add one to filter by rent." in captions
     assert "Budget: not given — rent shown for information only." in body
     assert "Rent estimate:" in body
-    assert "Estimate" in captions
+    assert ":violet-badge[Estimate]" in body
     assert "under budget" not in body.lower()
     assert "your $" not in body.lower()
+
+
+def test_match_card_groups_each_long_source_once_in_collapsed_expander():
+    at = open_priya()
+    body = "\n".join(str(element.value) for element in at.markdown)
+    captions = "\n".join(element.value for element in at.caption)
+    assert "Sources and dates" in [element.label for element in at.expander]
+    assert ":violet-badge[Estimate]" in body
+    assert ":blue-badge[Dataset]" in body
+    for source in (
+        "HUD FY2026 SAFMR",
+        "OpenStreetMap via Overpass API",
+        "Zillow ZORI (Smoothed): All Homes Plus Multifamily",
+        "within 1,500 m of the area's centre point",
+    ):
+        assert body.count(source) == 1
+        assert source not in captions
+    assert body.count("Zillow index: $") == 1
 
 
 def test_selected_area_shows_matched_and_unmatched_priorities_above_hot_news():

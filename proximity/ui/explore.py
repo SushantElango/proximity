@@ -74,17 +74,36 @@ def badge(label: str, detail: str = "") -> str:
     return f":{_BADGE_COLOR.get(label, 'gray')}-badge[{text}]"
 
 
-def fact_caption(fact: Fact | None) -> str:
+def fact_badge(fact: Fact | None) -> str:
     if fact is None:
-        return "Not checked / no data"
-    parts = [badge(fact.label, fact.label_detail)]
-    if fact.source:
-        parts.append(fact.source)
-    if fact.as_of:
-        parts.append(f"{fact.as_of_word} {fact.as_of}")
-    if fact.note:
-        parts.append(fact.note)
-    return " · ".join(parts)
+        return ""
+    return badge(fact.label)
+
+
+def _sources_and_dates(r: AreaResult) -> None:
+    sources: dict[str, dict[str, set[str]]] = {}
+    facts = [c.fact for c in r.components if c.fact is not None]
+    if r.rent_other is not None:
+        facts.append(r.rent_other)
+    zillow_index = r.rent_other
+    rent = r.component("rent")
+    if zillow_index is None and r.rent_basis == "Zillow" and rent is not None:
+        zillow_index = rent.fact
+    for fact in facts:
+        key = fact.source or fact.label
+        entry = sources.setdefault(key, {"labels": set(), "dates": set(), "methods": set()})
+        entry["labels"].add(fact.label)
+        if fact.as_of:
+            entry["dates"].add(f"{fact.as_of_word} {fact.as_of}")
+        entry["methods"].update(filter(None, (fact.label_detail, fact.note)))
+
+    with st.expander("Sources and dates"):
+        for source, details in sources.items():
+            labels = " / ".join(badge(label) for label in sorted(details["labels"]))
+            metadata = sorted(details["dates"] | details["methods"])
+            st.markdown(f"- {labels} · {source}" + (" · " + " · ".join(metadata) if metadata else ""))
+        if zillow_index is not None:
+            st.markdown(f"Zillow index: ${zillow_index.value:,.0f} · {fact_badge(zillow_index)}")
 
 
 def _rank_title(rank: int | None, name: str, size: str = "1.15rem") -> None:
@@ -426,18 +445,7 @@ def _rent_block(r: AreaResult) -> None:
     if rent is None or rent.fact is None:
         st.markdown("**Rent estimate:** Not checked / no data")
         return
-    if r.rent_basis != "HUD":
-        basis = "Zillow Observed Rent Index"
-    elif rent.fact.label_detail:
-        basis = "half of the HUD 2-bed Fair Market Rent"
-    else:
-        basis = "HUD Fair Market Rent"
-    st.markdown(f"**Rent estimate: ${rent.raw:,.0f}/mo** · {basis}")
-    st.caption(fact_caption(rent.fact))
-    if r.rent_other is not None:
-        st.caption(f"Zillow index: ${r.rent_other.value:,.0f} · {fact_caption(r.rent_other)}")
-    elif r.rent_basis == "HUD":
-        st.caption("Zillow index: Not checked / no data")
+    st.markdown(f"**Rent estimate: ${rent.raw:,.0f}/mo** · {fact_badge(rent.fact)}")
 
 
 def _match_card(r: AreaResult, n_areas: int, matches: list[AreaResult]) -> None:
@@ -449,13 +457,17 @@ def _match_card(r: AreaResult, n_areas: int, matches: list[AreaResult]) -> None:
 
     st.markdown("**:green[:material/check_circle:] Why it matched**")
     bullets = ex.why_matched(r)
-    st.markdown("\n".join(f"- {b}" for b in bullets) if bullets else "- No evaluated priority was met.")
-    counts = [c.fact for c in r.components if c.kind == "interest" and c.fact is not None]
-    if counts:
-        st.caption("Place counts: " + fact_caption(counts[0]))
+    tagged_bullets = []
+    for line in bullets:
+        fact = next((c.fact for c in r.components if c.fact is not None and ex._sentence(c) == line), None)
+        tagged_bullets.append(f"- {line}" + (f" · {fact_badge(fact)}" if fact else ""))
+    st.markdown("\n".join(tagged_bullets) if tagged_bullets else "- No evaluated priority was met.")
 
     st.markdown("**:orange[:material/balance:] Main compromise**")
-    st.markdown(f"- {ex.main_compromise(r, matches)}")
+    compromise = ex.main_compromise(r, matches)
+    compromise_component = ex._compromise(r)
+    tag = fact_badge(compromise_component.fact) if compromise_component else ""
+    st.markdown(f"- {compromise}" + (f" · {tag}" if tag else ""))
 
     st.markdown("**:gray[:material/help:] Missing / not checked**")
     not_checked = r.missing + r.unchecked + st.session_state.get("not_used", [])
@@ -468,15 +480,14 @@ def _match_card(r: AreaResult, n_areas: int, matches: list[AreaResult]) -> None:
         for c in r.components:
             if c.kind == "rent" and c.limit is None:
                 rent_value = f"${c.raw:,.0f}/mo rent estimate" if c.raw is not None else "Rent estimate: Not checked / no data"
-                st.markdown(f"{c.label}: **{rent_value}**")
-                st.caption(fact_caption(c.fact))
+                st.markdown(f"{c.label}: **{rent_value}** · {fact_badge(c.fact)}")
                 continue
             if c.met is None:
                 st.markdown(f":gray[:material/help:] {c.label}: **{c.flag or 'Not checked / no data'}** · :gray[{c.importance}]")
                 continue
             icon = ":green[:material/check_circle:]" if c.met else ":red[:material/cancel:]"
-            st.markdown(f"{icon} {ex._sentence(c)} · :gray[{c.importance}]")
-            st.caption(fact_caption(c.fact))
+            st.markdown(f"{icon} {ex._sentence(c)} · :gray[{c.importance}] · {fact_badge(c.fact)}")
+    _sources_and_dates(r)
 
 
 def _priority_breakdown(r: AreaResult) -> None:
@@ -487,8 +498,7 @@ def _priority_breakdown(r: AreaResult) -> None:
     if not matched:
         st.caption("No priorities matched.")
     for c in matched:
-        st.markdown(f"- {ex._sentence(c)} · :gray[{c.importance}]")
-        st.caption(fact_caption(c.fact))
+        st.markdown(f"- {ex._sentence(c)} · :gray[{c.importance}] · {fact_badge(c.fact)}")
 
     st.markdown("**Not matched / not checked**")
     unmatched = [c for c in priorities if c.met is not True]
@@ -496,11 +506,10 @@ def _priority_breakdown(r: AreaResult) -> None:
         st.caption("No unmatched priorities.")
     for c in unmatched:
         if c.met is False:
-            st.markdown(f"- {ex._sentence(c)} · :gray[{c.importance}]")
+            st.markdown(f"- {ex._sentence(c)} · :gray[{c.importance}] · {fact_badge(c.fact)}")
         else:
             detail = c.flag or "Not checked / no data"
             st.markdown(f"- {c.label}: {detail} · :gray[{c.importance}]")
-        st.caption(fact_caption(c.fact))
 
 
 def _event_date(iso: str) -> str:
