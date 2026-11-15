@@ -463,6 +463,29 @@ def _match_card(r: AreaResult, n_areas: int, matches: list[AreaResult]) -> None:
             st.caption(fact_caption(c.fact))
 
 
+def _priority_breakdown(r: AreaResult) -> None:
+    """Show every selected priority as met, not met, or not checked."""
+    st.markdown("**Matched**")
+    matched = [c for c in r.components if c.met is True]
+    if not matched:
+        st.caption("No priorities matched.")
+    for c in matched:
+        st.markdown(f"- {ex._sentence(c)} · :gray[{c.importance}]")
+        st.caption(fact_caption(c.fact))
+
+    st.markdown("**Not matched / not checked**")
+    unmatched = [c for c in r.components if c.met is not True]
+    if not unmatched:
+        st.caption("No unmatched priorities.")
+    for c in unmatched:
+        if c.met is False:
+            st.markdown(f"- {ex._sentence(c)} · :gray[{c.importance}]")
+        else:
+            detail = c.flag or "Not checked / no data"
+            st.markdown(f"- {c.label}: {detail} · :gray[{c.importance}]")
+        st.caption(fact_caption(c.fact))
+
+
 def _event_date(iso: str) -> str:
     if not iso:
         return "Date not given"
@@ -625,6 +648,8 @@ def render(
                 if unverified:
                     with st.container(border=True):
                         _unverified_list(unverified, selected)
+                with st.container(border=True):
+                    _priority_breakdown(selected)
                 with st.container(border=True):
                     sections = hot_news(
                         selected.zip, [i.category for i in profile.interests], events, places, date.today().isoformat(),

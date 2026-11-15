@@ -68,6 +68,15 @@ def test_explore_description_updates_the_profile():
     assert any(i["category"] == "gym" for i in at.session_state["profile"]["interests"])
 
 
+def test_selected_area_shows_matched_and_unmatched_priorities_above_hot_news():
+    at = open_priya()
+    values = [element.value for element in at.markdown]
+    assert any("Matched" in str(value) for value in values)
+    assert any("Not matched / not checked" in str(value) for value in values)
+    body = "\n".join(str(value) for value in values)
+    assert body.index("Not matched / not checked") < body.index("Hot News")
+
+
 def test_empty_text_does_not_crash():
     click(start(), "Find my neighborhood")
 
