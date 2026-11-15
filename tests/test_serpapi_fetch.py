@@ -23,6 +23,11 @@ class FakeResponse:
         return self._payload
 
 
+def test_queries_follow_the_docs_example_form():
+    assert mod.query_for("Highland Park", "events") == "Events in Highland Park, NJ"
+    assert mod.query_for("Metuchen", "live_music") == "Live music events in Metuchen, NJ"
+
+
 def test_scrub_removes_the_key():
     assert KEY not in mod.scrub(f"failed at https://x/search.json?api_key={KEY}", KEY)
 

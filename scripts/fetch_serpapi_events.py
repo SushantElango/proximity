@@ -5,7 +5,7 @@ Why a cache file and not a live call inside the app: the demo must run offline
 once on a laptop that has the key, commit the cache files, and the app reads them.
 
 Run:  python scripts/fetch_serpapi_events.py --only "Highland Park,Metuchen"   # test two towns
-      python scripts/fetch_serpapi_events.py                                    # all areas, 2 searches each
+      python scripts/fetch_serpapi_events.py                                    # all areas, 3 searches each
       python scripts/fetch_serpapi_events.py --refresh                          # ignore cached files
 
 The key comes from the SERPAPI_API_KEY environment variable or from .env (never
@@ -47,8 +47,9 @@ ENGINE = "google_events"
 KEY_NAME = "SERPAPI_API_KEY"
 TIMEOUT_S = 30
 PAUSE_S = 1.0  # free plan: 50 searches per hour, so go one at a time
-# interest key (same as places.csv) -> words used in the search
-TOPICS = {"live_music": "live music events", "sports": "sports events"}
+# topic -> words used in the search. "events" is the broad form from SerpApi's docs
+# example ("Events in Austin, TX"); the narrower ones can come back empty for small towns.
+TOPICS = {"events": "events", "live_music": "live music events", "sports": "sports events"}
 
 
 def load_env_file(path: Path) -> dict[str, str]:
@@ -75,7 +76,7 @@ def scrub(text: str, key: str) -> str:
 
 
 def query_for(area: str, topic: str) -> str:
-    return f"{TOPICS[topic]} in {area}, NJ"
+    return f"{TOPICS[topic].capitalize()} in {area}, NJ"
 
 
 def cache_file(zip_code: str, topic: str) -> Path:
