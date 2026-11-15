@@ -170,6 +170,12 @@ def _apply_proposal() -> None:
         session.set_profile(Profile(**data["profile"]))
         st.session_state["not_used"] = data.get("not_used", [])
         st.session_state["refine_text"] = ""
+        # The applied sentence joins the description, so the box always shows the latest prompt.
+        before = (st.session_state.get("last_prompt") or "").strip()
+        sentence = data["text"].strip()
+        if before and before[-1] not in ".!?":
+            before += "."
+        landing.remember_prompt(f"{before} {sentence}".strip())
 
 
 def _cancel_proposal() -> None:
@@ -215,19 +221,20 @@ def profile_form(available_interests: list[str], applied: Profile) -> None:
         if key not in st.session_state:
             st.session_state[key] = defaults[key]
 
-    top, restart = st.columns([3, 1.4], vertical_alignment="bottom")
-    top.markdown("### Your profile")
-    restart.button("Start over", key="start_over", on_click=_start_over, use_container_width=True)
+    st.markdown("### Your profile")
+    st.button("Start over", key="start_over", on_click=_start_over, use_container_width=True, icon=":material/restart_alt:")
     head = st.container()  # filled in below, once the pending profile is known
 
     st.session_state.setdefault("explore_prompt", st.session_state.get("last_prompt", ""))
     with st.expander("Your description", expanded=True):
-        st.text_area("Your description", key="explore_prompt", label_visibility="collapsed", height=110)
-        st.button(
-            "Update my matches", type="primary", use_container_width=True,
-            key="update_matches", on_click=landing.update_from_explore,
-        )
-        st.caption("This replaces the profile edits below.")
+        # A form, so Ctrl+Enter (Cmd+Enter on Mac) in the box submits it like the button.
+        with st.form("describe_form", border=False):
+            st.text_area("Your description", key="explore_prompt", label_visibility="collapsed", height=110)
+            st.form_submit_button(
+                "Update my matches", type="primary", use_container_width=True,
+                on_click=landing.update_from_explore,
+            )
+        st.caption("Ctrl+Enter to update · this replaces the profile edits below.")
         if st.session_state.get("landing_message"):
             st.warning(st.session_state["landing_message"])
         landing.render_clarification()

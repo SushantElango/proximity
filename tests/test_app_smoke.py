@@ -64,7 +64,7 @@ def test_free_text_does_not_crash():
 def test_explore_description_updates_the_profile():
     at = open_priya()
     text = "I work in Newark, no car, $1,800/month and I need a gym."
-    at.text_area(key="explore_prompt").set_value(text).run()
+    at.text_area(key="explore_prompt").set_value(text)  # a form: stage, then submit in one run
     click(at, "Update my matches")
     assert at.session_state["last_prompt"] == text
     assert at.session_state["profile"]["budget"] == 1800
@@ -75,7 +75,7 @@ def test_explore_description_asks_the_same_clarifying_question_as_landing():
     at = open_priya()
     before = at.session_state["profile"]
     text = "I want a gym nearby."
-    at.text_area(key="explore_prompt").set_value(text).run()
+    at.text_area(key="explore_prompt").set_value(text)  # a form: stage, then submit in one run
     click(at, "Update my matches")
 
     assert at.session_state["clarify"]["text"] == text
@@ -238,3 +238,19 @@ def test_refine_make_transit_more_important_offers_apply_and_explains():
     click(at, "Apply")
     notes = " ".join(str(el.value) for el in [*at.info, *at.success, *at.warning, *at.markdown])
     assert "What changed" in notes and "Newark Penn Station" in notes
+
+
+def test_description_box_shows_the_latest_prompt_after_a_refine():
+    at = open_priya()
+    at.text_input(key="refine_text").set_value("I need a grocery store nearby")
+    click(at, "Suggest changes")
+    click(at, "Apply")
+    latest = at.session_state["last_prompt"]
+    assert latest.endswith("I need a grocery store nearby")
+    assert at.text_area(key="explore_prompt").value == latest
+
+
+def test_start_over_returns_to_landing():
+    at = open_priya()
+    click(at, "Start over")
+    assert at.session_state["stage"] == "landing"

@@ -18,6 +18,12 @@ EXAMPLE = (
 RESULTS_DRAFT_LABEL = "Results from your description — edit anything on the left."
 
 
+def remember_prompt(text: str) -> None:
+    """The latest description, shown (and editable) in the Explore page's description box."""
+    st.session_state["last_prompt"] = text
+    st.session_state["explore_prompt"] = text
+
+
 def _reset_results() -> None:
     for key in ("last_profile", "change_notes", "selected_area", "proposal", "last_map_click", "not_used"):
         st.session_state.pop(key, None)
@@ -25,7 +31,7 @@ def _reset_results() -> None:
 
 def _try_priya() -> None:
     """Loads Priya instantly. No API call."""
-    st.session_state["last_prompt"] = EXAMPLE
+    remember_prompt(EXAMPLE)
     _reset_results()
     session.set_profile(demo_profile())
     session.go(session.EXPLORE)
@@ -66,13 +72,13 @@ def _process_description(text: str) -> None:
 
 def _describe() -> None:
     text = (st.session_state.get("landing_text") or "").strip()
-    st.session_state["last_prompt"] = text
+    remember_prompt(text)
     _process_description(text)
 
 
 def update_from_explore() -> None:
     text = (st.session_state.get("explore_prompt") or "").strip()
-    st.session_state["last_prompt"] = text
+    remember_prompt(text)
     _process_description(text)
 
 
@@ -82,7 +88,7 @@ def _answer() -> None:
         return
     answer = (st.session_state.get("clarify_answer") or "").strip()
     text = (pending["text"].strip() + " " + answer).strip()
-    st.session_state["last_prompt"] = text
+    remember_prompt(text)
     draft = answer_question(pending["text"], answer)
     if draft.proposal.message == DEMOGRAPHIC_REPLY and not draft.proposal.changes:
         st.session_state["landing_message"] = DEMOGRAPHIC_REPLY
