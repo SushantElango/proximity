@@ -9,6 +9,7 @@ import pydeck as pdk
 import streamlit as st
 
 from .. import explain as ex
+from ..hotnews import Section, distance_text, hot_news, place_detail, unnamed_line
 from ..maplayout import fit_view, place_labels
 from ..models import (
     BEDROOM_LABELS,
@@ -26,6 +27,7 @@ from ..models import (
     Event,
     Fact,
     InterestPref,
+    Place,
     Profile,
     demo_profile,
 )
@@ -51,6 +53,7 @@ _UNVERIFIED_COLOR = [150, 150, 150]
 _INELIGIBLE_COLOR = [200, 200, 200]
 
 MAP_HEIGHT = 600
+HOT_NEWS_TOP = 3  # items shown per list before "show all"
 NOTE_SHRINK = 150  # the map gives up this much height while "What changed" is showing
 
 PERSONA_SUMMARY = (
@@ -363,36 +366,68 @@ def _event_date(iso: str) -> str:
     return f"{d:%a} {d:%b} {d.day}"
 
 
-def _hot_news(r: AreaResult, events: list[Event], profile: Profile) -> None:
-    """Curated events for this area. Only real, sourced rows are shown; gaps stay empty."""
-    st.markdown("**:material/local_fire_department: Hot News**")
-    here = [e for e in events if e.zip == r.zip]
-    if not here:
-        st.caption("No curated events yet.")
-        return
-    today = date.today().isoformat()
-    upcoming = [e for e in here if not e.date or e.date >= today]
-    if not upcoming:
-        st.caption("No upcoming curated events.")
-        return
+def _md(text: str) -> str:
+    """Keep a title from breaking a markdown link."""
+    return text.replace("[", "(").replace("]", ")")
 
-    wanted = [i.category for i in profile.interests]
-    groups = [(cat, INTERESTS.get(cat, cat)) for cat in wanted] + [("local", LOCAL_EVENTS_LABEL)]
-    shown = 0
-    for key, label in groups:
-        rows = [e for e in upcoming if e.group == key]
-        if not rows:
+
+def _event_line(e: Event) -> str:
+    venue = f" · {e.venue}" if e.venue else ""
+    return f"[{_md(e.title)}]({e.url})  \n:gray[{_event_date(e.date)}{venue}]"
+
+
+def _place_line(p: Place) -> str:
+    name = f"[{_md(p.name)}]({p.url})" if p.url else _md(p.name)
+    detail = place_detail(p)
+    extra = f"{detail} · " if detail else ""
+    return f"{name}  \n:gray[{extra}{distance_text(p.distance_m)}]"
+
+
+def _show(lines: list[str], more_label: str) -> None:
+    """First HOT_NEWS_TOP lines, the rest behind an expander."""
+    for line in lines[:HOT_NEWS_TOP]:
+        st.markdown(line)
+    if len(lines) > HOT_NEWS_TOP:
+        with st.expander(more_label):
+            for line in lines[HOT_NEWS_TOP:]:
+                st.markdown(line)
+
+
+def _hot_news(r: AreaResult, sections: list[Section]) -> None:
+    """Events and places for this area, per interest. Every item links to its source."""
+    st.markdown(f"**:material/local_fire_department: Hot News in {r.area}**")
+    for i, s in enumerate(sections):
+        if i:
+            st.divider()
+        st.markdown(f"**{s.label}**")
+
+        if s.events:
+            _show([_event_line(e) for e in s.events], f"Show all {len(s.events)} events")
+            collected = sorted({e.collected_on for e in s.events if e.collected_on})
+            st.caption(
+                f"{badge(s.events[0].label)} events, each linked to its source page"
+                + (f" · collected {collected[-1]}" if collected else "")
+            )
+        else:
+            st.caption("No curated events yet.")
+
+        if not s.has_places:
             continue
-        st.markdown(f"**{label}**")
-        for e in rows:
-            shown += 1
-            title = e.title.replace("[", "(").replace("]", ")")
-            venue = f" · {e.venue}" if e.venue else ""
-            st.markdown(f"[{title}]({e.url})  \n:gray[{_event_date(e.date)}{venue}]")
-        collected = sorted({e.collected_on for e in rows if e.collected_on})
-        st.caption(f"{badge(rows[0].label)} from the linked pages" + (f" · collected {collected[-1]}" if collected else ""))
-    if not shown:
-        st.caption("No curated events for your interests yet.")
+        if s.places:
+            _show([_place_line(p) for p in s.places], f"Show all {len(s.places)} named places")
+        line = unnamed_line(s.key, s.unnamed)
+        if line:
+            st.markdown(f":gray[{line}]")
+        if s.places or s.unnamed:
+            first = s.places[0] if s.places else None
+            st.caption(
+                f"{badge(first.label if first else LABEL_DATASET)} places · "
+                + (first.source if first else "OpenStreetMap via Overpass API")
+                + (f" · as of {first.as_of}" if first and first.as_of else "")
+                + " · within 1.5 km of the area centre, each linked to its map page"
+            )
+        else:
+            st.caption("No places found within 1.5 km.")
 
 
 # --------------------------------------------------------------------------
@@ -407,7 +442,9 @@ _PAGE_CSS = """
 """
 
 
-def render(areas: list[AreaFacts], events: list[Event], issues: list[str], placeholders: list[str]) -> None:
+def render(
+    areas: list[AreaFacts], events: list[Event], places: list[Place], issues: list[str], placeholders: list[str],
+) -> None:
     st.html(_PAGE_CSS)
     facts = {a.area: a for a in areas}
     available_interests = sorted({cat for a in areas for cat in a.places})
@@ -472,7 +509,10 @@ def render(areas: list[AreaFacts], events: list[Event], issues: list[str], place
                     with st.container(border=True):
                         _unverified_list(unverified, selected)
                 with st.container(border=True):
-                    _hot_news(selected, events, profile)
+                    sections = hot_news(
+                        selected.zip, [i.category for i in profile.interests], events, places, date.today().isoformat(),
+                    )
+                    _hot_news(selected, sections)
 
     with st.expander("See all 8 areas in a table"):
         table = pd.DataFrame([

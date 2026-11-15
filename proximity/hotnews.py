@@ -21,6 +21,17 @@ UNNAMED_WORDS: dict[str, str] = {
     "restaurant": "restaurants",
     "place_of_worship": "places of worship",
 }
+UNNAMED_ONE: dict[str, str] = {
+    "sports": "pitch or court",
+    "park": "park",
+    "grocery": "shop",
+    "gym": "gym",
+    "cafe": "cafe",
+    "library": "library",
+    "live_music": "bar or venue",
+    "restaurant": "restaurant",
+    "place_of_worship": "place of worship",
+}
 
 
 def places_for(places: list[Place], zip_code: str, category: str) -> tuple[list[Place], int]:
@@ -47,6 +58,8 @@ def unnamed_line(category: str, count: int) -> str:
     """'+ 39 unnamed pitches and courts', or '' when there are none."""
     if count <= 0:
         return ""
+    if count == 1:
+        return f"+ 1 unnamed {UNNAMED_ONE.get(category, 'place')}"
     return f"+ {count} unnamed {UNNAMED_WORDS.get(category, 'places')}"
 
 
@@ -93,3 +106,12 @@ def hot_news(zip_code: str, interests: list[str], events: list[Event], places: l
         events=curated_for(events, zip_code, "local", today), has_places=False,
     ))
     return sections
+
+
+def place_detail(place: Place) -> str:
+    """'cricket', 'indian' ... from the OSM sport/cuisine tags, or '' when not tagged."""
+    for part in place.detail.split(";"):
+        key, _, value = part.partition("=")
+        if key in ("sport", "cuisine") and value:
+            return value.replace("_", " ").replace(";", ", ")
+    return ""

@@ -3,13 +3,14 @@
 **Proximity is power.** Find neighborhoods that fit your life, not just your budget.
 Built at HackPrinceton Fall 2026 for students and early-career renters moving near Rutgers–New Brunswick, NJ.
 
-> Status: layer 1 of 4. All data in the app is real: rent, area locations, commute times, events and place counts. `data/placeholder/` is only a fallback if a file goes missing.
+> Status: layers 1 and 2 of 4. All data in the app is real: rent, area locations, commute times, events and place counts. `data/placeholder/` is only a fallback if a file goes missing.
 
 ## What works now
 
 - A profile form (budget, bedroom type, destinations, travel mode, max commute, interests, importance per item).
 - 8 candidate areas on a map, with the top 3 matches numbered.
 - A card per match: why it matched, the main compromise, what is missing, and the rent estimate with its source.
+- Hot News for the selected area: upcoming curated events and nearby OpenStreetMap places for each interest you picked, plus local events. Every item links to its source.
 - Change any setting and the ranking recomputes, with a "What changed" note that gives the reason.
 
 ## How matching works
@@ -54,4 +55,4 @@ The app reads `data/<file>.csv` first and falls back to `data/placeholder/<file>
 - Commute lookups all depart on a weekday morning. A late-night trip home from Newark has not been checked, and the app says so on every area.
 - Commute values that are not numbers ("Not found") count as missing. Transit times over 120 minutes are flagged "Unusual: please verify" and are not used.
 - The map background needs an internet connection; the markers and everything else work offline.
-- Events ("Hot News"), free-text profiles and the compare table are not built yet.
+- Live Ticketmaster events, free-text profiles and the compare table are not built yet.
