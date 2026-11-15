@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import streamlit as st
 
-from ..assistant import draft_profile
+from ..assistant import answer_question, draft_profile
 from ..models import demo_profile
 from ..refine import AI, DEMOGRAPHIC_REPLY, NOT_UNDERSTOOD, starter_profile
 from . import session
@@ -31,17 +31,9 @@ def _try_priya() -> None:
     session.go(session.EXPLORE)
 
 
-def _describe() -> None:
-    text = (st.session_state.get("landing_text") or "").strip()
-    st.session_state["landing_message"] = ""
-    if not text:
-        st.session_state["landing_message"] = "Write a sentence or two first, or try Priya's example."
-        return
-    proposal = draft_profile(text).proposal
-    if proposal.message == DEMOGRAPHIC_REPLY and not proposal.changes:
-        st.session_state["landing_message"] = DEMOGRAPHIC_REPLY
-        return
+def _open_results(proposal) -> None:
     _reset_results()
+    st.session_state.pop("clarify", None)
     if not proposal.changes:
         session.set_profile(starter_profile(), NOT_UNDERSTOOD)
     else:
@@ -49,9 +41,38 @@ def _describe() -> None:
         if proposal.message:
             label = f"{proposal.message} {label}"
         session.set_profile(proposal.profile, label)
-    st.session_state["draft_changes"] = [c.__dict__ for c in proposal.changes]
-    st.session_state["draft_source"] = proposal.source
     session.go(session.EXPLORE)
+
+
+def _describe() -> None:
+    text = (st.session_state.get("landing_text") or "").strip()
+    st.session_state["landing_message"] = ""
+    st.session_state.pop("clarify", None)
+    if not text:
+        st.session_state["landing_message"] = "Write a sentence or two first, or try Priya's example."
+        return
+    draft = draft_profile(text)
+    if draft.proposal.message == DEMOGRAPHIC_REPLY and not draft.proposal.changes:
+        st.session_state["landing_message"] = DEMOGRAPHIC_REPLY
+        return
+    if draft.question:
+        # One question, once. The answer is added to the description and the draft is redone.
+        st.session_state["clarify"] = {"text": text, "question": draft.question}
+        st.session_state["clarify_answer"] = ""
+        return
+    _open_results(draft.proposal)
+
+
+def _answer() -> None:
+    pending = st.session_state.get("clarify")
+    if not pending:
+        return
+    answer = (st.session_state.get("clarify_answer") or "").strip()
+    draft = answer_question(pending["text"], answer)
+    if draft.proposal.message == DEMOGRAPHIC_REPLY and not draft.proposal.changes:
+        st.session_state["landing_message"] = DEMOGRAPHIC_REPLY
+        return
+    _open_results(draft.proposal)
 
 
 def render(accent: str) -> None:
@@ -72,6 +93,17 @@ def render(accent: str) -> None:
         a, b = st.columns(2)
         a.button("Find my neighborhood", type="primary", use_container_width=True, on_click=_describe)
         b.button("Try Priya's example", use_container_width=True, on_click=_try_priya)
+        pending = st.session_state.get("clarify")
+        if pending:
+            with st.container(border=True):
+                st.markdown(f"**One quick question:** {pending['question']}")
+                st.text_input(
+                    "Your answer", key="clarify_answer", label_visibility="collapsed",
+                    placeholder="For example: classes on College Ave most days, by bus",
+                )
+                c, d = st.columns(2)
+                c.button("Continue", type="primary", use_container_width=True, key="clarify_go", on_click=_answer)
+                d.button("Skip", use_container_width=True, key="clarify_skip", on_click=_answer, help="Carry on without answering")
         message = st.session_state.get("landing_message")
         if message:
             st.warning(message)

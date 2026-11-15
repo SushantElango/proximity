@@ -223,8 +223,12 @@ class _Editor:
             self.reasons[f"interest:{cat}"] = reason
 
 
-def keyword_refine(text: str, profile: Profile) -> Proposal:
-    """Rule-based edits for the phrasings we promise to handle. Unknown text changes nothing."""
+def keyword_refine(text: str, profile: Profile, draft: bool = False) -> Proposal:
+    """Rule-based edits for the phrasings we promise to handle. Unknown text changes nothing.
+
+    With draft=True (a first description, not an edit) every destination and interest the
+    person mentions is added, even without "I like" or a time limit.
+    """
     raw = text.strip()
     low = " " + re.sub(r"\s+", " ", raw.lower()) + " "
     low = low.replace("’", "'")
@@ -287,6 +291,7 @@ def keyword_refine(text: str, profile: Profile) -> Proposal:
                     ed.reasons[f"dest:{name}:max_minutes"] = f"You asked for {name} within {minutes} min"
 
     # 5. likes and dislikes (not when the sentence was a comparison, which rule 1 handled)
+    dislike = None
     if not compared:
         dislike = re.search(r"\b(don't care about|do not care about|not interested in|don't need|no need for|hate|skip)\b(.*)", low)
         if dislike:
@@ -301,6 +306,22 @@ def keyword_refine(text: str, profile: Profile) -> Proposal:
             if like:
                 for cat in _find(INTEREST_WORDS, like.group(2)):
                     ed.set_interest(cat, "Nice", "You said you like this")
+
+    # 6. first description: include whatever places and interests were mentioned
+    if draft:
+        unwanted = _find(INTEREST_WORDS, dislike.group(2)) if (not compared and dislike) else []
+        for name in _find(DEST_WORDS, low):
+            if ed._dest(name) is None:
+                ed.p.destinations.append(DestinationPref(name=name, mode=ed._default_mode(), importance="Important"))
+                ed.reasons[f"dest:{name}"] = f"You mentioned {name}"
+        if re.search(r"\b(have a car|got a car|i drive|with a car|by car|own a car|bought a car)\b", low) and not re.search(
+            r"\b(no car|don't have a car|do not have a car|without a car)\b", low
+        ):
+            for d in ed.p.destinations:
+                d.mode = "drive"
+        for cat in _find(INTEREST_WORDS, low):
+            if cat not in unwanted and ed._interest(cat) is None:
+                ed.set_interest(cat, "Nice", "You mentioned this")
 
     changes = diff_profiles(profile, ed.p, ed.reasons)
     message = ""

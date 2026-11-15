@@ -140,3 +140,14 @@ def test_landing_text_builds_on_the_starter_profile():
     assert p.profile.budget == 1400
     assert dest(p.profile, CAMPUS).max_minutes == 30 and dest(p.profile, CAMPUS).mode == "transit"
     assert interest(p.profile, "live_music").importance == "Important"
+
+
+def test_first_description_adds_what_is_mentioned_but_an_edit_does_not():
+    text = "classes on College Ave, I work in Newark, a gym would be nice but I don't care about parks"
+    d = keyword_refine(text, starter_profile(), draft=True)
+    assert [x.name for x in d.profile.destinations] == [CAMPUS, NEWARK]
+    assert interest(d.profile, "gym").importance == "Nice" and interest(d.profile, "park") is None
+    # The same words as an edit to an existing profile add nothing new.
+    assert keyword_refine("I work in Newark", starter_profile()).changes == []
+    drive = keyword_refine("I have a car and study at Busch", starter_profile(), draft=True)
+    assert [(x.name, x.mode) for x in drive.profile.destinations] == [("Rutgers Busch", "drive")]

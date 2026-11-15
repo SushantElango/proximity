@@ -7,7 +7,7 @@ Built at HackPrinceton Fall 2026 for students and early-career renters moving ne
 
 ## What works now
 
-- A landing page: describe your situation in your own words, or load Priya's example.
+- A landing page: describe your situation in your own words, or load Priya's example. If you name nowhere you need to get to, it asks one question, once.
 - An editable profile (housing, budget, destinations, travel mode, max commute, interests, importance per item). Edits take effect when you click Apply.
 - A refine box: type something like "Getting to Newark matters more than gyms", see the proposed changes as a table with a reason for each, then Apply or Cancel.
 - 8 candidate areas on a map, with the top 3 matches numbered.

@@ -35,15 +35,37 @@ class Draft:
     question: str = ""  # at most one clarifying question; "" when none is needed
 
 
+CLARIFY_QUESTION = "Where do you need to commute to, and how often?"
+
+
 def draft_profile(text: str, **llm_options) -> Draft:
-    """A first profile from a free-text description. `changes` are relative to the starter profile."""
-    fallback = keyword_refine(text, starter_profile())
+    """A first profile from a free-text description. `changes` are relative to the starter profile.
+
+    If the description names nowhere the person needs to get to, the draft comes
+    back with one clarifying question. It is the only question the app ever asks.
+    """
+    fallback = keyword_refine(text, starter_profile(), draft=True)
     if mentions_demographics(text):
         return Draft(fallback)
     result = llm.draft(text, **llm_options)
-    if result is None:
-        return Draft(fallback)
-    proposal, question = result
-    if not proposal.changes and fallback.changes:
-        return Draft(fallback)
+    proposal = fallback
+    question = ""
+    if result is not None:
+        ai, question = result
+        if ai.changes or not fallback.changes:
+            proposal = ai
+        else:
+            question = ""
+    if not proposal.profile.destinations:
+        question = question or CLARIFY_QUESTION  # the required field is missing, AI or not
+    else:
+        question = ""
     return Draft(proposal, question)
+
+
+def answer_question(text: str, answer: str, **llm_options) -> Draft:
+    """Re-draft with the person's answer added. Never asks a second question."""
+    combined = (text.strip() + " " + answer.strip()) if answer.strip() else text
+    draft = draft_profile(combined, **llm_options)
+    draft.question = ""
+    return draft

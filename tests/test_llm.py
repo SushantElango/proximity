@@ -149,7 +149,8 @@ def test_draft_returns_a_profile_and_at_most_one_question(cache):
     assert d.proposal.source == AI and d.proposal.profile.budget == 1600
     assert d.question == "Where do you need to commute to, and how often?"
     fallback = assistant.draft_profile("budget $1,400, I love parks", client=FakeClient("nope"), cache_path=cache)
-    assert fallback.proposal.source == KEYWORD and fallback.question == ""
+    assert fallback.proposal.source == KEYWORD
+    assert fallback.question == assistant.CLARIFY_QUESTION  # no destination given, so the one question is asked
     assert fallback.proposal.profile.budget == 1400
 
 
@@ -165,3 +166,23 @@ def test_shipped_demo_cache_answers_the_demo_inputs_without_a_client(monkeypatch
         assert first is not None and first.changes, "first demo refine is not cached"
         second = llm.refine("Actually I could stretch to $1,800 if it's walkable to music venues", first.profile)
         assert second is not None and second.profile.budget == 1800, "second demo refine is not cached"
+
+
+def test_one_clarifying_question_when_no_destination_is_given_and_never_a_second(cache):
+    none = demo_profile().model_dump() | {"destinations": [], "reasons": [], "question": ""}
+    client = FakeClient(json.dumps(none))
+    first = assistant.draft_profile("I have $1,600 and love live music", client=client, cache_path=cache)
+    assert first.question == assistant.CLARIFY_QUESTION  # asked even though the model did not ask
+    # The answer names a place: the keyword path alone can use it, and no further question is asked.
+    again = assistant.answer_question("I have $1,600 and love live music", "classes on College Ave, under 30 min",
+                                      client=FakeClient("not json"), cache_path=cache)
+    assert again.question == ""
+    assert [d.name for d in again.proposal.profile.destinations] == ["Rutgers College Ave"]
+    # Even if the answer is empty and there is still no destination, the app does not ask again.
+    skipped = assistant.answer_question("I have $1,600 and love live music", "", client=client, cache_path=cache)
+    assert skipped.question == ""
+
+
+def test_no_question_when_the_description_already_names_a_destination(cache):
+    d = assistant.draft_profile("classes on College Ave, budget $1,500", client=FakeClient("not json"), cache_path=cache)
+    assert d.question == "" and d.proposal.profile.destinations
