@@ -5,6 +5,20 @@ Built at HackPrinceton Fall 2026 for students and early-career renters moving ne
 
 > Status: all four layers except live Ticketmaster events. All data in the app is real: rent, area locations, commute times, events and place counts.
 
+## What it looks like
+
+Describe your situation in your own words:
+
+![Landing page with a box to describe your situation](docs/screenshots/1-landing.png)
+
+Your top matches on the map, with why each one matched, its main compromise and what is missing:
+
+![Results page: profile on the left, map in the middle, the top match on the right](docs/screenshots/2-results.png)
+
+Change a priority and the ranking updates, with the reason:
+
+![What changed note explaining why Highland Park moved to first place](docs/screenshots/3-what-changed.png)
+
 ## What works now
 
 - A landing page: describe your situation in your own words, or load Priya's example. If you name nowhere you need to get to, it asks one question, once.
