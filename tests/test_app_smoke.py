@@ -40,7 +40,10 @@ def open_priya() -> AppTest:
 def test_landing_page_loads():
     at = start()
     assert [b.label for b in at.button][:2] == ["Find my neighborhood", "Try Priya's example"]
-    assert any("Hi, good to have you here." in element.value for element in at.html)
+    landing_copy = "\n".join(element.value for element in at.html)
+    assert "Hi! I’m your Friendly Neighborhood Finder. Tell me how you want to live, and I’ll show you where." in landing_copy
+    assert "Find where to live by how you actually live" not in landing_copy
+    assert "Matched on commute, rent, places and events." not in landing_copy
 
 
 def test_priya_example_opens_results():

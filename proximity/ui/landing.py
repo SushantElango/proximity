@@ -136,11 +136,9 @@ def render(accent: str) -> None:
         st.html(
             '<div style="margin-top:8vh;text-align:center">'
             f'<div style="display:flex;justify-content:center">{logo_html(4.2, accent)}</div>'
-            f'<div style="font-size:1.35rem;margin-top:0.8rem;opacity:0.8">{PITCH}</div>'
-            '<div style="font-size:1.05rem;margin-top:0.65rem;opacity:0.75">'
-            "Hi, good to have you here. Describe how you want to live and I'll find where.</div>"
-            '<div style="font-size:0.95rem;margin-top:0.4rem;opacity:0.6">'
-            "Matched on commute, rent, places and events.</div></div>"
+            '<div style="font-size:1.35rem;margin-top:0.8rem;font-weight:600">'
+            "Hi! I’m your Friendly Neighborhood Finder. Tell me how you want to live, and I’ll show you where."
+            "</div></div>"
         )
         with st.form("landing_form", border=False):
             st.text_area(
