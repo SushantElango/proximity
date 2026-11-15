@@ -112,6 +112,8 @@ def render(accent: str) -> None:
             '<div style="font-size:3.4rem;font-weight:800;letter-spacing:-0.04em;line-height:1">'
             f'Proximity<span style="color:{accent}">.</span></div>'
             f'<div style="font-size:1.35rem;margin-top:0.8rem;opacity:0.8">{PITCH}</div>'
+            '<div style="font-size:1.05rem;margin-top:0.65rem;opacity:0.75">'
+            "Hi, good to have you here. Describe how you want to live and I'll find where.</div>"
             '<div style="font-size:0.95rem;margin-top:0.4rem;opacity:0.6">'
             "Neighborhoods near Rutgers–New Brunswick, matched on commute, rent, places and events.</div></div>"
         )
