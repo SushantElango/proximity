@@ -62,6 +62,10 @@ The app reads `data/<file>.csv` first and falls back to `data/placeholder/<file>
 
 "Room in a shared 2-bed" is an estimate: the HUD 2-bedroom rent split in half.
 
+## User research
+
+[Real People Responses.docx](Real%20People%20Responses.docx): what five people we spoke to want from a place to live, plus five public Reddit threads. Names are removed.
+
 ## Limitations
 
 - "In an area" means within 1,500 m of the area's centre point, not the real ZIP boundary. Where neighbouring circles overlap, a place counts only for the area whose centre point is nearest. An area whose centre point is away from its downtown is undercounted.
