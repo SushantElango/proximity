@@ -69,6 +69,23 @@ def test_explore_description_updates_the_profile():
     assert any(i["category"] == "gym" for i in at.session_state["profile"]["interests"])
 
 
+def test_explore_description_asks_the_same_clarifying_question_as_landing():
+    at = open_priya()
+    before = at.session_state["profile"]
+    text = "I want a gym nearby."
+    at.text_area(key="explore_prompt").set_value(text).run()
+    click(at, "Update my matches")
+
+    assert at.session_state["clarify"]["text"] == text
+    assert at.session_state["profile"] == before
+    assert any("Where do you need to commute to, and how often?" in str(el.value) for el in at.markdown)
+
+    at.text_input(key="clarify_answer").set_value("Classes on College Ave").run()
+    click(at, "Continue")
+    assert "clarify" not in at.session_state
+    assert any(d["name"] == "Rutgers College Ave" for d in at.session_state["profile"]["destinations"])
+
+
 def test_explore_shows_not_used_items_under_banner_and_in_match_card():
     at = start()
     text = "I work in Newark, I want grocery stores, and I need a 5 mile radius."
