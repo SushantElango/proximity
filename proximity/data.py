@@ -10,6 +10,7 @@ Rules this module enforces:
 """
 from __future__ import annotations
 
+import math
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -24,6 +25,7 @@ from .models import (
     AreaFacts,
     Event,
     Fact,
+    Place,
 )
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
@@ -286,3 +288,39 @@ def build_events(bundle: DataBundle) -> tuple[list[Event], list[str]]:
         ))
     events.sort(key=lambda e: (e.date == "", e.date, e.title))
     return events, issues
+
+
+def _distance_m(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
+    """Great-circle distance in metres."""
+    r = 6_371_000.0
+    p1, p2 = math.radians(lat1), math.radians(lat2)
+    a = math.sin((p2 - p1) / 2) ** 2 + math.cos(p1) * math.cos(p2) * math.sin(math.radians(lon2 - lon1) / 2) ** 2
+    return 2 * r * math.asin(math.sqrt(a))
+
+
+def build_places(bundle: DataBundle) -> list[Place]:
+    """Every row of places.csv as a Place, with its distance from the area's centre point."""
+    df = bundle.tables["places.csv"]
+    areas = bundle.tables["areas.csv"]
+    centres = {a["zip"]: (_num(a["lat"]), _num(a["lon"])) for _, a in areas.iterrows()}
+    source = _column_value(df, "source") or "OpenStreetMap via Overpass"
+    fetched = _column_value(df, "fetched_on")
+    places: list[Place] = []
+    for _, r in df.iterrows():
+        lat, lon = _num(r["lat"]), _num(r["lon"])
+        clat, clon = centres.get(r["zip"], (None, None))
+        known = None not in (lat, lon, clat, clon)
+        demo = int(r["demo"]) == 1
+        places.append(Place(
+            zip=r["zip"],
+            category=_text(r["category"]),
+            name=_text(r["name"]),
+            osm_id=_text(r["osm_id"]),
+            distance_m=_distance_m(clat, clon, lat, lon) if known else None,
+            detail=_text(r["detail"]) if "detail" in df.columns else "",
+            osm_tag=_text(r["osm_tag"]) if "osm_tag" in df.columns else "",
+            label=LABEL_DEMO if demo else LABEL_DATASET,
+            source="PLACEHOLDER - not real data" if demo else source,
+            as_of=fetched,
+        ))
+    return places

@@ -154,3 +154,27 @@ def demo_profile() -> Profile:
             InterestPref(category="sports", importance="Nice"),
         ],
     )
+
+
+@dataclass(frozen=True)
+class Place:
+    """One OpenStreetMap place near an area. `name` is blank when OSM has none."""
+
+    zip: str
+    category: str  # an interest key
+    name: str
+    osm_id: str  # "node/123", "way/456" ...
+    distance_m: Optional[float] = None  # from the area's centre point
+    detail: str = ""  # e.g. "sport=cricket"
+    osm_tag: str = ""  # e.g. "leisure=pitch"
+    label: str = LABEL_DATASET
+    source: str = ""
+    as_of: str = ""
+
+    @property
+    def url(self) -> str:
+        """Link to the place on openstreetmap.org, or '' for placeholder rows."""
+        kind, _, number = self.osm_id.partition("/")
+        if kind in ("node", "way", "relation") and number.isdigit():
+            return f"https://www.openstreetmap.org/{kind}/{number}"
+        return ""
