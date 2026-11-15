@@ -170,6 +170,27 @@ def test_edison_hot_news_shows_events_only_when_none_are_available():
     assert not any(name in body for name in ("ShopRite", "Sunoco", "Wawa", "99 Ranch Market", "H Mart"))
 
 
+def test_new_brunswick_hot_news_is_one_date_sorted_event_list():
+    at = open_priya()
+    at.session_state["selected_area"] = "New Brunswick"
+    at.run()
+
+    markdown = [str(element.value) for element in at.markdown]
+    body = "\n".join(markdown)
+    assert body.count("Hot News in New Brunswick") == 1
+    assert "Local events" not in body
+
+    titles = (
+        "The Hip Hop Nutcracker",
+        "DD Verni & the Cadillac Band",
+        "Maxim Lando",
+        "The Irish Tenors",
+    )
+    event_lines = [value for value in markdown if any(title in value for title in titles)]
+    assert [next(title for title in titles if title in line) for line in event_lines] == list(titles)
+    assert all("Manually collected" in line for line in event_lines)
+
+
 def test_empty_text_does_not_crash():
     click(start(), "Find my neighborhood")
 

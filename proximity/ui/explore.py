@@ -529,7 +529,7 @@ def _md(text: str) -> str:
 
 def _event_line(e: Event) -> str:
     venue = f" · {e.venue}" if e.venue else ""
-    return f"[{_md(e.title)}]({e.url})  \n:gray[{_event_date(e.date)}{venue}]"
+    return f"{badge(e.label)} [{_md(e.title)}]({e.url})  \n:gray[{_event_date(e.date)}{venue}]"
 
 
 def _show(lines: list[str], more_label: str) -> None:
@@ -545,21 +545,17 @@ def _show(lines: list[str], more_label: str) -> None:
 def _hot_news(r: AreaResult, sections: list[Section]) -> None:
     """Upcoming curated events for this area, each linked to its source."""
     st.markdown(f"**:material/local_fire_department: Hot News in {r.area}**")
-    event_sections = [section for section in sections if section.events]
-    if not event_sections:
+    unique_events: dict[tuple[str, str], Event] = {}
+    for section in sections:
+        for event in section.events:
+            if event.date:
+                unique_events.setdefault((event.title.strip().casefold(), event.date), event)
+    events = sorted(unique_events.values(), key=lambda event: (event.date, event.title.casefold()))
+    if not events:
         st.caption("No upcoming events collected for this area yet.")
         return
 
-    for i, section in enumerate(event_sections):
-        if i:
-            st.divider()
-        st.markdown(f"**{section.label}**")
-        _show([_event_line(event) for event in section.events], f"Show all {len(section.events)} events")
-        collected = sorted({event.collected_on for event in section.events if event.collected_on})
-        st.caption(
-            f"{badge(section.events[0].label)} events, each linked to its source page"
-            + (f" · collected {collected[-1]}" if collected else "")
-        )
+    _show([_event_line(event) for event in events], f"Show all {len(events)} events")
 
 
 # --------------------------------------------------------------------------
