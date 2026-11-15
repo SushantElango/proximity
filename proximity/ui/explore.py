@@ -1,6 +1,8 @@
 """Explore view, three columns: Prompt Zone | Map | selected match + Hot News."""
 from __future__ import annotations
 
+import base64
+import json
 from datetime import date, datetime
 from html import escape
 
@@ -365,6 +367,24 @@ _PLACE_COLORS: dict[str, list[int]] = {
 }
 PLACES_ZOOM = 13.2  # close enough that the 1.5 km circle around an area fills the map
 
+# Satellite background: USGS National Map imagery (US government, public domain, no key).
+# The service metadata and a New Brunswick-area tile were verified against the live endpoint.
+SATELLITE_TILES = "https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/{z}/{y}/{x}"
+SATELLITE_CREDIT = "Satellite imagery: USGS The National Map"
+
+
+def _satellite_style() -> str:
+    """Map style URL with one raster layer from USGS imagery tiles."""
+    style = {
+        "version": 8,
+        "sources": {"satellite": {
+            "type": "raster", "tiles": [SATELLITE_TILES], "tileSize": 256, "maxzoom": 16,
+            "attribution": SATELLITE_CREDIT,
+        }},
+        "layers": [{"id": "satellite", "type": "raster", "source": "satellite"}],
+    }
+    return "data:application/json;base64," + base64.b64encode(json.dumps(style).encode()).decode()
+
 
 def counted_places(places: list[Place], zip_code: str, categories: list[str]) -> list[Place]:
     """The places behind an area's counts for these interests: the same rows the card counts."""
@@ -394,7 +414,7 @@ def _places_legend(dots: list[Place], area: str) -> str:
 
 def _map(
     results: list[AreaResult], facts: dict[str, AreaFacts], selected: str | None, height: int = MAP_HEIGHT,
-    dots: list[Place] | None = None,
+    dots: list[Place] | None = None, satellite: bool = False,
 ) -> str | None:
     """Draw all areas. Returns the area the user clicked, if any.
 
@@ -480,7 +500,8 @@ def _map(
         ))
     deck = pdk.Deck(
         # A basemap with no place names, so the only labels are ours.
-        map_style=pdk.map_styles.CARTO_LIGHT_NO_LABELS,
+        map_style=_satellite_style() if satellite else pdk.map_styles.CARTO_LIGHT_NO_LABELS,
+        map_provider="mapbox" if satellite else "carto",
         initial_view_state=pdk.ViewState(latitude=lat0, longitude=lon0, zoom=zoom),
         layers=layers,
         tooltip={
@@ -716,19 +737,23 @@ def render(
 
         # Shrink the map a little when the note is showing, so the page still fits one screen.
         dots: list[Place] = []
+        places_switch, satellite_switch = st.columns([2.2, 1])
         if selected is not None:
             countable = counted_places(places, selected.zip, [i.category for i in profile.interests])
-            if countable and st.toggle(
+            if countable and places_switch.toggle(
                 f"Show the places counted in {selected.area}", key="show_places",
                 help="Zooms in and marks every place behind this area's counts.",
             ):
                 dots = countable
+        satellite = satellite_switch.toggle("Satellite view", key="satellite", help="Needs an internet connection.")
         clicked = _map(
             results, facts, st.session_state["selected_area"],
-            height=MAP_HEIGHT - NOTE_SHRINK if (notes or proposing) else MAP_HEIGHT, dots=dots,
+            height=MAP_HEIGHT - NOTE_SHRINK if (notes or proposing) else MAP_HEIGHT, dots=dots, satellite=satellite,
         )
         if dots:
             st.html(_places_legend(dots, selected.area))
+        if satellite:
+            st.caption(f"{SATELLITE_CREDIT} · Live · needs an internet connection.")
         # The map remembers its selection across reruns, so act only on a new click.
         if clicked != st.session_state.get("last_map_click"):
             st.session_state["last_map_click"] = clicked

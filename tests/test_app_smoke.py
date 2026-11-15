@@ -309,3 +309,25 @@ def test_a_one_bedroom_at_1600_is_not_shown_at_the_shared_room_rent():
     at.text_area(key="landing_text").set_value("Classes on College Ave, no car, $1,600/month for a 1-bedroom.")
     click(at, "Find my neighborhood")
     assert at.selectbox(key="bedroom").value == "1br"
+
+
+def test_satellite_switch_is_off_by_default_and_safe_to_turn_on():
+    at = open_priya()
+    assert at.toggle(key="satellite").value is False
+    at.toggle(key="satellite").set_value(True).run()
+    assert not at.exception, at.exception
+    assert any("USGS" in c.value for c in at.caption)
+
+
+def test_satellite_style_uses_usgs_raster_tiles():
+    import base64
+    import json
+
+    from proximity.ui.explore import SATELLITE_TILES, _satellite_style
+
+    style_url = _satellite_style()
+    encoded_style = style_url.removeprefix("data:application/json;base64,")
+    style = json.loads(base64.b64decode(encoded_style))
+    assert style["version"] == 8
+    assert style["sources"]["satellite"]["tiles"] == [SATELLITE_TILES]
+    assert style["layers"] == [{"id": "satellite", "type": "raster", "source": "satellite"}]
