@@ -5,7 +5,7 @@ import streamlit as st
 
 from ..assistant import answer_question, draft_profile
 from ..models import demo_profile
-from ..refine import AI, DEMOGRAPHIC_REPLY, NOT_UNDERSTOOD, starter_profile
+from ..refine import DEMOGRAPHIC_REPLY, starter_profile
 from . import session
 
 PITCH = "Find where to live by how you actually live"
@@ -15,8 +15,7 @@ EXAMPLE = (
     "until 10:30pm on Tuesdays and Thursdays, and I don't have a car. I can pay $1,600 a month, and I love "
     "live music, plus a gym and somewhere to play sports."
 )
-AI_DRAFT_LABEL = "AI draft — check and edit before results."
-KEYWORD_DRAFT_LABEL = "Draft from your words — check and edit before results."
+RESULTS_DRAFT_LABEL = "Results from your description — edit anything on the left."
 
 
 def _reset_results() -> None:
@@ -36,12 +35,12 @@ def _open_results(proposal) -> None:
     _reset_results()
     st.session_state["not_used"] = proposal.not_used
     st.session_state.pop("clarify", None)
+    label = RESULTS_DRAFT_LABEL
+    if proposal.message:
+        st.session_state["landing_message"] = proposal.message
     if not proposal.changes:
-        session.set_profile(starter_profile(), NOT_UNDERSTOOD)
+        session.set_profile(starter_profile(), label)
     else:
-        label = AI_DRAFT_LABEL if proposal.source == AI else KEYWORD_DRAFT_LABEL
-        if proposal.message:
-            label = f"{proposal.message} {label}"
         session.set_profile(proposal.profile, label)
     session.go(session.EXPLORE)
 

@@ -57,6 +57,8 @@ def test_free_text_does_not_crash():
     click(at, "Find my neighborhood")
     assert at.session_state["last_prompt"] == text
     assert at.text_area(key="explore_prompt").value == text
+    assert any("Results from your description — edit anything on the left." in el.value for el in at.info)
+    assert not any("check and edit before results" in el.value for el in at.info)
 
 
 def test_explore_description_updates_the_profile():
