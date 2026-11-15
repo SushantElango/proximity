@@ -63,8 +63,8 @@ NOTE_SHRINK = 150  # the map gives up this much height while "What changed" is s
 
 # Shown as a reply, only for the known demo persona: the app never invents a name for anyone else.
 PERSONA_GREETING = (
-    "**Hi Priya!** Here's what I understood: you're a Rutgers junior sharing a 2-bed, with classes on "
-    "College Ave and work in Newark until 10:30pm Tue/Thu. No car, and $1,600 a month. "
+    "**Hi Priya!** Here's what I understood: you're a Rutgers junior, happy to share a 2-bed with a roommate. "
+    "You have classes on College Ave and work in Newark until 10:30pm Tue/Thu, with no car and $1,600 a month. "
     "Your best matches are on the right."
 )
 PANEL_HEIGHT = 640  # side panels scroll inside this height so the page fits one screen
