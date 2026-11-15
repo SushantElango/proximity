@@ -263,3 +263,31 @@ def test_priya_gets_a_greeting_but_nobody_else_is_named():
     at.text_area(key="landing_text").set_value("Classes on College Ave, no car, $1,500 a month, I like cafes.")
     click(at, "Find my neighborhood")
     assert not any("Priya" in str(m.value) for m in at.markdown)
+
+
+def test_place_dots_match_the_counts_on_the_card():
+    """Every dot is a real places.csv row, and there are exactly as many as the card counts."""
+    from proximity.data import build_area_facts, build_places, load_all
+    from proximity.models import demo_profile
+    from proximity.ui.explore import counted_places
+
+    bundle = load_all()
+    places = build_places(bundle)
+    cats = [i.category for i in demo_profile().interests]
+    for area in build_area_facts(bundle):
+        dots = counted_places(places, area.zip, cats)
+        for cat in cats:
+            if cat in area.places:
+                assert sum(p.category == cat for p in dots) == int(area.places[cat].value), (area.area, cat)
+        assert all(p.lat is not None and p.lon is not None for p in dots)
+
+
+def test_show_places_toggle_is_off_by_default_and_safe_to_turn_on():
+    at = open_priya()
+    toggle = at.toggle(key="show_places")
+    assert toggle.value is False
+    toggle.set_value(True).run()
+    assert not at.exception, at.exception
+    assert any("Places counted in Metuchen" in str(h.value) for h in at.html)
+    at.toggle(key="show_places").set_value(False).run()
+    assert not at.exception, at.exception

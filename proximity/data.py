@@ -353,5 +353,7 @@ def build_places(bundle: DataBundle) -> list[Place]:
             label=LABEL_DEMO if demo else LABEL_DATASET,
             source="PLACEHOLDER - not real data" if demo else source,
             as_of=fetched,
+            lat=lat,
+            lon=lon,
         ))
     return places

@@ -329,8 +329,55 @@ def _pin_tip(r: AreaResult) -> tuple[str, str]:
     return "Not eligible", "; ".join(r.reasons)
 
 
-def _map(results: list[AreaResult], facts: dict[str, AreaFacts], selected: str | None, height: int = MAP_HEIGHT) -> str | None:
-    """Draw all areas. Returns the area the user clicked, if any."""
+# One colour per interest for the place dots. None is orange or slate blue, which the area pins use.
+_PLACE_COLORS: dict[str, list[int]] = {
+    "live_music": [130, 60, 190],
+    "gym": [0, 140, 130],
+    "sports": [60, 150, 60],
+    "grocery": [200, 150, 0],
+    "park": [20, 110, 60],
+    "cafe": [140, 90, 50],
+    "library": [40, 120, 200],
+    "restaurant": [200, 60, 110],
+    "place_of_worship": [90, 90, 90],
+}
+PLACES_ZOOM = 13.2  # close enough that the 1.5 km circle around an area fills the map
+
+
+def counted_places(places: list[Place], zip_code: str, categories: list[str]) -> list[Place]:
+    """The places behind an area's counts for these interests: the same rows the card counts."""
+    return [p for p in places if p.zip == zip_code and p.category in categories]
+
+
+def _places_legend(dots: list[Place], area: str) -> str:
+    """HTML legend: a coloured dot, the interest and its count, then the data label."""
+    counts: dict[str, int] = {}
+    for p in dots:
+        counts[p.category] = counts.get(p.category, 0) + 1
+    parts = []
+    for cat, n in counts.items():
+        r, g, b = _PLACE_COLORS.get(cat, [90, 90, 90])
+        parts.append(
+            f'<span style="white-space:nowrap"><span style="color:rgb({r},{g},{b});font-size:1.1em">&#9679;</span> '
+            f"{escape(INTERESTS.get(cat, cat))} ({n})</span>"
+        )
+    first = dots[0]
+    source = " · ".join(x for x in (first.source, f"as of {first.as_of}" if first.as_of else "") if x)
+    return (
+        '<div style="font-size:0.85rem;opacity:0.85">'
+        f"Places counted in {escape(area)}: " + " &nbsp; ".join(parts)
+        + f' &nbsp;·&nbsp; {escape(first.label)} · {escape(source)}. Hover a dot for its name.</div>'
+    )
+
+
+def _map(
+    results: list[AreaResult], facts: dict[str, AreaFacts], selected: str | None, height: int = MAP_HEIGHT,
+    dots: list[Place] | None = None,
+) -> str | None:
+    """Draw all areas. Returns the area the user clicked, if any.
+
+    With `dots` (the selected area's counted places) the map zooms to that area and shows each place.
+    """
     top = {r.area for r in top_matches(results)}
     located = [r for r in results if facts[r.area].lat is not None and facts[r.area].lon is not None]
     if not located:
@@ -340,6 +387,9 @@ def _map(results: list[AreaResult], facts: dict[str, AreaFacts], selected: str |
     # Fit to a deliberately small map so every pin is in view on a laptop, and
     # place the name labels where no pin or other label is in the way.
     lat0, lon0, zoom = fit_view([(facts[r.area].lat, facts[r.area].lon) for r in located], 600, MAP_HEIGHT - NOTE_SHRINK)
+    dots = [p for p in (dots or []) if p.lat is not None and p.lon is not None]
+    if dots and selected in facts and facts[selected].lat is not None:
+        lat0, lon0, zoom = facts[selected].lat, facts[selected].lon, PLACES_ZOOM
     offsets = place_labels([(r.area, facts[r.area].lat, facts[r.area].lon) for r in located], zoom)
 
     rows = []
@@ -360,7 +410,8 @@ def _map(results: list[AreaResult], facts: dict[str, AreaFacts], selected: str |
             "number_size": 18 if r.area in top else 14,
             "tip1": _pin_tip(r)[0],
             "tip2": _pin_tip(r)[1],
-            "label": r.area if r.area in offsets else "",
+            # While the place dots are on, the selected area's name would sit under them; it is named in the legend.
+            "label": r.area if r.area in offsets and not (dots and r.area == selected) else "",
             "offset": list(offsets.get(r.area, (0, 0))),
             "line": [20, 20, 20] if r.area == selected else [255, 255, 255],
             "line_width": 4 if r.area == selected else 2,
@@ -387,6 +438,24 @@ def _map(results: list[AreaResult], facts: dict[str, AreaFacts], selected: str |
             get_text_anchor="'middle'", get_alignment_baseline="'center'", parameters={"depthTest": False},
         ),
     ]
+    if dots:
+        place_rows = [
+            {
+                "lat": p.lat, "lon": p.lon, "color": _PLACE_COLORS.get(p.category, [90, 90, 90]),
+                # Same keys as the area pins, so one tooltip serves both layers.
+                "area": p.name or f"Unnamed ({INTERESTS.get(p.category, p.category).lower()})",
+                "tip1": INTERESTS.get(p.category, p.category),
+                "tip2": f"{p.label} · {p.source}",
+            }
+            for p in dots
+        ]
+        layers.append(pdk.Layer(
+            "ScatterplotLayer", id="places", data=pd.DataFrame(place_rows), get_position="[lon, lat]",
+            get_fill_color="color", get_radius=5, radius_units=pdk.types.String("pixels"),
+            stroked=True, get_line_color=[255, 255, 255], get_line_width=1,
+            line_width_units=pdk.types.String("pixels"),
+            pickable=True, parameters={"depthTest": False},
+        ))
     deck = pdk.Deck(
         # A basemap with no place names, so the only labels are ours.
         map_style=pdk.map_styles.CARTO_LIGHT_NO_LABELS,
@@ -618,7 +687,20 @@ def render(
             st.error("\n\n".join(ex.no_eligible_message(info)), icon=":material/block:")
 
         # Shrink the map a little when the note is showing, so the page still fits one screen.
-        clicked = _map(results, facts, st.session_state["selected_area"], height=MAP_HEIGHT - NOTE_SHRINK if (notes or proposing) else MAP_HEIGHT)
+        dots: list[Place] = []
+        if selected is not None:
+            countable = counted_places(places, selected.zip, [i.category for i in profile.interests])
+            if countable and st.toggle(
+                f"Show the places counted in {selected.area}", key="show_places",
+                help="Zooms in and marks every place behind this area's counts.",
+            ):
+                dots = countable
+        clicked = _map(
+            results, facts, st.session_state["selected_area"],
+            height=MAP_HEIGHT - NOTE_SHRINK if (notes or proposing) else MAP_HEIGHT, dots=dots,
+        )
+        if dots:
+            st.html(_places_legend(dots, selected.area))
         # The map remembers its selection across reruns, so act only on a new click.
         if clicked != st.session_state.get("last_map_click"):
             st.session_state["last_map_click"] = clicked

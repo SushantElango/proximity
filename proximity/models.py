@@ -170,6 +170,8 @@ class Place:
     label: str = LABEL_DATASET
     source: str = ""
     as_of: str = ""
+    lat: Optional[float] = None  # the place's own position, for the map
+    lon: Optional[float] = None
 
     @property
     def url(self) -> str:
