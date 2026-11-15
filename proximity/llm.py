@@ -384,6 +384,8 @@ def _with_reasons(old: Profile, new: Profile, out: LLMOut):
 # The first sentence of each pair is the opener; the second follows it. The "live music" opener
 # changes who is #1 on the current data; the "gyms" one does not.
 DEMO_OPENERS = ["Getting to Newark matters more than live music", "Getting to Newark matters more than gyms"]
+# The demo line that changes who is #1. Not cached: with DEMO_MODE=1 the keyword parser handles it.
+DEMO_RERANK = "I need a grocery store nearby"
 DEMO_FOLLOW_UP = "Actually I could stretch to $1,800 if it's walkable to music venues"
 DEMO_REFINES = [
     "Getting to Newark matters more than gyms",

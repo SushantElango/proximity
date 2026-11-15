@@ -159,11 +159,12 @@ def build_area_facts(bundle: DataBundle) -> list[AreaFacts]:
     t = bundle.tables
     areas: list[AreaFacts] = []
 
-    places = t["places.csv"]
     # A category we have rows for was checked everywhere we have place data,
     # so an area with none of it has a real count of 0. Anything else is unknown.
-    checked_categories = sorted(places["category"].dropna().unique())
-    zips_with_places = set(places["zip"].unique())
+    # Both are read before de-duplicating, so an area that keeps no rows still counts as checked.
+    checked_categories = sorted(t["places.csv"]["category"].dropna().unique())
+    zips_with_places = set(t["places.csv"]["zip"].unique())
+    places = nearest_area_only(t["places.csv"], t["areas.csv"])
 
     for _, a in t["areas.csv"].iterrows():
         z = a["zip"]
@@ -298,10 +299,40 @@ def _distance_m(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
     return 2 * r * math.asin(math.sqrt(a))
 
 
+def nearest_area_only(places: pd.DataFrame, areas: pd.DataFrame) -> pd.DataFrame:
+    """Keep each place once, under the area whose centre point is nearest.
+
+    The search circles of neighbouring areas overlap, so the same OSM object can be
+    fetched for two areas. Rows with no osm_id or no coordinates cannot be matched
+    up and are kept as they are. A tie goes to the lower ZIP, so the result is stable.
+    """
+    if places.empty:
+        return places
+    centres = {a["zip"]: (_num(a["lat"]), _num(a["lon"])) for _, a in areas.iterrows()}
+    best: dict[tuple[str, str], tuple[float, str]] = {}  # (category, osm_id) -> (distance, zip)
+    distances: dict = {}
+    for idx, r in places.iterrows():
+        osm_id = _text(r["osm_id"])
+        lat, lon = _num(r["lat"]), _num(r["lon"])
+        clat, clon = centres.get(r["zip"], (None, None))
+        if not osm_id or None in (lat, lon, clat, clon):
+            continue
+        d = (_distance_m(clat, clon, lat, lon), r["zip"])
+        distances[idx] = d
+        key = (_text(r["category"]), osm_id)
+        if key not in best or d < best[key]:
+            best[key] = d
+    keep = [
+        idx not in distances or distances[idx] == best[(_text(r["category"]), _text(r["osm_id"]))]
+        for idx, r in places.iterrows()
+    ]
+    return places[keep]
+
+
 def build_places(bundle: DataBundle) -> list[Place]:
     """Every row of places.csv as a Place, with its distance from the area's centre point."""
-    df = bundle.tables["places.csv"]
     areas = bundle.tables["areas.csv"]
+    df = nearest_area_only(bundle.tables["places.csv"], areas)
     centres = {a["zip"]: (_num(a["lat"]), _num(a["lon"])) for _, a in areas.iterrows()}
     source = _column_value(df, "source") or "OpenStreetMap via Overpass"
     fetched = _column_value(df, "fetched_on")

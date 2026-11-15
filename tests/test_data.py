@@ -117,3 +117,25 @@ def test_not_found_is_missing_and_long_transit_is_flagged_not_used(tmp_path):
     assert alpha.commute[("Newark Penn Station", "transit")].value == 120
     # Each row keeps its own source.
     assert alpha.commute[("Rutgers Busch", "drive")].source == "TravelTime API"
+
+
+def test_a_place_fetched_for_two_areas_counts_only_for_the_nearest(tmp_path):
+    from proximity.data import build_places
+
+    setup(tmp_path)
+    write(
+        tmp_path, "places.csv",
+        "zip,category,name,lat,lon,osm_id\n"
+        "08901,gym,Shared Gym,40.51,-74.41,n1\n"  # close to Alpha
+        "08904,gym,Shared Gym,40.51,-74.41,n1\n"  # same place, fetched again for Beta
+        "08904,gym,Beta Gym,40.6,-74.5,n2\n"
+        "08904,cafe,Only Cafe,40.52,-74.42,n3\n"  # only ever fetched for Beta: stays with Beta
+        "08901,gym,No Coordinates,,,n4\n",
+    )
+    bundle = load_all(tmp_path)
+    alpha, beta = build_area_facts(bundle)
+    assert alpha.places["gym"].value == 2 and beta.places["gym"].value == 1
+    assert alpha.places["cafe"].value == 0 and beta.places["cafe"].value == 1
+    assert sorted((p.zip, p.osm_id) for p in build_places(bundle)) == [
+        ("08901", "n1"), ("08901", "n4"), ("08904", "n2"), ("08904", "n3"),
+    ]

@@ -188,15 +188,21 @@ def test_no_question_when_the_description_already_names_a_destination(cache):
     assert d.question == "" and d.proposal.profile.destinations
 
 
-def test_the_cached_opener_that_changes_number_one_works_offline(monkeypatch):
-    """'Getting to Newark matters more than live music' is the demo line that re-sorts the ranking."""
+def test_the_cached_newark_opener_still_works_offline(monkeypatch):
+    monkeypatch.setattr(llm, "get_client", lambda: None)
+    proposal = llm.refine(llm.DEMO_OPENERS[0], demo_profile())
+    assert proposal is not None and proposal.source == AI, "the Newark demo sentence is not cached"
+    assert all(c.reason for c in proposal.changes)
+
+
+def test_the_demo_rerank_line_changes_number_one_offline(monkeypatch):
+    """The demo line that re-sorts the ranking. It runs on the keyword parser, so it needs no network."""
     from proximity.data import build_area_facts, load_all
     from proximity.scoring import score_areas
 
-    monkeypatch.setattr(llm, "get_client", lambda: None)
-    proposal = llm.refine(llm.DEMO_OPENERS[0], demo_profile())
-    assert proposal is not None and proposal.source == AI, "the re-sorting demo sentence is not cached"
-    assert all(c.reason for c in proposal.changes)
+    monkeypatch.setenv("DEMO_MODE", "1")
+    proposal = assistant.propose_refine(llm.DEMO_RERANK, demo_profile())
+    assert proposal.changes, "the demo re-rank sentence was not understood"
     areas = build_area_facts(load_all())
     before = next(r.area for r in score_areas(areas, demo_profile()) if r.rank == 1)
     after = next(r.area for r in score_areas(areas, proposal.profile) if r.rank == 1)
