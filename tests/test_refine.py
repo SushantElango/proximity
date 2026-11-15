@@ -153,6 +153,19 @@ def test_first_description_adds_what_is_mentioned_but_an_edit_does_not():
     assert [(x.name, x.mode) for x in drive.profile.destinations] == [("Rutgers Busch", "drive")]
 
 
+@pytest.mark.parametrize("phrase", ["walkable", "walking distance", "walk to"])
+def test_walkable_interest_mentions_are_important_in_a_draft(phrase):
+    p = keyword_refine(f"pubs and groceries at {phrase}", starter_profile(), draft=True)
+    assert interest(p.profile, "live_music").importance == "Important"
+    assert interest(p.profile, "grocery").importance == "Important"
+
+
+@pytest.mark.parametrize("term", ["pub", "pubs", "entertainment", "brewery", "breweries"])
+def test_entertainment_vocabulary_maps_to_live_music(term):
+    p = keyword_refine(f"I like {term}", starter_profile(), draft=True)
+    assert interest(p.profile, "live_music") is not None
+
+
 @pytest.mark.parametrize(
     "text", ["make transit more important", "Make transit more important.", "transit matters more", "make my commute more important"]
 )

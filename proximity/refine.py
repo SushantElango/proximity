@@ -43,7 +43,10 @@ DEST_WORDS: dict[str, list[str]] = {
 }
 INTEREST_WORDS: dict[str, list[str]] = {
     "gym": ["gym", "gyms", "fitness", "workout", "working out"],
-    "live_music": ["live music", "music", "jazz", "bars", "bar", "venues", "nightlife", "concerts"],
+    "live_music": [
+        "live music", "music", "jazz", "bars", "bar", "pub", "pubs", "entertainment",
+        "brewery", "breweries", "venues", "nightlife", "concerts",
+    ],
     "sports": ["sports", "sport", "cricket", "courts", "pitches"],
     "grocery": ["grocery", "groceries", "supermarket", "supermarkets"],
     "park": ["park", "parks", "green space"],
@@ -342,6 +345,7 @@ def keyword_refine(text: str, profile: Profile, draft: bool = False) -> Proposal
     # 6. first description: include whatever places and interests were mentioned
     if draft:
         unwanted = _find(INTEREST_WORDS, dislike.group(2)) if (not compared and dislike) else []
+        walkable = re.search(r"\bwalkable\b|\bwalking distance\b|\bwalk to\b", low) is not None
         for name in _find(DEST_WORDS, low):
             if ed._dest(name) is None:
                 ed.p.destinations.append(DestinationPref(name=name, mode=ed._default_mode(), importance="Important"))
@@ -353,7 +357,8 @@ def keyword_refine(text: str, profile: Profile, draft: bool = False) -> Proposal
                 d.mode = "drive"
         for cat in _find(INTEREST_WORDS, low):
             if cat not in unwanted and ed._interest(cat) is None:
-                ed.set_interest(cat, "Nice", "You mentioned this")
+                importance = "Important" if walkable else "Nice"
+                ed.set_interest(cat, importance, "You mentioned this")
 
     changes = diff_profiles(profile, ed.p, ed.reasons)
     message = ""
