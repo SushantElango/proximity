@@ -9,6 +9,9 @@ import pydeck as pdk
 import streamlit as st
 
 from .. import explain as ex
+from ..assistant import propose_refine
+from ..refine import AI
+from . import session
 from ..hotnews import Section, distance_text, hot_news, place_detail, unnamed_line
 from ..maplayout import fit_view, place_labels
 from ..models import (
@@ -99,48 +102,129 @@ def _rank_title(rank: int | None, name: str, size: str = "1.15rem") -> None:
 # Left: Prompt Zone
 # --------------------------------------------------------------------------
 
-def _importance(label: str, default: str, key: str, visible: bool = True) -> str:
+def _importance(label: str, key: str, visible: bool = True) -> str:
     value = st.segmented_control(
-        label, IMPORTANCE_LEVELS, default=default, required=True, key=key,
+        label, IMPORTANCE_LEVELS, required=True, key=key,
         label_visibility="visible" if visible else "collapsed",
     )
-    return value or default
+    return value or "Important"
 
 
-def profile_form(available_interests: list[str]) -> Profile:
-    base = demo_profile()
-    base_dest = {d.name: d for d in base.destinations}
-    base_int = {i.category: i for i in base.interests}
+def _apply_pending(data: dict) -> None:
+    """Apply button: the edited profile becomes the one the ranking uses."""
+    st.session_state["profile"] = data
+    st.session_state["draft_label"] = ""
+    st.session_state.pop("proposal", None)
 
-    st.markdown("### Your profile")
-    persona = st.empty()  # filled in below, once we know whether the profile is still Priya's
+
+def _undo_pending() -> None:
+    session.load_widgets(session.applied_profile())
+
+
+def _start_over() -> None:
+    session.go(session.LANDING)
+
+
+def _suggest(applied: Profile) -> None:
+    """Refine box: sentence -> proposed changes, kept in session until applied or cancelled."""
+    text = (st.session_state.get("refine_text") or "").strip()
+    if not text:
+        return
+    proposal = propose_refine(text, applied)
+    st.session_state["proposal"] = {
+        "text": text,
+        "base": applied.model_dump(),
+        "profile": proposal.profile.model_dump(),
+        "changes": [c.__dict__ for c in proposal.changes],
+        "source": proposal.source,
+        "message": proposal.message,
+    }
+
+
+def _apply_proposal() -> None:
+    data = st.session_state.pop("proposal", None)
+    if data:
+        session.set_profile(Profile(**data["profile"]))
+        st.session_state["refine_text"] = ""
+
+
+def _cancel_proposal() -> None:
+    st.session_state.pop("proposal", None)
+
+
+def _cell(text: str) -> str:
+    return str(text).replace("|", "/").replace("\n", " ")
+
+
+def _proposal_box(applied: Profile) -> bool:
+    """The diff for the last refine request, with Apply / Cancel. Returns True when shown."""
+    data = st.session_state.get("proposal")
+    if not data:
+        return False
+    if data["base"] != applied.model_dump():  # the profile moved on; the diff no longer applies
+        st.session_state.pop("proposal", None)
+        return False
+    with st.container(border=True):
+        colour = "violet" if data["source"] == AI else "gray"
+        st.markdown(f"**Proposed changes** for “{_cell(data['text'])}” :{colour}-badge[{data['source']}]")
+        if data["message"]:
+            st.warning(data["message"])
+        if data["changes"]:
+            rows = ["| Field | Old → New | Reason |", "|---|---|---|"]
+            for c in data["changes"]:
+                rows.append(f"| {_cell(c['field'])} | {_cell(c['old'])} → **{_cell(c['new'])}** | {_cell(c['reason']) or '—'} |")
+            st.markdown("\n".join(rows))
+            a, b, _ = st.columns([1, 1, 3])
+            a.button("Apply", type="primary", use_container_width=True, key="proposal_apply", on_click=_apply_proposal)
+            b.button("Cancel", use_container_width=True, key="proposal_cancel", on_click=_cancel_proposal)
+        else:
+            st.button("Dismiss", key="proposal_cancel", on_click=_cancel_proposal)
+    return True
+
+
+def profile_form(available_interests: list[str], applied: Profile) -> None:
+    """The editable profile. Edits are pending until the user clicks Apply."""
+    defaults = session.widget_values(applied)
+
+    def ensure(key: str) -> None:
+        # Streamlit forgets a widget's value while it is not on screen; restore it from the applied profile.
+        if key not in st.session_state:
+            st.session_state[key] = defaults[key]
+
+    top, restart = st.columns([3, 1.4], vertical_alignment="bottom")
+    top.markdown("### Your profile")
+    restart.button("Start over", key="start_over", on_click=_start_over, use_container_width=True)
+    head = st.container()  # filled in below, once the pending profile is known
+
+    with st.form("refine_form", border=True):
+        st.text_input(
+            "Refine in your own words", key="refine_text",
+            placeholder="Getting to Newark matters more than gyms",
+        )
+        if st.form_submit_button("Suggest changes", use_container_width=True):
+            _suggest(applied)
 
     with st.expander("Rent", expanded=True, icon=":material/payments:"):
-        bedroom = st.selectbox(
-            "Housing", list(BEDROOM_LABELS), index=list(BEDROOM_LABELS).index(base.bedroom),
-            format_func=BEDROOM_LABELS.get, key="bedroom",
-        )
-        budget = st.number_input("Budget ($/mo)", min_value=500, max_value=6000, value=base.budget, step=50, key="budget")
-        rent_importance = _importance("Room under budget matters", base.rent_importance, "rent_importance")
+        ensure("bedroom")
+        bedroom = st.selectbox("Housing", list(BEDROOM_LABELS), format_func=BEDROOM_LABELS.get, key="bedroom")
+        ensure("budget")
+        budget = st.number_input("Budget ($/mo)", min_value=500, max_value=6000, step=50, key="budget")
+        ensure("rent_importance")
+        rent_importance = _importance("Room under budget matters", "rent_importance")
         st.caption("Your budget is always a hard limit.")
 
     destinations: list[DestinationPref] = []
     with st.expander("Where you need to get to", expanded=False, icon=":material/commute:"):
         for name in DESTINATIONS:
-            d = base_dest.get(name)
-            if st.checkbox(name, value=d is not None, key=f"dest_on_{name}"):
+            ensure(f"dest_on_{name}")
+            if st.checkbox(name, key=f"dest_on_{name}"):
                 a, b = st.columns(2)
-                mode = a.selectbox(
-                    "Travel by", ["transit", "drive"], index=0 if (d is None or d.mode == "transit") else 1,
-                    key=f"dest_mode_{name}", format_func=str.capitalize,
-                )
-                max_minutes = b.number_input(
-                    "Max minutes", min_value=5, max_value=180, value=d.max_minutes if d else 45, step=5,
-                    key=f"dest_max_{name}",
-                )
-                importance = _importance(
-                    f"Importance of {name}", d.importance if d else "Important", f"dest_imp_{name}", visible=False,
-                )
+                ensure(f"dest_mode_{name}")
+                mode = a.selectbox("Travel by", ["transit", "drive"], key=f"dest_mode_{name}", format_func=str.capitalize)
+                ensure(f"dest_max_{name}")
+                max_minutes = b.number_input("Max minutes", min_value=5, max_value=180, step=5, key=f"dest_max_{name}")
+                ensure(f"dest_imp_{name}")
+                importance = _importance(f"Importance of {name}", f"dest_imp_{name}", visible=False)
                 destinations.append(
                     DestinationPref(name=name, mode=mode, max_minutes=int(max_minutes), importance=importance)
                 )
@@ -148,26 +232,35 @@ def profile_form(available_interests: list[str]) -> Profile:
     interests: list[InterestPref] = []
     with st.expander("What you want nearby", expanded=False, icon=":material/local_activity:"):
         options = [k for k in INTERESTS if k != "place_of_worship"] + ["place_of_worship"]
+        ensure("interests")
         chosen = st.multiselect(
-            "Interests", options, default=[i.category for i in base.interests],
-            format_func=INTERESTS.get, key="interests", label_visibility="collapsed",
+            "Interests", options, format_func=INTERESTS.get, key="interests", label_visibility="collapsed",
         )
         for cat in chosen:
-            default = base_int[cat].importance if cat in base_int else "Nice"
-            importance = _importance(INTERESTS[cat], default, f"int_imp_{cat}")
+            ensure(f"int_imp_{cat}")
+            importance = _importance(INTERESTS[cat], f"int_imp_{cat}")
             if cat not in available_interests:
                 st.caption("Not checked / no data for this interest yet. It will not count as a match.")
             interests.append(InterestPref(category=cat, importance=importance))
 
-    profile = Profile(
+    pending = Profile(
         budget=int(budget), bedroom=bedroom, rent_importance=rent_importance,
         destinations=destinations, interests=interests,
     )
-    if profile == base:
-        persona.markdown(f"**Priya:** {PERSONA_SUMMARY}")
-    else:
-        persona.caption("Edited from Priya's profile. Reload the page to start again as Priya.")
-    return profile
+    with head:
+        label = st.session_state.get("draft_label")
+        if label:
+            st.info(label, icon=":material/edit_note:")
+        elif applied == demo_profile():
+            st.markdown(f"**Priya:** {PERSONA_SUMMARY}")
+        if pending != applied:
+            st.caption("You have edits that are not applied yet.")
+            a, b = st.columns(2)
+            a.button(
+                "Apply", type="primary", use_container_width=True, key="pending_apply",
+                on_click=_apply_pending, args=(pending.model_dump(),),
+            )
+            b.button("Undo edits", use_container_width=True, key="pending_undo", on_click=_undo_pending)
 
 
 # --------------------------------------------------------------------------
@@ -454,9 +547,14 @@ def render(
 
     left, center, right = st.columns([1.05, 2.5, 1.15], gap="medium")
 
+    profile = session.applied_profile()
+    if profile is None:  # reached the results without choosing a profile: start as Priya
+        session.set_profile(demo_profile())
+        profile = demo_profile()
+
     with left:
         with st.container(height=PANEL_HEIGHT, border=False):
-            profile = profile_form(available_interests)
+            profile_form(available_interests, profile)
 
     results = score_areas(areas, profile)
     matches = [r for r in results if r.status == ELIGIBLE]
@@ -479,6 +577,7 @@ def render(
     selected = next((r for r in results if r.area == st.session_state["selected_area"]), None)
 
     with center:
+        proposing = _proposal_box(profile)
         notes = st.session_state.get("change_notes")
         if notes:
             st.info("**What changed**\n\n" + "\n".join(f"- {n}" for n in notes), icon=":material/swap_vert:")
@@ -487,7 +586,7 @@ def render(
             st.error("\n\n".join(ex.no_eligible_message(info)), icon=":material/block:")
 
         # Shrink the map a little when the note is showing, so the page still fits one screen.
-        clicked = _map(results, facts, st.session_state["selected_area"], height=MAP_HEIGHT - NOTE_SHRINK if notes else MAP_HEIGHT)
+        clicked = _map(results, facts, st.session_state["selected_area"], height=MAP_HEIGHT - NOTE_SHRINK if (notes or proposing) else MAP_HEIGHT)
         # The map remembers its selection across reruns, so act only on a new click.
         if clicked != st.session_state.get("last_map_click"):
             st.session_state["last_map_click"] = clicked
