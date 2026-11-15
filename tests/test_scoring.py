@@ -284,7 +284,7 @@ def test_compare_rows_have_the_same_rows_for_every_area_and_never_a_blank():
     assert compare_rows([]) == []
 
 
-def test_why_matched_lists_a_count_for_every_selected_interest():
+def test_why_matched_lists_only_interests_the_area_has():
     from proximity.explain import why_matched
     from proximity.models import INTERESTS
 
@@ -297,8 +297,13 @@ def test_why_matched_lists_a_count_for_every_selected_interest():
     ]
     lines = why_matched(by_area(score_areas(areas, profile))["Near Campus"])
     assert any("**3** gyms" in x for x in lines)
-    assert any("**No** cafes" in x for x in lines)  # a zero is shown, not hidden
-    assert any(INTERESTS["library"] in x and "no data" in x for x in lines)  # never a made-up count
+    # A zero or a missing count is not a reason the area matched. The card lists both
+    # under "Not matched / not checked" instead, so neither is hidden.
+    assert not any("cafes" in x.lower() for x in lines)
+    assert not any(INTERESTS["library"] in x for x in lines)
+    result = by_area(score_areas(areas, profile))["Near Campus"]
+    assert result.component("interest:cafe").met is False
+    assert result.component("interest:library").met is None  # never a made-up count
 
 
 def test_flagged_commute_makes_a_must_have_unverified_with_the_flag_as_reason():

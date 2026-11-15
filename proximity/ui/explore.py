@@ -320,8 +320,30 @@ def profile_form(available_interests: list[str], applied: Profile) -> None:
 # Map
 # --------------------------------------------------------------------------
 
+def nothing_to_rank(profile: Profile) -> bool:
+    """True when the profile has no budget, no destination and no interest: there is nothing to compare areas on."""
+    return profile.budget is None and not profile.destinations and not profile.interests
+
+
+NOTHING_TO_RANK_TEXT = (
+    "**Nothing to rank yet.** Tell me a budget, somewhere you need to get to, or something you want nearby "
+    "(on the left), and I'll rank the areas. Until then the areas are shown in no particular order."
+)
+
+
+def _score(areas: list[AreaFacts], profile: Profile) -> list[AreaResult]:
+    """score_areas, except that a profile with nothing to rank on gives no area a rank."""
+    results = score_areas(areas, profile)
+    if nothing_to_rank(profile):
+        for r in results:
+            r.rank = None
+    return results
+
+
 def _pin_tip(r: AreaResult) -> tuple[str, str]:
     """Tooltip lines: rank, or the reason the pin is grey."""
+    if r.status == ELIGIBLE and r.rank is None:
+        return "Not ranked yet", "Add a priority to rank the areas"
     if r.status == ELIGIBLE:
         return f"#{r.rank}", ex.headline(r)
     if r.status == UNVERIFIED:
@@ -420,7 +442,10 @@ def _match_nav(selected: AreaResult, matches: list[AreaResult]) -> None:
     if idx is None:
         prev_area = None
         next_area = matches[0].area if matches else None
-        label = "Unverified area" if selected.status == UNVERIFIED else "Not a match"
+        if selected.status == UNVERIFIED:
+            label = "Unverified area"
+        else:
+            label = "Not ranked yet" if selected.status == ELIGIBLE else "Not a match"
     else:
         prev_area = matches[idx - 1].area if idx > 0 else None
         next_area = matches[idx + 1].area if idx + 1 < len(matches) else None
@@ -588,8 +613,9 @@ def render(
         with st.container(height=PANEL_HEIGHT, border=False):
             profile_form(available_interests, profile)
 
-    results = score_areas(areas, profile)
-    matches = [r for r in results if r.status == ELIGIBLE]
+    results = _score(areas, profile)
+    unranked = nothing_to_rank(profile)
+    matches = [r for r in results if r.status == ELIGIBLE and r.rank is not None]
     unverified = [r for r in results if r.status == UNVERIFIED]
 
     # Re-rank: compare with the profile from the previous run.
@@ -597,7 +623,7 @@ def render(
     previous = st.session_state.get("last_profile")
     if previous is not None and previous != current:
         before_profile = Profile(**previous)
-        before = score_areas(areas, before_profile)
+        before = _score(areas, before_profile)
         st.session_state["change_notes"] = ex.what_changed(diff_rankings(before, results, before_profile, profile))
         st.session_state["selected_area"] = None  # a new ranking starts back at match #1
     st.session_state["last_profile"] = current
@@ -613,7 +639,9 @@ def render(
         notes = st.session_state.get("change_notes")
         if notes:
             st.info("**What changed**\n\n" + "\n".join(f"- {n}" for n in notes), icon=":material/swap_vert:")
-        info = no_eligible_info(results)
+        info = None if unranked else no_eligible_info(results)
+        if unranked:
+            st.warning(NOTHING_TO_RANK_TEXT, icon=":material/tune:")
         if info is not None:
             st.error("\n\n".join(ex.no_eligible_message(info)), icon=":material/block:")
 

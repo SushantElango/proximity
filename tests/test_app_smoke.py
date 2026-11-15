@@ -263,3 +263,21 @@ def test_priya_gets_a_greeting_but_nobody_else_is_named():
     at.text_area(key="landing_text").set_value("Classes on College Ave, no car, $1,500 a month, I like cafes.")
     click(at, "Find my neighborhood")
     assert not any("Priya" in str(m.value) for m in at.markdown)
+
+
+def test_a_description_with_nothing_to_rank_on_ranks_nothing():
+    at = start()
+    at.text_area(key="landing_text").set_value("somewhere quiet and peaceful")
+    click(at, "Find my neighborhood")
+    click(at, "Skip")
+    assert at.session_state["stage"] == "explore"
+    assert any("Nothing to rank yet" in str(w.value) for w in at.warning)
+    page = " ".join(str(el.value) for el in [*at.markdown, *at.html])
+    assert "Match 1 of" not in page  # no area is presented as the #1 match
+
+
+def test_a_one_bedroom_at_1600_is_not_shown_at_the_shared_room_rent():
+    at = start()
+    at.text_area(key="landing_text").set_value("Classes on College Ave, no car, $1,600/month for a 1-bedroom.")
+    click(at, "Find my neighborhood")
+    assert at.selectbox(key="bedroom").value == "1br"

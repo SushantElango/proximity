@@ -177,9 +177,38 @@ def _find(words: dict[str, list[str]], text: str) -> list[str]:
     return [k for _, k in sorted(hits)]
 
 
+# Words that name College Ave itself. The rest of its list ("campus", "classes", "rutgers") is generic.
+_COLLEGE_AVE_ONLY = ["college ave", "college avenue"]
+
+
+def _find_dests(text: str) -> list[str]:
+    """Destinations named in the text. "Busch campus" or "classes at Busch" means Busch only:
+    a generic word does not also add College Ave when another Rutgers campus is named."""
+    found = _find(DEST_WORDS, text)
+    if "Rutgers Busch" in found and "Rutgers College Ave" in found:
+        if not any(re.search(rf"\b{re.escape(w)}\b", text) for w in _COLLEGE_AVE_ONLY):
+            found.remove("Rutgers College Ave")
+    return found
+
+
+_BED = r"(?:[- ]?(?:bed(?:room)?s?|br|bd)\b)"
+
+
+def _housing(text: str) -> str | None:
+    """The housing type named in the text, as a BEDROOM_LABELS key, or None when none is named."""
+    shared = re.search(r"\b(?:shar(?:e|ed|ing)|roommates?|housemates?|flatmates?|room in)\b", text) is not None
+    if re.search(rf"\b(?:2|two){_BED}", text):
+        return "shared2br" if shared else "2br"
+    if re.search(rf"\b(?:1|one|single){_BED}", text):
+        return "1br"
+    if re.search(r"\b(?:studio|efficiency)\b", text):
+        return "0br"
+    return "shared2br" if shared else None
+
+
 def _entities(text: str) -> list[tuple[str, str]]:
     """('dest', name) / ('interest', key) / ('rent', '') mentioned in a piece of text."""
-    out = [("dest", d) for d in _find(DEST_WORDS, text)] + [("interest", i) for i in _find(INTEREST_WORDS, text)]
+    out = [("dest", d) for d in _find_dests(text)] + [("interest", i) for i in _find(INTEREST_WORDS, text)]
     if any(re.search(rf"\b{re.escape(w)}\b", text) for w in RENT_WORDS):
         out.append(("rent", ""))
     return out
@@ -262,7 +291,7 @@ def keyword_refine(text: str, profile: Profile, draft: bool = False) -> Proposal
     )
     if location:
         place = re.sub(r"\s+", " ", location.group(1)).strip()
-        if place and not _find(DEST_WORDS, place.lower()):
+        if place and not _find_dests(place.lower()):
             not_used.append(
                 f"Commute to {place}: I can only measure trips to Rutgers College Ave, Rutgers Busch and Newark Penn Station."
             )
@@ -315,6 +344,14 @@ def keyword_refine(text: str, profile: Profile, draft: bool = False) -> Proposal
             ed.p.budget = amount
             ed.reasons["budget"] = f"You gave ${amount:,} as what you can pay"
 
+    # 2b. housing type: "a 1-bedroom", "studio", "2 bed with my partner", "sharing with a roommate"
+    housing = _housing(low)
+    if housing is not None:
+        recognized = True
+        if housing != ed.p.bedroom:
+            ed.p.bedroom = housing
+            ed.reasons["bedroom"] = f"You asked for: {BEDROOM_LABELS[housing].lower()}"
+
     # 3. car
     if re.search(r"\b(no car|don't have a car|do not have a car|without a car|carless|sold my car)\b", low):
         recognized = True
@@ -337,7 +374,7 @@ def keyword_refine(text: str, profile: Profile, draft: bool = False) -> Proposal
     )
     if t:
         minutes = int(t.group(1))
-        places = _find(DEST_WORDS, low)
+        places = _find_dests(low)
         if places and MINUTES_RANGE[0] <= minutes <= MINUTES_RANGE[1]:
             recognized = True
             for name in places:
@@ -379,7 +416,7 @@ def keyword_refine(text: str, profile: Profile, draft: bool = False) -> Proposal
     if draft:
         unwanted = _find(INTEREST_WORDS, dislike.group(2)) if (not compared and dislike) else []
         walkable = re.search(r"\bwalkable\b|\bwalking distance\b|\bwalk to\b", low) is not None
-        for name in _find(DEST_WORDS, low):
+        for name in _find_dests(low):
             if ed._dest(name) is None:
                 ed.p.destinations.append(DestinationPref(name=name, mode=ed._default_mode(), importance="Important"))
                 ed.reasons[f"dest:{name}"] = f"You mentioned {name}"
