@@ -233,3 +233,38 @@ def test_lower_or_raise_about_a_value_does_not_change_importance(text):
 def test_lower_the_importance_of_x_still_works():
     p = keyword_refine("lower the importance of getting to Newark", demo_profile())
     assert dest(p.profile, NEWARK).importance == "Nice"
+
+
+@pytest.mark.parametrize("text, bedroom", [
+    ("$1,600/month for a 1-bedroom, classes on College Ave", "1br"),
+    ("I need a 1 bedroom for $2,300", "1br"),
+    ("looking for a one bed near Busch", "1br"),
+    ("I want a studio under $1500", "0br"),
+    ("grad student, 2 bedroom with my partner, budget 2800", "2br"),
+    ("I'm sharing a 2-bed with a roommate, classes on College Ave", "shared2br"),
+    ("classes on College Ave, $1,500, I like cafes", "shared2br"),  # none named: the default stays
+])
+def test_housing_type_is_read_from_a_description(text, bedroom):
+    assert keyword_refine(text, starter_profile(), draft=True).profile.bedroom == bedroom
+
+
+@pytest.mark.parametrize("text, bedroom", [("I want a 1 bedroom", "1br"), ("studio please", "0br")])
+def test_housing_type_can_be_changed_in_the_refine_box(text, bedroom):
+    p = keyword_refine(text, demo_profile())
+    assert p.profile.bedroom == bedroom
+    assert [c.key for c in p.changes] == ["bedroom"] and p.changes[0].reason
+
+
+@pytest.mark.parametrize("text", [
+    "I want a studio under $1500 near Busch campus, I drive",
+    "my classes are at Busch, budget $1,500",
+    "Rutgers grad student working on Busch",
+])
+def test_naming_busch_does_not_also_add_college_ave(text):
+    names = [d.name for d in keyword_refine(text, starter_profile(), draft=True).profile.destinations]
+    assert names == ["Rutgers Busch"]
+
+
+def test_both_campuses_are_added_when_both_are_named():
+    p = keyword_refine("classes on College Ave and labs on Busch campus", starter_profile(), draft=True)
+    assert sorted(d.name for d in p.profile.destinations) == ["Rutgers Busch", "Rutgers College Ave"]

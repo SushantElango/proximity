@@ -65,19 +65,19 @@ def _compromise(r: AreaResult, matches: list[AreaResult] | None = None) -> Compo
 
 
 def why_matched(r: AreaResult, limit: int = 2, matches: list[AreaResult] | None = None) -> list[str]:
-    """The strongest met rent/commute priorities, then a count for every selected interest.
+    """The strongest met rent/commute priorities, then every selected interest this area has.
 
-    The main compromise is never also listed here.
+    An interest with a count of zero or no data did not match, so it is not listed here:
+    the card shows it under "Not matched / not checked". The main compromise is never listed either.
     """
     skip = _compromise(r, matches)
     good = [c for c in r.components if c.kind != "interest" and c.evaluated and c.met and c is not skip]
     good.sort(key=lambda c: (-(c.weight * c.relative), -c.weight, c.key))
     lines = [_sentence(c) for c in good[:limit]]
     for c in r.components:
-        if c.kind != "interest" or c is skip:
+        if c.kind != "interest" or c is skip or not c.evaluated or not c.met:
             continue
-        # Every interest the user picked is listed, including zero and "no data".
-        lines.append(_sentence(c) if c.evaluated else f"{c.label}: not checked / no data")
+        lines.append(_sentence(c))
     return lines
 
 

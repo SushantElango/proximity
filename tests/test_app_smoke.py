@@ -291,3 +291,21 @@ def test_show_places_toggle_is_off_by_default_and_safe_to_turn_on():
     assert any("Places counted in Metuchen" in str(h.value) for h in at.html)
     at.toggle(key="show_places").set_value(False).run()
     assert not at.exception, at.exception
+
+
+def test_a_description_with_nothing_to_rank_on_ranks_nothing():
+    at = start()
+    at.text_area(key="landing_text").set_value("somewhere quiet and peaceful")
+    click(at, "Find my neighborhood")
+    click(at, "Skip")
+    assert at.session_state["stage"] == "explore"
+    assert any("Nothing to rank yet" in str(w.value) for w in at.warning)
+    page = " ".join(str(el.value) for el in [*at.markdown, *at.html])
+    assert "Match 1 of" not in page  # no area is presented as the #1 match
+
+
+def test_a_one_bedroom_at_1600_is_not_shown_at_the_shared_room_rent():
+    at = start()
+    at.text_area(key="landing_text").set_value("Classes on College Ave, no car, $1,600/month for a 1-bedroom.")
+    click(at, "Find my neighborhood")
+    assert at.selectbox(key="bedroom").value == "1br"

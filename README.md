@@ -12,7 +12,7 @@ Built at HackPrinceton Fall 2026 for students and early-career renters moving ne
 - A refine box: type something like "I need a grocery store nearby", see the proposed changes as a table with a reason for each, then Apply or Cancel.
 - 8 candidate areas on a map, with the top 3 matches numbered.
 - A card per match: why it matched, the main compromise, what is missing, and the rent estimate with its source.
-- Hot News for the selected area: upcoming curated events and nearby OpenStreetMap places for each interest you picked, plus local events. Every item links to its source.
+- Hot News for the selected area: upcoming events collected by hand, each linked to its source page.
 - Change any setting and the ranking recomputes, with a "What changed" note that gives the reason.
 - A side-by-side table of your top matches: rent, each commute, each place count and what is missing, with the same rows and units for every area.
 
