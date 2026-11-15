@@ -149,11 +149,14 @@ def test_priya_match_card_explains_met_rent_compromise_consistently():
 def test_selected_area_shows_matched_and_unmatched_priorities_above_hot_news():
     at = open_priya()
     values = [element.value for element in at.markdown]
+    expanders = [element.label for element in at.expander]
     assert any("Matched" in str(value) for value in values)
     assert any("Not matched / not checked" in str(value) for value in values)
     body = "\n".join(str(value) for value in values)
     assert body.index("Not matched / not checked") < body.index("Hot News")
     assert "Grocery & convenience stores" in at.multiselect(key="interests").options
+    assert any(label.startswith("Compare your top ") for label in expanders)
+    assert "See all 8 areas in a table" not in expanders
 
 
 def test_edison_hot_news_shows_events_only_when_none_are_available():

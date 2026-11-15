@@ -655,17 +655,3 @@ def render(
         with st.expander(f"Compare your top {len(compared)} matches side by side", icon=":material/compare_arrows:"):
             st.dataframe(pd.DataFrame(ex.compare_rows(compared)), hide_index=True, use_container_width=True)
             st.caption("Same priorities and units in every column. Sources and dates are on each match's card.")
-
-    with st.expander("See all 8 areas in a table"):
-        table = pd.DataFrame([
-            {
-                "Rank": f"#{r.rank}" if r.rank else "—",
-
-                "Area": r.area,
-                "Status": r.status,
-                "Priorities": f"meets {r.met} of {r.evaluated} evaluated ({r.total} total)",
-                "Note": "; ".join(r.reasons),
-            }
-            for r in results
-        ])
-        st.dataframe(table, hide_index=True, use_container_width=True)
