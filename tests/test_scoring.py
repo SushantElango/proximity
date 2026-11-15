@@ -205,7 +205,7 @@ def test_what_changed_names_the_areas_it_has_no_room_to_explain():
             assert m["area"] in notes[-1]
 
 
-def test_an_empty_hot_news_section_says_none_found(monkeypatch):
+def test_hot_news_without_upcoming_events_shows_one_empty_state(monkeypatch):
     from types import SimpleNamespace
 
     from proximity.hotnews import Section
@@ -215,7 +215,7 @@ def test_an_empty_hot_news_section_says_none_found(monkeypatch):
     fake = SimpleNamespace(markdown=lambda *a, **k: None, divider=lambda: None, caption=captions.append)
     monkeypatch.setattr(explore, "st", fake)
     explore._hot_news(SimpleNamespace(area="Test"), [Section(key="gym", label="Gyms")])
-    assert captions == ["None found within 1.5 km."]
+    assert captions == ["No upcoming events collected for this area yet."]
 
 
 def test_compare_rows_have_the_same_rows_for_every_area_and_never_a_blank():

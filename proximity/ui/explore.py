@@ -13,7 +13,7 @@ from ..assistant import propose_refine
 from ..llm import DEMO_RERANK
 from ..refine import AI
 from . import session
-from ..hotnews import Section, distance_text, hot_news, place_detail, unnamed_line
+from ..hotnews import Section, hot_news
 from ..maplayout import fit_view, place_labels
 from ..models import (
     BEDROOM_LABELS,
@@ -503,13 +503,6 @@ def _event_line(e: Event) -> str:
     return f"[{_md(e.title)}]({e.url})  \n:gray[{_event_date(e.date)}{venue}]"
 
 
-def _place_line(p: Place) -> str:
-    name = f"[{_md(p.name)}]({p.url})" if p.url else _md(p.name)
-    detail = place_detail(p)
-    extra = f"{detail} · " if detail else ""
-    return f"{name}  \n:gray[{extra}{distance_text(p.distance_m)}]"
-
-
 def _show(lines: list[str], more_label: str) -> None:
     """First HOT_NEWS_TOP lines, the rest behind an expander."""
     for line in lines[:HOT_NEWS_TOP]:
@@ -520,48 +513,24 @@ def _show(lines: list[str], more_label: str) -> None:
                 st.markdown(line)
 
 
-EMPTY_SECTION_TEXT = "None found within 1.5 km."
-
-
 def _hot_news(r: AreaResult, sections: list[Section]) -> None:
-    """Events and places for this area, per interest. Every item links to its source."""
+    """Upcoming curated events for this area, each linked to its source."""
     st.markdown(f"**:material/local_fire_department: Hot News in {r.area}**")
-    for i, s in enumerate(sections):
+    event_sections = [section for section in sections if section.events]
+    if not event_sections:
+        st.caption("No upcoming events collected for this area yet.")
+        return
+
+    for i, section in enumerate(event_sections):
         if i:
             st.divider()
-        st.markdown(f"**{s.label}**")
-
-        if s.empty and s.has_places:
-            st.caption(EMPTY_SECTION_TEXT)
-            continue
-
-        if s.events:
-            _show([_event_line(e) for e in s.events], f"Show all {len(s.events)} events")
-            collected = sorted({e.collected_on for e in s.events if e.collected_on})
-            st.caption(
-                f"{badge(s.events[0].label)} events, each linked to its source page"
-                + (f" · collected {collected[-1]}" if collected else "")
-            )
-        else:
-            st.caption("No curated events yet.")
-
-        if not s.has_places:
-            continue
-        if s.places:
-            _show([_place_line(p) for p in s.places], f"Show all {len(s.places)} named places")
-        line = unnamed_line(s.key, s.unnamed)
-        if line:
-            st.markdown(f":gray[{line}]")
-        if s.places or s.unnamed:
-            first = s.places[0] if s.places else None
-            st.caption(
-                f"{badge(first.label if first else LABEL_DATASET)} places · "
-                + (first.source if first else "OpenStreetMap via Overpass API")
-                + (f" · as of {first.as_of}" if first and first.as_of else "")
-                + " · within 1.5 km of the area centre, each linked to its map page"
-            )
-        else:
-            st.caption("No places found within 1.5 km.")
+        st.markdown(f"**{section.label}**")
+        _show([_event_line(event) for event in section.events], f"Show all {len(section.events)} events")
+        collected = sorted({event.collected_on for event in section.events if event.collected_on})
+        st.caption(
+            f"{badge(section.events[0].label)} events, each linked to its source page"
+            + (f" · collected {collected[-1]}" if collected else "")
+        )
 
 
 # --------------------------------------------------------------------------

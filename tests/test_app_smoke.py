@@ -76,6 +76,21 @@ def test_selected_area_shows_matched_and_unmatched_priorities_above_hot_news():
     assert any("Not matched / not checked" in str(value) for value in values)
     body = "\n".join(str(value) for value in values)
     assert body.index("Not matched / not checked") < body.index("Hot News")
+    assert "Grocery & convenience stores" in at.multiselect(key="interests").options
+
+
+def test_edison_hot_news_shows_events_only_when_none_are_available():
+    at = open_priya()
+    at.session_state["selected_area"] = "Edison"
+    at.run()
+
+    body = "\n".join(str(element.value) for element in at.markdown)
+    captions = "\n".join(element.value for element in at.caption)
+    assert "Hot News in Edison" in body
+    assert "No upcoming events collected for this area yet." in captions
+    assert "No curated events yet." not in captions
+    assert "Show all" not in "\n".join(str(element.value) for element in at.button)
+    assert not any(name in body for name in ("ShopRite", "Sunoco", "Wawa", "99 Ranch Market", "H Mart"))
 
 
 def test_empty_text_does_not_crash():

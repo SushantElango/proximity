@@ -34,7 +34,7 @@ DESTINATIONS: list[str] = [
 
 # Interest key -> label shown to the user. Keys match `category` in places.csv.
 INTERESTS: dict[str, str] = {
-    "grocery": "Grocery stores",
+    "grocery": "Grocery & convenience stores",
     "gym": "Gyms",
     "park": "Parks",
     "cafe": "Cafes",
