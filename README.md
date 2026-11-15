@@ -1,9 +1,9 @@
-# Proximity
+<img src="assets/logo.png" alt="Proximity." width="320">
 
 **Proximity is power.** Find neighborhoods that fit your life, not just your budget.
 Built at HackPrinceton Fall 2026 for students and early-career renters moving near Rutgers–New Brunswick, NJ.
 
-> Status: all four layers except live Ticketmaster events. All data in the app is real: rent, area locations, commute times, events and place counts.
+> Status: all four layers except live Ticketmaster events. All data in the app is real: rent, area locations, commute times, events and place counts. This pilot covers 8 areas around New Brunswick, NJ.
 
 ## What it looks like
 
@@ -22,11 +22,15 @@ Change a priority and the ranking updates, with the reason:
 ## What works now
 
 - A landing page: describe your situation in your own words, or load Priya's example. If you name nowhere you need to get to, it asks one question, once.
+- Your description stays on the results page, where you can edit it and update your matches (Ctrl+Enter works).
+- Honest about what it can't use: anything in your description the app has no data for (another workplace, a distance radius) is listed under "I couldn't use" instead of being dropped silently.
+- Budget is optional. With no budget, each area's rent is shown for information and does not affect the ranking.
 - An editable profile (housing, budget, destinations, travel mode, max commute, interests, importance per item). Edits take effect when you click Apply.
 - A refine box: type something like "I need a grocery store nearby", see the proposed changes as a table with a reason for each, then Apply or Cancel.
 - 8 candidate areas on a map, with the top 3 matches numbered.
+- "Show the places counted" zooms into the selected area and marks every gym, venue or store behind its counts. An optional satellite view uses USGS imagery.
 - A card per match: why it matched, the main compromise, what is missing, and the rent estimate with its source.
-- Hot News for the selected area: upcoming events collected by hand, each linked to its source page.
+- Hot News for the selected area: upcoming events collected by hand, in date order, each linked to its source page.
 - Change any setting and the ranking recomputes, with a "What changed" note that gives the reason.
 - A side-by-side table of your top matches: rent, each commute, each place count and what is missing, with the same rows and units for every area.
 
@@ -76,12 +80,16 @@ The app reads `data/<file>.csv` first and falls back to `data/placeholder/<file>
 
 "Room in a shared 2-bed" is an estimate: the HUD 2-bedroom rent split in half.
 
+The optional satellite background is USGS The National Map imagery, loaded live. It is a picture only; no numbers come from it.
+
 ## User research
 
 [Real People Responses.docx](Real%20People%20Responses.docx): what five people we spoke to want from a place to live, plus five public Reddit threads. Names are removed.
 
 ## Limitations
 
+- Commutes are measured to three destinations only: Rutgers College Ave, Rutgers Busch and Newark Penn Station. A workplace anywhere else is listed under "I couldn't use".
+- Only the 8 areas in `data/areas.csv` are covered.
 - "In an area" means within 1,500 m of the area's centre point, not the real ZIP boundary. Where neighbouring circles overlap, a place counts only for the area whose centre point is nearest. An area whose centre point is away from its downtown is undercounted.
 - Sports facilities are mostly unnamed pitches in OpenStreetMap, so that count is large and coarse.
 - Commute lookups all depart on a weekday morning. A late-night trip home from Newark has not been checked, and the app says so on every area.
