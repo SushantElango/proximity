@@ -21,7 +21,7 @@ Built at HackPrinceton Fall 2026 for students and early-career renters moving ne
 - Gemini (`gemini-3.5-flash`) turns your words into proposed profile changes. Each proposal is labeled "AI suggestion" and nothing changes until you click Apply.
 - Its answer must match a strict schema. Unknown fields, unknown places or out-of-range values discard the whole answer.
 - If the model is slow (over 8 seconds), unavailable or wrong, a keyword parser takes over and the proposal is labeled "Keyword match". The app works with no key at all.
-- AI never scores or ranks. Eligibility, Fit and the order are plain Python.
+- AI never scores or ranks. Eligibility and the order are plain Python.
 - Requests about who lives in an area ("safe", "families", a nationality) are never sent to the model. The app replies that it matches on commute, budget, places and events only.
 - The three demo inputs are cached in `data/cache/llm_cache.json`, so the demo runs offline. `DEMO_MODE=1` forbids network calls.
 
@@ -30,9 +30,9 @@ Built at HackPrinceton Fall 2026 for students and early-career renters moving ne
 Code decides, with no AI involved in scoring:
 
 1. **Eligibility.** Rent must fit the budget, and every must-have commute must be within its limit. If a must-have has no data, the area is shown as *Unverified* and ranked after all verified areas.
-2. **Fit.** Each priority gets a 0 to 1 value (commute and place counts are compared across the 8 areas, rent by room under budget), weighted Must-have 3, Important 2, Nice 1. The result is shown as "Fit 56 · relative to the 8 areas". It ranks these areas against each other; it is not an absolute grade.
+2. **Ranking.** Each priority gets a 0 to 1 value (commute and place counts are compared across the 8 areas, rent by room under budget), weighted Must-have 3, Important 2, Nice 1. The weighted total decides the order. The app shows the rank only, not the number: it compares these areas against each other and is not an absolute grade.
 3. **Priorities met** is reported separately ("Meets 5 of 6 evaluated priorities").
-4. **Missing data** never counts as met and never raises the Fit.
+4. **Missing data** never counts as met and never raises an area's rank.
 
 We match on places, travel time and rent only. Nothing in the app describes who lives in an area.
 
