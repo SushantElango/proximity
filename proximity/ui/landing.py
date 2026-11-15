@@ -115,13 +115,16 @@ def render(accent: str) -> None:
             '<div style="font-size:0.95rem;margin-top:0.4rem;opacity:0.6">'
             "Neighborhoods near Rutgers–New Brunswick, matched on commute, rent, places and events.</div></div>"
         )
-        st.text_area(
-            "Describe your situation", key="landing_text", height=130,
-            placeholder=f"For example: {EXAMPLE}",
-        )
-        a, b = st.columns(2)
-        a.button("Find my neighborhood", type="primary", use_container_width=True, on_click=_describe)
-        b.button("Try Priya's example", use_container_width=True, on_click=_try_priya)
+        with st.form("landing_form", border=False):
+            st.text_area(
+                "Describe your situation", key="landing_text", height=130,
+                placeholder=f"For example: {EXAMPLE}",
+            )
+            st.form_submit_button(
+                "Find my neighborhood", type="primary", use_container_width=True, on_click=_describe,
+            )
+            st.caption("Ctrl+Enter to search")
+        st.button("Try Priya's example", use_container_width=True, on_click=_try_priya)
         pending = st.session_state.get("clarify")
         if pending:
             render_clarification()

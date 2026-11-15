@@ -52,9 +52,7 @@ def test_priya_example_opens_results():
 def test_free_text_does_not_crash():
     at = start()
     text = "Rutgers junior, no car, $1,600/month for a 1-bedroom, love jazz bars and a gym."
-    at.text_area(key="landing_text").set_value(
-        text
-    ).run()
+    at.text_area(key="landing_text").set_value(text)
     click(at, "Find my neighborhood")
     assert at.session_state["last_prompt"] == text
     assert at.text_area(key="explore_prompt").value == text
