@@ -166,6 +166,31 @@ def test_entertainment_vocabulary_maps_to_live_music(term):
     assert interest(p.profile, "live_music") is not None
 
 
+def test_partially_understood_description_reports_unsupported_constraints():
+    text = (
+        "Work in North Brunswick Looking for a house that's 30 minutes away Max maximum "
+        "Entertainment and pubs five to 10 mile radius Supermarket groceries "
+        "At a walkable distance saravana bhavan edison"
+    )
+    proposal = keyword_refine(text, starter_profile(), draft=True)
+
+    assert [(i.category, i.importance) for i in proposal.profile.interests] == [
+        ("live_music", "Important"), ("grocery", "Important"),
+    ]
+    assert proposal.not_used == [
+        "Commute to North Brunswick: I can only measure trips to Rutgers College Ave, Rutgers Busch and Newark Penn Station.",
+        "30-minute limit: no supported destination to apply it to.",
+        "Distance radius: places are counted within 1.5 km (about 1 mile) of each area's centre only.",
+        "House: I can match a shared room, studio, 1-bed or 2-bed. Pick one under Housing.",
+    ]
+    assert all("saravana bhavan" not in item.lower() for item in proposal.not_used)
+
+
+def test_unrecognized_description_gets_one_generic_not_used_note():
+    proposal = keyword_refine("Saravana Bhavan in Edison", starter_profile(), draft=True)
+    assert proposal.not_used == ["Some of your description didn't match anything I can check."]
+
+
 @pytest.mark.parametrize(
     "text", ["make transit more important", "Make transit more important.", "transit matters more", "make my commute more important"]
 )

@@ -140,6 +140,7 @@ def _suggest(applied: Profile) -> None:
         "changes": [c.__dict__ for c in proposal.changes],
         "source": proposal.source,
         "message": proposal.message,
+        "not_used": proposal.not_used,
     }
 
 
@@ -147,6 +148,7 @@ def _apply_proposal() -> None:
     data = st.session_state.pop("proposal", None)
     if data:
         session.set_profile(Profile(**data["profile"]))
+        st.session_state["not_used"] = data.get("not_used", [])
         st.session_state["refine_text"] = ""
 
 
@@ -265,6 +267,9 @@ def profile_form(available_interests: list[str], applied: Profile) -> None:
         label = st.session_state.get("draft_label")
         if label:
             st.info(label, icon=":material/edit_note:")
+            not_used = st.session_state.get("not_used", [])
+            if not_used:
+                st.warning("**I couldn't use:**\n\n" + "\n".join(f"- {item}" for item in not_used))
         elif applied == demo_profile():
             st.markdown(f"**Priya:** {PERSONA_SUMMARY}")
         if pending != applied:
@@ -447,7 +452,7 @@ def _match_card(r: AreaResult, n_areas: int, matches: list[AreaResult]) -> None:
     st.markdown(f"- {ex.main_compromise(r, matches)}")
 
     st.markdown("**:gray[:material/help:] Missing / not checked**")
-    not_checked = r.missing + r.unchecked
+    not_checked = r.missing + r.unchecked + st.session_state.get("not_used", [])
     st.markdown("\n".join(f"- {m}" for m in not_checked) if not_checked else "- Nothing missing for your priorities")
 
     _rent_block(r)

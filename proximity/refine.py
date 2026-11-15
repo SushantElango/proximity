@@ -106,6 +106,7 @@ class Proposal:
     changes: list[Change] = field(default_factory=list)
     source: str = KEYWORD
     message: str = ""  # shown above the table (refusal, or "couldn't map that")
+    not_used: list[str] = field(default_factory=list)
 
 
 def _level(importance: str) -> int:
@@ -248,6 +249,21 @@ def keyword_refine(text: str, profile: Profile, draft: bool = False) -> Proposal
     ed = _Editor(profile)
     quoted = f'You said "{raw}"' if len(raw) <= 90 else "From what you wrote"
     refused = mentions_demographics(raw)
+    not_used: list[str] = []
+    recognized = bool(_entities(low))
+
+    location = re.search(
+        r"\b(?:work|job|office)\s+in\s+(.+?)(?=\s+(?:looking for|want|need|seeking|and|but|within|under|"
+        r"maximum|max|at most|up to|no more than)\b|[,.;!?]|$)",
+        raw,
+        re.IGNORECASE,
+    )
+    if location:
+        place = re.sub(r"\s+", " ", location.group(1)).strip()
+        if place and not _find(DEST_WORDS, place.lower()):
+            not_used.append(
+                f"Commute to {place}: I can only measure trips to Rutgers College Ave, Rutgers Busch and Newark Penn Station."
+            )
 
     # 1. "X matters more/less than Y"
     m = re.search(r"(.*?)\b(more|less)\b(?:\s+important)?\s+than\b(.*)", low)
@@ -291,6 +307,7 @@ def keyword_refine(text: str, profile: Profile, draft: bool = False) -> Proposal
         or re.search(r"\$\s?(\d[\d,]{2,})", low)
     )
     if b:
+        recognized = True
         amount = int(b.group(1).replace(",", ""))
         if BUDGET_RANGE[0] <= amount <= BUDGET_RANGE[1]:
             ed.p.budget = amount
@@ -298,22 +315,29 @@ def keyword_refine(text: str, profile: Profile, draft: bool = False) -> Proposal
 
     # 3. car
     if re.search(r"\b(no car|don't have a car|do not have a car|without a car|carless|sold my car)\b", low):
+        recognized = True
         for d in ed.p.destinations:
             if d.mode != "transit":
                 d.mode = "transit"
                 ed.reasons[f"dest:{d.name}:mode"] = "You have no car, so this trip is by transit"
     elif re.search(r"\b(have a car|got a car|i drive|with a car|by car|own a car|bought a car)\b", low):
+        recognized = True
         for d in ed.p.destinations:
             if d.mode != "drive":
                 d.mode = "drive"
                 ed.reasons[f"dest:{d.name}:mode"] = "You have a car, so this trip is by car"
 
     # 4. "commute to PLACE under N min"
-    t = re.search(r"\b(?:under|within|less than|max|maximum|at most|up to|no more than)\s+(\d{1,3})\s*(?:min|mins|minutes)\b", low)
+    t = re.search(
+        r"\b(?:(?:under|within|less than|max|maximum|at most|up to|no more than)\s+)?"
+        r"(\d{1,3})\s*(?:min|mins|minutes)\b",
+        low,
+    )
     if t:
         minutes = int(t.group(1))
         places = _find(DEST_WORDS, low)
         if places and MINUTES_RANGE[0] <= minutes <= MINUTES_RANGE[1]:
+            recognized = True
             for name in places:
                 d = ed._dest(name)
                 if d is None:
@@ -324,6 +348,13 @@ def keyword_refine(text: str, profile: Profile, draft: bool = False) -> Proposal
                 elif d.max_minutes != minutes:
                     d.max_minutes = minutes
                     ed.reasons[f"dest:{name}:max_minutes"] = f"You asked for {name} within {minutes} min"
+        elif not places:
+            not_used.append(f"{minutes}-minute limit: no supported destination to apply it to.")
+
+    if re.search(r"\b(?:mile|miles|radius)\b", low):
+        not_used.append("Distance radius: places are counted within 1.5 km (about 1 mile) of each area's centre only.")
+    if re.search(r"\bhouse\b", low):
+        not_used.append("House: I can match a shared room, studio, 1-bed or 2-bed. Pick one under Housing.")
 
     # 5. likes and dislikes (not when the sentence was a comparison, which rule 1 handled)
     dislike = None
@@ -361,12 +392,14 @@ def keyword_refine(text: str, profile: Profile, draft: bool = False) -> Proposal
                 ed.set_interest(cat, importance, "You mentioned this")
 
     changes = diff_profiles(profile, ed.p, ed.reasons)
+    if not not_used and not recognized:
+        not_used.append("Some of your description didn't match anything I can check.")
     message = ""
     if refused:
         message = DEMOGRAPHIC_REPLY
     elif not changes:
         message = at_limit or NOT_UNDERSTOOD
-    return Proposal(profile=ed.p, changes=changes, source=KEYWORD, message=message)
+    return Proposal(profile=ed.p, changes=changes, source=KEYWORD, message=message, not_used=not_used)
 
 
 def starter_profile() -> Profile:

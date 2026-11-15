@@ -72,6 +72,7 @@ class _ApiOut(BaseModel):
     interests: list[_ApiInterest]
     reasons: list[_ApiReason]
     question: str
+    not_used: list[str] = Field(default_factory=list)
 
 
 # ---- what we accept: strict. Unknown fields or out-of-range values reject the whole answer ----
@@ -104,6 +105,7 @@ class LLMOut(BaseModel):
     interests: list[_Interest] = Field(max_length=len(INTERESTS))
     reasons: list[_Reason] = Field(default_factory=list, max_length=20)
     question: str = Field(default="", max_length=200)
+    not_used: list[str] = Field(default_factory=list, max_length=20)
 
 
 class LLMRejected(Exception):
@@ -127,7 +129,7 @@ def validate(raw: str) -> LLMOut:
     if any(c not in INTERESTS for c in cats) or len(set(cats)) != len(cats):
         raise LLMRejected("unknown or repeated interest")
     # Fair housing: the model must not talk about residents either.
-    spoken = " ".join([r.reason for r in out.reasons] + [out.question])
+    spoken = " ".join([r.reason for r in out.reasons] + [out.question] + out.not_used)
     if mentions_demographics(spoken):
         raise LLMRejected("demographic wording in output")
     return out
@@ -177,6 +179,10 @@ The profile has exactly these fields:
   "destination:<name>" or "interest:<category>". reason is one short plain sentence, at most 18 words,
   that quotes or paraphrases what the person said.
 - question: normally "".
+- not_used: brief plain sentences for details that cannot be represented or checked. Use [] when none.
+  Mention unsupported work/job/office destinations, a minutes limit with no supported destination,
+  a requested mile/radius distance (places use the fixed 1.5 km search radius), and houses (only shared room,
+  studio, 1-bed and 2-bed are supported). Never guess shop or restaurant names; do not list unmatched words.
 
 Importance levels in order: Nice < Important < Must-have.
 
@@ -355,7 +361,7 @@ def refine(text: str, profile: Profile, client=None, timeout: float = TIMEOUT_S,
     if out is None:
         return None
     new = to_profile(out)
-    return Proposal(profile=new, changes=_with_reasons(profile, new, out), source=AI)
+    return Proposal(profile=new, changes=_with_reasons(profile, new, out), source=AI, not_used=out.not_used)
 
 
 def draft(text: str, client=None, timeout: float = TIMEOUT_S, cache_path: Path = CACHE_FILE,
@@ -369,7 +375,9 @@ def draft(text: str, client=None, timeout: float = TIMEOUT_S, cache_path: Path =
     if out is None:
         return None
     new = to_profile(out)
-    return Proposal(profile=new, changes=_with_reasons(base, new, out), source=AI), out.question.strip()
+    return Proposal(
+        profile=new, changes=_with_reasons(base, new, out), source=AI, not_used=out.not_used,
+    ), out.question.strip()
 
 
 def _with_reasons(old: Profile, new: Profile, out: LLMOut):

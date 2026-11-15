@@ -69,6 +69,19 @@ def test_explore_description_updates_the_profile():
     assert any(i["category"] == "gym" for i in at.session_state["profile"]["interests"])
 
 
+def test_explore_shows_not_used_items_under_banner_and_in_match_card():
+    at = start()
+    text = "I work in Newark, I want grocery stores, and I need a 5 mile radius."
+    at.text_area(key="landing_text").set_value(text)
+    click(at, "Find my neighborhood")
+
+    warnings = "\n".join(str(element.value) for element in at.warning)
+    body = "\n".join(str(element.value) for element in at.markdown)
+    assert "I couldn't use:" in warnings
+    assert "Distance radius" in warnings
+    assert "Distance radius" in body
+
+
 def test_selected_area_shows_matched_and_unmatched_priorities_above_hot_news():
     at = open_priya()
     values = [element.value for element in at.markdown]

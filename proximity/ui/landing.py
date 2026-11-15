@@ -20,7 +20,7 @@ KEYWORD_DRAFT_LABEL = "Draft from your words — check and edit before results."
 
 
 def _reset_results() -> None:
-    for key in ("last_profile", "change_notes", "selected_area", "proposal", "last_map_click"):
+    for key in ("last_profile", "change_notes", "selected_area", "proposal", "last_map_click", "not_used"):
         st.session_state.pop(key, None)
 
 
@@ -34,6 +34,7 @@ def _try_priya() -> None:
 
 def _open_results(proposal) -> None:
     _reset_results()
+    st.session_state["not_used"] = proposal.not_used
     st.session_state.pop("clarify", None)
     if not proposal.changes:
         session.set_profile(starter_profile(), NOT_UNDERSTOOD)
@@ -47,6 +48,7 @@ def _open_results(proposal) -> None:
 
 def _process_description(text: str) -> None:
     st.session_state["landing_message"] = ""
+    st.session_state.pop("not_used", None)
     st.session_state.pop("clarify", None)
     if not text:
         st.session_state["landing_message"] = "Write a sentence or two first, or try Priya's example."

@@ -113,8 +113,18 @@ def test_the_prompts_contain_no_demographic_request_and_forbid_resident_data():
 def test_model_cannot_change_scores_only_profile_fields():
     # The accepted schema has profile fields, reasons and a question. Nothing else gets through.
     assert set(llm.LLMOut.model_fields) == {
-        "budget", "bedroom", "rent_importance", "destinations", "interests", "reasons", "question",
+        "budget", "bedroom", "rent_importance", "destinations", "interests", "reasons", "question", "not_used",
     }
+    assert llm.validate(answer()).not_used == []  # older cached responses omit this optional field
+
+
+def test_ai_not_used_items_are_carried_into_the_proposal(cache):
+    p = assistant.propose_refine(
+        TEXT, demo_profile(),
+        client=FakeClient(answer(not_used=["Distance radius: places use the fixed search radius."])),
+        cache_path=cache,
+    )
+    assert p.not_used == ["Distance radius: places use the fixed search radius."]
 
 
 def test_unchanged_answer_with_no_keyword_match_says_not_understood(cache):
