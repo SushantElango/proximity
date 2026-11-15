@@ -1,6 +1,9 @@
 """Landing page: describe your situation, or load Priya's example."""
 from __future__ import annotations
 
+import base64
+from pathlib import Path
+
 import streamlit as st
 
 from ..assistant import answer_question, draft_profile
@@ -16,6 +19,22 @@ EXAMPLE = (
     "live music, plus a gym and somewhere to play sports."
 )
 RESULTS_DRAFT_LABEL = "Results from your description — edit anything on the left."
+
+
+LOGO_FILE = Path(__file__).resolve().parents[2] / "assets" / "logo.png"
+
+
+@st.cache_data(show_spinner=False)
+def logo_html(height_rem: float, accent: str) -> str:
+    """The logo as an inline image (works offline). Falls back to the text wordmark if the file is missing."""
+    try:
+        data = base64.b64encode(LOGO_FILE.read_bytes()).decode()
+    except OSError:
+        return (
+            f'<span style="font-size:{height_rem}rem;font-weight:800;letter-spacing:-0.03em;line-height:1">'
+            f'Proximity<span style="color:{accent}">.</span></span>'
+        )
+    return f'<img src="data:image/png;base64,{data}" alt="Proximity." style="height:{height_rem}rem;width:auto;display:block">'
 
 
 def remember_prompt(text: str) -> None:
@@ -116,13 +135,12 @@ def render(accent: str) -> None:
     with mid:
         st.html(
             '<div style="margin-top:8vh;text-align:center">'
-            '<div style="font-size:3.4rem;font-weight:800;letter-spacing:-0.04em;line-height:1">'
-            f'Proximity<span style="color:{accent}">.</span></div>'
+            f'<div style="display:flex;justify-content:center">{logo_html(4.2, accent)}</div>'
             f'<div style="font-size:1.35rem;margin-top:0.8rem;opacity:0.8">{PITCH}</div>'
             '<div style="font-size:1.05rem;margin-top:0.65rem;opacity:0.75">'
             "Hi, good to have you here. Describe how you want to live and I'll find where.</div>"
             '<div style="font-size:0.95rem;margin-top:0.4rem;opacity:0.6">'
-            "Neighborhoods near Rutgers–New Brunswick, matched on commute, rent, places and events.</div></div>"
+            "Matched on commute, rent, places and events.</div></div>"
         )
         with st.form("landing_form", border=False):
             st.text_area(
