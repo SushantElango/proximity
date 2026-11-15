@@ -27,9 +27,8 @@ if session.stage() == session.LANDING:
     st.stop()
 
 st.html(
-    '<div style="display:flex;align-items:baseline;gap:0.9rem;flex-wrap:wrap">'
-    '<span style="font-size:1.8rem;font-weight:800;letter-spacing:-0.03em;line-height:1">'
-    f'Proximity<span style="color:{explore.ACCENT}">.</span></span>'
+    '<div style="display:flex;align-items:center;gap:0.9rem;flex-wrap:wrap">'
+    f"{landing.logo_html(2.3, explore.ACCENT)}"
     f'<span style="font-size:1rem;opacity:0.7">{landing.PITCH}.</span></div>'
 )
 
