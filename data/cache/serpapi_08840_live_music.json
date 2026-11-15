@@ -1,0 +1,279 @@
+{
+ "search_metadata": {
+  "id": "6af918a0ba7b05d665023d9e",
+  "status": "Success",
+  "json_endpoint": "https://serpapi.com/searches/rMElHV7ufsJVTbNlrhZZlzkUQKFz_AsjLCt5wOoOoNU/6af918a0ba7b05d665023d9e.json",
+  "markdown_endpoint": "https://serpapi.com/searches/rMElHV7ufsJVTbNlrhZZlzkUQKFz_AsjLCt5wOoOoNU/6af918a0ba7b05d665023d9e.md",
+  "created_at": "2026-11-15 02:27:44 UTC",
+  "processed_at": "2026-11-15 02:27:44 UTC",
+  "google_events_url": "https://www.google.com/search?q=live+music+events+in+Metuchen%2C+NJ&udm=54&hl=en&gl=us",
+  "raw_html_file": "https://serpapi.com/searches/rMElHV7ufsJVTbNlrhZZlzkUQKFz_AsjLCt5wOoOoNU/6af918a0ba7b05d665023d9e.html",
+  "total_time_taken": 1.93
+ },
+ "search_parameters": {
+  "q": "live music events in Metuchen, NJ",
+  "engine": "google_events"
+ },
+ "search_information": {
+  "events_results_state": "Results for exact spelling"
+ },
+ "events_map": {
+  "image": "https://www.google.com/maps/vt/data=nci5Kutk4KnB1bmmIEPx0Mfs5uiHuRecvGatVNOTyveFKE3qM-t74qVg0VBY70ouigH0Uw4SjbVeGVjUYMkDW9nWnlY5t4KLYxOVZjqxSHYTMkdC974N_w5yuTLE5VKOnDh_ajg4CK3NjrHtIY-M7WyB_gQDuJrIAXraAIlwS7C0JMJV1syfc5NQ_BAC7Lsu83eiZBW-xcTKcGjB-W8A0E05Ndf8YH2z7ItjB9zK1ECpH4IofTkImH6wYBYN1JXgTgrvo1ziTnR4I-FSUNZR9YSmwfsk33OW2GDrUX-CzLySqdKEFg31GK5TTSKAPsqaq34x9SJJuzPr_BBcaaN9O8qn5zeqeo38jpc57UmVfpTvl143i-1VCCZz7ETtSmeeb7Ir21GKN0NcKmi6c8fd_FBBvDyRtL7be5wlqGcwFgPD-PAsRNVUfl27xsD56WGNP90u37aLg7bgtED25wnw1IR-xU0jrEJlMKAc-fammVlzpY9D_iut3miROkXPg-VBU1sYUC-bXzuGY3x7ds4rW0R96NR-m-B52lGXg50SZRH4tGB78wBQpAcEFmV1k7WOj-rE6ksInyKyvFGY3vJt_8tqAbpKEpim6ieRJlFEJ7J9UqR_N2pBRMeXQ3URxXTMw5YaK-nVi5EdJsr_gAyQmNbhv98-WRikWwqJN9SNX284XiYAkWcTsRxLwpepNVCUgOTG0D1tsWm9T3HnakiSCAu3PqOmNlb3YMvBFxUlaGtBYFjWSFTaSP_2yClYqbocqN9PI-eu7XUCoNj3_FmhUDdrdP09WUwGEBbBtot5NdoecL7vYXEUjjpwhSrTW0hSK7KvxINItu-dDQ-cTb19UcfQzcvbekSiIFXJDwXevJ-7A11WBWoA9O9ztdwQ5xG4IKB-3nLENaqR2PYbwM0R76eA_6I4-lt8TKhnYgf3aeKaoDr-2qOKmIncBtAVgZ33z90U5Bf-tOlPmxt1SvsIi3CSI67yl08O6jP6i6iuAjkFXf0dLVl0fHVE-Dtl5pqcuuctrelO3JNhAxjzUzCbHA",
+  "gps_coordinates": {
+   "latitude": 40.549287249082035,
+   "longitude": -74.3580436706543
+  },
+  "zoom": 13
+ },
+ "events_results": [
+  {
+   "title": "Mingus Big Band at Middlesex Jazz Festival",
+   "date": {
+    "start_date": "Nov 21",
+    "when": "Nov 21, 5:00 PM"
+   },
+   "venue": {
+    "name": "Metuchen High School",
+    "link": "https://www.google.com/search?q=Metuchen+High+School&ludocid=17198773201577624326&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=17198773201577624326&q=Metuchen+High+School"
+   },
+   "address": [
+    "Metuchen High School",
+    "Metuchen, NJ"
+   ],
+   "event_location_map": {
+    "image": "https://www.google.com/maps/vt/data=hO3deyJgdU3g2zIlsl70xwHNtpg4Eqt6NOmekaovYvEOeMcMKt9Kxo9BqkBJbucR8U8QhONXtvd2ojciYwCXmnvflfcntrMbzg3a9mFDVauHy5wmEhXA0WTQYq72atpSWF5ee7b1S4GUIZxbvoOv5KzVLIavgdjkQgTwhOcjjIZ5",
+    "link": "https://maps.google.com/?cid=17198773201577624326",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=17198773201577624326&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "ticket_info": [
+    {
+     "source": "bandsintown.com",
+     "link": "https://www.bandsintown.com/e/109065597?app_id=ggl_feed&came_from=289&utm_medium=web&utm_source=ggl_feed&utm_campaign=event",
+     "link_type": "tickets"
+    }
+   ],
+   "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmhvk4nPr4-Rb0Aq-EdENIML__X8Mr1z8qtUXKPoZXmyOw3zqFoQ4qzwkiKcGHMAQlaO-vlQrSin91K1I",
+   "event_token": "ErcICvcHQUREYldlWlNBbm52ZkZKdVIteHJBNEI2Ykp2UmhNQ0U5dVpTNDdVeGZGSC1MYWIxb1FYb3lpNkc1eFNGUXBtYy1BX3pRQ3A0T1c2T3YwejJZVXlJdUVfQlRrQTJpSE1DSEc0S09rMVhOZExwVndUMnhvZUFGUTQzaGZXd2plcm9yNjBkMmV5VTVSckxZRjVySzB6M1E0b0t0WVU4Ujg1N2d0MTEwYXM1X3A1aXBVSi1MTUV1ME84dXBfYmdKYmtvMXpvVUFTMTMxTHJZN2lBWU1wRmg1dkNSaURuZVdrTjJpMWZBb1A0alFxQjVDSUZXenZMcHRjVlhFcVBNTGtuTTBmd2ktWjNDaXpfTnBEOEctRm1LaDZMZnd3ODhWNXdiT2tFVHItYXdZMVJRVU1hd1pzS09XWjZ1UW1zVXZKZW0wQUplMUFva3VHa2JvRWJKY3FXTThIWjJxSFBhQWlLcDA1UzFZU3BQaFRTb05tMkFxWVhVZDROX2lNVWhwQVJjaE1lYkdTUG5XZjNsNkMwM0EwNzFUSG9KanVEZDlFLWxxMTVEY2ZxQTlleVBzUFp0UzBic1loR0F1Rm1YYk5NQmhTTGt3NTRWVlg4aTRZaGdJb0Qyal9IdkpoeEpoSmFlNnN5UTFnX25vajBUQzNReXZLTHRNNWV4VHNMZVVvcWZWenFZOGgxSlQ1Wi1wemlqREhUSFhBQW9MclJuUWpCWmJraG03RzBmbFhaYlI1QnNQMkNlellCTTNWcHdxcTNTLUN3TlAyb0VGX3pCWTRqMFZJa2hub1FpclN0OFlQeWpnUlRod1dXU0RHTmRacE9JeWhkRDhKdWJWZnA0RmJUMnE1Q0t6d0RYZml0OVhLY2c5LUVJTHN4SVlNSDE2OWJWWDMtQ256SGpEaUFxcmdiY2YtOERjaVE0RTcybDdydy0xODBGV1dYVENRcl9OZy1ITzFjZXpWbjNaOEdEUXNVS245ck9IODFlZnJqUlYwSERxaVp3V0ZLZGNRRmRkandXQ1AwVkhaWmRmQTBQaWtZNXgtc190YU0tZS1vUkRTWXF6R0dUWm1uTmdMdXYyT01BRF9LWVJxSm9LTDgwTTZqbVNaem5xaktHRmZVM1dNdFRGUlhzcHBBbEZ2MFlueVduM2c5dGtJdlhMcHc2UFlRZTFQeUJVbDdPLS15QmU3QXV1aHJGQTRrYzlLU1M5NzRKaHFVQjdtQ1BKdGhQNzdSNVQ2QUloVEdWNE9zUW50M1JxVXktUlBIbmkxZXNhZk5iTEZlaVc0UnoxWkxsR1NfR0tfQ0VTdWp2MkoybnIySTliZldwb2NoYi1ndVlyRDNycU40VlJpQRIXb1JqNWF2T1ZKOWV1cHRRUDYtMnBxUTAaIkFITjBFN0Vwb1lpRVRZbV9Lc2JWRUU4OWFXX1FXZDltR1E",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=ErcICvcHQUREYldlWlNBbm52ZkZKdVIteHJBNEI2Ykp2UmhNQ0U5dVpTNDdVeGZGSC1MYWIxb1FYb3lpNkc1eFNGUXBtYy1BX3pRQ3A0T1c2T3YwejJZVXlJdUVfQlRrQTJpSE1DSEc0S09rMVhOZExwVndUMnhvZUFGUTQzaGZXd2plcm9yNjBkMmV5VTVSckxZRjVySzB6M1E0b0t0WVU4Ujg1N2d0MTEwYXM1X3A1aXBVSi1MTUV1ME84dXBfYmdKYmtvMXpvVUFTMTMxTHJZN2lBWU1wRmg1dkNSaURuZVdrTjJpMWZBb1A0alFxQjVDSUZXenZMcHRjVlhFcVBNTGtuTTBmd2ktWjNDaXpfTnBEOEctRm1LaDZMZnd3ODhWNXdiT2tFVHItYXdZMVJRVU1hd1pzS09XWjZ1UW1zVXZKZW0wQUplMUFva3VHa2JvRWJKY3FXTThIWjJxSFBhQWlLcDA1UzFZU3BQaFRTb05tMkFxWVhVZDROX2lNVWhwQVJjaE1lYkdTUG5XZjNsNkMwM0EwNzFUSG9KanVEZDlFLWxxMTVEY2ZxQTlleVBzUFp0UzBic1loR0F1Rm1YYk5NQmhTTGt3NTRWVlg4aTRZaGdJb0Qyal9IdkpoeEpoSmFlNnN5UTFnX25vajBUQzNReXZLTHRNNWV4VHNMZVVvcWZWenFZOGgxSlQ1Wi1wemlqREhUSFhBQW9MclJuUWpCWmJraG03RzBmbFhaYlI1QnNQMkNlellCTTNWcHdxcTNTLUN3TlAyb0VGX3pCWTRqMFZJa2hub1FpclN0OFlQeWpnUlRod1dXU0RHTmRacE9JeWhkRDhKdWJWZnA0RmJUMnE1Q0t6d0RYZml0OVhLY2c5LUVJTHN4SVlNSDE2OWJWWDMtQ256SGpEaUFxcmdiY2YtOERjaVE0RTcybDdydy0xODBGV1dYVENRcl9OZy1ITzFjZXpWbjNaOEdEUXNVS245ck9IODFlZnJqUlYwSERxaVp3V0ZLZGNRRmRkandXQ1AwVkhaWmRmQTBQaWtZNXgtc190YU0tZS1vUkRTWXF6R0dUWm1uTmdMdXYyT01BRF9LWVJxSm9LTDgwTTZqbVNaem5xaktHRmZVM1dNdFRGUlhzcHBBbEZ2MFlueVduM2c5dGtJdlhMcHc2UFlRZTFQeUJVbDdPLS15QmU3QXV1aHJGQTRrYzlLU1M5NzRKaHFVQjdtQ1BKdGhQNzdSNVQ2QUloVEdWNE9zUW50M1JxVXktUlBIbmkxZXNhZk5iTEZlaVc0UnoxWkxsR1NfR0tfQ0VTdWp2MkoybnIySTliZldwb2NoYi1ndVlyRDNycU40VlJpQRIXb1JqNWF2T1ZKOWV1cHRRUDYtMnBxUTAaIkFITjBFN0Vwb1lpRVRZbV9Lc2JWRUU4OWFXX1FXZDltR1E&gl=us&hl=en"
+  },
+  {
+   "title": "WILLIAMS HONOR ~ Home for the Holidays",
+   "date": {
+    "start_date": "Dec 13",
+    "when": "Dec 13, 3:00 PM"
+   },
+   "venue": {
+    "name": "Old Franklin Schoolhouse",
+    "link": "https://www.google.com/search?q=Old+Franklin+Schoolhouse&ludocid=9758748672001658014&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=9758748672001658014&q=Old+Franklin+Schoolhouse"
+   },
+   "address": [
+    "Old Franklin Schoolhouse",
+    "Metuchen, NJ"
+   ],
+   "event_location_map": {
+    "image": "https://www.google.com/maps/vt/data=a1xn2q3QCUp7kifoUqV9IWcLuoSCsasq0BH6wSCz_rpZ7OJy26Ztt_H-Css3SdEKYIXkGyZZw-Rucc31qV4PARTS8rlHmXt7FDhLLce2bb5vPQPTtnbuo9DwQgpAMiqTq-MYiyBz7XMc1rGydEU91BxinSRv4geaWtqSqXEX2DW2",
+    "link": "https://maps.google.com/?cid=9758748672001658014",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=9758748672001658014&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "ticket_info": [
+    {
+     "source": "facebook.com",
+     "link": "https://www.facebook.com/events/old-franklin-schoolhouse/williams-honor-home-for-the-holidays/3392123584292787/",
+     "link_type": "tickets"
+    }
+   ],
+   "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQn7n6eeVLvpYfff--UzG0DZTAXpi4UfmyyN0XcgkrWwjLchRrLbm8DLnljl53crMvTp-Tqej5wa7sOP_Y",
+   "event_token": "EqIICuIHQUREYldlYjRRM1B4SDV0UjhwNUlENFVpeC1kMUc3ckRkcS1kS0JudjF2V3VNY0w5QVFDTENKZFByVE0xYTkzdENMVXVVcUtaRWxvdF9wZ3V4MUU3bEh5MlZkNlhzaWNkMGdEajg5ZHlvUy1EM1JXMWF3cUJoQy1BbHNtOGo3VmUwRE1XcjR2Qm01MFNFMmx0ZDdCUXk0TFJDT0NYZ2lUbHMwSlpZVmlXcnRvZjZISzdxd0duOWRNcUhFWUtkY21QVS10TE1aMGpGeWVULV9ucWxaMUZEVHVuVlBoQU1GVnZHSHVCaVNLbDh6Q1A1cTRPWWZNeVJXRU13NW8yUm81R1liWkR3OEItVTBScWI0c09aNFB2Tk9QOVQ5SWhlVFQzcHFRQldQM1h2SVNlM1pQTy1La1RzX0RlM0tOQkIwTV9OVWp5LUtXT3MycHhQR21uSE8tYUVPdXJmWGpGbGJlNy1sVmR5aURwcjhUX1Q2YWE4bFhJZ3JoMG9yLWhqdTlEWHJfQlppY19aN0U2REdOQUpmdzFaenZFdVA2RjVmYWJlSjdTSEc5MkZrMzZWdEMxdVI1WnpLZkpDTWY4bTZscGhYZXpDbk1QdDNtX3RRSGFnbVRsLU5PLXhHdlZhc3VpbzMzalppX0RrOTVWTlBvbnBLc3hsNE1yUDIxbnFHUEs0bmZuT2hjazQ0cDNwR3ZXY3VNbGUwZ21qN2piRzNkXzR4NUdhd0hFaTdZRmc5M3BGUGIwbkllVkdDaXhqbnNpT3Z3OGNEc3dPTHZqVVU4SWw4TWtubmZIVVlGbHlaaWVwR1hwZnZtM1VJTkMybUtwOXJVcThRQkhpNnN4NjBKb2V5RGNlYzlGWU9BYVpGTW5aeXJuX2IzelI0MFdWRllVSkhudi1XdUlVZnZuTXJpdGRVdlZoZHVCRmwxRE9meTBleVJGTHBjUW1LZjYzcWZrWmhWMWU2US15Mm9YOVBVbUF5WXRYbjlBTGI5R3NoazlJa0JmOHNFYVpURDF2eGFXRnlMWlZYN1JfbXYzcnk4RDAycE1fbkVtSFctM0lpb0xjU3V3dnN4SmFsWUxOcXNnaTctUjE0R1dFSFU2a2M5Mk93ZlNnYm5YMkdLaUgtWm1tdFI4dlI3SUo1b0stUXpGb09RZUtBeTlJYzZfV1hHNkV4a01RMVdvSXh4cTI4b3I1S0JpNnppZWlxSUE1R2ZMVHFndGFwSFd6cjBtY1pIVmgxOWhwSW1vc0FSTHQxQkZ0RHZYcnhIbDhHR0ZOU0FmZXpXZldkRDNVU25EVnpIdHExenU5WFJwSVhSR2JlTzh6URIXb1JqNWF2T1ZKOWV1cHRRUDYtMnBxUTAaIkFITjBFN0Z4azBjUkRZSDd5dUpZczVRSTZmM29WaTY2eFE",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=EqIICuIHQUREYldlYjRRM1B4SDV0UjhwNUlENFVpeC1kMUc3ckRkcS1kS0JudjF2V3VNY0w5QVFDTENKZFByVE0xYTkzdENMVXVVcUtaRWxvdF9wZ3V4MUU3bEh5MlZkNlhzaWNkMGdEajg5ZHlvUy1EM1JXMWF3cUJoQy1BbHNtOGo3VmUwRE1XcjR2Qm01MFNFMmx0ZDdCUXk0TFJDT0NYZ2lUbHMwSlpZVmlXcnRvZjZISzdxd0duOWRNcUhFWUtkY21QVS10TE1aMGpGeWVULV9ucWxaMUZEVHVuVlBoQU1GVnZHSHVCaVNLbDh6Q1A1cTRPWWZNeVJXRU13NW8yUm81R1liWkR3OEItVTBScWI0c09aNFB2Tk9QOVQ5SWhlVFQzcHFRQldQM1h2SVNlM1pQTy1La1RzX0RlM0tOQkIwTV9OVWp5LUtXT3MycHhQR21uSE8tYUVPdXJmWGpGbGJlNy1sVmR5aURwcjhUX1Q2YWE4bFhJZ3JoMG9yLWhqdTlEWHJfQlppY19aN0U2REdOQUpmdzFaenZFdVA2RjVmYWJlSjdTSEc5MkZrMzZWdEMxdVI1WnpLZkpDTWY4bTZscGhYZXpDbk1QdDNtX3RRSGFnbVRsLU5PLXhHdlZhc3VpbzMzalppX0RrOTVWTlBvbnBLc3hsNE1yUDIxbnFHUEs0bmZuT2hjazQ0cDNwR3ZXY3VNbGUwZ21qN2piRzNkXzR4NUdhd0hFaTdZRmc5M3BGUGIwbkllVkdDaXhqbnNpT3Z3OGNEc3dPTHZqVVU4SWw4TWtubmZIVVlGbHlaaWVwR1hwZnZtM1VJTkMybUtwOXJVcThRQkhpNnN4NjBKb2V5RGNlYzlGWU9BYVpGTW5aeXJuX2IzelI0MFdWRllVSkhudi1XdUlVZnZuTXJpdGRVdlZoZHVCRmwxRE9meTBleVJGTHBjUW1LZjYzcWZrWmhWMWU2US15Mm9YOVBVbUF5WXRYbjlBTGI5R3NoazlJa0JmOHNFYVpURDF2eGFXRnlMWlZYN1JfbXYzcnk4RDAycE1fbkVtSFctM0lpb0xjU3V3dnN4SmFsWUxOcXNnaTctUjE0R1dFSFU2a2M5Mk93ZlNnYm5YMkdLaUgtWm1tdFI4dlI3SUo1b0stUXpGb09RZUtBeTlJYzZfV1hHNkV4a01RMVdvSXh4cTI4b3I1S0JpNnppZWlxSUE1R2ZMVHFndGFwSFd6cjBtY1pIVmgxOWhwSW1vc0FSTHQxQkZ0RHZYcnhIbDhHR0ZOU0FmZXpXZldkRDNVU25EVnpIdHExenU5WFJwSVhSR2JlTzh6URIXb1JqNWF2T1ZKOWV1cHRRUDYtMnBxUTAaIkFITjBFN0Z4azBjUkRZSDd5dUpZczVRSTZmM29WaTY2eFE&gl=us&hl=en"
+  },
+  {
+   "title": "Seth Adam",
+   "date": {
+    "start_date": "Nov 28",
+    "when": "Nov 28, 7:30 PM"
+   },
+   "venue": {
+    "name": "The Parlor at Hailey's",
+    "link": "https://www.google.com/search?q=The+Parlor+at+Hailey%27s&ludocid=500039207012307622&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=500039207012307622&q=The+Parlor+at+Hailey%27s"
+   },
+   "address": [
+    "The Parlor at Hailey's",
+    "Metuchen, NJ"
+   ],
+   "event_location_map": {
+    "image": "https://www.google.com/maps/vt/data=rsi4nSPyMp75Ryt9v8WhAtfnEIT0VOx6njYBjDDW3RyU73kyJOvwnlwHXPrHVLMcGu-TyKB-3X4AAdyUdtTJQGGewoKgO_yevzTM1Y8zXfMXaziHHAFueK3rBhIWDV5f_9wDYmCW8sRgtvz8jc68zP5eXmm9-WxWHIiqHllFkYQl",
+    "link": "https://maps.google.com/?cid=500039207012307622",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=500039207012307622&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "ticket_info": [
+    {
+     "source": "bandsintown.com",
+     "link": "https://www.bandsintown.com/e/109106081?app_id=ggl_feed&came_from=289&utm_medium=web&utm_source=ggl_feed&utm_campaign=event",
+     "link_type": "tickets"
+    }
+   ],
+   "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc6roqHQqi0MUdU1KKS8W1F1NF52wxl0nzzdQ_qq-jmuV81JA7Q_zdCuF0HuU5zYiKmSI0nIIBSl7Ek4E",
+   "event_token": "EvcHCrcHQUREYldlYjF1WnZCOXQ3cnBOY1dKem9YS1g4bmZzWXMweGk5bHZZUzFaRGhrMEVOLXViR3QzREIzU0FQUlMtNnZDLUVFTmxnVEl2bnNQTjNtMFdYNElvdFl0ZnNSeVMxcE1Wem5QOG5QU3cwa1VrUVIybFRiX0FCYmo4WEhpRDZjVjR0dW5qZUFqSUdvWV9fVzRKNFpFazIyUWtuQjE4aHo3RmVyOVlpMDNXNlF3cWRTYjBwd1NnNDA5MFBERE5rcmUtQ3JVN3UwbWpjNXFfMEZ1U2tlZExzQXB1MlRtZWJtS1FFTjlITG1LcmFJLUp3dUVWdTVGUjFGWkRPNkZrRlI2MWJidWoyZ3NxWHFKeE1JYmx1cEJKeHJVNFBxaGJzZUxybk9ISzkxbDZucDFudVZvMnVDQ0htdG9TNmpZREtva2hxZndHOXNoUHYzVnotRGVacEJfNFU3blljb0xYT0ZBTlMyb2pJUUtNSkNmQnA0bmV6UlZPdS14MFB1SnRnVEV2eURRUjNHRkFTanA2cjd6OXlpLXNrbjNWNDFaeW4tWlZQN1JnT0RJOV9QUFU2OER1RmR6eGh5N0JObEFNQWRUSUVqNnl4LTl2SG9xRkpMR0M0czlrSDVLWUJkX1JPN1FXQkd1SXNrdWxrODRLNmtNNFJBbGFTNFlXV29yZ3Y3TkwyOGE4cVRDa3hQY3BNUnE5TTVxRTJBMjF6eWRLd18wUkh3ak1GWFUxMy1tME5IVGNQdTBuSkE2ZEZmMVJVS2x4c1diV2pJY0RHMGF2TS1LV3o1UFI0TklUSUdLcFljRkpsd2ZuYkE4OWJ6dF9aemcwcTJyRjN4VU9JQmtlSUJJRHZCU05mYmNCbVJxbjU4Mi12M0ZyZ1I0WUF4eGFIdXVJNVBsd2NxdmdPTVBEMEoyRDlQMDFtT2YwNVd4SXNEUFctUkhhcldWM21hSFY3eEx6S2RUcGVKdEV3R1lEQ0JySlBXb3UtZHNrdGJUOU9HV2piVHFPejl2Z1I1LWJ4T1JHNm5jWHpfbG5XdVRrR1VrSXNocUFHSHplOG9rVWJ5MkxLd21ka2oxNFZjLWdNcTQwYVNoaWdVeTZZc0FmclFmeFRJaWMzdFRXTkdyYVh6blVRY3pPMVdyV05VVktSaFliM3JTb0tzVzQwemZQdXhTVU92b2c5M3pFVWlnSXd6WXFYb1A1ZDJObFVRZHhWTVJTOW5ybFRxU0oyemVWQXF3Q0VEM0JnQ3BRZ1NVY253azlYSm1REhdvUmo1YXZPVko5ZXVwdFFQNi0ycHFRMBoiQUhOMEU3RnhGYkt3V3NTdVRJZGZidGxQSTBYUl92aFlwZw",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=EvcHCrcHQUREYldlYjF1WnZCOXQ3cnBOY1dKem9YS1g4bmZzWXMweGk5bHZZUzFaRGhrMEVOLXViR3QzREIzU0FQUlMtNnZDLUVFTmxnVEl2bnNQTjNtMFdYNElvdFl0ZnNSeVMxcE1Wem5QOG5QU3cwa1VrUVIybFRiX0FCYmo4WEhpRDZjVjR0dW5qZUFqSUdvWV9fVzRKNFpFazIyUWtuQjE4aHo3RmVyOVlpMDNXNlF3cWRTYjBwd1NnNDA5MFBERE5rcmUtQ3JVN3UwbWpjNXFfMEZ1U2tlZExzQXB1MlRtZWJtS1FFTjlITG1LcmFJLUp3dUVWdTVGUjFGWkRPNkZrRlI2MWJidWoyZ3NxWHFKeE1JYmx1cEJKeHJVNFBxaGJzZUxybk9ISzkxbDZucDFudVZvMnVDQ0htdG9TNmpZREtva2hxZndHOXNoUHYzVnotRGVacEJfNFU3blljb0xYT0ZBTlMyb2pJUUtNSkNmQnA0bmV6UlZPdS14MFB1SnRnVEV2eURRUjNHRkFTanA2cjd6OXlpLXNrbjNWNDFaeW4tWlZQN1JnT0RJOV9QUFU2OER1RmR6eGh5N0JObEFNQWRUSUVqNnl4LTl2SG9xRkpMR0M0czlrSDVLWUJkX1JPN1FXQkd1SXNrdWxrODRLNmtNNFJBbGFTNFlXV29yZ3Y3TkwyOGE4cVRDa3hQY3BNUnE5TTVxRTJBMjF6eWRLd18wUkh3ak1GWFUxMy1tME5IVGNQdTBuSkE2ZEZmMVJVS2x4c1diV2pJY0RHMGF2TS1LV3o1UFI0TklUSUdLcFljRkpsd2ZuYkE4OWJ6dF9aemcwcTJyRjN4VU9JQmtlSUJJRHZCU05mYmNCbVJxbjU4Mi12M0ZyZ1I0WUF4eGFIdXVJNVBsd2NxdmdPTVBEMEoyRDlQMDFtT2YwNVd4SXNEUFctUkhhcldWM21hSFY3eEx6S2RUcGVKdEV3R1lEQ0JySlBXb3UtZHNrdGJUOU9HV2piVHFPejl2Z1I1LWJ4T1JHNm5jWHpfbG5XdVRrR1VrSXNocUFHSHplOG9rVWJ5MkxLd21ka2oxNFZjLWdNcTQwYVNoaWdVeTZZc0FmclFmeFRJaWMzdFRXTkdyYVh6blVRY3pPMVdyV05VVktSaFliM3JTb0tzVzQwemZQdXhTVU92b2c5M3pFVWlnSXd6WXFYb1A1ZDJObFVRZHhWTVJTOW5ybFRxU0oyemVWQXF3Q0VEM0JnQ3BRZ1NVY253azlYSm1REhdvUmo1YXZPVko5ZXVwdFFQNi0ycHFRMBoiQUhOMEU3RnhGYkt3V3NTdVRJZGZidGxQSTBYUl92aFlwZw&gl=us&hl=en"
+  },
+  {
+   "title": "Wolf Creek @ Hailey's Harp & Pub",
+   "date": {
+    "start_date": "Nov 20",
+    "when": "Nov 20, 8:30 PM"
+   },
+   "venue": {
+    "name": "Hailey's Harp & Pub",
+    "link": "https://www.google.com/search?q=Hailey%27s+Harp+%26+Pub&ludocid=8477878002749730517&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=8477878002749730517&q=Hailey%27s+Harp+%26+Pub"
+   },
+   "address": [
+    "Hailey's Harp & Pub",
+    "Metuchen, NJ"
+   ],
+   "event_location_map": {
+    "image": "https://www.google.com/maps/vt/data=8e89X5oRwcMOaCbh161NyZAqYzob6yFp8OPAFoYFhFxKEdntRJMyi_j-QHnWBraceNwvZtS9Yqc4_16PKZmcANdP5YtJ4WvMovHKrb_Etgz849uAsH2pd8zsXoaSXB6Em7EXhJkA2sPkOizn7gmOnNtzr9TdvE38F3dLDLakbz49",
+    "link": "https://maps.google.com/?cid=8477878002749730517",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=8477878002749730517&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "ticket_info": [
+    {
+     "source": "facebook.com",
+     "link": "https://www.facebook.com/events/haileys-harp-pub/wolf-creek-haileys-harp-pub/1617821996095870/",
+     "link_type": "tickets"
+    }
+   ],
+   "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTOdkQA0fULWdcz5K8f0MgeLUft_ppE8PJlJ763Ntso7WVzx2IBJdA7Xo_xsv4Aj-0JX3QcJ1hSsA7NbA",
+   "event_token": "EvcHCrcHQUREYldlYWh0V3psV3k3NVRwbTBQc1RsYWd6d3pKX2c4U3hWREdsX1AwTnBtTGZ1SHkwb19KTHhYWi1kMEhCVDNnZDBtYmRDQlpfdW13NzY0SjFLM3lsU004Yk1TNFhkRnExaU9DUEExSW4tSlVVMHhZeUR3V1ZCS01tZDFhT3Z3RDByTjhUNkZuZmtiUTA3NUl5MWxBaUlKUGRCaGF2SUNRck5kUHVGSFhEOFFDdlN1cWZpR0xJNXNKUXRUc1lacXJqSl9MeXptVUhZUm1oQzAwTXNBMDNmeVM5aHRDajdMMXRVR1RaNGRZSThVZWZSdmYwMlBvY19ERkhsV1hNbC1Ra1BPOGI2SzZveXIwdkdhSHc5WldVOTY3VjNJNDljVjN2dmx6cFZ1cm5rMFVyVFdOS3JOSDBCSkktLVhXTFYwaHhnS3lHc2szQ3hKVy12T0JXRjV1ZU82LWF4alJ0Q1RzLUcydllBWWdQaHJQRGZldDVvempCb0dCMUZZbXlhZk1seTRLOUMxMnhBeFZfX0JoVVBsQm9IWFNhdEFCRjVWNk5mc0xzNm9sYWc0dEJkb3VfY01wTnFGS0FiWmtVV3V4bGVVNXJVMnM1ZHFXM2hWbmZUSzdubWw0TDRmQ0RoWW9XYWpfZmtMWGNfQ3dfeDJtdmxCd3ZobW1uQ1J5d2hxZGMzc3h1TjFBM21DXzhrUTVXd3hQUEgzWmVoSFczSERWOXZoUV9TX0ZjdVFEYUx6ZHE3d082MG1pdDFvajRfQklUSkhvYmtSYW1VWVdYcFpYQy1wQ1JOQURyM3lZTDlHS05Yc04tbkQwa3ZOZk9uOElZWDY0b2pibnQ2NUF4ZXY2UElLYThJRmc4Z1VUdGhGNUxvYlI3bHFya25hV2xQUy02RENRUDBORUE4RnlDUmZwamVMMi1IREhzbEQ0MjBDSnhiUnVaRC1CY1B0VGRPVjlOdnFMWUFnRFJBaWF0cDhsbk9sOW4tT05ucmtlYXdmcnd4U09vbkpTU19PR3N5bkVSTXAybmxwbzh0elp3OEk2QzJGcDFaQmZlMVhIYXFqZTdjR3JYdWMtdUlWR1NsQ1FLdzl0QTYxcHFWZjhKWVJoTmstN3hhUURUWUhkZE9IcS00STVtMzhqdzJKMlpXRXdzX3hYblZleTY4bWwzRFdidEQ2UmQ5RVN4N3lCb1BRM1B4emNmU1NNTjhaRWhXeklBb1ZYSnBoV2szTjREUEpnTjYtZkNhc1BMX2wxQ3RadGpTcHd3EhdvUmo1YXZPVko5ZXVwdFFQNi0ycHFRMBoiQUhOMEU3RjBoNGpBMkR1Q3pLTjYzNWx1Sm9UcEM0ZXZqQQ",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=EvcHCrcHQUREYldlYWh0V3psV3k3NVRwbTBQc1RsYWd6d3pKX2c4U3hWREdsX1AwTnBtTGZ1SHkwb19KTHhYWi1kMEhCVDNnZDBtYmRDQlpfdW13NzY0SjFLM3lsU004Yk1TNFhkRnExaU9DUEExSW4tSlVVMHhZeUR3V1ZCS01tZDFhT3Z3RDByTjhUNkZuZmtiUTA3NUl5MWxBaUlKUGRCaGF2SUNRck5kUHVGSFhEOFFDdlN1cWZpR0xJNXNKUXRUc1lacXJqSl9MeXptVUhZUm1oQzAwTXNBMDNmeVM5aHRDajdMMXRVR1RaNGRZSThVZWZSdmYwMlBvY19ERkhsV1hNbC1Ra1BPOGI2SzZveXIwdkdhSHc5WldVOTY3VjNJNDljVjN2dmx6cFZ1cm5rMFVyVFdOS3JOSDBCSkktLVhXTFYwaHhnS3lHc2szQ3hKVy12T0JXRjV1ZU82LWF4alJ0Q1RzLUcydllBWWdQaHJQRGZldDVvempCb0dCMUZZbXlhZk1seTRLOUMxMnhBeFZfX0JoVVBsQm9IWFNhdEFCRjVWNk5mc0xzNm9sYWc0dEJkb3VfY01wTnFGS0FiWmtVV3V4bGVVNXJVMnM1ZHFXM2hWbmZUSzdubWw0TDRmQ0RoWW9XYWpfZmtMWGNfQ3dfeDJtdmxCd3ZobW1uQ1J5d2hxZGMzc3h1TjFBM21DXzhrUTVXd3hQUEgzWmVoSFczSERWOXZoUV9TX0ZjdVFEYUx6ZHE3d082MG1pdDFvajRfQklUSkhvYmtSYW1VWVdYcFpYQy1wQ1JOQURyM3lZTDlHS05Yc04tbkQwa3ZOZk9uOElZWDY0b2pibnQ2NUF4ZXY2UElLYThJRmc4Z1VUdGhGNUxvYlI3bHFya25hV2xQUy02RENRUDBORUE4RnlDUmZwamVMMi1IREhzbEQ0MjBDSnhiUnVaRC1CY1B0VGRPVjlOdnFMWUFnRFJBaWF0cDhsbk9sOW4tT05ucmtlYXdmcnd4U09vbkpTU19PR3N5bkVSTXAybmxwbzh0elp3OEk2QzJGcDFaQmZlMVhIYXFqZTdjR3JYdWMtdUlWR1NsQ1FLdzl0QTYxcHFWZjhKWVJoTmstN3hhUURUWUhkZE9IcS00STVtMzhqdzJKMlpXRXdzX3hYblZleTY4bWwzRFdidEQ2UmQ5RVN4N3lCb1BRM1B4emNmU1NNTjhaRWhXeklBb1ZYSnBoV2szTjREUEpnTjYtZkNhc1BMX2wxQ3RadGpTcHd3EhdvUmo1YXZPVko5ZXVwdFFQNi0ycHFRMBoiQUhOMEU3RjBoNGpBMkR1Q3pLTjYzNWx1Sm9UcEM0ZXZqQQ&gl=us&hl=en"
+  },
+  {
+   "title": "Seth Adam at The Parlor at Hailey\u2019s",
+   "date": {
+    "start_date": "Nov 28",
+    "when": "Nov 28, 7:30 PM"
+   },
+   "venue": {
+    "name": "The Parlor at Hailey's",
+    "link": "https://www.google.com/search?q=The+Parlor+at+Hailey%27s&ludocid=500039207012307622&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=500039207012307622&q=The+Parlor+at+Hailey%27s"
+   },
+   "address": [
+    "The Parlor at Hailey's",
+    "Metuchen, NJ"
+   ],
+   "event_location_map": {
+    "link": "https://maps.google.com/?cid=500039207012307622",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=500039207012307622&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "thumbnail": "https://serpapi.com/searches/6af918a0ba7b05d665023d9e/images/PA-_f0H-Z5MGBk0h7M6GHuZ4PeVIhX7VksO8m4XhQSs.jpg",
+   "event_token": "EqIICuIHQUREYldlWWg5RERFSmp4TlJENDZ4VUIyM0h1QUZSelhOR2I4UE5VeDZUZ0JRY29XTGtPd21QNzljZFpFdTRCaEl5c0VLN2VDZ1FNMVluZXFHT0FrY08tWmFDS09Ga3F5c2E5UTdlbm9lUFdmLWNNZ3MxY0NQWTNxeFk0MUNJNnNzdjNsRmRmd3Nob0o1S2ZaOEpYYjI0Z01Wa2prakNZeEJMSGdnT3pLS05BanEyTUJCVUVFbE1ZT2xKdnBHMHlLQWZ3NG9BVnhleWF4cmdhRVRuODgxT0V0MGt2ZjlKWlh4LUpHaVB6X05xNFFFLU9rdUVQUU1OREgyb2loY1dfSWg4NmhvM3VHXzVkZjBtVjNOd0VZNWRvOFAwa09lcjBHUUh5V1N4Y29tMXAxWi0tVGhkdGQwQ0xEczA4UmxiNk9ZYWlaeWJzZmxlalRYbFVIT3paaHBXOVd4WklZLWh1TUFfZV96SVlHR1hoUFNFSUQwRjlPMjJEUUZvV1R3d3ozcENPNkV2WjJweWVuQnNIazlET2pJTlJyaERSWjdKOWNNdUlsbnYydnBkc2RjSjRvcUl5UE1BNVdrNGJtVTNuVEVDMUEwQS1YVzF5M25NSS1Hcnd3a21TbXNib0lVZ1BtVkkwdzF0RGhTY3ZTUGxfdHhYTzdEOXFaRk9kb3IyNjY0em8zb0xQWHV3QmpabTNhZE84OHRob0wycGZIUjFGMFBJZm1yLUo0NDhtQkEzWmxQVy14cUdackxIUEw3NGdqMmdPcDEydHVwVGtrNTk1WHR0elZJQm1KdFJLTVp3RWt4VUd2Z3BrVGJ1d1QyNGdmM0lMVkkxd2hzSkhySVEzcVhBVEFlTXZTRVRlQ1l4T3FRVU1BU2VPY0RIQVpGcDlqdG5CakxtUkFQOVlMSXpDbmV3UVdCYTREYmJGSHJwRkM5UGs1SHVkMkoySXpqd182Y0V5UW9UbDZBQWFzcWd2bnZ3VGFzTm1aUVB6MWVLX0ptOTI0SjVWQXROUHlxcUVfNWhhZGZJc0pxeVFxU1dCMXRLSkcyc2t5TmZFMEFXVEV3cl9ydllUbXRhVGxQLVVYM1JNZUdCbHhDOWNTczloZ2ZLek5FcFVWSGthOXlCN1F6NnVqVEEtbmxEcThhcWxTUFA0SmZ1NTBxYU9VWko2c1MzS29xWk9rUWNGWXhLUnI1RDZ4a2s5dnVoWXMxZUlNd3hneUh2bnN2NXNJa2VXSmE3ek1HM0ExY3RqVmFaaVB3QkJmV2hYbWlES3BuSGpRU1R0N3JmMll2R0luS2NkVjBOUWNIbjFVSEIyNTJfOG1pURIXb1JqNWF2T1ZKOWV1cHRRUDYtMnBxUTAaIkFITjBFN0dzQ0NfdThHaWJrUzRoVHBHbHRrUm9ENFU0Q1E",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=EqIICuIHQUREYldlWWg5RERFSmp4TlJENDZ4VUIyM0h1QUZSelhOR2I4UE5VeDZUZ0JRY29XTGtPd21QNzljZFpFdTRCaEl5c0VLN2VDZ1FNMVluZXFHT0FrY08tWmFDS09Ga3F5c2E5UTdlbm9lUFdmLWNNZ3MxY0NQWTNxeFk0MUNJNnNzdjNsRmRmd3Nob0o1S2ZaOEpYYjI0Z01Wa2prakNZeEJMSGdnT3pLS05BanEyTUJCVUVFbE1ZT2xKdnBHMHlLQWZ3NG9BVnhleWF4cmdhRVRuODgxT0V0MGt2ZjlKWlh4LUpHaVB6X05xNFFFLU9rdUVQUU1OREgyb2loY1dfSWg4NmhvM3VHXzVkZjBtVjNOd0VZNWRvOFAwa09lcjBHUUh5V1N4Y29tMXAxWi0tVGhkdGQwQ0xEczA4UmxiNk9ZYWlaeWJzZmxlalRYbFVIT3paaHBXOVd4WklZLWh1TUFfZV96SVlHR1hoUFNFSUQwRjlPMjJEUUZvV1R3d3ozcENPNkV2WjJweWVuQnNIazlET2pJTlJyaERSWjdKOWNNdUlsbnYydnBkc2RjSjRvcUl5UE1BNVdrNGJtVTNuVEVDMUEwQS1YVzF5M25NSS1Hcnd3a21TbXNib0lVZ1BtVkkwdzF0RGhTY3ZTUGxfdHhYTzdEOXFaRk9kb3IyNjY0em8zb0xQWHV3QmpabTNhZE84OHRob0wycGZIUjFGMFBJZm1yLUo0NDhtQkEzWmxQVy14cUdackxIUEw3NGdqMmdPcDEydHVwVGtrNTk1WHR0elZJQm1KdFJLTVp3RWt4VUd2Z3BrVGJ1d1QyNGdmM0lMVkkxd2hzSkhySVEzcVhBVEFlTXZTRVRlQ1l4T3FRVU1BU2VPY0RIQVpGcDlqdG5CakxtUkFQOVlMSXpDbmV3UVdCYTREYmJGSHJwRkM5UGs1SHVkMkoySXpqd182Y0V5UW9UbDZBQWFzcWd2bnZ3VGFzTm1aUVB6MWVLX0ptOTI0SjVWQXROUHlxcUVfNWhhZGZJc0pxeVFxU1dCMXRLSkcyc2t5TmZFMEFXVEV3cl9ydllUbXRhVGxQLVVYM1JNZUdCbHhDOWNTczloZ2ZLek5FcFVWSGthOXlCN1F6NnVqVEEtbmxEcThhcWxTUFA0SmZ1NTBxYU9VWko2c1MzS29xWk9rUWNGWXhLUnI1RDZ4a2s5dnVoWXMxZUlNd3hneUh2bnN2NXNJa2VXSmE3ek1HM0ExY3RqVmFaaVB3QkJmV2hYbWlES3BuSGpRU1R0N3JmMll2R0luS2NkVjBOUWNIbjFVSEIyNTJfOG1pURIXb1JqNWF2T1ZKOWV1cHRRUDYtMnBxUTAaIkFITjBFN0dzQ0NfdThHaWJrUzRoVHBHbHRrUm9ENFU0Q1E&gl=us&hl=en"
+  },
+  {
+   "title": "Friendsgiving at Duke's",
+   "date": {
+    "start_date": "Nov 24",
+    "when": "Nov 24, 7:00 PM"
+   },
+   "venue": {
+    "name": "Duke\u2019s Steakhouse & Fine Dining Restaurant",
+    "link": "https://www.google.com/search?q=Duke%E2%80%99s+Steakhouse+%26+Fine+Dining+Restaurant&ludocid=1951864974643801500&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=1951864974643801500&q=Duke%E2%80%99s+Steakhouse+%26+Fine+Dining+Restaurant"
+   },
+   "address": [
+    "Duke\u2019s Steakhouse & Fine Dining Restaurant",
+    "Metuchen, NJ"
+   ],
+   "event_location_map": {
+    "image": "https://www.google.com/maps/vt/data=FwcibCiCiqYiRamin65809fBgB-qIg1SZAWW03e4bBti0aEnIzjmyyahiIVYNQe6SI5ZS139GujSHuN03LOLaPT_9C-2bVG4eTu8NCVREULisbnVOdCJyggwS6Y2NGUNIWUw56GtlGYSxOREcjv0bt5uV9HV15K1AffjKXL_W9h5",
+    "link": "https://maps.google.com/?cid=1951864974643801500",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=1951864974643801500&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "ticket_info": [
+    {
+     "source": "facebook.com",
+     "link": "https://www.facebook.com/61574689079315/posts/friendsgiving-at-dukes-steakhouse-an-evening-of-gratitude-glamour-great-food-unf/122194754444822969/",
+     "link_type": "tickets"
+    }
+   ],
+   "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTmq8rDO0U0H-nIMJ2puHefejbw82_yp9Jfg-7Z4gUB6h66F8vZGBwkcEQT5zI0PdPT8ZTLpjiZd77Qwrc",
+   "event_token": "EswICowIQUREYldlYmsydGQ1YjgzVDVMRlUxeXVDTFJxTnpNbG9hVFRhOERGRk1ORG9mQVJyeVh0d0F4TWlvWmJVUEJIT2xwZk1laVFBdEZMakZWeEZsUWV3Z2VGdDEzYjB1c1V2d1NVcHJVZ25yMm5rUk01WU9qcmM2Z3VoMXBzeHBmWVlYTW1hUndXcU9jM2VnU25XNFFmTlhtZjlYV3JCLWNKVjFkSjdVN2czOWNCcUtTeEh4dEZXYlFNbXI5TDdBWVIxaGRqZU5GSmw5eFhTVk9WNXZfSDBEWGRpZTh0bGxVZ3gwaXlRbE1hLWRtdWt4dEZaZDVhbGxEV21nQmptOFdBOTAyZzVKbGswVkcyRTFaNDk0NWJWV0R6TmVmSDhuLUI5SmRCYjBwR2J3RjF3X0NzV1dtbE5Pd3NYZ3V2ZWo3SDdERDc3MGhWQmR6aWtxQ1JCSUo0QkFmRFg0eURnNm5RUHB3dmpBMU5GemFIMERXUlpBc3VKQzVVb21ZZHZURkZfLXRmRjg0QXV6a2FrSXNDb2ZJYmNhQ2xvM0lTWHlPZGNTYktZcnI1emZJVS1DS1RSVml1LTZhT05hV2llWTRIZHZZNlJoVmpOVWtNaGZ0M1NTX2xCbW1qYjJ2Zy15YnY4V0FScjA3ZlZhTF8zeFpKQnRTaVE3b1p5aE00OGx4bTJocXhUOXR2OEdTU3BvQ2JraXl1ekE5OW9rMDhGTkFZbEo2dGp4RGFUdm9YQWRtanlHdEFMQjFZOVhuWVp4Qk0ycFNNYWk3Y1NHeDJfMVpFazlMbkhnWWRRZzBNcHRJazJDLUUwNDZ2cExTdUNzYkd6R0tFOEpnTUZFZVA4WEZSb0FfbV9RbnlWaHNzUE5yMG5hazFOWGhRZS1ISXQ2TTJlLWFBeU9HaVlGeUlnTG9hczItczRLZ0pSUTJuMTBjUGh4am5SVlEyVDFjZ2tER0JtWmIyRGt1bmQza0dkQ0Z6U3NocjFqSE91dG91MFB4N3ZWUFFwU1R4enVhTmZhblR4Zlp5MGdmeWRydFA3QzJBMTFsLUVmc2xoYWRsY1Z4cjMzZlZQQ0xVSFhLd1g2TXlLQ0RwYkZGLUtIVnhENnRnR3hyV2xyMElweVkyaFA0MWVmRERBdjZFT2RxRTFVMXdYTDMzcXU1ajdqWHlYWUxDUE8zWV9PSWtFbWdxc3BBSV9NRDdZdU9rY2F4Y2lkQlVwV29CbU9rVWlDaHhPMDg2UVh0SEdKWDNCb2VSRi00RXRTSVBaSWgyV3FoQjNzME9fZzJYRVA0a1VpU1VuN056dklidDhJX2tvR0lESXFwVTZmOU1YMTgyTHdOTW4ybURtZVQ3ZFVwQnRlSHV4eThpNHV3UEQ3MzB6NUlEaxIXb1JqNWF2T1ZKOWV1cHRRUDYtMnBxUTAaIkFITjBFN0dOZWZBSzVtOGtGRkFwQXhMNzg4SG1RVERYcEE",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=EswICowIQUREYldlYmsydGQ1YjgzVDVMRlUxeXVDTFJxTnpNbG9hVFRhOERGRk1ORG9mQVJyeVh0d0F4TWlvWmJVUEJIT2xwZk1laVFBdEZMakZWeEZsUWV3Z2VGdDEzYjB1c1V2d1NVcHJVZ25yMm5rUk01WU9qcmM2Z3VoMXBzeHBmWVlYTW1hUndXcU9jM2VnU25XNFFmTlhtZjlYV3JCLWNKVjFkSjdVN2czOWNCcUtTeEh4dEZXYlFNbXI5TDdBWVIxaGRqZU5GSmw5eFhTVk9WNXZfSDBEWGRpZTh0bGxVZ3gwaXlRbE1hLWRtdWt4dEZaZDVhbGxEV21nQmptOFdBOTAyZzVKbGswVkcyRTFaNDk0NWJWV0R6TmVmSDhuLUI5SmRCYjBwR2J3RjF3X0NzV1dtbE5Pd3NYZ3V2ZWo3SDdERDc3MGhWQmR6aWtxQ1JCSUo0QkFmRFg0eURnNm5RUHB3dmpBMU5GemFIMERXUlpBc3VKQzVVb21ZZHZURkZfLXRmRjg0QXV6a2FrSXNDb2ZJYmNhQ2xvM0lTWHlPZGNTYktZcnI1emZJVS1DS1RSVml1LTZhT05hV2llWTRIZHZZNlJoVmpOVWtNaGZ0M1NTX2xCbW1qYjJ2Zy15YnY4V0FScjA3ZlZhTF8zeFpKQnRTaVE3b1p5aE00OGx4bTJocXhUOXR2OEdTU3BvQ2JraXl1ekE5OW9rMDhGTkFZbEo2dGp4RGFUdm9YQWRtanlHdEFMQjFZOVhuWVp4Qk0ycFNNYWk3Y1NHeDJfMVpFazlMbkhnWWRRZzBNcHRJazJDLUUwNDZ2cExTdUNzYkd6R0tFOEpnTUZFZVA4WEZSb0FfbV9RbnlWaHNzUE5yMG5hazFOWGhRZS1ISXQ2TTJlLWFBeU9HaVlGeUlnTG9hczItczRLZ0pSUTJuMTBjUGh4am5SVlEyVDFjZ2tER0JtWmIyRGt1bmQza0dkQ0Z6U3NocjFqSE91dG91MFB4N3ZWUFFwU1R4enVhTmZhblR4Zlp5MGdmeWRydFA3QzJBMTFsLUVmc2xoYWRsY1Z4cjMzZlZQQ0xVSFhLd1g2TXlLQ0RwYkZGLUtIVnhENnRnR3hyV2xyMElweVkyaFA0MWVmRERBdjZFT2RxRTFVMXdYTDMzcXU1ajdqWHlYWUxDUE8zWV9PSWtFbWdxc3BBSV9NRDdZdU9rY2F4Y2lkQlVwV29CbU9rVWlDaHhPMDg2UVh0SEdKWDNCb2VSRi00RXRTSVBaSWgyV3FoQjNzME9fZzJYRVA0a1VpU1VuN056dklidDhJX2tvR0lESXFwVTZmOU1YMTgyTHdOTW4ybURtZVQ3ZFVwQnRlSHV4eThpNHV3UEQ3MzB6NUlEaxIXb1JqNWF2T1ZKOWV1cHRRUDYtMnBxUTAaIkFITjBFN0dOZWZBSzVtOGtGRkFwQXhMNzg4SG1RVERYcEE&gl=us&hl=en"
+  },
+  {
+   "title": "Live Music: Shawn Mars",
+   "date": {
+    "start_date": "Nov 27",
+    "when": "Nov 27, 7:30 PM"
+   },
+   "venue": {
+    "name": "Hailey's Harp & Pub",
+    "link": "https://www.google.com/search?q=Hailey%27s+Harp+%26+Pub&ludocid=8477878002749730517&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=8477878002749730517&q=Hailey%27s+Harp+%26+Pub"
+   },
+   "address": [
+    "Hailey's Harp & Pub",
+    "Metuchen, NJ"
+   ],
+   "event_location_map": {
+    "link": "https://maps.google.com/?cid=8477878002749730517",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=8477878002749730517&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "thumbnail": "https://serpapi.com/searches/6af918a0ba7b05d665023d9e/images/_fCdpzROUhhC_uK1IURL9I3eJkTKGDylRms2NYbl09Q.jpg",
+   "event_token": "EswHCowHQUREYldlWmpVMmx3LTVkTU12N295Z3JjTExmdnZHemNHUFdreUVRLUdDZmp2dHY3NUJ1THpraGdmb2d5QXpZcl9hZjJmOWpzR2IzLVJ6OG02VjZubHRrR0xRVkk0MDF6VGtzd3A0RTRJMzdCYVdqdjZudFNwRG1LVmNHcEhwWHJCZE13MXVqblNSNmpYNzRGcWlqS19pM1ljSnR1TWZaYnY1WUExc25zN2lkcDZvakVHZm9XbjN4bjlRbHJJamRfcU9EX0NPamZKNUZWRW1TcXcxWUtfaW1laXdNeXJHenVMeVlKd2JyY0s0cGJHM290NnBwLVo1dVMyZ1lCSVgtY2dlRTRBMXYwUXpuVlE0OHZRZDZURXIxMTFXMW9YZEhOTXZ2RnpfWWNXVHU0OG5HTHJRR08yZ2hhWFRDcGZ1RkJrV1lIQjVyRm9qVENmcHg0NmlrTmlzS19DUXhnMTBKREtZbE16NEsyMmlMcDNqM3ZPTXdNaE9zRG94aWpHZWZZeXF4TzBod2g5RnpVVGpubGtHQ1lKUmZuN0pQYTJaSTBCNFFhYVhYTnUyVVpodlBZcHdMUVpTSDRBYmViVkRydUV0M3NqX0RZRkR4MUxFbExkUHhTMGdtOGo2UTk2MndlSVh4anEzT0ZlaFJ5LWxfUkE4dW5MXzlVbGdrLVlrWnROZkgwMUE4SXUtMm9qMDhYWk4xZHp0alZfdGpVMkpPMVpnNGJaeDUxcU1jdnNfSDQ1WjFmYThpRjhRa19FUmwyZ2p4TUV4WlR3YlFGbFZqXzU2LVpiNG5Ua1hCSXAzVnAzVkJWNE5MNjd6TXkybWxzQTlucExNOW1PYVE2RFRyUGNrbmIzUFY5aTF0Z3RER1QtTVpXcldhLTBoZzZFd2M3cXdocEJRRldCTF8tT0REMktod1pYT2Rsa1E1SmRnZm1uZHpPb0JpalpkYThtM09ONHIxSk9saG03QlZ4U3BmZDBaUHVNQk1WYUpoR2d0SmdSSDZQU0pYY0JxOW9VanBoN2VncWQtbHo2WEFKNmVFb21zNDNFZ3FYRFlxNm4yZ01pZHlQM3hWY0I4aVBqZXg5eGx0NTFXaGpTdjFyRzlUTnZ5d1Jrc0tZR2JRenBYWjVnU2t1TFZXYkx1b2c2aUNEQllaUGVLSUt3U2RMX19UaTJvbDJYMEo3bkdkQUdvRndielhyaGphWjBVVDYSF29SajVhdk9WSjlldXB0UVA2LTJwcVEwGiJBSE4wRTdIRF8zWU9nZ09kYXZNVHlCbGxFTVhNVUJrc1Zn",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=EswHCowHQUREYldlWmpVMmx3LTVkTU12N295Z3JjTExmdnZHemNHUFdreUVRLUdDZmp2dHY3NUJ1THpraGdmb2d5QXpZcl9hZjJmOWpzR2IzLVJ6OG02VjZubHRrR0xRVkk0MDF6VGtzd3A0RTRJMzdCYVdqdjZudFNwRG1LVmNHcEhwWHJCZE13MXVqblNSNmpYNzRGcWlqS19pM1ljSnR1TWZaYnY1WUExc25zN2lkcDZvakVHZm9XbjN4bjlRbHJJamRfcU9EX0NPamZKNUZWRW1TcXcxWUtfaW1laXdNeXJHenVMeVlKd2JyY0s0cGJHM290NnBwLVo1dVMyZ1lCSVgtY2dlRTRBMXYwUXpuVlE0OHZRZDZURXIxMTFXMW9YZEhOTXZ2RnpfWWNXVHU0OG5HTHJRR08yZ2hhWFRDcGZ1RkJrV1lIQjVyRm9qVENmcHg0NmlrTmlzS19DUXhnMTBKREtZbE16NEsyMmlMcDNqM3ZPTXdNaE9zRG94aWpHZWZZeXF4TzBod2g5RnpVVGpubGtHQ1lKUmZuN0pQYTJaSTBCNFFhYVhYTnUyVVpodlBZcHdMUVpTSDRBYmViVkRydUV0M3NqX0RZRkR4MUxFbExkUHhTMGdtOGo2UTk2MndlSVh4anEzT0ZlaFJ5LWxfUkE4dW5MXzlVbGdrLVlrWnROZkgwMUE4SXUtMm9qMDhYWk4xZHp0alZfdGpVMkpPMVpnNGJaeDUxcU1jdnNfSDQ1WjFmYThpRjhRa19FUmwyZ2p4TUV4WlR3YlFGbFZqXzU2LVpiNG5Ua1hCSXAzVnAzVkJWNE5MNjd6TXkybWxzQTlucExNOW1PYVE2RFRyUGNrbmIzUFY5aTF0Z3RER1QtTVpXcldhLTBoZzZFd2M3cXdocEJRRldCTF8tT0REMktod1pYT2Rsa1E1SmRnZm1uZHpPb0JpalpkYThtM09ONHIxSk9saG03QlZ4U3BmZDBaUHVNQk1WYUpoR2d0SmdSSDZQU0pYY0JxOW9VanBoN2VncWQtbHo2WEFKNmVFb21zNDNFZ3FYRFlxNm4yZ01pZHlQM3hWY0I4aVBqZXg5eGx0NTFXaGpTdjFyRzlUTnZ5d1Jrc0tZR2JRenBYWjVnU2t1TFZXYkx1b2c2aUNEQllaUGVLSUt3U2RMX19UaTJvbDJYMEo3bkdkQUdvRndielhyaGphWjBVVDYSF29SajVhdk9WSjlldXB0UVA2LTJwcVEwGiJBSE4wRTdIRF8zWU9nZ09kYXZNVHlCbGxFTVhNVUJrc1Zn&gl=us&hl=en"
+  },
+  {
+   "title": "Jon Langford & Jean Cook w/Special Guest Walter Salas-Humara",
+   "date": {
+    "start_date": "Dec 5",
+    "when": "Dec 5, 7:00 PM"
+   },
+   "venue": {
+    "name": "Old Franklin Schoolhouse",
+    "link": "https://www.google.com/search?q=Old+Franklin+Schoolhouse&ludocid=9758748672001658014&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=9758748672001658014&q=Old+Franklin+Schoolhouse"
+   },
+   "address": [
+    "Old Franklin Schoolhouse",
+    "Metuchen, NJ"
+   ],
+   "event_location_map": {
+    "link": "https://maps.google.com/?cid=9758748672001658014",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=9758748672001658014&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "thumbnail": "https://serpapi.com/searches/6af918a0ba7b05d665023d9e/images/mVd0iVSBVU7E90KCyUIomCshO__zMjKzCvhg9S_RrDs.jpg",
+   "event_token": "EvcICrcIQUREYldlYUFQbEMyRkhlU1VVYTJaLVBXRVJMRkNLRWZKQlpmVTdmeUhlNVdpQ2FRQ2psV3AyWjVIX0RvVkoyTDlSaW9LMTM5bHZTcjJHdmxUcU51VGV2MHdzVmJmSXBFbUI5ZXBTQk55TGlZdkNPMHFHRE96X1pfNUNHU1lmSDM5a0RTa1RDVG95UWdfcE1fdmRCV1M1V2N1a0hhRkZreVdrTVdpbUU0ZWZ4YU41a3FxZF9JbTFUek16LTdZWkEtU0VMalJ0d0R4WVhlcjVMQ0V6ckVfRkt3WmJLeF9rVzBRelBYbjFZeDJTVVNIYmg2WS03OGRUZDFKUG9MSUxTVk15OTZCLTgzS2ZmLW1FV3poTzdIb2J1c1g3OFNpZXg4a3VXSnlJXzhOODFpb3FDQ01Qc2xYVWtsVDVJTmUwRnhTZmtsUll5U0plU3NySGZXRkkxa2ZFY3NDbTU0TzVQWk5YTFJ6eTNBcWJYMUJJcVcwRktTOXVUeVg0c29ELThkSGpMU3g1R296bVBCTGcxcWw5Q1NpSlZLbTNJMEJ1YkRXNnhJMjlSOU1lei1ZOGg4cWZrcFVfLWRzM21nZGd4LTllMmRNbDF1MGdsVlpBUHNOakh0bzktaFhzTzk3NFBpZFhXeFM1eTRQcC00NVdvcmthNEZnOFlqQml4eDdlMW5uZTNvQmEtamxXUVhYdFVEQ2xfaC1DbHZKczlDWjRwNG1MazVSY1FkZVJHZkMyUTQ3Y0tnb1B6eXdIaVZPaGx5QWlWMTRnaXF6am9oLUYycVdSSUp0bHVpRm5MZ0ZRU1J4aEVFMnFkMXh1Mkc2Rk8tckIya1FIWDBURnU2UWt4S01EUGRET0JhRF9xakpvX1VocGk1eVRWUkRnbmFoZVdmVElQRzZZT0JteXAyaG9JVEhma25KbXFvTGtMTG4yaG5BR0lUdFBvV3c4ZVRCaGRGNWR1SUEycHBzSmx0TTFDc2VtN1VKMVZOU2hCN0dKcVpBQl9OcmZVYTRUOENSdG8wdndsMGo2RjMyb3pHcXd3dF95cHFwbDlXNk5pNTNnUnd2dmRxQjU1ODZkMWpYRUcta20yX0pEZlJHckhwSUhOTzBVa2JZWWRJRDk1VmQyVWRKYVJrNGlMSnJFMHdNMWlCNmc5MXZfRk9GQW1Vell0ZU1fSHFPY19uUjhDVlNnUGhxQS1QVHo5dkFWVkRtOVZaSTRKZmZiSS1SSjJvVG42dkhsUTBrbUtiNmp0eDBtNWE1ZVJ4RW9GN0Z2WTZCOWR2YkU5WmdGUU05ZDRtUEpGRFRVSnI3OGwzbk51UlRFMXRpbUpJcG5nRmFRODNXb2xBWHQ1NGdDbzVINTI1RG1hOWUybXFaWVQwczdBcXkwUFlROThqdG5ZQThsZmx4QUdkekVLRzdhd0NndndsYzdOUWdOVlFyNm8SF29SajVhdk9WSjlldXB0UVA2LTJwcVEwGiJBSE4wRTdGcU9maDkyVXluNXRNTnMzc1pkS005bXM5bTFB",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=EvcICrcIQUREYldlYUFQbEMyRkhlU1VVYTJaLVBXRVJMRkNLRWZKQlpmVTdmeUhlNVdpQ2FRQ2psV3AyWjVIX0RvVkoyTDlSaW9LMTM5bHZTcjJHdmxUcU51VGV2MHdzVmJmSXBFbUI5ZXBTQk55TGlZdkNPMHFHRE96X1pfNUNHU1lmSDM5a0RTa1RDVG95UWdfcE1fdmRCV1M1V2N1a0hhRkZreVdrTVdpbUU0ZWZ4YU41a3FxZF9JbTFUek16LTdZWkEtU0VMalJ0d0R4WVhlcjVMQ0V6ckVfRkt3WmJLeF9rVzBRelBYbjFZeDJTVVNIYmg2WS03OGRUZDFKUG9MSUxTVk15OTZCLTgzS2ZmLW1FV3poTzdIb2J1c1g3OFNpZXg4a3VXSnlJXzhOODFpb3FDQ01Qc2xYVWtsVDVJTmUwRnhTZmtsUll5U0plU3NySGZXRkkxa2ZFY3NDbTU0TzVQWk5YTFJ6eTNBcWJYMUJJcVcwRktTOXVUeVg0c29ELThkSGpMU3g1R296bVBCTGcxcWw5Q1NpSlZLbTNJMEJ1YkRXNnhJMjlSOU1lei1ZOGg4cWZrcFVfLWRzM21nZGd4LTllMmRNbDF1MGdsVlpBUHNOakh0bzktaFhzTzk3NFBpZFhXeFM1eTRQcC00NVdvcmthNEZnOFlqQml4eDdlMW5uZTNvQmEtamxXUVhYdFVEQ2xfaC1DbHZKczlDWjRwNG1MazVSY1FkZVJHZkMyUTQ3Y0tnb1B6eXdIaVZPaGx5QWlWMTRnaXF6am9oLUYycVdSSUp0bHVpRm5MZ0ZRU1J4aEVFMnFkMXh1Mkc2Rk8tckIya1FIWDBURnU2UWt4S01EUGRET0JhRF9xakpvX1VocGk1eVRWUkRnbmFoZVdmVElQRzZZT0JteXAyaG9JVEhma25KbXFvTGtMTG4yaG5BR0lUdFBvV3c4ZVRCaGRGNWR1SUEycHBzSmx0TTFDc2VtN1VKMVZOU2hCN0dKcVpBQl9OcmZVYTRUOENSdG8wdndsMGo2RjMyb3pHcXd3dF95cHFwbDlXNk5pNTNnUnd2dmRxQjU1ODZkMWpYRUcta20yX0pEZlJHckhwSUhOTzBVa2JZWWRJRDk1VmQyVWRKYVJrNGlMSnJFMHdNMWlCNmc5MXZfRk9GQW1Vell0ZU1fSHFPY19uUjhDVlNnUGhxQS1QVHo5dkFWVkRtOVZaSTRKZmZiSS1SSjJvVG42dkhsUTBrbUtiNmp0eDBtNWE1ZVJ4RW9GN0Z2WTZCOWR2YkU5WmdGUU05ZDRtUEpGRFRVSnI3OGwzbk51UlRFMXRpbUpJcG5nRmFRODNXb2xBWHQ1NGdDbzVINTI1RG1hOWUybXFaWVQwczdBcXkwUFlROThqdG5ZQThsZmx4QUdkekVLRzdhd0NndndsYzdOUWdOVlFyNm8SF29SajVhdk9WSjlldXB0UVA2LTJwcVEwGiJBSE4wRTdGcU9maDkyVXluNXRNTnMzc1pkS005bXM5bTFB&gl=us&hl=en"
+  },
+  {
+   "title": "Jon Langford & Walter Salas-Humara at Old...",
+   "date": {
+    "start_date": "Dec 5",
+    "when": "Dec 5, 6:30 PM"
+   },
+   "venue": {
+    "name": "Old Franklin Schoolhouse",
+    "link": "https://www.google.com/search?q=Old+Franklin+Schoolhouse&ludocid=9758748672001658014&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=9758748672001658014&q=Old+Franklin+Schoolhouse"
+   },
+   "address": [
+    "Old Franklin Schoolhouse",
+    "Metuchen, NJ"
+   ],
+   "event_location_map": {
+    "link": "https://maps.google.com/?cid=9758748672001658014",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=9758748672001658014&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "thumbnail": "https://serpapi.com/searches/6af918a0ba7b05d665023d9e/images/ppTJY1_v6yZiT36g0386Qr99_g-Q9jqsvnqG5bsAB0w.jpg",
+   "event_token": "EswICowIQUREYldlWTlRTUdCOWpMcjJodTlSUVlDS1E3SWpTZ2c0QmJ2WFJNRXFXbWt5c1JpUFFvWlBYUHVBMm5FdFRHY0RfVGhuOWpuZlBsbDNxdkM1TXl5YXFxcVFBN1V0Q2xJYzg4TGZMT1k1eTRESi1ZLUtUT2hDTENBUldHbUFfZDF6NFpFd2pzSVhtWnNsTXd5S1hDelR2R1VQdWVlaW1BSmY3SGgzd29SNFA3RnA5NEJoZmtTbTVmblFNLXVhcVktMWdKTzdXV3ctY0hsRlRkZGVESkJZYkx1ZU03NEhtd0VXd0dGeWJENzJxN2VhQmNSNVFEUEVLU2xGZHBNNzRQZ2p0UUNNNWNFUG1xQW1TN2RHMzJybFFwbFNncDRBTk1MeUlVUGtReVc1aHh1OXBqMWV3YXM4ZHBYQmRXRDkyak93bk9XcUliYkdTV0cycmJnaTQ5VU5UX192Y2l2RW51cnhTYUNxTG1HRlRDQk8xbWlJNU9BdFNsU3BLQjRKaHU1YUwxNzltZ2RjS3YwYlZZa1paLWFqMlVHeG5WZWF5ajRkS0d6M1Q0SVJSRXplaXB6M3FxYjVVVmU5c3lXOXZOQ003aVluNGdJdGVDdENKUWhDeHVzeVRJY0ZOTnprWERmMFVvQTZtNHg0Wm5BOWlSMDc3dVVkdl9UTWpLTU91blpwOVA2eVZTWkYtdzRrN2MwNThDR3dNSlg3QnNkSGx5VUZwZGl6VVJrSmRqaF8tX3dEQXlUV2wwMG5xQTVSWU55Zm5fZUgyM2dSR1JGaGpoRC11QTZpYWhTNmw4TkpyM1dlZEpLTDE0VXQ0Y1pDU2l5SW1qQWVQUThqdWlXOURhVU9NSWo5MGFuY1BoenJGZEQtV0FhTmUzeF9SMTVUcFYzbEdNd2x5MUJycTAzSHBDVFdrSzh6UkQ3STdsTlp2aU5uQmZiTHFiMXVka1Boc1FlTG1jREZBa1pUaU9ZZGpOSjEybUs1NWRfNmVzcVNuZUxBeTc4ZjJJdmhsSFVCNGotYUx1aXhsUmlhWkpVV1F3WEV6NW1YblNqX0FITzdHeWw3Uml4YlllRFVkYldObkcya3ZSNDhsbURWa090NzB5VE9hUFZzdDl5V0NOTXpSZ0duTzVxdjN1NGhUOUFSVnk2ZTNKcmZhOXhUU2Q1S202enBIYjUzYm9PaW9sX1JoLWJ2TUp0eU05ZjU5ZE8wZFIwRXRrdnlsTTRYYnJON0RYbFJMVDNzVTZscGR0QmVhZC0xU1Y5dk5qd1hTUHB2cklVcjFKbWZEdl9majlvclBuYjdmNVZnbHYtVVdKQ001MHBkZlBXQVRvMmF1dEVLbmJpc0FZOVVOWFlSVVhqVFdYbVVkdEotWThHVXNDdBIXb1JqNWF2T1ZKOWV1cHRRUDYtMnBxUTAaIkFITjBFN0ZSRVV4SW1UZXFkY05Ea0MxVy1LcnpDWG5yRGc",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=EswICowIQUREYldlWTlRTUdCOWpMcjJodTlSUVlDS1E3SWpTZ2c0QmJ2WFJNRXFXbWt5c1JpUFFvWlBYUHVBMm5FdFRHY0RfVGhuOWpuZlBsbDNxdkM1TXl5YXFxcVFBN1V0Q2xJYzg4TGZMT1k1eTRESi1ZLUtUT2hDTENBUldHbUFfZDF6NFpFd2pzSVhtWnNsTXd5S1hDelR2R1VQdWVlaW1BSmY3SGgzd29SNFA3RnA5NEJoZmtTbTVmblFNLXVhcVktMWdKTzdXV3ctY0hsRlRkZGVESkJZYkx1ZU03NEhtd0VXd0dGeWJENzJxN2VhQmNSNVFEUEVLU2xGZHBNNzRQZ2p0UUNNNWNFUG1xQW1TN2RHMzJybFFwbFNncDRBTk1MeUlVUGtReVc1aHh1OXBqMWV3YXM4ZHBYQmRXRDkyak93bk9XcUliYkdTV0cycmJnaTQ5VU5UX192Y2l2RW51cnhTYUNxTG1HRlRDQk8xbWlJNU9BdFNsU3BLQjRKaHU1YUwxNzltZ2RjS3YwYlZZa1paLWFqMlVHeG5WZWF5ajRkS0d6M1Q0SVJSRXplaXB6M3FxYjVVVmU5c3lXOXZOQ003aVluNGdJdGVDdENKUWhDeHVzeVRJY0ZOTnprWERmMFVvQTZtNHg0Wm5BOWlSMDc3dVVkdl9UTWpLTU91blpwOVA2eVZTWkYtdzRrN2MwNThDR3dNSlg3QnNkSGx5VUZwZGl6VVJrSmRqaF8tX3dEQXlUV2wwMG5xQTVSWU55Zm5fZUgyM2dSR1JGaGpoRC11QTZpYWhTNmw4TkpyM1dlZEpLTDE0VXQ0Y1pDU2l5SW1qQWVQUThqdWlXOURhVU9NSWo5MGFuY1BoenJGZEQtV0FhTmUzeF9SMTVUcFYzbEdNd2x5MUJycTAzSHBDVFdrSzh6UkQ3STdsTlp2aU5uQmZiTHFiMXVka1Boc1FlTG1jREZBa1pUaU9ZZGpOSjEybUs1NWRfNmVzcVNuZUxBeTc4ZjJJdmhsSFVCNGotYUx1aXhsUmlhWkpVV1F3WEV6NW1YblNqX0FITzdHeWw3Uml4YlllRFVkYldObkcya3ZSNDhsbURWa090NzB5VE9hUFZzdDl5V0NOTXpSZ0duTzVxdjN1NGhUOUFSVnk2ZTNKcmZhOXhUU2Q1S202enBIYjUzYm9PaW9sX1JoLWJ2TUp0eU05ZjU5ZE8wZFIwRXRrdnlsTTRYYnJON0RYbFJMVDNzVTZscGR0QmVhZC0xU1Y5dk5qd1hTUHB2cklVcjFKbWZEdl9majlvclBuYjdmNVZnbHYtVVdKQ001MHBkZlBXQVRvMmF1dEVLbmJpc0FZOVVOWFlSVVhqVFdYbVVkdEotWThHVXNDdBIXb1JqNWF2T1ZKOWV1cHRRUDYtMnBxUTAaIkFITjBFN0ZSRVV4SW1UZXFkY05Ea0MxVy1LcnpDWG5yRGc&gl=us&hl=en"
+  }
+ ],
+ "_fetched_on": "2026-11-14",
+ "_query": "live music events in Metuchen, NJ"
+}

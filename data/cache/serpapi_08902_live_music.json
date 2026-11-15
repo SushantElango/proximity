@@ -1,0 +1,279 @@
+{
+ "search_metadata": {
+  "id": "6af91ac9d757f3dbefdef6d9",
+  "status": "Success",
+  "json_endpoint": "https://serpapi.com/searches/8PtnQUmDJY_WuyUPmkO_f8aD1Gx3Qd50FrgSq_4M_a8/6af91ac9d757f3dbefdef6d9.json",
+  "markdown_endpoint": "https://serpapi.com/searches/8PtnQUmDJY_WuyUPmkO_f8aD1Gx3Qd50FrgSq_4M_a8/6af91ac9d757f3dbefdef6d9.md",
+  "created_at": "2026-11-15 02:36:57 UTC",
+  "processed_at": "2026-11-15 02:36:57 UTC",
+  "google_events_url": "https://www.google.com/search?q=Live+music+events+in+North+Brunswick%2C+NJ&udm=54&hl=en&gl=us",
+  "raw_html_file": "https://serpapi.com/searches/8PtnQUmDJY_WuyUPmkO_f8aD1Gx3Qd50FrgSq_4M_a8/6af91ac9d757f3dbefdef6d9.html",
+  "total_time_taken": 5.19
+ },
+ "search_parameters": {
+  "q": "Live music events in North Brunswick, NJ",
+  "engine": "google_events"
+ },
+ "search_information": {
+  "events_results_state": "Results for exact spelling"
+ },
+ "events_map": {
+  "image": "https://www.google.com/maps/vt/data=apxJoTGSkot67O4L4d2AoUO22cTJi_7WWTmitSShKfSlUivpHAa035wtYgOi96_JO6ogc7DyoARyhSvoi793sOGMMxvQnLmh7q5tRp-b7ETEDo-jj5sIZoiFtxj_Z3tbDbgLsDuQZU1Yrnj2zLEJggpIrMPZS6_bQpGiPSX4wAbDcPvzEw1XLtk8mS3jaisx3P59E3EJ9MtiJFywJyUhHXHBMIVEDCB53co9kLrLJ41nCf4Q3yabSv18lXjs220OnAC_g472iQOXgbl8ecXStcr_ZRnplTjdsa3Kb20N7l_wlwpZ9V3yYBQv0UNx2rmlTRA5mDmVfOSx1jgpTqYhO6LndnHQqfBdUNa_3RosaJxGTVU87C5n35fplZGdQoDFiyZBmdsn7xIhOyTitAu9XF3l_ro2w7PbYW2ZnRrNYkMgD0Vd-GK9WSeV_E-5l0agPN-BqE24yIxKHVmQFi3i_sZQpUSUFn7sbxpt36yzTc6woqZjS_mfl868hblf5rGKYRez7L-8eknnYSpjcZPpgau8JxbXI8fsWc9w3jYt5s6Juzh9lnMTS9GOMC7ynZvWQ4F_SJh3-SG5h_OSsFIyCG2zLjjxD99CuDWFHPN2IjKmLXi6Jm3g_bJX2uBhfm9a0iTntzlgS1QHj3Fag8UezUo5PfwUJ3BIG3orcB2d9cRq4nw4Lc6UJ40GlvYg4uSmZdvoYQ_8ldfRl5sVan7NkuJH3V7G4gQg-XGUgVWPMaKZD7GiB_OJZVFjV_xKIL9WQNoaWR9Is4-MIu6XtHvG1CGKn3hIrEcqU6iWjPJJTxcgu2cl3ZqZKZU0nYBIAxD_AqQ9PRnoiqt_bvrYBkgpIcNkRutc7rNcBCn7l-1X93CXWEX0y3m-QnYqT-EwfxER6AOrKn7QX17w5mpfj3qB2cviFhs5s5S0XTgHx6bw9WOUi3WjYeTfxluaYZMN9aSrWq79ewt9o9KYikfJuEo",
+  "gps_coordinates": {
+   "latitude": 40.47776996827146,
+   "longitude": -74.45606231689453
+  },
+  "zoom": 12
+ },
+ "events_results": [
+  {
+   "title": "Electrify Your Symphony with Mark Wood",
+   "date": {
+    "start_date": "Jan 20",
+    "when": "Jan 20, 7:00 PM"
+   },
+   "venue": {
+    "name": "North Brunswick Township High School",
+    "link": "https://www.google.com/search?q=North+Brunswick+Township+High+School&ludocid=15147893563418617631&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=15147893563418617631&q=North+Brunswick+Township+High+School"
+   },
+   "address": [
+    "North Brunswick Township High School",
+    "North Brunswick Township, NJ"
+   ],
+   "event_location_map": {
+    "image": "https://www.google.com/maps/vt/data=CSz2Jd_K_KkeY9DFPE1IPIr9nrBIBdITjzlvSRiQW2-5OmDPtxCcL4ZkoMKia4oyw2g1qH5abC-KKSlNHJRjWvRQjxx8EPAvBmuiRZbZRbIV0lmh_akYD6fOQ7LaoNOOqpp5mWoW4kmekkYEnCyM9WpWAXSy3m7IbOlHiJMqOHHw",
+    "link": "https://maps.google.com/?cid=15147893563418617631",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=15147893563418617631&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "ticket_info": [
+    {
+     "source": "bandsintown.com",
+     "link": "https://www.bandsintown.com/e/108822718?app_id=ggl_feed&came_from=289&utm_medium=web&utm_source=ggl_feed&utm_campaign=event",
+     "link_type": "tickets"
+    }
+   ],
+   "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTBHKiMuplZ0u9vX7KuuSXahLzafE8kmGvkdM0uhWA6TDPnMMEFvlKwYIvKwn2OtjTQnAGsqyBRj7K0FGY",
+   "event_token": "EswICowIQUREYldlYmxaOXk2aW9IQ3ZPcjhMMFp4V1dibE8zV3dDeVNFdU5NYUlubXJZM0xsdm03Tm8xVnpfYkNyVWg0aWY4X29XLUQ3eUEwd0otc3VVdTN5MWtTUUFsR1l6WE92UjE4OUlfZnp0Q281RTNZei10NG94RVdUSi1DWjNXaFNXWDFmUFVLU2lDdXV2YjlwaURsQm5fLTExRDNZcHd6Y3JRRXpPaEhfUl83TzdMQjZkU0I3MnlHSklSTVI0MENNRHhwb0c4d000TEgzV3Q0SVlGWkpMUy15MldYaVBzRlM2STc2XzJpQjdjdkVRbVNDQVc3ajB6TnZ5UmtWMzlwLWhfZlRIYXdOTVZ0RkVSSi0tNHIyV0c3Qk01bkFEYmJPTkFkZTZLbzlGdW1ocWpjTUkzRUtrQ1hwMnAwTTk2U0YyNzJMbktsZmpKN1EzZFd4eVVKb1F4UzlHbmZ2U3F6SEpucmZVS0wyZnBKaklIZTdSSjJVRDlPZ3FzaURyYkpPOTgydUR2WkwzMl8zb0lBc3RGSDd2OHhPQ21NaDdXcTRyYVVTVjRTNVZuZDlHRUlfTjlkTFhGZFlGb2JnVUU2VzZkRmhpWVl2YlR1YlNBNktEb2R5Ti0wUkw1WmNRNm9DRndMazJheXg4YnYyZEtjRW1Vd05NQ0FQN2Z2OHdQUFkwWW1ZWjZQaVJtSXB0SDB2aEVHaTdqOHctbi1pT25qeEJqbVJXQlY3TXE0WGRnX1dKd3lxSTNZUFNYc01OaXlYQ0tOejRiTkhjY01EZGM3TWh6UDk4V1dQMF9RR3ZUdGlNR1FaWW02dmR6Ni1DY3VvUmNDaGdvTkduUHRiTXplbFpBcllGYmJwVTJ4WmNuQWRGNk0zVTBXbWdsS2ZlMGRpZnB4Qk9TZUZNbmVOYi1pb2Y5WVVsd0c4azItcUpfRVRwSlFYcHZ6LWFHUTl0TkNHNVZZY2xfS3V5WGRqYjFXV21Za2k1bk4wdDBUbThpTHFXQjEtOEduWUNHUDRKZ1dGWWhwQ29TdllObTlmUE9INzBFZHRDdGt5cVhfTTRtTzN3R0gwTVByUEhyTUVwWlZra3pmOTIzZFEtaEsyMWd6SXgwZWpDMEp3RURTLS1rcXFtckxyWVhadzA3Y0xSbzB4amM1YXRMYkdLbGdxaUhUZHY4WEpLWEdGZlg0YjNscjRQZnJWamZDb2xWZzd6WW5TMnRYZExCd0t6RjZJTkV3MjU2aUlpTjVtSjBHWlcyZ1UybUFFT0dSdVM5LXowQ2NQYnJ2c0g3S1puQkZEeklSb3NVYXAyZEl4eUx1UUJBZUlCSU9paGQ1bG5WSFZlOVpod2g1c3ltMmhzT3lrWF9ZQWJiU2M5M1dhVGxschIXekJyNWFxYjdILWl3cXRzUHVfclYwQWMaIkFITjBFN0hRdl9SVHlabVlGak0ybk1Tdk1XR1lUYUZlNHc",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=EswICowIQUREYldlYmxaOXk2aW9IQ3ZPcjhMMFp4V1dibE8zV3dDeVNFdU5NYUlubXJZM0xsdm03Tm8xVnpfYkNyVWg0aWY4X29XLUQ3eUEwd0otc3VVdTN5MWtTUUFsR1l6WE92UjE4OUlfZnp0Q281RTNZei10NG94RVdUSi1DWjNXaFNXWDFmUFVLU2lDdXV2YjlwaURsQm5fLTExRDNZcHd6Y3JRRXpPaEhfUl83TzdMQjZkU0I3MnlHSklSTVI0MENNRHhwb0c4d000TEgzV3Q0SVlGWkpMUy15MldYaVBzRlM2STc2XzJpQjdjdkVRbVNDQVc3ajB6TnZ5UmtWMzlwLWhfZlRIYXdOTVZ0RkVSSi0tNHIyV0c3Qk01bkFEYmJPTkFkZTZLbzlGdW1ocWpjTUkzRUtrQ1hwMnAwTTk2U0YyNzJMbktsZmpKN1EzZFd4eVVKb1F4UzlHbmZ2U3F6SEpucmZVS0wyZnBKaklIZTdSSjJVRDlPZ3FzaURyYkpPOTgydUR2WkwzMl8zb0lBc3RGSDd2OHhPQ21NaDdXcTRyYVVTVjRTNVZuZDlHRUlfTjlkTFhGZFlGb2JnVUU2VzZkRmhpWVl2YlR1YlNBNktEb2R5Ti0wUkw1WmNRNm9DRndMazJheXg4YnYyZEtjRW1Vd05NQ0FQN2Z2OHdQUFkwWW1ZWjZQaVJtSXB0SDB2aEVHaTdqOHctbi1pT25qeEJqbVJXQlY3TXE0WGRnX1dKd3lxSTNZUFNYc01OaXlYQ0tOejRiTkhjY01EZGM3TWh6UDk4V1dQMF9RR3ZUdGlNR1FaWW02dmR6Ni1DY3VvUmNDaGdvTkduUHRiTXplbFpBcllGYmJwVTJ4WmNuQWRGNk0zVTBXbWdsS2ZlMGRpZnB4Qk9TZUZNbmVOYi1pb2Y5WVVsd0c4azItcUpfRVRwSlFYcHZ6LWFHUTl0TkNHNVZZY2xfS3V5WGRqYjFXV21Za2k1bk4wdDBUbThpTHFXQjEtOEduWUNHUDRKZ1dGWWhwQ29TdllObTlmUE9INzBFZHRDdGt5cVhfTTRtTzN3R0gwTVByUEhyTUVwWlZra3pmOTIzZFEtaEsyMWd6SXgwZWpDMEp3RURTLS1rcXFtckxyWVhadzA3Y0xSbzB4amM1YXRMYkdLbGdxaUhUZHY4WEpLWEdGZlg0YjNscjRQZnJWamZDb2xWZzd6WW5TMnRYZExCd0t6RjZJTkV3MjU2aUlpTjVtSjBHWlcyZ1UybUFFT0dSdVM5LXowQ2NQYnJ2c0g3S1puQkZEeklSb3NVYXAyZEl4eUx1UUJBZUlCSU9paGQ1bG5WSFZlOVpod2g1c3ltMmhzT3lrWF9ZQWJiU2M5M1dhVGxschIXekJyNWFxYjdILWl3cXRzUHVfclYwQWMaIkFITjBFN0hRdl9SVHlabVlGak0ybk1Tdk1XR1lUYUZlNHc&gl=us&hl=en"
+  },
+  {
+   "title": "2 Pianos 4 Hands",
+   "date": {
+    "start_date": "Dec 12",
+    "when": "Dec 12, 7:30 PM"
+   },
+   "venue": {
+    "name": "New Brunswick Performing Arts Center (NBPAC)",
+    "link": "https://www.google.com/search?q=New+Brunswick+Performing+Arts+Center+%28NBPAC%29&ludocid=12962552693172407693&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=12962552693172407693&q=New+Brunswick+Performing+Arts+Center+%28NBPAC%29"
+   },
+   "address": [
+    "New Brunswick Performing Arts Center (NBPAC)",
+    "New Brunswick, NJ"
+   ],
+   "event_location_map": {
+    "image": "https://www.google.com/maps/vt/data=2HqglkCSJwAAFXexjR4aqM00Ao9MF3O3kqEDs5qC2toAT0rhLaNkDBbvrNBBXVsSGxACER11r62wT5nvnDF0BK-BFGU8p4UrapQKbpMN57XmEbtDnQxaN96CBq04bmP-5_Pk-mjvCIC77QIlJ6gsrWW4EhChK_2kQLWRbsNTU7-5",
+    "link": "https://maps.google.com/?cid=12962552693172407693",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=12962552693172407693&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "ticket_info": [
+    {
+     "source": "facebook.com",
+     "link": "https://www.facebook.com/events/11-livingston-ave-new-brunswick-nj-united-states-new-jersey-08901/2-pianos-4-hands/29339713565631737/",
+     "link_type": "tickets"
+    }
+   ],
+   "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQCAM8gxzJ8fp9MRPeLBiyFdhJQbpEREWQckXLauHZFC_fC2axxdR0i3uwp8sbA3wHnNxBRIsF6BHH-_CA",
+   "event_token": "EqIICuIHQUREYldlYlFWMzFEVTRWb3FWem9MZ0hGVTM0elNFMTUtcUdPeWdTTWFnUHZPYTgzT1dLb01DZmRZNTNFR1U4YUZ5ZTJRbVBodDVOa2J0MjdvVWlyY0lySmc4WWRralZ2Z3dvM1NMeTFSTGhLcHRiUm9jSGtKRC0xOEdRc2JJLW1rRFFBSFZnRWlzb003X0w4eHNBaXlGekF3czB4LXFVVDBmeERrYlo5R19HMXB6YjdYeHVXMnNQa2pkRXBwczkxSFE5cnYtbU1GaXYySTdLWE8tTHdhREhTV0F2emhtZjdZYVVrNkc0ZlhGNjJ0VnUxbDc0cHdyVmN2SmZHRTlkV1ctSVpHaUgzamlpaEhtS1BQc2RTR3E5cGw4UWdac21hVXh3Y1F4TnhuckNBT3ZLUkJKZlNjejFpdTk5UEw3dDNZWFZ0RlhuS0h3TTNzM05EWVNXWEVtckZiSlJESExxczhoSndPM0IybGpseXB4bHdQSlhTNENDR2s1THFMWDJidm03cVVTekk4a1Z1VzJGb2VOR210amJIOGFnaFdWVU1UTUJJdDBUa1J3MktGNHIwUUJBd0d6YlFINnlFdGFHZlQtYjNOa0xHQ2Vrck5tLTFDM2VqRW13YXdma3Y4eDZ2V1pGRVZ4NUs1Mm96Zl9WMkVaU0ZidDNhUUFPcjBJbHhUS0NVZEk2MUNDMnZrdDZua3d0VllIakhWU3lfS1lBbWJWZkpiblNja0xlTUxzVWdPZjM3OVZqMWw2Zk9yV3djVVNHZ3NNYWlzVjZGZHJCQ0ROT2JZdU5yeVZDZUJ3Y1JHSVJwSk1SY1hna3N2Q3ZLVWhyN1BmLVBuMkh4ZEhkU0N5Qi02a0RVbjQyTF95cllNU3hEaVRvUXplQjhCVFNuX0ZjUWpMMUdmMzN2Rm92LTBmVnJwd1N4bGw0QUd2ZHhqN2ptbURISkN2NWNBMVJqUF84UkQwWTBZWjF5aEdJZklTUWFLM3YwRnYxeFRjaG04WXJyU2pZMGxHZEw1dDFRRUc1RDBMdHBEenkyaF92ZnhIdkd1cDNqcVRvRGhZVWUtck93UHdsbGdvTmRzWG9tdnJ2QnBHVHYtQTNCMXdlSFc2MEJ6NFk1OWtkeHdZZjFQOWFCQUtrTFp3OGhzOERmSmlQVW5HMm8xdTM3N1F0b0xGeGMyRklBeHRWTTRiTUNCTllwREx3RVF2dlBZeER2MWpNcC1nVGdaZXlTSjY2Z1QyeXY4ckNULS04Nk9ucVk0bkp3dUlvdk1TT2F2NzBSYmJSVFdZZ2dJYV9LR0JuOUFQVnNrVnpxdGVyY01kZVp1dxIXekJyNWFxYjdILWl3cXRzUHVfclYwQWMaIkFITjBFN0h4Wl9SdUtKRnZDTXQxSUtnLXBJcnA2SVdlWnc",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=EqIICuIHQUREYldlYlFWMzFEVTRWb3FWem9MZ0hGVTM0elNFMTUtcUdPeWdTTWFnUHZPYTgzT1dLb01DZmRZNTNFR1U4YUZ5ZTJRbVBodDVOa2J0MjdvVWlyY0lySmc4WWRralZ2Z3dvM1NMeTFSTGhLcHRiUm9jSGtKRC0xOEdRc2JJLW1rRFFBSFZnRWlzb003X0w4eHNBaXlGekF3czB4LXFVVDBmeERrYlo5R19HMXB6YjdYeHVXMnNQa2pkRXBwczkxSFE5cnYtbU1GaXYySTdLWE8tTHdhREhTV0F2emhtZjdZYVVrNkc0ZlhGNjJ0VnUxbDc0cHdyVmN2SmZHRTlkV1ctSVpHaUgzamlpaEhtS1BQc2RTR3E5cGw4UWdac21hVXh3Y1F4TnhuckNBT3ZLUkJKZlNjejFpdTk5UEw3dDNZWFZ0RlhuS0h3TTNzM05EWVNXWEVtckZiSlJESExxczhoSndPM0IybGpseXB4bHdQSlhTNENDR2s1THFMWDJidm03cVVTekk4a1Z1VzJGb2VOR210amJIOGFnaFdWVU1UTUJJdDBUa1J3MktGNHIwUUJBd0d6YlFINnlFdGFHZlQtYjNOa0xHQ2Vrck5tLTFDM2VqRW13YXdma3Y4eDZ2V1pGRVZ4NUs1Mm96Zl9WMkVaU0ZidDNhUUFPcjBJbHhUS0NVZEk2MUNDMnZrdDZua3d0VllIakhWU3lfS1lBbWJWZkpiblNja0xlTUxzVWdPZjM3OVZqMWw2Zk9yV3djVVNHZ3NNYWlzVjZGZHJCQ0ROT2JZdU5yeVZDZUJ3Y1JHSVJwSk1SY1hna3N2Q3ZLVWhyN1BmLVBuMkh4ZEhkU0N5Qi02a0RVbjQyTF95cllNU3hEaVRvUXplQjhCVFNuX0ZjUWpMMUdmMzN2Rm92LTBmVnJwd1N4bGw0QUd2ZHhqN2ptbURISkN2NWNBMVJqUF84UkQwWTBZWjF5aEdJZklTUWFLM3YwRnYxeFRjaG04WXJyU2pZMGxHZEw1dDFRRUc1RDBMdHBEenkyaF92ZnhIdkd1cDNqcVRvRGhZVWUtck93UHdsbGdvTmRzWG9tdnJ2QnBHVHYtQTNCMXdlSFc2MEJ6NFk1OWtkeHdZZjFQOWFCQUtrTFp3OGhzOERmSmlQVW5HMm8xdTM3N1F0b0xGeGMyRklBeHRWTTRiTUNCTllwREx3RVF2dlBZeER2MWpNcC1nVGdaZXlTSjY2Z1QyeXY4ckNULS04Nk9ucVk0bkp3dUlvdk1TT2F2NzBSYmJSVFdZZ2dJYV9LR0JuOUFQVnNrVnpxdGVyY01kZVp1dxIXekJyNWFxYjdILWl3cXRzUHVfclYwQWMaIkFITjBFN0h4Wl9SdUtKRnZDTXQxSUtnLXBJcnA2SVdlWnc&gl=us&hl=en"
+  },
+  {
+   "title": "The Day Players",
+   "date": {
+    "start_date": "Nov 21",
+    "when": "Nov 21, 1:00 PM"
+   },
+   "venue": {
+    "name": "Stress Factory Comedy Club",
+    "link": "https://www.google.com/search?q=Stress+Factory+Comedy+Club&ludocid=17125803364252185438&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=17125803364252185438&q=Stress+Factory+Comedy+Club"
+   },
+   "address": [
+    "Stress Factory Comedy Club",
+    "New Brunswick, NJ"
+   ],
+   "event_location_map": {
+    "image": "https://www.google.com/maps/vt/data=lGOejn-BcMqQXKabhHwUrytB1BjuPVH7csmE4r2le_a6oxvTkMsJso8ZOFoJL68h4ns8gZden9zxj381LRJ9xiOR2SY5ZeTWgaCgPwVop7BkQZv2MPSJqOvp4jYvoalYJJb9GJAp8scelfmDqbbPd02yVuhwjYT_bxbLWNmn0cZw",
+    "link": "https://maps.google.com/?cid=17125803364252185438",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=17125803364252185438&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "ticket_info": [
+    {
+     "source": "bandsintown.com",
+     "link": "https://www.bandsintown.com/e/108098392?app_id=ggl_feed&came_from=289&utm_medium=web&utm_source=ggl_feed&utm_campaign=event",
+     "link_type": "tickets"
+    }
+   ],
+   "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTpVyDwW-tNjBZqTqeQnmh-WaaH2bH60WwViByu5g_QJIFeEjK44PGrbdedmpfkLhMI-rrbQ16rB47-YMg",
+   "event_token": "EvcHCrcHQUREYldlWmdqOWxhRVloV2hSMGl3bTN5VEVaZ01GeFA5NjVPbm8yV0F5SmwtR193dXhXaXJSdDBvaGhGamJDRHpIQTFnSFViajlINkh2cmRVVERPeEc3SkVmdW1rbl9OSE5SWmIzV2pYVXNSVUNkR0puSUJFTWlSN29pTHVHTG91NkpoOGFXbk8tWWc5Z2JDWmNjOG5nS09KbWhwN2NxZzJuakdwSHl5amYyeVBWbUVJa213Um9tQ2RuWTFIcTV6S29QU05rODBreU1GaW9DUGJBTnRTSkpZd0JiZlh4YXhKcmI1cUwxQ2Z5QXFCLU9Ub01Ma1gzZzJfeFRyektONnBBQVQ4Vm9DbHZ0ZTk4SmJLZnFxbXJYSmN3OHRXLXV5anRYVHlqV24tS3ltUU5vZUItR0dfOFd1UUh0RDlYVk5WcEhxR2NaRG56V0NQczFOSXpUVC1TOF81UXFMTWgweXhYYkFwZU9HLTAzNzhCWkpBcHNoc21qeFo5SDluMUFZUHZUUEx3Vk5jVG1MQnhYNzk3SkFZWXhIZ2xqd25ZRWplN203UjJwanVUSk0tejBvUUFMVXpfbFJBTm9ZLXAydE0yQ0RGSlpYVV9INmJobkZ4Z2h2THlzakVKbW5iMXpueXUzVVIyTS1DVDkxa0RlTXJhdGM3My1WclZoOXZqbXBBaDRROVJCeHo5NnRKYXQ1VWRIRjRjUlVNN2I4TlRHNTJqUWZMTk5lM1AtVXo2YUVscUQ0cXRmck5SRnRLa3VaVmZpR05Dd0tKUl9JY3VSUkx4SVgtV211M2hfTFdmVThod0lrTkxaUEx6aUhFVDlOX2hNYnRmd2F4Z045Zzhyc2Y3RXlJOVp0RG1seEdpZW5Yb0ZRdXVxSlpONTBlRWdVY0xVVUwybkdVa3M3QXF5dDdUV2NfTFBrZUptcnNkME1IeVNUVG9Zb2NUSUx2U2FTQzBGVUhtMlo0V1BHNU5Sb2JSRWZBVEhINGh3TUtIT3laY3VtamZmVEpmVzlSdUFHNzlUSHdfaDdQR19jLUVaN0ZTR1hHak1SZ09oc08tQ29GVzRyOTdwYnNfZ2ZnbWRVOXNPTU90ekdZNS1pLXc2eXphSTNxWFNjVzZNUXZRSW5nUERSbEk1OVhWcG1CQkxnMzVRejF2YzRVVXl4T3IzaDVUajJUcFBiR2VsMnZxSEZ5NE81cVVLcUYxdmJqcXZCVDFGUXF0R1NBcktoZ24waEZYRHo3WnNNbzRHQkRwMlJXdkhTNy00Ehd6QnI1YXFiN0gtaXdxdHNQdV9yVjBBYxoiQUhOMEU3SHRidWRzZ1FyWlpoRjJtN2kxd1ZSelpPN2YzZw",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=EvcHCrcHQUREYldlWmdqOWxhRVloV2hSMGl3bTN5VEVaZ01GeFA5NjVPbm8yV0F5SmwtR193dXhXaXJSdDBvaGhGamJDRHpIQTFnSFViajlINkh2cmRVVERPeEc3SkVmdW1rbl9OSE5SWmIzV2pYVXNSVUNkR0puSUJFTWlSN29pTHVHTG91NkpoOGFXbk8tWWc5Z2JDWmNjOG5nS09KbWhwN2NxZzJuakdwSHl5amYyeVBWbUVJa213Um9tQ2RuWTFIcTV6S29QU05rODBreU1GaW9DUGJBTnRTSkpZd0JiZlh4YXhKcmI1cUwxQ2Z5QXFCLU9Ub01Ma1gzZzJfeFRyektONnBBQVQ4Vm9DbHZ0ZTk4SmJLZnFxbXJYSmN3OHRXLXV5anRYVHlqV24tS3ltUU5vZUItR0dfOFd1UUh0RDlYVk5WcEhxR2NaRG56V0NQczFOSXpUVC1TOF81UXFMTWgweXhYYkFwZU9HLTAzNzhCWkpBcHNoc21qeFo5SDluMUFZUHZUUEx3Vk5jVG1MQnhYNzk3SkFZWXhIZ2xqd25ZRWplN203UjJwanVUSk0tejBvUUFMVXpfbFJBTm9ZLXAydE0yQ0RGSlpYVV9INmJobkZ4Z2h2THlzakVKbW5iMXpueXUzVVIyTS1DVDkxa0RlTXJhdGM3My1WclZoOXZqbXBBaDRROVJCeHo5NnRKYXQ1VWRIRjRjUlVNN2I4TlRHNTJqUWZMTk5lM1AtVXo2YUVscUQ0cXRmck5SRnRLa3VaVmZpR05Dd0tKUl9JY3VSUkx4SVgtV211M2hfTFdmVThod0lrTkxaUEx6aUhFVDlOX2hNYnRmd2F4Z045Zzhyc2Y3RXlJOVp0RG1seEdpZW5Yb0ZRdXVxSlpONTBlRWdVY0xVVUwybkdVa3M3QXF5dDdUV2NfTFBrZUptcnNkME1IeVNUVG9Zb2NUSUx2U2FTQzBGVUhtMlo0V1BHNU5Sb2JSRWZBVEhINGh3TUtIT3laY3VtamZmVEpmVzlSdUFHNzlUSHdfaDdQR19jLUVaN0ZTR1hHak1SZ09oc08tQ29GVzRyOTdwYnNfZ2ZnbWRVOXNPTU90ekdZNS1pLXc2eXphSTNxWFNjVzZNUXZRSW5nUERSbEk1OVhWcG1CQkxnMzVRejF2YzRVVXl4T3IzaDVUajJUcFBiR2VsMnZxSEZ5NE81cVVLcUYxdmJqcXZCVDFGUXF0R1NBcktoZ24waEZYRHo3WnNNbzRHQkRwMlJXdkhTNy00Ehd6QnI1YXFiN0gtaXdxdHNQdV9yVjBBYxoiQUhOMEU3SHRidWRzZ1FyWlpoRjJtN2kxd1ZSelpPN2YzZw&gl=us&hl=en"
+  },
+  {
+   "title": "DD Verni and The Cadillac Band",
+   "date": {
+    "start_date": "Nov 28",
+    "when": "Nov 28, 7:00 PM"
+   },
+   "venue": {
+    "name": "New Brunswick Performing Arts Center (NBPAC)",
+    "link": "https://www.google.com/search?q=New+Brunswick+Performing+Arts+Center+%28NBPAC%29&ludocid=12962552693172407693&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=12962552693172407693&q=New+Brunswick+Performing+Arts+Center+%28NBPAC%29"
+   },
+   "address": [
+    "New Brunswick Performing Arts Center (NBPAC)",
+    "New Brunswick, NJ"
+   ],
+   "event_location_map": {
+    "link": "https://maps.google.com/?cid=12962552693172407693",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=12962552693172407693&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "thumbnail": "https://serpapi.com/searches/6af91ac9d757f3dbefdef6d9/images/RPWRHL-8GDp6WkYWYySowfL_QfCk4R1Ed_HAGvYOIWk.jpg",
+   "event_token": "EswICowIQUREYldlWjM0dU16T0dZdTJVdFdQRWhsTTRvN0lXcFZmWnFIRWI0eERQQ2pBQ195alNfZm16X2Vyc3U4MVlNWHZicGxaR2FKaGJZSXJuSmp0OFpVOVEwaVcteVN6b1J5OVJBbmM1RDNaRDktMTd4ekFIMFZ0eVRPMmxxaExucWFhWHZWXzlvamFMVUExcU1DY192Q0lxWjM0T0JmalZnV2t0VzNKUW1ISE5IT0dLblFxNTNqdUwxdGRlczFLYWhJdVJoRnJka255VkIzRUJNYXlRZHdrMGRuYWZBaGZOcU15LVFWTXRPazVRNHE1WExyS3JFODdjajRrbDVmbG9CTmtHLWNCVFU1bFV5am5OMWx4emlEaHI0dU1uamdBQjhtYXZaclZRX04yOEcwZDFWV1BmVWhGS1V1UkhmTk5taG42bTNRT3I0dnJCcU9MaGx2WTcxVVhNUWo4aEN4cXZ3T2VvSEVHSHhVLUEyZ2lrWm5Pc1ZFaHJHMGdETVgtakxBa0N3eTZLT0JLb3E3QW5oRGV6aEpMdmtrMEFQY2NzVm5RV2VvRDJSeEFHWmRZbTRYQkhnTVZxdmNWbE5JNldIMFg1ODc0SGdIZ0VCMDZPSGpUc1FYcmJvRUJJcFM3YzlyUGVkczlnNXpDbTA1cV8yNk8xTWFWQ1hva0hTRG9TcHhaMUNvczdJM2VnS2JGRlIwTmRxN2FzdThVNlAyU2JaVXFZTGwybDdJZEduYnBCNnpUN2ZOS3p5Wm5RZ0xsTzJEVTNTaXljejRZS0F3aFBISEdMZEdTczNwa2FReEktenpha01VQks2bGxqemlDeVRLYnFWWWxyTGNTSE5ENVZIWmZoNmtBV1JUTF9hd0VvSHo3dXltTUVRWXlvT3gwcG9qQURUd0dSZFJWXzVnX1NJeWtfTnhmSU1KMDd4Wi02UGUyeTRGT0tSLWdYSkVLTHVTWHhMU016NVFybEdHRksweXprTDhYQWVVQ3lPZTFkRFBmaV93SmdyTXVuVUh3TXVHSlZDdFdyQl9HalVEcXhfQkRlUVY2U1E3RHFWamNxOUtlZ1lpTjlvWk1vZTlZUmYzSjdqbE5wMjk4QjdOZThVNy1NeEE2cXlfcGN2NHpUdGwwVVlIRFRFTUprVEFvQnJqRXpJaVQtUGJWa09lV0s0VzNyRDBuQzJhdkFjTmRzUU9fU2dBd1I5SWhOb1FpNVRzNkg2a1F2SFU5OTlrTlZjT2w4UFo0aXQwNjZIalJlcjRmSjJrOHBIeVpmY3NxVHNmREtXbkpsUXVVYlRWMHRKNUs0a19sb1VkSTBaMWhXWUZrbzlObGo2dXM2WEx6WldVcVhjSENzYXFtWmNKekIwcVNkYk1ETFFxSG1GaBIXekJyNWFxYjdILWl3cXRzUHVfclYwQWMaIkFITjBFN0dPZFZDTDdzc2R4cVV5VEl0alcwbERpZDJtNHc",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=EswICowIQUREYldlWjM0dU16T0dZdTJVdFdQRWhsTTRvN0lXcFZmWnFIRWI0eERQQ2pBQ195alNfZm16X2Vyc3U4MVlNWHZicGxaR2FKaGJZSXJuSmp0OFpVOVEwaVcteVN6b1J5OVJBbmM1RDNaRDktMTd4ekFIMFZ0eVRPMmxxaExucWFhWHZWXzlvamFMVUExcU1DY192Q0lxWjM0T0JmalZnV2t0VzNKUW1ISE5IT0dLblFxNTNqdUwxdGRlczFLYWhJdVJoRnJka255VkIzRUJNYXlRZHdrMGRuYWZBaGZOcU15LVFWTXRPazVRNHE1WExyS3JFODdjajRrbDVmbG9CTmtHLWNCVFU1bFV5am5OMWx4emlEaHI0dU1uamdBQjhtYXZaclZRX04yOEcwZDFWV1BmVWhGS1V1UkhmTk5taG42bTNRT3I0dnJCcU9MaGx2WTcxVVhNUWo4aEN4cXZ3T2VvSEVHSHhVLUEyZ2lrWm5Pc1ZFaHJHMGdETVgtakxBa0N3eTZLT0JLb3E3QW5oRGV6aEpMdmtrMEFQY2NzVm5RV2VvRDJSeEFHWmRZbTRYQkhnTVZxdmNWbE5JNldIMFg1ODc0SGdIZ0VCMDZPSGpUc1FYcmJvRUJJcFM3YzlyUGVkczlnNXpDbTA1cV8yNk8xTWFWQ1hva0hTRG9TcHhaMUNvczdJM2VnS2JGRlIwTmRxN2FzdThVNlAyU2JaVXFZTGwybDdJZEduYnBCNnpUN2ZOS3p5Wm5RZ0xsTzJEVTNTaXljejRZS0F3aFBISEdMZEdTczNwa2FReEktenpha01VQks2bGxqemlDeVRLYnFWWWxyTGNTSE5ENVZIWmZoNmtBV1JUTF9hd0VvSHo3dXltTUVRWXlvT3gwcG9qQURUd0dSZFJWXzVnX1NJeWtfTnhmSU1KMDd4Wi02UGUyeTRGT0tSLWdYSkVLTHVTWHhMU016NVFybEdHRksweXprTDhYQWVVQ3lPZTFkRFBmaV93SmdyTXVuVUh3TXVHSlZDdFdyQl9HalVEcXhfQkRlUVY2U1E3RHFWamNxOUtlZ1lpTjlvWk1vZTlZUmYzSjdqbE5wMjk4QjdOZThVNy1NeEE2cXlfcGN2NHpUdGwwVVlIRFRFTUprVEFvQnJqRXpJaVQtUGJWa09lV0s0VzNyRDBuQzJhdkFjTmRzUU9fU2dBd1I5SWhOb1FpNVRzNkg2a1F2SFU5OTlrTlZjT2w4UFo0aXQwNjZIalJlcjRmSjJrOHBIeVpmY3NxVHNmREtXbkpsUXVVYlRWMHRKNUs0a19sb1VkSTBaMWhXWUZrbzlObGo2dXM2WEx6WldVcVhjSENzYXFtWmNKekIwcVNkYk1ETFFxSG1GaBIXekJyNWFxYjdILWl3cXRzUHVfclYwQWMaIkFITjBFN0dPZFZDTDdzc2R4cVV5VEl0alcwbERpZDJtNHc&gl=us&hl=en"
+  },
+  {
+   "title": "Joanie Leeds",
+   "date": {
+    "start_date": "Dec 5",
+    "when": "Dec 5, 10:00 AM"
+   },
+   "venue": {
+    "name": "State Theatre New Jersey",
+    "link": "https://www.google.com/search?q=State+Theatre+New+Jersey&ludocid=12801531443670275292&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=12801531443670275292&q=State+Theatre+New+Jersey"
+   },
+   "address": [
+    "State Theatre New Jersey",
+    "New Brunswick, NJ"
+   ],
+   "event_location_map": {
+    "image": "https://www.google.com/maps/vt/data=ZG8XXxY3fg5KSB4UtF_cJ01LKxOY4X900N3rxOVI2JXuPcS9UyMSyn04jkvJDyC0XJAWxQ8AY6DtKKePoW4_b63B63h-TNiic6TUcOVBMwZAZxTSCd5aPMmr8d374vUQ6EHqXQU9yW-ETI-Ssh0qbsVnj18NsbalPoQXz3KivffI",
+    "link": "https://maps.google.com/?cid=12801531443670275292",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=12801531443670275292&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "ticket_info": [
+    {
+     "source": "bandsintown.com",
+     "link": "https://www.bandsintown.com/e/108919784?app_id=ggl_feed&came_from=289&utm_medium=web&utm_source=ggl_feed&utm_campaign=event",
+     "link_type": "tickets"
+    }
+   ],
+   "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT9HrmSOmr8bwh4T0WjkYHI4kaXUFi14ufUN37ftoeou1ltgDnuCRXLovTLO2ali6c0K5Kz6I1t7e2Gfdc",
+   "event_token": "EvcHCrcHQUREYldlYUhWQ1JpYW9nZE1WTDAySTRybGNOejdLOUlRemdvV2lZNzBxX1I1T0JGT1ZpaU9LVG9Ha3VYa2daNnV3eFpJbk5nYnpxeXhQbTZGZ1RxdW45Q3lTSzVHUVRhQzdNNWFrOVJYZVoteWM0VzRfaWRCellOdHJ4VlBoRUZDRGcxc2d4azZNV1BZSlIwc2dTQVg1azdFQklyVzNzOTRCNnRvNnAzeGpubFJWa2VDWEkzajRTMXVZRnNrY1RmMzZqV3RSRi1xcmdXdGxLOXpzZ19TbVhzQ2hURHo5RDloQTZJMmJxWU1ndjZhMWpvempvaDFKTVdTYTJSd3R0aXQyX2lTOFc0UGdlWmZ0VkJMeWxUVVc5VThXcThPYjAtS3dMajY1S0FRb2xSOEhYUlhITmJIdldRQkM2OFZVT0VmcHNtcll1MklNWG9wdTh0TVlKYmhzRzFlNTRxX1JQZjluTTh3bFE1SmNTUkN6aUJ3SUpOVENjSmFBTm02R0RpcHg4cWo2Unl0c09mOXRRR2trUWtJbjNCMEY1SU9XUTNYeExXeHZXOTZlalFrRWdlSVdGM2JyaDZuYnZUS2g0OHFydHEwYWdYcnhtclRHQS1HUWNxTGJrU3FEWGhrNU80Y3EyV3NNTHdRdWpfMzBoek5hdmNDTnF6M0dnWXo1dWxzc0doNDRWTERGajA4dE50M3pjXzlFN0Z2T2g3X0xncDhCQWZmOHBzQ2QyZFp2NXBBb0FJQVNKSkY1cTZTQnpsVjNFbk1rUzQwckZKN1hEc0F1ZDdIanNZSlhvYnVSYklzNGYwYnlFUWNGTy1jMkdYcFdTcHg1SXFsRzBIUlp3czNFeHo4dXdWbmpXNGtwMThNaUdkSkJ5V3dkckpJR19NY3BxRkkzYnh5QzdqM1o0amdDb284MzlWemE1OUZZNE1qXy13eFhyd2FUcXRSeU1WaFpIMF91NlBvVzBrRlFoRjI3QXFaMEU5SUhWSTJlMGhWREVub3lNb3JGaHIyeW9MTkxrbEdVUXdTNWVIdnpjSk44RU1PMHFVSWZOdWpadmNITjNBOUIwZWRVbDdzVld1U3FnTzZSYXdkYUJiM0JHU3RSVmJyTURabVdPdDBNTVBzYnRnX3g0anRaMUVIVFdCYWlLUXdhY3JQSlNXUTRBYVVrY2lKYUZ4dEZ5VXRvaHFyT1AxZEgzYjJhcG96ejZKU3FiaV9pX2lRdnJtRXdHYjVGQkx6NEx1VWxwU2FlbWp0VmZuUGdzEhd6QnI1YXFiN0gtaXdxdHNQdV9yVjBBYxoiQUhOMEU3RldKLUV0VUd4bVFfbElNYUVBLWdDeXZrMlVNZw",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=EvcHCrcHQUREYldlYUhWQ1JpYW9nZE1WTDAySTRybGNOejdLOUlRemdvV2lZNzBxX1I1T0JGT1ZpaU9LVG9Ha3VYa2daNnV3eFpJbk5nYnpxeXhQbTZGZ1RxdW45Q3lTSzVHUVRhQzdNNWFrOVJYZVoteWM0VzRfaWRCellOdHJ4VlBoRUZDRGcxc2d4azZNV1BZSlIwc2dTQVg1azdFQklyVzNzOTRCNnRvNnAzeGpubFJWa2VDWEkzajRTMXVZRnNrY1RmMzZqV3RSRi1xcmdXdGxLOXpzZ19TbVhzQ2hURHo5RDloQTZJMmJxWU1ndjZhMWpvempvaDFKTVdTYTJSd3R0aXQyX2lTOFc0UGdlWmZ0VkJMeWxUVVc5VThXcThPYjAtS3dMajY1S0FRb2xSOEhYUlhITmJIdldRQkM2OFZVT0VmcHNtcll1MklNWG9wdTh0TVlKYmhzRzFlNTRxX1JQZjluTTh3bFE1SmNTUkN6aUJ3SUpOVENjSmFBTm02R0RpcHg4cWo2Unl0c09mOXRRR2trUWtJbjNCMEY1SU9XUTNYeExXeHZXOTZlalFrRWdlSVdGM2JyaDZuYnZUS2g0OHFydHEwYWdYcnhtclRHQS1HUWNxTGJrU3FEWGhrNU80Y3EyV3NNTHdRdWpfMzBoek5hdmNDTnF6M0dnWXo1dWxzc0doNDRWTERGajA4dE50M3pjXzlFN0Z2T2g3X0xncDhCQWZmOHBzQ2QyZFp2NXBBb0FJQVNKSkY1cTZTQnpsVjNFbk1rUzQwckZKN1hEc0F1ZDdIanNZSlhvYnVSYklzNGYwYnlFUWNGTy1jMkdYcFdTcHg1SXFsRzBIUlp3czNFeHo4dXdWbmpXNGtwMThNaUdkSkJ5V3dkckpJR19NY3BxRkkzYnh5QzdqM1o0amdDb284MzlWemE1OUZZNE1qXy13eFhyd2FUcXRSeU1WaFpIMF91NlBvVzBrRlFoRjI3QXFaMEU5SUhWSTJlMGhWREVub3lNb3JGaHIyeW9MTkxrbEdVUXdTNWVIdnpjSk44RU1PMHFVSWZOdWpadmNITjNBOUIwZWRVbDdzVld1U3FnTzZSYXdkYUJiM0JHU3RSVmJyTURabVdPdDBNTVBzYnRnX3g0anRaMUVIVFdCYWlLUXdhY3JQSlNXUTRBYVVrY2lKYUZ4dEZ5VXRvaHFyT1AxZEgzYjJhcG96ejZKU3FiaV9pX2lRdnJtRXdHYjVGQkx6NEx1VWxwU2FlbWp0VmZuUGdzEhd6QnI1YXFiN0gtaXdxdHNQdV9yVjBBYxoiQUhOMEU3RldKLUV0VUd4bVFfbElNYUVBLWdDeXZrMlVNZw&gl=us&hl=en"
+  },
+  {
+   "title": "Gabriel Bar Cohen Quartet",
+   "date": {
+    "start_date": "Nov 19",
+    "when": "Nov 19, 7:00 PM"
+   },
+   "venue": {
+    "name": "Tavern on George",
+    "link": "https://www.google.com/search?q=Tavern+on+George&ludocid=7440588160673513209&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=7440588160673513209&q=Tavern+on+George"
+   },
+   "address": [
+    "Tavern on George",
+    "New Brunswick, NJ"
+   ],
+   "event_location_map": {
+    "image": "https://www.google.com/maps/vt/data=dnQHoE0Ui2lJ6KiWwS_gSVCo87fyowoKdIfLFYPbT-rsDRTHo17NveiOR1NunKaglMlZ3b86IT5nTrEKefcDA2JcQuaF8gap0BWTZgrEOaMc47u0D2txUtqQGKgFzDjmcgDCNQdu5Vr4egqwGCpNMYcUI0va7VZaPx0-1GzrHGKl",
+    "link": "https://maps.google.com/?cid=7440588160673513209",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=7440588160673513209&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "ticket_info": [
+    {
+     "source": "facebook.com",
+     "link": "https://www.facebook.com/events/tavern-on-george/gabriel-bar-cohen-quartet/1587424019739670/",
+     "link_type": "tickets"
+    }
+   ],
+   "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUkeFKlDP_muq0zmSer-r6O029LzEVYTclTUY0yoXpGlS3-jEjM6wnQUaECbu6PuiZ2sE25VHmhKBgjI8",
+   "event_token": "EuIHCqIHQUREYldlYVBxRi01NGQ2UmNLOTNfamlaZzVoM2lZZ3U3TTZ0X0xMbTh6MDcwcXQ0ZWZaUkxBNXJYSWFxNmxvb3V5Sm5XSmxhNHU3dHNWbEV5eHRNYlBYcmlXRWdUZ01JZVZ4bVJFVC1sRU9jeUV6NHZSTXEwNG5IN0R2X0dGWGI5SDktamJTWWVYM2xVYUNTY0VHcms2azdLQmpCcExoNGlOemxSaE1GYUpnLWZOZjM5bUU2ZU5uZ3YwMFdFYUtCUklBWkQ4eTFVLUVwQ3ZweVlzLXlHUlVQR0tla3FqMGl4cHJzcmgzQ3lncWxoNkVhNFAzbGlxUTd0c2ZERnRoVGdBM2MyNHFUbDIyWE11aWVWb1owZEtKc2ZTVmdKQ1RIVzVBX1FaSmJEanFBSjdWWWFqQmdXbngxbkZzOVVTa2FOZFA3bmZoY0d4SnZBZmFoZVctdVZnLXJRbXNJUG1JWHp4VGttQVFoU0Z2cVc2czRab0VhREdMaFBYcUlIU3JNME5ZZUJ6a05JUFFxSkMwaG94TWxVR3YxZS1CY3FmTDFfNW1ZLWFsNHFPUTEzT0ZubEN3MlZMUm0tNU9xWUxJODl4dWplcGVXNHNkNUhmVG1xa2xiVHRCMGpNSmpEc3FxYzhKNFZveU12UkFPcnpVRkJGS1RWSFdxTklKS3VsdmlXRmhZQS1oOUZUZFg5MDJuTGZ1SE1BQm9yblJjekM2a3p4YjBRUTZITkxlaXR4OW54bVcwLTBjbGp3bG04OWtEanQxTC1RT0tIT0p1eU5IZi1hbXJoQnZPMTF1SlJHU0d3aFNNWG1yMmFoVVRabGhoYThBMDhpNndNUGdEcGZOVk96eXg4ZnhRR0xnT2ljbm5RT0V5aEJDTTE1OERIUEdwMndNYzRDTFJYeTdkSVRMcWhUc3F4cXBVNWNCOXAwTF9NS0o1ZDV6WE1NRkZqLXhIazFXaFFmbEVwOHc5TEV4SVNGRFJZS2syQ21DOHVQSFRHT3luNHdYdFNiR1FJcTdyc3VKS2VZcFM4T3I3bWJhZnBMd3JQY1hrOWJLeFlyeUN2MExKNmdDd1hIMmgzRTIwMGxqbTA0RGhFZklJd0RhUnNsQnQtWUR0NGJuMGxrcUdVOGRtRjdZV0syNG9UbnlaRmxzdEdwRmV1YlB6dHYwbGZCVUtMLWRSLTh0VzJyM1ZJdGZvSjJIV1NwWThyajM1dW5wbi1GWlZGeXFmZ29ldG9REhd6QnI1YXFiN0gtaXdxdHNQdV9yVjBBYxoiQUhOMEU3Rk5nVUpSRnVwM0ZmRDJKV21pNWcxaWt6Qmpidw",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=EuIHCqIHQUREYldlYVBxRi01NGQ2UmNLOTNfamlaZzVoM2lZZ3U3TTZ0X0xMbTh6MDcwcXQ0ZWZaUkxBNXJYSWFxNmxvb3V5Sm5XSmxhNHU3dHNWbEV5eHRNYlBYcmlXRWdUZ01JZVZ4bVJFVC1sRU9jeUV6NHZSTXEwNG5IN0R2X0dGWGI5SDktamJTWWVYM2xVYUNTY0VHcms2azdLQmpCcExoNGlOemxSaE1GYUpnLWZOZjM5bUU2ZU5uZ3YwMFdFYUtCUklBWkQ4eTFVLUVwQ3ZweVlzLXlHUlVQR0tla3FqMGl4cHJzcmgzQ3lncWxoNkVhNFAzbGlxUTd0c2ZERnRoVGdBM2MyNHFUbDIyWE11aWVWb1owZEtKc2ZTVmdKQ1RIVzVBX1FaSmJEanFBSjdWWWFqQmdXbngxbkZzOVVTa2FOZFA3bmZoY0d4SnZBZmFoZVctdVZnLXJRbXNJUG1JWHp4VGttQVFoU0Z2cVc2czRab0VhREdMaFBYcUlIU3JNME5ZZUJ6a05JUFFxSkMwaG94TWxVR3YxZS1CY3FmTDFfNW1ZLWFsNHFPUTEzT0ZubEN3MlZMUm0tNU9xWUxJODl4dWplcGVXNHNkNUhmVG1xa2xiVHRCMGpNSmpEc3FxYzhKNFZveU12UkFPcnpVRkJGS1RWSFdxTklKS3VsdmlXRmhZQS1oOUZUZFg5MDJuTGZ1SE1BQm9yblJjekM2a3p4YjBRUTZITkxlaXR4OW54bVcwLTBjbGp3bG04OWtEanQxTC1RT0tIT0p1eU5IZi1hbXJoQnZPMTF1SlJHU0d3aFNNWG1yMmFoVVRabGhoYThBMDhpNndNUGdEcGZOVk96eXg4ZnhRR0xnT2ljbm5RT0V5aEJDTTE1OERIUEdwMndNYzRDTFJYeTdkSVRMcWhUc3F4cXBVNWNCOXAwTF9NS0o1ZDV6WE1NRkZqLXhIazFXaFFmbEVwOHc5TEV4SVNGRFJZS2syQ21DOHVQSFRHT3luNHdYdFNiR1FJcTdyc3VKS2VZcFM4T3I3bWJhZnBMd3JQY1hrOWJLeFlyeUN2MExKNmdDd1hIMmgzRTIwMGxqbTA0RGhFZklJd0RhUnNsQnQtWUR0NGJuMGxrcUdVOGRtRjdZV0syNG9UbnlaRmxzdEdwRmV1YlB6dHYwbGZCVUtMLWRSLTh0VzJyM1ZJdGZvSjJIV1NwWThyajM1dW5wbi1GWlZGeXFmZ29ldG9REhd6QnI1YXFiN0gtaXdxdHNQdV9yVjBBYxoiQUhOMEU3Rk5nVUpSRnVwM0ZmRDJKV21pNWcxaWt6Qmpidw&gl=us&hl=en"
+  },
+  {
+   "title": "Maxim Lando",
+   "date": {
+    "start_date": "Nov 29",
+    "when": "Nov 29, 3:00 PM"
+   },
+   "venue": {
+    "name": "State Theatre New Jersey",
+    "link": "https://www.google.com/search?q=State+Theatre+New+Jersey&ludocid=12801531443670275292&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=12801531443670275292&q=State+Theatre+New+Jersey"
+   },
+   "address": [
+    "State Theatre New Jersey",
+    "New Brunswick, NJ"
+   ],
+   "event_location_map": {
+    "link": "https://maps.google.com/?cid=12801531443670275292",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=12801531443670275292&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "thumbnail": "https://serpapi.com/searches/6af91ac9d757f3dbefdef6d9/images/0LJ32GbsM7dtyjnEZQp2Ss4eejBMwMQUiPgMJP99Vso.jpg",
+   "event_token": "EqIHCuIGQUREYldlWXlhdEt4Tm9xdEIyZ1c5ODdjaEVHWEpsdUR0a0JTUXNjcHVCRnZnTm4xU2xOZndkcWNIRGNDYjd2VVQyamxBcWNNTDdHOXpNWkRMWmFud21TdGdBV29yVFc2TkhmSmNLLVowU080WWpGWk5wMUxGQjlMeEcweHlqcXNjSHJ4eldvRmthWUhlcTRNbDVsWXRiOVYzMng4VlNRdVc5TzI3ZFozUzRhUHhMOG9GRmwxWW1GNDBjcGdKQnlHNVQ0RGs3THJ5ODB4cXBfWXA3Y3owVG1lTDNEbnh4bTJUdmI3dFo3MlhITXh0dnVVdlhjZzl0ODFMRGVkc0RrbDIzLWNtelhyTVZXVHh4anFMbk9PUjQ4QVhYa1RYNDRlbjN4ZEFDNzhYQW5vakVOZkpSMllVajdmTXBwV3djLTVXTVU1Z050d3I1SU9WRDBSYl9KRVBwc3NGMURFVGhmMlFCbGlXZG5aTmpFU011czk2bkM3OGM2aHU3QUc4TUFIakEyOFptSnZjWHhaYzdReW1fQkNJUnF2RDRYaTdxVWtZS0d1Z3R1aXBqcTUtWUVBenlVMTRKVEVHYWljV3MzbFZON2JIcHFGYUIwbkF6NERYQU9hczRQWE1Ka2JoZEV0WkJBVmplZmYtQkZwOWR3LThUMzY2UXRIQ3J6X3VZUGZRbDdEeVhONHd3cTFvSVJKSThCb0k4R0JyT2Qwa0lvZjE1Ty0xOWNDWjdaVGlVb3lBal9UMUpINmJPSjhXQWMwYlJKdXFsdXpCZXpKTU9FeU1KSjkteVFldWVKV096djZxSzRpWmNhVkkteThMMXZFZXhaaUQ4Z3kxdXlneVV3cWdnOEdMT2RyQ3lLSkVNWU5RWjFQVWotaTJJOE0wdFVwTkZIdHFiM0hUcmc5TElJNTByWmlMclFtemtrSThlZnJKbFg0LTRldEFUTDVHNFFISXBhdlhGZXZmRVc3WV91WWpCVE96eGZoU05fdFdqOXY3c0lCMUFTazBQa0swVm5EUkxQdU9hcUp0Z1pLMnBJN1pkSHBra1NTRktKalp4ZHpGRVh6Ukc2VTI1UWtIVm4yRjhSU3pWWXJqSmo3cEJkTjVnS212ZnVIOVBwdDc4Uy1MY3hhdUwtWHIwaV9ZM19JZGcSF3pCcjVhcWI3SC1pd3F0c1B1X3JWMEFjGiJBSE4wRTdITHVFeTRMQ05iWjFYbHJ5eDdqYWV5eGJxUjdR",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=EqIHCuIGQUREYldlWXlhdEt4Tm9xdEIyZ1c5ODdjaEVHWEpsdUR0a0JTUXNjcHVCRnZnTm4xU2xOZndkcWNIRGNDYjd2VVQyamxBcWNNTDdHOXpNWkRMWmFud21TdGdBV29yVFc2TkhmSmNLLVowU080WWpGWk5wMUxGQjlMeEcweHlqcXNjSHJ4eldvRmthWUhlcTRNbDVsWXRiOVYzMng4VlNRdVc5TzI3ZFozUzRhUHhMOG9GRmwxWW1GNDBjcGdKQnlHNVQ0RGs3THJ5ODB4cXBfWXA3Y3owVG1lTDNEbnh4bTJUdmI3dFo3MlhITXh0dnVVdlhjZzl0ODFMRGVkc0RrbDIzLWNtelhyTVZXVHh4anFMbk9PUjQ4QVhYa1RYNDRlbjN4ZEFDNzhYQW5vakVOZkpSMllVajdmTXBwV3djLTVXTVU1Z050d3I1SU9WRDBSYl9KRVBwc3NGMURFVGhmMlFCbGlXZG5aTmpFU011czk2bkM3OGM2aHU3QUc4TUFIakEyOFptSnZjWHhaYzdReW1fQkNJUnF2RDRYaTdxVWtZS0d1Z3R1aXBqcTUtWUVBenlVMTRKVEVHYWljV3MzbFZON2JIcHFGYUIwbkF6NERYQU9hczRQWE1Ka2JoZEV0WkJBVmplZmYtQkZwOWR3LThUMzY2UXRIQ3J6X3VZUGZRbDdEeVhONHd3cTFvSVJKSThCb0k4R0JyT2Qwa0lvZjE1Ty0xOWNDWjdaVGlVb3lBal9UMUpINmJPSjhXQWMwYlJKdXFsdXpCZXpKTU9FeU1KSjkteVFldWVKV096djZxSzRpWmNhVkkteThMMXZFZXhaaUQ4Z3kxdXlneVV3cWdnOEdMT2RyQ3lLSkVNWU5RWjFQVWotaTJJOE0wdFVwTkZIdHFiM0hUcmc5TElJNTByWmlMclFtemtrSThlZnJKbFg0LTRldEFUTDVHNFFISXBhdlhGZXZmRVc3WV91WWpCVE96eGZoU05fdFdqOXY3c0lCMUFTazBQa0swVm5EUkxQdU9hcUp0Z1pLMnBJN1pkSHBra1NTRktKalp4ZHpGRVh6Ukc2VTI1UWtIVm4yRjhSU3pWWXJqSmo3cEJkTjVnS212ZnVIOVBwdDc4Uy1MY3hhdUwtWHIwaV9ZM19JZGcSF3pCcjVhcWI3SC1pd3F0c1B1X3JWMEFjGiJBSE4wRTdITHVFeTRMQ05iWjFYbHJ5eDdqYWV5eGJxUjdR&gl=us&hl=en"
+  },
+  {
+   "title": "Forever Motown Christmas",
+   "date": {
+    "start_date": "Dec 6",
+    "when": "Dec 6, 7:00 PM"
+   },
+   "venue": {
+    "name": "State Theatre New Jersey",
+    "link": "https://www.google.com/search?q=State+Theatre+New+Jersey&ludocid=12801531443670275292&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=12801531443670275292&q=State+Theatre+New+Jersey"
+   },
+   "address": [
+    "State Theatre New Jersey",
+    "New Brunswick, NJ"
+   ],
+   "event_location_map": {
+    "link": "https://maps.google.com/?cid=12801531443670275292",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=12801531443670275292&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "thumbnail": "https://serpapi.com/searches/6af91ac9d757f3dbefdef6d9/images/c1ePvd7y2WsZ4HGn1n_ab2bEht0SWXhBeoJddBW0SZU.jpg",
+   "event_token": "ErcHCvcGQUREYldlWTJwMHo5MHctMTUxWVBUMXh2LVJhQW85XzdFaTYyeDlyUW4tNVpHc1VGb1oxbmJLbTJGcmtXM096TjZ5THR3RThoeEFrcTA3ZUJnbXFZTURNV2NyRDIxSFE0R3VXNUw3eFMwWmhPY2htdmdkLTI3Z1UzeV93LWY5dU85Qm5fNTE4NXBwUFJrb1YzdzJ6LVVzZlRIWTMxanBSUjY5Qmp0MmR2M2FZTzRQQVI3SUJMeklkcW9lUG5fclpkZk8zWEtFd2dza3VSNHlsZTZ2RHBfUG5LM3RZMThNUE5UaGlIb0RWN2xFRHFBdHhoN3NXSllnbUxlY1hRWG9BS1VzRkttSG9WS2VrUjdYN1U3NjJPVzNHS0xJaWtUR2hCVUJTQU5mckl3dlhmTXE5Y0syWV9ScnNBd21vVTNVMi1hOXJQaVRLYTEtQXR0d09QUm03STdsTmctX1JYcUNRaG5mSnFyZGNwMmViTnExd2dYRk5uOFF2NXFmT1U5b29hVGFWT1h5SjlrcFVtUTZHNDhfeDVFemNZcjB5akhVQmVxV3piR0VFejE5cURuWThSTkI0RGxjbVBFd1lXT0R5akN2VzBCQlloTHNQWmRiaVFhNWc5MVhuOGlhQXFHQUdENW1ub2I1TXpKNGlwal9laGdtTW9OZGxiX0pLRG80ZnJ0RVpGS29fOG43MVYxei1WclhpYmpNZTQ0RFFIZldmMXZSMkNkR2tibFJYVEZ1WW92MU5OYUc1RDJZbXk2SHZiWTRyZnEyOGNSNFJtamdZMVZaNnpEZjlGZ0pkRlRibTlLaDJXQW0ySWM4aWtGOW41UFlaa0Nvay1TY1g5aW05MXJseUNObng0b05qanZwYUNBdkQ2VTdQdnQxbnM3Q2dOT2ptc2pUMThJcW53R0g0dm56VFpHRmM3VVFzVGpnYXB5UVhQMHdhSmtjeGJZSFZVbHNyX3YxTVhoYkhGMVpEN3c3SWs2OWJPdEhuWWxnTDNhWWZBcVNYaEZ6ZDhlempmLWt5OXc4aERSQTZ5cEt1elNValJYS21SQ1Q3SFVtZktCYUoxTkpTZEkwaUZpdXR0YVJWNktuc2VZQTNnOWNFOFdENjBUZGhRSmhBTlFyZzdOYV8zY01EYW9xVFFsQldySkxhZXNKRVdDV0t5SkhwTkdqaUEyZmsSF3pCcjVhcWI3SC1pd3F0c1B1X3JWMEFjGiJBSE4wRTdFLXZoOWkwd0xnbUdacklJRkpWM0RPRS1pNFBB",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=ErcHCvcGQUREYldlWTJwMHo5MHctMTUxWVBUMXh2LVJhQW85XzdFaTYyeDlyUW4tNVpHc1VGb1oxbmJLbTJGcmtXM096TjZ5THR3RThoeEFrcTA3ZUJnbXFZTURNV2NyRDIxSFE0R3VXNUw3eFMwWmhPY2htdmdkLTI3Z1UzeV93LWY5dU85Qm5fNTE4NXBwUFJrb1YzdzJ6LVVzZlRIWTMxanBSUjY5Qmp0MmR2M2FZTzRQQVI3SUJMeklkcW9lUG5fclpkZk8zWEtFd2dza3VSNHlsZTZ2RHBfUG5LM3RZMThNUE5UaGlIb0RWN2xFRHFBdHhoN3NXSllnbUxlY1hRWG9BS1VzRkttSG9WS2VrUjdYN1U3NjJPVzNHS0xJaWtUR2hCVUJTQU5mckl3dlhmTXE5Y0syWV9ScnNBd21vVTNVMi1hOXJQaVRLYTEtQXR0d09QUm03STdsTmctX1JYcUNRaG5mSnFyZGNwMmViTnExd2dYRk5uOFF2NXFmT1U5b29hVGFWT1h5SjlrcFVtUTZHNDhfeDVFemNZcjB5akhVQmVxV3piR0VFejE5cURuWThSTkI0RGxjbVBFd1lXT0R5akN2VzBCQlloTHNQWmRiaVFhNWc5MVhuOGlhQXFHQUdENW1ub2I1TXpKNGlwal9laGdtTW9OZGxiX0pLRG80ZnJ0RVpGS29fOG43MVYxei1WclhpYmpNZTQ0RFFIZldmMXZSMkNkR2tibFJYVEZ1WW92MU5OYUc1RDJZbXk2SHZiWTRyZnEyOGNSNFJtamdZMVZaNnpEZjlGZ0pkRlRibTlLaDJXQW0ySWM4aWtGOW41UFlaa0Nvay1TY1g5aW05MXJseUNObng0b05qanZwYUNBdkQ2VTdQdnQxbnM3Q2dOT2ptc2pUMThJcW53R0g0dm56VFpHRmM3VVFzVGpnYXB5UVhQMHdhSmtjeGJZSFZVbHNyX3YxTVhoYkhGMVpEN3c3SWs2OWJPdEhuWWxnTDNhWWZBcVNYaEZ6ZDhlempmLWt5OXc4aERSQTZ5cEt1elNValJYS21SQ1Q3SFVtZktCYUoxTkpTZEkwaUZpdXR0YVJWNktuc2VZQTNnOWNFOFdENjBUZGhRSmhBTlFyZzdOYV8zY01EYW9xVFFsQldySkxhZXNKRVdDV0t5SkhwTkdqaUEyZmsSF3pCcjVhcWI3SC1pd3F0c1B1X3JWMEFjGiJBSE4wRTdFLXZoOWkwd0xnbUdacklJRkpWM0RPRS1pNFBB&gl=us&hl=en"
+  },
+  {
+   "title": "World on a String",
+   "date": {
+    "start_date": "Apr 8",
+    "when": "Apr 8, 7:30 PM"
+   },
+   "venue": {
+    "name": "State Theatre New Jersey",
+    "link": "https://www.google.com/search?q=State+Theatre+New+Jersey&ludocid=12801531443670275292&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=12801531443670275292&q=State+Theatre+New+Jersey"
+   },
+   "address": [
+    "State Theatre New Jersey",
+    "New Brunswick, NJ"
+   ],
+   "event_location_map": {
+    "link": "https://maps.google.com/?cid=12801531443670275292",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=12801531443670275292&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "thumbnail": "https://serpapi.com/searches/6af91ac9d757f3dbefdef6d9/images/Ml5TRlSC8xVGMEPgtMubNCYe__1x-W8ufE6tORzyQTc.jpg",
+   "event_token": "EvcHCrcHQUREYldlYTI2Nm5wblBST0hlUG1rLVphTXVCMTU1OW94RVBfb2JqUnB6V2NVOFkxTHR0Vk9vdkV4QmRZWFlBQVEyRWFvMkduYldDOTA4UXV6WjBBWTVuTmdTQnhaaEZLYnFXVnNvb0xfNER0eEJOekpfVVYyNkpGXzRDSlowNURFMWFlOURQbmhoeEk5bU9zUXh0eTFmaVlZVVpVQlRNdzJnU1JzcDBHd1FZNFdGaUdySF9jQnBrMzRuMFV2b1NtbGpYV0RvZXp0OWJRM2hVN3JXalR4WEpwaERSMEhNbDZpam1CaDlKdXh4TDgwcUxqdmdGQ1F4VE0tU0FzeHJEZ1Y2R2NrWWF4N21UcDQ1c0x4MHByeF9NQUpYZHFkZy1BTDRZUU1GVTlKYy1XVjBTZ1RrZ2VZN3A1NHRISVpkYjdyc0dodmF2RW90dGZCUGFhZ0p6eTdQUVNYOE1uQkZkMTVsNzZWQ3Vpb2ZpdElEa3ZPcl9UWkJWTm12NXlWMlBZaTI0blEtdWVLdVBVNWRySkZhamxFQUE3NUJoMVFjN1lHZXMyNUhtREVBckZjTzNmUFRZLXBPandEbXdBc2Q5N2RGOXR4Q25udlAzVldpSmNVY2RUTDZvRC1GNlNsVnl0TEI5TEkwMTdZUGw4cjJwNE1yQzN1aXByazM1Ty12eTh2bk9GYnZOZVpyUElJRWx1N1k1eXYydW5wdFFHd3RYNm5OMnRtN0RtRF9ibl9hNEFqaE94OVRPVUV0UlZQZUZyY25scWY4RThWMTIzN1lqYkVuSllYYVdMM05Jc3B0cldtZ3U1RUUtLWdRWmxYTENoVGJBaTZVLXhsOW5RN0tsQnN3R2lZT0JCdDJJejVBNHZRTS1KMXpNdjZhbkRWUTlUdmdWRkdCOVlzOHB3ai0zQUlmWG8tMzRvSnJ6MDhxSkYzQTlOWUwxRGFmUmhnLW5CeFN6QWlwRnE5YXdwbExLLTEycjU4OEt2Vk1zQUlNbEs2MGcxTjNucTlYaVV6aUw3N0RLS2o3bjk5WWhKcC15NnBZRE1peng5ZHdxY0JMQVBTTUk3b0l4T0l2V2F3T3dBWnpfRHZFNzhNUHlmdjlRaGgzaWg1aEZ4OTdabEdjSUhvZU1paDFzWmthczhBRUJXTHk5VzBlNU44MTV6OFczeVdiY1BNSW9BNllNbjRpMy1FeWRYSkl6cmpZOWlfUm8xWnNZZHBJdlJ6eVhTV0ppaG9FaUt1N2hCU094ZjgteXE1Q3gwQ1o0Ehd6QnI1YXFiN0gtaXdxdHNQdV9yVjBBYxoiQUhOMEU3RnBobUdhcF9Kb2lfYXBTZ1RZRzV2d2hwbEhJUQ",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=EvcHCrcHQUREYldlYTI2Nm5wblBST0hlUG1rLVphTXVCMTU1OW94RVBfb2JqUnB6V2NVOFkxTHR0Vk9vdkV4QmRZWFlBQVEyRWFvMkduYldDOTA4UXV6WjBBWTVuTmdTQnhaaEZLYnFXVnNvb0xfNER0eEJOekpfVVYyNkpGXzRDSlowNURFMWFlOURQbmhoeEk5bU9zUXh0eTFmaVlZVVpVQlRNdzJnU1JzcDBHd1FZNFdGaUdySF9jQnBrMzRuMFV2b1NtbGpYV0RvZXp0OWJRM2hVN3JXalR4WEpwaERSMEhNbDZpam1CaDlKdXh4TDgwcUxqdmdGQ1F4VE0tU0FzeHJEZ1Y2R2NrWWF4N21UcDQ1c0x4MHByeF9NQUpYZHFkZy1BTDRZUU1GVTlKYy1XVjBTZ1RrZ2VZN3A1NHRISVpkYjdyc0dodmF2RW90dGZCUGFhZ0p6eTdQUVNYOE1uQkZkMTVsNzZWQ3Vpb2ZpdElEa3ZPcl9UWkJWTm12NXlWMlBZaTI0blEtdWVLdVBVNWRySkZhamxFQUE3NUJoMVFjN1lHZXMyNUhtREVBckZjTzNmUFRZLXBPandEbXdBc2Q5N2RGOXR4Q25udlAzVldpSmNVY2RUTDZvRC1GNlNsVnl0TEI5TEkwMTdZUGw4cjJwNE1yQzN1aXByazM1Ty12eTh2bk9GYnZOZVpyUElJRWx1N1k1eXYydW5wdFFHd3RYNm5OMnRtN0RtRF9ibl9hNEFqaE94OVRPVUV0UlZQZUZyY25scWY4RThWMTIzN1lqYkVuSllYYVdMM05Jc3B0cldtZ3U1RUUtLWdRWmxYTENoVGJBaTZVLXhsOW5RN0tsQnN3R2lZT0JCdDJJejVBNHZRTS1KMXpNdjZhbkRWUTlUdmdWRkdCOVlzOHB3ai0zQUlmWG8tMzRvSnJ6MDhxSkYzQTlOWUwxRGFmUmhnLW5CeFN6QWlwRnE5YXdwbExLLTEycjU4OEt2Vk1zQUlNbEs2MGcxTjNucTlYaVV6aUw3N0RLS2o3bjk5WWhKcC15NnBZRE1peng5ZHdxY0JMQVBTTUk3b0l4T0l2V2F3T3dBWnpfRHZFNzhNUHlmdjlRaGgzaWg1aEZ4OTdabEdjSUhvZU1paDFzWmthczhBRUJXTHk5VzBlNU44MTV6OFczeVdiY1BNSW9BNllNbjRpMy1FeWRYSkl6cmpZOWlfUm8xWnNZZHBJdlJ6eVhTV0ppaG9FaUt1N2hCU094ZjgteXE1Q3gwQ1o0Ehd6QnI1YXFiN0gtaXdxdHNQdV9yVjBBYxoiQUhOMEU3RnBobUdhcF9Kb2lfYXBTZ1RZRzV2d2hwbEhJUQ&gl=us&hl=en"
+  }
+ ],
+ "_fetched_on": "2026-11-14",
+ "_query": "Live music events in North Brunswick, NJ"
+}

@@ -1,0 +1,241 @@
+{
+ "search_metadata": {
+  "id": "6af91a9628703457897dd067",
+  "status": "Success",
+  "json_endpoint": "https://serpapi.com/searches/FNWLJk2Com_OpGYJYs4vob7pjq_RrH_zP6q8mZWHLp8/6af91a9628703457897dd067.json",
+  "markdown_endpoint": "https://serpapi.com/searches/FNWLJk2Com_OpGYJYs4vob7pjq_RrH_zP6q8mZWHLp8/6af91a9628703457897dd067.md",
+  "created_at": "2026-11-15 02:36:06 UTC",
+  "processed_at": "2026-11-15 02:36:06 UTC",
+  "google_events_url": "https://www.google.com/search?q=Events+in+Edison%2C+NJ&udm=54&hl=en&gl=us",
+  "raw_html_file": "https://serpapi.com/searches/FNWLJk2Com_OpGYJYs4vob7pjq_RrH_zP6q8mZWHLp8/6af91a9628703457897dd067.html",
+  "total_time_taken": 9.77
+ },
+ "search_parameters": {
+  "q": "Events in Edison, NJ",
+  "engine": "google_events"
+ },
+ "search_information": {
+  "events_results_state": "Results for exact spelling"
+ },
+ "events_map": {
+  "image": "https://www.google.com/maps/vt/data=s5Jma3N6rGCqCSeTgc7J0Gmv4au8hYB5uyi03mEfrkSdTQC3_AdQrocNyXHjR7FyTHACwRFssOi-cHWdur-aybnoijupkuHY6htmp7e4oETiOwFJQLwrKWM0n6f5V-W4DxLREMEyF4Ek7uUwyHpqk1oTUEA3mZY5v5JvFUDpI9hKImp3oM1Ctczb_myJK3KjwTuBp45SMqulZYUazU2g03tdnsXkAVltmlAkW3zn0JpvHwRlNjqfyyVQ2Ms4uO-NFgs8cMRNWK4QIGaEMq9qGfkhRtbzAJpu1GDUgC87f7vRTUlHwTi6_hRQozc0uTyTl19Cgv1Oo-fG2OFVBj5lCeD5ff6X2OxnyL6Eit1xEAJEQmCnRNOxqvbdp5yRbpg7uqC89-RzrBnROdwJayCWcKy4kY2PVD4-D3ygIOWzA0keYf3XBN6PA3OfsXj514TQVYxULDExjHjK-VTblZMv08FPgFFWroKLLlaybUOA2KgCIdi7eje6q6D2U3z_wagJFwzYTwtjYB2bW_aeTUJRcsG9aRdytJGKldj_7hND6-Aht_1sHzurUjF9X6WuurgwJaF27zWmFpqGbz3ZSm9pJ-jigz9eX89sw1YdYxhYqRxFHwh04vjVh45kZ_zpWTpLwTF_-tX4sobOfkxnPtmDEXlUPGZ63KD9T9-rU8qA2npNjLlFJIIWSIALy93LhE_v7FAjuTR_ZbFsKG5kMw1xfKi3e4O3RP6NnwEDsc5_KVlQqojbkfNc18A0-G7_5omULHFQBDKGEhngmWY5ZOFgoXoapCSRDL-tesvncU7Q5wwkirOlrLMrui5xcm1YuUqHkLMq7W2iMjlis8YvCRfPyExAQB9g0zAXoJaVbB6Zugu95pZdzHC9CkjLieD3WTXlWySOaZee4tOIItvYYhRTU5Ubdkcp73vEcNvRO8weUWV6Ki7WdanQJ8_vK9_q3MzF5KTy5_FEHFLfSayEmAIZImSY5kaM_ePYZ6RL4R9Y9aMQqrCJqpomYi5wrwCpC6FlgZydcGy6LMhikQ1Xe12q",
+  "gps_coordinates": {
+   "latitude": 40.54459137461185,
+   "longitude": -74.36508178710938
+  },
+  "zoom": 11
+ },
+ "events_results": [
+  {
+   "title": "Thanksgiving Luncheon",
+   "date": {
+    "start_date": "Nov 19",
+    "when": "Nov 19, 11:30 AM"
+   },
+   "venue": {
+    "name": "JCC of Middlesex County",
+    "link": "https://www.google.com/search?q=JCC+of+Middlesex+County&ludocid=9009827271807707203&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=9009827271807707203&q=JCC+of+Middlesex+County"
+   },
+   "address": [
+    "JCC of Middlesex County",
+    "Edison, NJ"
+   ],
+   "event_location_map": {
+    "image": "https://www.google.com/maps/vt/data=Z76D5D7pCLyH-lKTj4yEMZw5s_lE43LTz7WEdre7OfAOhLqIhp93jFUu3EpQ1g8Ha75ply2qWJ3b1u2CxsuZHcsXZtGhwX9igD-_LKV694meXgrI08Q1jtcqz6Ly2zGGsYRSVBoO9GhzKMH4YAQcipXqhvn8KjR6vz1vg3amvcvz",
+    "link": "https://maps.google.com/?cid=9009827271807707203",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=9009827271807707203&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "ticket_info": [
+    {
+     "source": "facebook.com",
+     "link": "https://www.facebook.com/events/1775-oak-tree-rd-edison-nj-united-states-new-jersey-08820/thanksgiving-luncheon/1070083575866857/",
+     "link_type": "tickets"
+    }
+   ],
+   "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTLHQCKk9l6bRLXitiYs58JmIQiyG1nGwg48lIhEMwtBpqYoieOANo0AW8bU6YcS4paw1QRL5yMjU22SVw",
+   "event_token": "EosICswHQUREYldlWXZoVFF1UEFVX2dfQWRlcVNIdzYzMHlaakJuRDFDdm9xcGxwRlV3M3h1YVUtQXg3R2VPOEFqRS1KU2dMaFB3MGVaZVU1NWRnRHF2WDltbnBIUWRFSmNxSmdwMnhpemtMRnhUUmx6SVFUejZwN2JCeE9rVW5KU2YtY3g2VXEydU00RU5FS0J4c1JqcHFTaG1PYTVxVnNQTGtIaktTMnFKTXBSLTkyeHF3QktTVHFKSjBnUFc2TzNrLTdxUWJjbVkzWEdaSTJUWkxvY3VqTmFOWThYTW4yTkFBMDluSjNKV1NaR1d0OC1OS2gwaFhudlk3dm5xM05mUnhjajlNR3paTV9lbHFWcDg4bnFEVkF3b3p0dnNVS1lFUnVSRjBUQXRKSjNXdVdpMmlHUmxucmVuZTRCUVVMbTBENkpGZm9jWTE4NXRkc1c4V2g4REQ2dkY1dEl3enZMcl9qU3NWQV90VzRzWXNKZ0JudHZoTGJoSTluMFhIQzVFRFpLTF9EdnBUOGNDQXpUcjA0TDRXR3gwOG9WNjFVS2U3bTRvRDYxOG1WbXNFOEd2X0dBRndIWDlpYnlJQ25SempVVHNDV08yUU5XeElZLXJKNklZOHZoVXFzWC14YVpDallrYzZIYUo4RTluV011clBnTHZEUnFINUNhZGhKM0FvaEVxUVRfLWFXQXp3M3JDOFdwWWFiLUVxTnhVWkJIZXJhcGUxZnA1SnUwVWZ2THJHUUM5RXZxYnhpNnlzeUZTYnI4bmREZUg1bTR5b0MwaHhKdC1iWmRBcWQ4dkRjOTY2U2Ztcm1rUGFkSEE3MTNZemM0M0Yydlp3YVhKcDVuTHM0WFhqNFo4ZTcwYU5PYjAzOTZrdmxxb0hvSy1CbzVoMUJUbnVTMVl1S0Y4czdpbG9vMEpBWFdDSEpFSEd6eW5iVWx6c1dWeG9mUldwX1BuLTV0ZTZGREVYbmNveFViTDdSSGJha3MycXY4Snlkd1FLaG5HZFF5UDhGcmZmaDJ3U3UyeFZHcFRKeW5CZWlBWXROR292a0ItNkZrVzZDZGZMb3AxaGp2Y2FnN1k2TDNhQWVPU3M1OXJJcUpCWGRObkFSS2VlRjRJdy1zdkhJS1Y1NGtfR0RfRVZzTzNjaVNPeUt0Y2xPMk5Fb2U2RmdrbDFLamdIN1h5QjB1OWhFMVp3YzNTd01CVzFTZm5VX09MM285YS1BTGNOZ3lnX0lrUnBSUWtyZlZlaGJmOGhUaTZqUW9Ecjk0TEpjX0J6dERMdjFfc2txNVoxX3h6U3prEhZueHI1YXVMWkZkal9wODRQMllXNFFBGiJBSE4wRTdHOHF0S1ZiVTRlXzNWN0twcmJoQWp1YnB0MjZB",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=EosICswHQUREYldlWXZoVFF1UEFVX2dfQWRlcVNIdzYzMHlaakJuRDFDdm9xcGxwRlV3M3h1YVUtQXg3R2VPOEFqRS1KU2dMaFB3MGVaZVU1NWRnRHF2WDltbnBIUWRFSmNxSmdwMnhpemtMRnhUUmx6SVFUejZwN2JCeE9rVW5KU2YtY3g2VXEydU00RU5FS0J4c1JqcHFTaG1PYTVxVnNQTGtIaktTMnFKTXBSLTkyeHF3QktTVHFKSjBnUFc2TzNrLTdxUWJjbVkzWEdaSTJUWkxvY3VqTmFOWThYTW4yTkFBMDluSjNKV1NaR1d0OC1OS2gwaFhudlk3dm5xM05mUnhjajlNR3paTV9lbHFWcDg4bnFEVkF3b3p0dnNVS1lFUnVSRjBUQXRKSjNXdVdpMmlHUmxucmVuZTRCUVVMbTBENkpGZm9jWTE4NXRkc1c4V2g4REQ2dkY1dEl3enZMcl9qU3NWQV90VzRzWXNKZ0JudHZoTGJoSTluMFhIQzVFRFpLTF9EdnBUOGNDQXpUcjA0TDRXR3gwOG9WNjFVS2U3bTRvRDYxOG1WbXNFOEd2X0dBRndIWDlpYnlJQ25SempVVHNDV08yUU5XeElZLXJKNklZOHZoVXFzWC14YVpDallrYzZIYUo4RTluV011clBnTHZEUnFINUNhZGhKM0FvaEVxUVRfLWFXQXp3M3JDOFdwWWFiLUVxTnhVWkJIZXJhcGUxZnA1SnUwVWZ2THJHUUM5RXZxYnhpNnlzeUZTYnI4bmREZUg1bTR5b0MwaHhKdC1iWmRBcWQ4dkRjOTY2U2Ztcm1rUGFkSEE3MTNZemM0M0Yydlp3YVhKcDVuTHM0WFhqNFo4ZTcwYU5PYjAzOTZrdmxxb0hvSy1CbzVoMUJUbnVTMVl1S0Y4czdpbG9vMEpBWFdDSEpFSEd6eW5iVWx6c1dWeG9mUldwX1BuLTV0ZTZGREVYbmNveFViTDdSSGJha3MycXY4Snlkd1FLaG5HZFF5UDhGcmZmaDJ3U3UyeFZHcFRKeW5CZWlBWXROR292a0ItNkZrVzZDZGZMb3AxaGp2Y2FnN1k2TDNhQWVPU3M1OXJJcUpCWGRObkFSS2VlRjRJdy1zdkhJS1Y1NGtfR0RfRVZzTzNjaVNPeUt0Y2xPMk5Fb2U2RmdrbDFLamdIN1h5QjB1OWhFMVp3YzNTd01CVzFTZm5VX09MM285YS1BTGNOZ3lnX0lrUnBSUWtyZlZlaGJmOGhUaTZqUW9Ecjk0TEpjX0J6dERMdjFfc2txNVoxX3h6U3prEhZueHI1YXVMWkZkal9wODRQMllXNFFBGiJBSE4wRTdHOHF0S1ZiVTRlXzNWN0twcmJoQWp1YnB0MjZB&gl=us&hl=en"
+  },
+  {
+   "title": "An Inspiring Afternoon at the Edison Public Library - Meet Author and Speaker Sunil Robert",
+   "date": {
+    "start_date": "Nov 21",
+    "when": "Nov 21, 2:00 PM"
+   },
+   "venue": {
+    "name": "Edison Public Library: North Edison Branch",
+    "link": "https://www.google.com/search?q=Edison+Public+Library%3A+North+Edison+Branch&ludocid=16271855099812046193&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=16271855099812046193&q=Edison+Public+Library%3A+North+Edison+Branch"
+   },
+   "address": [
+    "Edison Public Library: North Edison Branch",
+    "Edison, NJ"
+   ],
+   "event_location_map": {
+    "image": "https://www.google.com/maps/vt/data=vNpFPDMIadXcL_m3Pm2Iv0RHV42Pa3s6gunZBk6qwflb-GK1n-TUhE0ajcY7SN5zZpPtvQeB8B3zybVGqKRSmnTtfboSnh36NuRgV3SCTn9kv-NeBaR563qpH0VljPFyUkgM0LR5dg2KCHB4m31dc43F_4d8i44sIfucF5CiXel1",
+    "link": "https://maps.google.com/?cid=16271855099812046193",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=16271855099812046193&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "ticket_info": [
+    {
+     "source": "venunite.com",
+     "link": "https://venunite.com/events/an-inspiring-afternoon-at-the-edison-public-library-meet-author-and-speaker-sunil-robert",
+     "link_type": "tickets"
+    }
+   ],
+   "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtKCoGSKr7iNFLNuUvs2lGKAa-F_wPpqEuYD_ZX9OBjPILczSM_2PbKNB3lzQR4VtL6Viprd4ecVQBZVo",
+   "event_token": "EssJCowJQUREYldlWnJFdTFxMEEwVDdwLUpkM3hzM1ZXcFhKbmUxZ0lQOVFRRUJrX1psclpSMzI3bUQ5QWRIeVNyYnlpak9KZ0hrbTdNaXNGNS1IWWRZUDVZSl94M2pvM1FhNWxydG1USERkSEhsUmhhaUVsVzhJZWpIYjVwSkdONTZyZi0xVkw5SnVTSDBLR0ZiRFJJaXVVUi1VU2Y2RUlOeUNLTktlblVqSUNPejA0UnJYNmpfak1pUTdJV1p1YXVZTDkxenhhWHl5dUtLQkI5YVdwRTl4eFdqbDN0MXNkZzNTMDFjUVVISUIyaThNSDhQR056MzZOZmplWWV6RHdoVU1rcG44UW5WTFRQQjkzeWEwWmVtVHRpOHhJX2kyaHN1eS1teWg2cFp6cktWSTdUZmZkc1VHNjF5SERJRUJjN19CSDQyR0VpUHQ2cXRvYU1taGlxNWM1VTFCSl9zOV9lNDZxZUxHd3FISWpJZzNuWERZMmdqRE4xeG10SE85ZWxYQ21vTDQ5eFpPX0wzMld4TlBwWkI0Nkw0SWFaangybTFKTE11UTduNkljZHhOclBoNUZIUFpMbE5rRFpvczl5VzFLeGtaWjhIVjVoUEZFOUdJT0E2dzlMLUJ6emRVSjRBY3JnUDV5Z0tMYkJHdmgzRVdSdmQycEdyQTN1bnZBb3hXUnRfRlh6MHlaVWhXTjJncXNpWXMteW1IelNRNGNFOHFoTkdUTFBfNVp6bGhsc3V3Ykp5SWEzb2V5b19LNUE3WXQwTnIwVDZKSDNvcmpzRXk2M2xGdGxSRllKdXU4c3dFeDh3NlJ0UE5RU3AyaDhaVXM1OVUtc2J3MjZCX0E5TlRpakM5NUFidDdCbEZfc2ZueVN5OHFfS0FsM2toR0RGVkJ1WWRNNEVFVHMtWGNseGE3eFBBQlJLcmlvWG9SZkstV2VWM3ViZDRlQjFKenQ4ZTJDb2h2RTlmVE9obEJlS0JabEM3Y0JpMWE1dzVSS2hRVG8wM0JvX1FEcEl1b0NQVGxqVmROY1U2eFYxOGJ5NUJMcDkyVzM0aHRxS2VBdmZwYWVfcnVPNTF1TzF6SV80X1BxUklzcURzRWdRdFZnbXdnZ0FaRmhaWFQyMkJjTms0UTNfb082QjdPQm9zMVBUX28tMUwyWWEwcnRfOFlwZlZ6eHk0LVpXYVhiZUM2cFFkUEdXOTRHTEI3QzBCc1pnQzFQYUdmLU0wbmkyUXR1cDBpVzgtM2NOUVJZalJSSlczWVlydjItbUxyd1R6WGRUQ3pSaHU5M0ZyMmhkR001aDBFV1FrNC1xMS05VXoyRWJsT0hUM3htQ2JpVldIS25YZDN1eXM0VUhibDdRU0M0emxNbjAzNkJlbUI3X09rOV94akY5bWhtNUVmT2dSUk12azRtYlNGRUdHcFFQdjBDRzhrZ0F0a3RWSjllVkJ0YVlJMm1QN2RpTW1NcHlXOTNOTmM2eDJyOGVWSGpaejVjRmhQYnJoT0FDYzl5U29YejhNa2JIQUVjSFJNODlxMnB3ck44bk1saGVxX1N2a05REhZueHI1YXVMWkZkal9wODRQMllXNFFBGiJBSE4wRTdGV1Ffd2lITHZqcl9YT0hYanJjN0NuR0Q2cDN3",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=EssJCowJQUREYldlWnJFdTFxMEEwVDdwLUpkM3hzM1ZXcFhKbmUxZ0lQOVFRRUJrX1psclpSMzI3bUQ5QWRIeVNyYnlpak9KZ0hrbTdNaXNGNS1IWWRZUDVZSl94M2pvM1FhNWxydG1USERkSEhsUmhhaUVsVzhJZWpIYjVwSkdONTZyZi0xVkw5SnVTSDBLR0ZiRFJJaXVVUi1VU2Y2RUlOeUNLTktlblVqSUNPejA0UnJYNmpfak1pUTdJV1p1YXVZTDkxenhhWHl5dUtLQkI5YVdwRTl4eFdqbDN0MXNkZzNTMDFjUVVISUIyaThNSDhQR056MzZOZmplWWV6RHdoVU1rcG44UW5WTFRQQjkzeWEwWmVtVHRpOHhJX2kyaHN1eS1teWg2cFp6cktWSTdUZmZkc1VHNjF5SERJRUJjN19CSDQyR0VpUHQ2cXRvYU1taGlxNWM1VTFCSl9zOV9lNDZxZUxHd3FISWpJZzNuWERZMmdqRE4xeG10SE85ZWxYQ21vTDQ5eFpPX0wzMld4TlBwWkI0Nkw0SWFaangybTFKTE11UTduNkljZHhOclBoNUZIUFpMbE5rRFpvczl5VzFLeGtaWjhIVjVoUEZFOUdJT0E2dzlMLUJ6emRVSjRBY3JnUDV5Z0tMYkJHdmgzRVdSdmQycEdyQTN1bnZBb3hXUnRfRlh6MHlaVWhXTjJncXNpWXMteW1IelNRNGNFOHFoTkdUTFBfNVp6bGhsc3V3Ykp5SWEzb2V5b19LNUE3WXQwTnIwVDZKSDNvcmpzRXk2M2xGdGxSRllKdXU4c3dFeDh3NlJ0UE5RU3AyaDhaVXM1OVUtc2J3MjZCX0E5TlRpakM5NUFidDdCbEZfc2ZueVN5OHFfS0FsM2toR0RGVkJ1WWRNNEVFVHMtWGNseGE3eFBBQlJLcmlvWG9SZkstV2VWM3ViZDRlQjFKenQ4ZTJDb2h2RTlmVE9obEJlS0JabEM3Y0JpMWE1dzVSS2hRVG8wM0JvX1FEcEl1b0NQVGxqVmROY1U2eFYxOGJ5NUJMcDkyVzM0aHRxS2VBdmZwYWVfcnVPNTF1TzF6SV80X1BxUklzcURzRWdRdFZnbXdnZ0FaRmhaWFQyMkJjTms0UTNfb082QjdPQm9zMVBUX28tMUwyWWEwcnRfOFlwZlZ6eHk0LVpXYVhiZUM2cFFkUEdXOTRHTEI3QzBCc1pnQzFQYUdmLU0wbmkyUXR1cDBpVzgtM2NOUVJZalJSSlczWVlydjItbUxyd1R6WGRUQ3pSaHU5M0ZyMmhkR001aDBFV1FrNC1xMS05VXoyRWJsT0hUM3htQ2JpVldIS25YZDN1eXM0VUhibDdRU0M0emxNbjAzNkJlbUI3X09rOV94akY5bWhtNUVmT2dSUk12azRtYlNGRUdHcFFQdjBDRzhrZ0F0a3RWSjllVkJ0YVlJMm1QN2RpTW1NcHlXOTNOTmM2eDJyOGVWSGpaejVjRmhQYnJoT0FDYzl5U29YejhNa2JIQUVjSFJNODlxMnB3ck44bk1saGVxX1N2a05REhZueHI1YXVMWkZkal9wODRQMllXNFFBGiJBSE4wRTdGV1Ffd2lITHZqcl9YT0hYanJjN0NuR0Q2cDN3&gl=us&hl=en"
+  },
+  {
+   "title": "Household Hazardous Waste Drop-off",
+   "date": {
+    "start_date": "Nov 15",
+    "when": "Nov 15, 8:00 AM"
+   },
+   "venue": {
+    "name": "Middlesex college",
+    "link": "https://www.google.com/search?q=Middlesex+college&ludocid=14643281842642007960&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=14643281842642007960&q=Middlesex+college"
+   },
+   "address": [
+    "Middlesex college",
+    "Edison, NJ"
+   ],
+   "event_location_map": {
+    "image": "https://www.google.com/maps/vt/data=y_l2jDPzHtoe14P_9qp7r8F34Wmnq0hODsa5bBoa6zySDHpKiymgudUj0cKoVaOrlB0aGcW7ew0thof9lB4DcFqy6S-MKa0FvMTbmvwQJMthw4y_OkKnHbQNONYe731__OPh6wVaJvyBcIR9KjL-DB3MVtwQNS6QI0yB4viHBnZf",
+    "link": "https://maps.google.com/?cid=14643281842642007960",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=14643281842642007960&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "ticket_info": [
+    {
+     "source": "facebook.com",
+     "link": "https://www.facebook.com/events/middlesex-college/household-hazardous-waste-drop-off/4466506020232800/",
+     "link_type": "tickets"
+    }
+   ],
+   "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQcsA75HtwBVP6xSAxhUF7ry5uOHf_R_W_XzGxNvIlkSy59BrR1g0FKuK17RbmB8hWroXfGFE5PXOVGfQM",
+   "event_token": "EosICswHQUREYldlWVFFS1hhTkd1ZktHOTBKTkFTQ0YwNlZtcWdGUmpFZUQ1RFVnS1hBRWtVUlRVV21leWZJTVo0YUdmb0p6UHdDcjRpMWVQYmhoa0hVd2ItY0ktdlVTWEticHVkRDNUY0xjZHpsWnRoZ3g2Q29fUlMtb2JULXBwNm5GWXgxNjVZTTlNSUNzYzJnTS0zMk5DOVRQU1BmbGJLcWpVSXBNMGJ4eHMzMm01czVYS1BXXzFrZWlBTkdEX0RXSzA1WVI0bHEzelpoemFWSm5xd3VQNzFGWXBXRERTY0ZMd1F3Vnl6WjRPUFFpWnRCMW8yQ0RNTkxWU3RpdUxqM21xeUV1Q2k4U3VfSjJHZy1JSTAxZVFneWpocVZFLWJ6d1VPcmE2alRiWU15VVFfekt4NkV5dGNuYmFlbkJERkV2aFptekxQMTM5bGx6em5sRFV0eU9YeFF3aHpmSXd1OUt3NHJaYmlrUGx5OGFuNTRZUENyMDhEeXZiRTZ3NS1LVm9MMVNSRjRxdHZVc0xzV2xxWm9DTVZXc2FaVlloVUk4NHpSZG9sRk1sbENkR2RWZHI2UlQzeUlmOEN6YTlIOTdWeXVadFFfekFMX3FEWlNfckpLRjRYaG82SEEyeDBRdlF2QUZnMUpCV1V6RW44SXJQd3p1aWdXSTlfNUZ5bEc5N3lPaXpHR3BBNTNsYXlBbTNOdWtSOUM1dnVxb2Iyd3VBTVA4cFZvcHRsaXVJSXptaE1fcVVXc0daT0tYMVRLSkFyel9ndDM2ZVVIWWEwNXpiWF9QZ0dtcUJWYXZHMW1Pa2h0eC1QUjFiRG1KWDdJaElPbDR3SGVoWTdMNUVBMWlwRlZXeF9XOGpwZHZHTzBfSno5SmFsbDZLTkJGd0Q0WWlQSmxXM2RYdXNVQlRSUHJzc3M4QktLZDFHTENuRC1jNUpZSkFOaXgxcGx0WXFFZGZMdXdvVGU4RTZvSnQ4Z2NIT25fdVc2dXprM0xYeC1VNHQyVm1TNWRjVExRYWFJUV8zNGtYUVRUTWZPYkJPb0xXTUllTUpKVVhGbmUxLU5CeUdYejdSaGNMSzZOMmhEY2czSnd5bG8tM00xSWVwa1dfTW5wMHdPRUV4TlhOc0lZczVoNEZiN21wM25WWW1xMWZWenRNZEVqQkU0Si11SW9qRzFMbTFHcndOOFhLaVBsWk1iUzREVGJLNXJMd0JKVE9TWGxQTkVrZ2JhNlZMamFDRldPczd2b0p6MWhXNXg3RWJFQ3RLSzBGWkg2aEg2ZFNkN21tUlEzU2xaUi00EhZueHI1YXVMWkZkal9wODRQMllXNFFBGiJBSE4wRTdHQTMweHlieENVc193WHV5bFo4TXBaRHJ3OXZ3",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=EosICswHQUREYldlWVFFS1hhTkd1ZktHOTBKTkFTQ0YwNlZtcWdGUmpFZUQ1RFVnS1hBRWtVUlRVV21leWZJTVo0YUdmb0p6UHdDcjRpMWVQYmhoa0hVd2ItY0ktdlVTWEticHVkRDNUY0xjZHpsWnRoZ3g2Q29fUlMtb2JULXBwNm5GWXgxNjVZTTlNSUNzYzJnTS0zMk5DOVRQU1BmbGJLcWpVSXBNMGJ4eHMzMm01czVYS1BXXzFrZWlBTkdEX0RXSzA1WVI0bHEzelpoemFWSm5xd3VQNzFGWXBXRERTY0ZMd1F3Vnl6WjRPUFFpWnRCMW8yQ0RNTkxWU3RpdUxqM21xeUV1Q2k4U3VfSjJHZy1JSTAxZVFneWpocVZFLWJ6d1VPcmE2alRiWU15VVFfekt4NkV5dGNuYmFlbkJERkV2aFptekxQMTM5bGx6em5sRFV0eU9YeFF3aHpmSXd1OUt3NHJaYmlrUGx5OGFuNTRZUENyMDhEeXZiRTZ3NS1LVm9MMVNSRjRxdHZVc0xzV2xxWm9DTVZXc2FaVlloVUk4NHpSZG9sRk1sbENkR2RWZHI2UlQzeUlmOEN6YTlIOTdWeXVadFFfekFMX3FEWlNfckpLRjRYaG82SEEyeDBRdlF2QUZnMUpCV1V6RW44SXJQd3p1aWdXSTlfNUZ5bEc5N3lPaXpHR3BBNTNsYXlBbTNOdWtSOUM1dnVxb2Iyd3VBTVA4cFZvcHRsaXVJSXptaE1fcVVXc0daT0tYMVRLSkFyel9ndDM2ZVVIWWEwNXpiWF9QZ0dtcUJWYXZHMW1Pa2h0eC1QUjFiRG1KWDdJaElPbDR3SGVoWTdMNUVBMWlwRlZXeF9XOGpwZHZHTzBfSno5SmFsbDZLTkJGd0Q0WWlQSmxXM2RYdXNVQlRSUHJzc3M4QktLZDFHTENuRC1jNUpZSkFOaXgxcGx0WXFFZGZMdXdvVGU4RTZvSnQ4Z2NIT25fdVc2dXprM0xYeC1VNHQyVm1TNWRjVExRYWFJUV8zNGtYUVRUTWZPYkJPb0xXTUllTUpKVVhGbmUxLU5CeUdYejdSaGNMSzZOMmhEY2czSnd5bG8tM00xSWVwa1dfTW5wMHdPRUV4TlhOc0lZczVoNEZiN21wM25WWW1xMWZWenRNZEVqQkU0Si11SW9qRzFMbTFHcndOOFhLaVBsWk1iUzREVGJLNXJMd0JKVE9TWGxQTkVrZ2JhNlZMamFDRldPczd2b0p6MWhXNXg3RWJFQ3RLSzBGWkg2aEg2ZFNkN21tUlEzU2xaUi00EhZueHI1YXVMWkZkal9wODRQMllXNFFBGiJBSE4wRTdHQTMweHlieENVc193WHV5bFo4TXBaRHJ3OXZ3&gl=us&hl=en"
+  },
+  {
+   "title": "The Chocolate Expo, New Jersey Edition \ud83c\udf6b",
+   "date": {
+    "start_date": "Jan 16",
+    "when": "Jan 16, 10:00 AM"
+   },
+   "venue": {
+    "name": "New Jersey Convention and Exposition Center",
+    "link": "https://www.google.com/search?q=New+Jersey+Convention+and+Exposition+Center&ludocid=4499587233641228574&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=4499587233641228574&q=New+Jersey+Convention+and+Exposition+Center"
+   },
+   "address": [
+    "New Jersey Convention and Exposition Center",
+    "Edison, NJ"
+   ],
+   "event_location_map": {
+    "image": "https://www.google.com/maps/vt/data=ihcf6RNnfDXnAxMZd5ENxohW8wfXPwcWmjTWdrwmUbin0NaT3Ao6eubGRpvBM1IXkuRl0PgWE7uQXjPDQhEL4unqm670qyvdiC86KySNEmLfQphzZSUHff0Upnlb0KxRQsykiBnNX6j1nxoqIdmssnC5YHm5G3rFXIDShBKRBkhb",
+    "link": "https://maps.google.com/?cid=4499587233641228574",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=4499587233641228574&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "ticket_info": [
+    {
+     "source": "facebook.com",
+     "link": "https://www.facebook.com/events/nj-convention-expo-center/the-chocolate-expo-new-jersey-edition-/1337195225015765/",
+     "link_type": "tickets"
+    }
+   ],
+   "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTapwmBYMMf254wwL0H8aQuJTxpp1iQVgLg4xXdF-jhEtfvSDMuKxuvh3hMTXbUt4XccMIxF5gJN6SmGqE",
+   "event_token": "EssICowIQUREYldlYTBvNi15dHo3UHJhb0hHbUNmNHBrRU1kYVpnYy1kSWoxcUo0Zm1VN0ZOZXlBTy03Q3IwRi1JcHI0T3NZMlJfeDViUjRvZ2N1NG13WExlcVpYMEU5TWlSZVlpZ2JXbjVnbndLbmZiU1BVQXlEcXgwa1owNFE2V09FYkJaTkFUY1BaN3Q2dDhqTC1xSXJ6dFZ6cDFiVGVocU05bTYtUHdLTWY1c2Q0MFJXUmpxdjdncXFzYllHNl80Yi1hNE1Qemx2RmgyM2Q5b2xrRnFmcHdsUUJsaFN0ZGFnQ1dTeXdkMmxnZnR6T1dCT2F2ZzJnX3gtWjhrejFFdnY5N1N0WENkRFdGaklfSnBrcUE3Vmx5R1VQVHRsU0w5ZmwtU1lkWm0wcjhCcjgzcVpyeEZFOE9UR0ZyWFo0SFlqbHNsMVdNZHdTaXlxb3lCaTg3aFFSaDBqbmVtWXRiNThLNGVzbHFSMUtUQzlWNnR0clpMa2ZxTUpjdHZqZUg0R3FCNlVIWE1yU2RnNnk1TWV4QkJzWkx0UWluZGFLZllXOEhsckJzajQ3U3k0SnZUZWZJbXM0Qzh2ZWpxcjJ0WXh5R2FlNXAxbFF1N3RZWnFFWnFfV1dSSjdJS3JtYzY2WXctdFJMMjhid29BcFhWOWlWcERLN3UwQnYya1dIRkVVdEROTkNIZlotRzZiWXFKUG1wSUZ4VVpIUmZ3aFlzcGVXbk1jM0wyVWdoRG5WUmhfTmdjY2VSVVY4RWhwLXBDd2RkLWtpeUlJOVFZV0NzelR5aXMtd2tuX3l5T1JzMUZOOVBxSW5kUlBRcXlWaGQ0ZlV1dEhhanZUU04yNXNDNFk0SkQ4amJwNkdmeWZDYTM2Vzk2bTlkX0VINnVIbzVLQVFjTm15Tkp1NUdPOFdjTDcwZG4tT3NHZGZUbVRvN01CZGtjVGNFTWh4TDlZcENzcHphN1JRVDdPZ05QTUxORTVic3RfbUdvM2FVcFZtM1Z3RGpaV053Mk9IM1dnZEVNZFVITzI3LURwdGNuLWpnaGlqcVZhUEJqUllha2ZkSEhvcTRIQkZVOVJrYlJuTzh1TGJsMkxfUEpMaWtHWHM3MGphRWRDanpSd0RNU2kzTEZScFVuMkcwdDZ6blhQRFRBVENySmpPNkYzNmFLakZncWFPcm0zTVdCSDJDT1NCbjREcHBncmpCTzA4X1N5X0d4NXZBM2JrZ01CS1ZGbWFuZ2gzc0Z1NTB4alNXTE56c3Vqdy0xTkRraU02SV9xdW9wcFpSQUJxQWVaUU54aHFhZFk3OUJObnFOVXM3VjJmcGRNY2JUdzQteEZXaW51OFBRQzhNYU1fNXA1ZlFoSnJOQ0hEQVZWM0JnLWRYemR1eRIWbnhyNWF1TFpGZGpfcDg0UDJZVzRRQRoiQUhOMEU3RUN0YUlnX0tlNmZjLTNxUWhWV1Zob2tHamEtUQ",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=EssICowIQUREYldlYTBvNi15dHo3UHJhb0hHbUNmNHBrRU1kYVpnYy1kSWoxcUo0Zm1VN0ZOZXlBTy03Q3IwRi1JcHI0T3NZMlJfeDViUjRvZ2N1NG13WExlcVpYMEU5TWlSZVlpZ2JXbjVnbndLbmZiU1BVQXlEcXgwa1owNFE2V09FYkJaTkFUY1BaN3Q2dDhqTC1xSXJ6dFZ6cDFiVGVocU05bTYtUHdLTWY1c2Q0MFJXUmpxdjdncXFzYllHNl80Yi1hNE1Qemx2RmgyM2Q5b2xrRnFmcHdsUUJsaFN0ZGFnQ1dTeXdkMmxnZnR6T1dCT2F2ZzJnX3gtWjhrejFFdnY5N1N0WENkRFdGaklfSnBrcUE3Vmx5R1VQVHRsU0w5ZmwtU1lkWm0wcjhCcjgzcVpyeEZFOE9UR0ZyWFo0SFlqbHNsMVdNZHdTaXlxb3lCaTg3aFFSaDBqbmVtWXRiNThLNGVzbHFSMUtUQzlWNnR0clpMa2ZxTUpjdHZqZUg0R3FCNlVIWE1yU2RnNnk1TWV4QkJzWkx0UWluZGFLZllXOEhsckJzajQ3U3k0SnZUZWZJbXM0Qzh2ZWpxcjJ0WXh5R2FlNXAxbFF1N3RZWnFFWnFfV1dSSjdJS3JtYzY2WXctdFJMMjhid29BcFhWOWlWcERLN3UwQnYya1dIRkVVdEROTkNIZlotRzZiWXFKUG1wSUZ4VVpIUmZ3aFlzcGVXbk1jM0wyVWdoRG5WUmhfTmdjY2VSVVY4RWhwLXBDd2RkLWtpeUlJOVFZV0NzelR5aXMtd2tuX3l5T1JzMUZOOVBxSW5kUlBRcXlWaGQ0ZlV1dEhhanZUU04yNXNDNFk0SkQ4amJwNkdmeWZDYTM2Vzk2bTlkX0VINnVIbzVLQVFjTm15Tkp1NUdPOFdjTDcwZG4tT3NHZGZUbVRvN01CZGtjVGNFTWh4TDlZcENzcHphN1JRVDdPZ05QTUxORTVic3RfbUdvM2FVcFZtM1Z3RGpaV053Mk9IM1dnZEVNZFVITzI3LURwdGNuLWpnaGlqcVZhUEJqUllha2ZkSEhvcTRIQkZVOVJrYlJuTzh1TGJsMkxfUEpMaWtHWHM3MGphRWRDanpSd0RNU2kzTEZScFVuMkcwdDZ6blhQRFRBVENySmpPNkYzNmFLakZncWFPcm0zTVdCSDJDT1NCbjREcHBncmpCTzA4X1N5X0d4NXZBM2JrZ01CS1ZGbWFuZ2gzc0Z1NTB4alNXTE56c3Vqdy0xTkRraU02SV9xdW9wcFpSQUJxQWVaUU54aHFhZFk3OUJObnFOVXM3VjJmcGRNY2JUdzQteEZXaW51OFBRQzhNYU1fNXA1ZlFoSnJOQ0hEQVZWM0JnLWRYemR1eRIWbnhyNWF1TFpGZGpfcDg0UDJZVzRRQRoiQUhOMEU3RUN0YUlnX0tlNmZjLTNxUWhWV1Zob2tHamEtUQ&gl=us&hl=en"
+  },
+  {
+   "title": "The Chocolate Expo 2027 NJ Expo Center (SATURDAY TICKETS)",
+   "date": {
+    "start_date": "Mar 6",
+    "when": "Mar 6, 10:00 AM"
+   },
+   "venue": {
+    "name": "New Jersey Convention and Exposition Center",
+    "link": "https://www.google.com/search?q=New+Jersey+Convention+and+Exposition+Center&ludocid=4499587233641228574&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=4499587233641228574&q=New+Jersey+Convention+and+Exposition+Center"
+   },
+   "address": [
+    "New Jersey Convention and Exposition Center",
+    "Edison, NJ"
+   ],
+   "event_location_map": {
+    "link": "https://maps.google.com/?cid=4499587233641228574",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=4499587233641228574&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "thumbnail": "https://serpapi.com/searches/6af91a9628703457897dd067/images/D9zuC7Id3tEVksh8XERf5XbuSFf0XeCaDHsQSMA419g.jpg",
+   "event_token": "EvYICrcIQUREYldlWTU5bzdhNUdqemhKLU9jczh5LXg0R3MzUWFjNGpoSDU4dHJRLXdYTXhDVVR5WTVaMGVsRTN6d1ZVVkVQcXVyUUxnZkNDaTZadlVwWkcxMV9NV04xaDZlZDdkVW1hZi00SWZ0Wnl3SFhqWkdfZkV6V2R6WFB5SXVpaW5sNlVqZHZuU1liMmg5YnhfQURhM1FJaG1KRFVSdTlqOVR6TzlwXzc5RnZwYWMzdC10dzl0SWx3aGRVOHh6WEUwZ0hfdDM0WFA5ZzN6ckQyZ29sT2ZoajVRS0c5VzRhZENCdFpoODlITTcwRTVZUjVIZ0RmbnltNTRZSjdnNmxncFhIblNCY3NjcTFoRlRNOEx5UkNfU3JDQUY5bjhzbWk1Y3NSbTFqdDBOZkN5QWcwWnFsS19hZ0hhQnA1N0gzRXpaR2xwVkVya19WUUJmYk5WYkFncGc4TVNBRlEta3RhNzY5WGRtWXdKamNnSHV3dUIwWC1qVWdJbzlYRWxCdXY5NndPa0xueVVCODZRT3Y4QnlmZVdsaEQ1a1JzbWRKeVVnNW5lUmZ1YkpKUDdCUHNxNkhSN0RlRm5uNnlwWk1MYzh2TEl4cTB2OXI2bW5yUEF5LWVwcTdReDdKTXdSWFBxUUVUcllOdlczOHRHS0ZUZ2pTY0tJMFIySzlTSnFoOXV3RUU1S28zNGtrVUlEUmt2Rnp0MlJXSzhlRnlORFN6ZW9ObEJ5d3d2bE8xQ210ZHlxSGN4OE5obDY3NHo0cWlZdU04LUVBRmFWaFdFdDdnWUNhdXZEcV92TFZ1NjVqRm80eTQ5REZfQUxmSHpNc0dRdTlORkx1M1BaTDV6anFLTGJvMDRKaFp4akVReDlqLVF3aDhaSzJ3M0pTZnR2amtIdzB3Tk9yUnVCakJpWWh4cWlKRExvVXhXbEo2VUc1X01OR2VsbDlhdWtJSjZqTW85Qnh0SEdrSWtGZV81Rk9WV3BWWjh0ckV6aWNXWFM2blBteTNueGlMdmdrcUVxOHh2Y04za2pfTTRySFAzdHJXQVZnNktuTmdPRnZQUEVaS3hpSWx0Z0dONDQwU3U3VnRVMjlGLWdoMFBnc3dCYmNFNHNJMkRxXzVIekR1R0FJYVQybF8xZWtndUxORGZSSlFHWE54QWFfVjZhLVJGV2dYTkZuSFNxMlBwSFpXRzQ2NWVJdWxJb2EyMWJLdlhKM1pzZ0pSaXR5aTNTbmk4WVg1TGZndTFsbTFfbHQ5UEZGcFJRYVVIRHpETUo0dFo0d0JIWHFSZXNlUVVqT2lzV2YxbDA1UFdDR3RzWFY2MGswTkt5bnpwaHduZWVtTV9xUC1zSV9oa19xaGdiSjFENEhLczRoQU1lWDVPOE9HcnBWRVFPb3JHMlBEMTFSbHRoTzdfbk1wOEtZemc1bWZGdFRSUFRkdC1HcncSFm54cjVhdUxaRmRqX3A4NFAyWVc0UUEaIkFITjBFN0hRU1czTnF1QlpWWndHazNQenRYcFhwdnEzTWc",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=EvYICrcIQUREYldlWTU5bzdhNUdqemhKLU9jczh5LXg0R3MzUWFjNGpoSDU4dHJRLXdYTXhDVVR5WTVaMGVsRTN6d1ZVVkVQcXVyUUxnZkNDaTZadlVwWkcxMV9NV04xaDZlZDdkVW1hZi00SWZ0Wnl3SFhqWkdfZkV6V2R6WFB5SXVpaW5sNlVqZHZuU1liMmg5YnhfQURhM1FJaG1KRFVSdTlqOVR6TzlwXzc5RnZwYWMzdC10dzl0SWx3aGRVOHh6WEUwZ0hfdDM0WFA5ZzN6ckQyZ29sT2ZoajVRS0c5VzRhZENCdFpoODlITTcwRTVZUjVIZ0RmbnltNTRZSjdnNmxncFhIblNCY3NjcTFoRlRNOEx5UkNfU3JDQUY5bjhzbWk1Y3NSbTFqdDBOZkN5QWcwWnFsS19hZ0hhQnA1N0gzRXpaR2xwVkVya19WUUJmYk5WYkFncGc4TVNBRlEta3RhNzY5WGRtWXdKamNnSHV3dUIwWC1qVWdJbzlYRWxCdXY5NndPa0xueVVCODZRT3Y4QnlmZVdsaEQ1a1JzbWRKeVVnNW5lUmZ1YkpKUDdCUHNxNkhSN0RlRm5uNnlwWk1MYzh2TEl4cTB2OXI2bW5yUEF5LWVwcTdReDdKTXdSWFBxUUVUcllOdlczOHRHS0ZUZ2pTY0tJMFIySzlTSnFoOXV3RUU1S28zNGtrVUlEUmt2Rnp0MlJXSzhlRnlORFN6ZW9ObEJ5d3d2bE8xQ210ZHlxSGN4OE5obDY3NHo0cWlZdU04LUVBRmFWaFdFdDdnWUNhdXZEcV92TFZ1NjVqRm80eTQ5REZfQUxmSHpNc0dRdTlORkx1M1BaTDV6anFLTGJvMDRKaFp4akVReDlqLVF3aDhaSzJ3M0pTZnR2amtIdzB3Tk9yUnVCakJpWWh4cWlKRExvVXhXbEo2VUc1X01OR2VsbDlhdWtJSjZqTW85Qnh0SEdrSWtGZV81Rk9WV3BWWjh0ckV6aWNXWFM2blBteTNueGlMdmdrcUVxOHh2Y04za2pfTTRySFAzdHJXQVZnNktuTmdPRnZQUEVaS3hpSWx0Z0dONDQwU3U3VnRVMjlGLWdoMFBnc3dCYmNFNHNJMkRxXzVIekR1R0FJYVQybF8xZWtndUxORGZSSlFHWE54QWFfVjZhLVJGV2dYTkZuSFNxMlBwSFpXRzQ2NWVJdWxJb2EyMWJLdlhKM1pzZ0pSaXR5aTNTbmk4WVg1TGZndTFsbTFfbHQ5UEZGcFJRYVVIRHpETUo0dFo0d0JIWHFSZXNlUVVqT2lzV2YxbDA1UFdDR3RzWFY2MGswTkt5bnpwaHduZWVtTV9xUC1zSV9oa19xaGdiSjFENEhLczRoQU1lWDVPOE9HcnBWRVFPb3JHMlBEMTFSbHRoTzdfbk1wOEtZemc1bWZGdFRSUFRkdC1HcncSFm54cjVhdUxaRmRqX3A4NFAyWVc0UUEaIkFITjBFN0hRU1czTnF1QlpWWndHazNQenRYcFhwdnEzTWc&gl=us&hl=en"
+  },
+  {
+   "title": "Live at Elixir Bar & Grill",
+   "date": {
+    "start_date": "Nov 21",
+    "when": "Nov 21, 7:30 PM"
+   },
+   "venue": {
+    "name": "Elixir Bar & Grill",
+    "link": "https://www.google.com/search?q=Elixir+Bar+%26+Grill&ludocid=12836000908113308132&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=12836000908113308132&q=Elixir+Bar+%26+Grill"
+   },
+   "address": [
+    "Elixir Bar & Grill",
+    "Edison, NJ"
+   ],
+   "event_location_map": {
+    "image": "https://www.google.com/maps/vt/data=TzLLD3lxNgA99vb2yhb6-mXikp6lFLFR4M1qC133dpjAGLfZz-QI9hcfIJpg4RzJ9FeH8JgeUNlw7gTvkY-6m3fEc7AHB8brfOIJ9UrcRaeBAV7W9ccLbyxz9NIMjcIvAm0pT4vZDe1syuHZilndvCOF4TemXUwJWJeQYNFWJqBG",
+    "link": "https://maps.google.com/?cid=12836000908113308132",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=12836000908113308132&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "ticket_info": [
+    {
+     "source": "facebook.com",
+     "link": "https://www.facebook.com/events/elixir-bar-grill/live-at-elixir-bar-grill/1859125685526864/",
+     "link_type": "tickets"
+    }
+   ],
+   "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQn5mUwPBJYgb2fDDVQKkFCcMTwk92i__aeq8IfGz6TCZPhe3yKLec0pboVjJZetpSuM7lXMKI2kf5hKcs",
+   "event_token": "EuEHCqIHQUREYldlWUtKYVV3VW80QjN0VjIzSmNVdUJSMTd4WFhDamhCZkFKb3A2dzdYN1VLUUtZOXJvNEpxbU9nUldTcFJzblN5UlFrUkFGblYyX1NZVXRIRXBMejJBLVBhUEsxNXl2a3JwV0RILXlhY181bDdBdXlTbUw5d2QyS2xDSzNIVlNseUVscVVJWEQ5ZkdEVXpnUVl1b1dEQ0FZYUk0MGpOaUJLZTRWUHRTa2J2OHFTdzRSMzhWNW1xVXdJN21qV1NqNFNGLWZNOHdWM3RnTEpySE1uQVc4WUY0czdYeC11TVg1dmh3QmhnZ2RUbUpwbDkxZDNGRlRJSHpLVWdRbkxUWXgtUEZoczE5amdnZEZNQTh2QVNOZWJvWlJ4d3hMaEZBcDBuRUFFZ1RMaG1hUEF0UEFxbGwzWVVZeHhZZmlLcHR1MnIwVVhMQ3RUR3Vkd05zZW5BTDJjc3hxTUM4RXlCMnQyb0RSazhkX2dMZHZLdFZ4dEF3X19ZVGpsM3lxYUxFalNOa0xqd0E0ZlY2dVlkd25IQ0Q3dWdfcFR3NndEYmlfSmJDemVLNlgyU1JSTVBrTTh2YUYxd2dLX3AtSWpfSUxiRFQ3RHNqVFRGaFVib3RnNlduWk1ydnYxcEhLblVjc3RmS0RUUmNGMzlBVWxNbG1OeEFROE5iVkxZQXVHVE5ncDNNbEZMcEFLdDVpODhfRWVkT09sbUZpNzVyNUNxeGg0dFlfaWhlajE3b29XU01uU2EyNzE5Z3pQN2lrVzIxLUFHMmhwTTR0XzY5NjA1Y1Ric0NNNUFtQzV3aW1BVllfZEdDSDU2dElIOGt5cjVFT1hxYUp1eGJFVlJkbTlhYUZjX3JsdTZzVEMwdDdoOHhheDV6Y2JEdmVQdklRbjVMTHQ3am1QMUhlNGFVdURoLWxrMDZVTGxza1RrN2hLOWxMeFljZm5XQzZJcDk2cVVMZW1pcEZna3F4cjdGaVVIOTRaSTJ3R0hDeXpGRW1oSVpqNFdKS2dOcF8xQkU3ZnpWcnMtTXkwc3I2MFB6TEV4Rkh5N2NYWXF3YWxrbTByZ29pYjFMWkN5cWlhZFBPUTJ5M3lZTU05cGZ0YlRsc2dwbVBzZWhYajNRYVRDMWE4c3hrcm9MT1NDZUNyWnhCLVVjNnNvVHdfbjJqbGUtemNmdmdJdURCcUdFVUlLUWlRTWlCaWtHaDVaTlRialhDME1uTmxnWkdkR2s1OGVNNmlBEhZueHI1YXVMWkZkal9wODRQMllXNFFBGiJBSE4wRTdGVkJSV2x2LVlXeERrWTh5NFNTQjhpdDVVZkJ3",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=EuEHCqIHQUREYldlWUtKYVV3VW80QjN0VjIzSmNVdUJSMTd4WFhDamhCZkFKb3A2dzdYN1VLUUtZOXJvNEpxbU9nUldTcFJzblN5UlFrUkFGblYyX1NZVXRIRXBMejJBLVBhUEsxNXl2a3JwV0RILXlhY181bDdBdXlTbUw5d2QyS2xDSzNIVlNseUVscVVJWEQ5ZkdEVXpnUVl1b1dEQ0FZYUk0MGpOaUJLZTRWUHRTa2J2OHFTdzRSMzhWNW1xVXdJN21qV1NqNFNGLWZNOHdWM3RnTEpySE1uQVc4WUY0czdYeC11TVg1dmh3QmhnZ2RUbUpwbDkxZDNGRlRJSHpLVWdRbkxUWXgtUEZoczE5amdnZEZNQTh2QVNOZWJvWlJ4d3hMaEZBcDBuRUFFZ1RMaG1hUEF0UEFxbGwzWVVZeHhZZmlLcHR1MnIwVVhMQ3RUR3Vkd05zZW5BTDJjc3hxTUM4RXlCMnQyb0RSazhkX2dMZHZLdFZ4dEF3X19ZVGpsM3lxYUxFalNOa0xqd0E0ZlY2dVlkd25IQ0Q3dWdfcFR3NndEYmlfSmJDemVLNlgyU1JSTVBrTTh2YUYxd2dLX3AtSWpfSUxiRFQ3RHNqVFRGaFVib3RnNlduWk1ydnYxcEhLblVjc3RmS0RUUmNGMzlBVWxNbG1OeEFROE5iVkxZQXVHVE5ncDNNbEZMcEFLdDVpODhfRWVkT09sbUZpNzVyNUNxeGg0dFlfaWhlajE3b29XU01uU2EyNzE5Z3pQN2lrVzIxLUFHMmhwTTR0XzY5NjA1Y1Ric0NNNUFtQzV3aW1BVllfZEdDSDU2dElIOGt5cjVFT1hxYUp1eGJFVlJkbTlhYUZjX3JsdTZzVEMwdDdoOHhheDV6Y2JEdmVQdklRbjVMTHQ3am1QMUhlNGFVdURoLWxrMDZVTGxza1RrN2hLOWxMeFljZm5XQzZJcDk2cVVMZW1pcEZna3F4cjdGaVVIOTRaSTJ3R0hDeXpGRW1oSVpqNFdKS2dOcF8xQkU3ZnpWcnMtTXkwc3I2MFB6TEV4Rkh5N2NYWXF3YWxrbTByZ29pYjFMWkN5cWlhZFBPUTJ5M3lZTU05cGZ0YlRsc2dwbVBzZWhYajNRYVRDMWE4c3hrcm9MT1NDZUNyWnhCLVVjNnNvVHdfbjJqbGUtemNmdmdJdURCcUdFVUlLUWlRTWlCaWtHaDVaTlRialhDME1uTmxnWkdkR2s1OGVNNmlBEhZueHI1YXVMWkZkal9wODRQMllXNFFBGiJBSE4wRTdGVkJSV2x2LVlXeERrWTh5NFNTQjhpdDVVZkJ3&gl=us&hl=en"
+  },
+  {
+   "title": "Edison Anime-Fest",
+   "date": {
+    "start_date": "Dec 12",
+    "when": "Dec 12, 10:00 AM"
+   },
+   "venue": {
+    "name": "Hilton Garden Inn Edison/Raritan Center",
+    "link": "https://www.google.com/search?q=Hilton+Garden+Inn+Edison%2FRaritan+Center&ludocid=13751226867229114469&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=13751226867229114469&q=Hilton+Garden+Inn+Edison%2FRaritan+Center"
+   },
+   "address": [
+    "Hilton Garden Inn Edison/Raritan Center",
+    "Edison, NJ"
+   ],
+   "event_location_map": {
+    "image": "https://www.google.com/maps/vt/data=sTiwWHYI_wuLv0CDJcm6IfUmwGqulYAdcGLjkJmlITOu-su_F9z89mL0Fr4FD4mDbLkiWQjICrIDftf0VTnBVueVfufXnEGYSQ_I1wtK3V88D6i-9g8XVCVdbWtIxyLwEWIc88ICVun88vZi2PxqN4LHxpTmamfUkpQW3BonnmDu",
+    "link": "https://maps.google.com/?cid=13751226867229114469",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=13751226867229114469&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "ticket_info": [
+    {
+     "source": "facebook.com",
+     "link": "https://www.facebook.com/events/hilton-garden-inn-edison-raritan-center/edison-anime-fest/3119251731593807/",
+     "link_type": "tickets"
+    }
+   ],
+   "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS-y4JDmby9XcZa7ogk1CTZCMi8WnhijMbyBiAChzq806MCUJCnf8GJ5kGQ6szRfwYFcrSJ0cOiYJ0tnfQ",
+   "event_token": "EvYHCrcHQUREYldlYUFfcmotS3lGMzQtc1Z4d0RaUkRqUDVlbWN2RmlsSXdlTHQ5NU5YUlNBTXZJUVVUdlpySGNjSEJBTy02ZUltSGNETHRoUmFFcER4N3hTbTN3TURia3VMS2xxV2dLV2xlbTRjX2lCVkpSN3VGc000dDgxSDd4SnFkUUlIalpVdVBCWklVU0tKZDlFQkpGWmI0QXpUdUZHOWdTdmRBREh5VC1nOUpDR2podU1UbF9EWjd1bExsandaeURHdmRuSHpGdmNVUkgzZ2tIVlJHMi15SEtwNjM4ZkpQZ0dJeEJ6RjE0UFZySG9wR2tjLWFlOGk1ckt5S3RBVDc0RmdGSUhSaXFtdEMtWTY3MHQ5ZlhPS1ltOUNTdkZzd3BqVjNqWFo0RV9iTzFCSnNGOTMzRWkyZkdDZUNVbVp0NVo2WktRNjRvYWQ4YndsWWhTdVFqdnFkSmdXMUpRWUJSY2FMRGRydmN5UXhGekllMGFhOEJYSDZoalZPMUNMbWhCVUM0cFdTaGxlUGF0LUtILVBlUEpKeHd5Z1ZBMW9EOC0yMkI4bTUtZHpXcW5WSHY1ZEZ0ZDRuREY3MVZ0d2ktZk9uQ240eG56cUd2WlQxa3c3Sk9kbVd2TUZoVjc5bjU4VFJaWmVXZWJqUEViNjZZdVpURERJdW04TjJLaEpyU3ltc1FIbEd2VTFNNEVTOWpKOEhUQ2wzM2htcXc2M2U0aDMzZzliUHBqWEtUVU5kcXUwOThGQ0p6d0Z2azZRbm10UWw2WWZ6eVVndTRDaFhJTjZwLVdVd182d2NKNGQ2M2xIRHZWbXpRa2NMS3hEelBsUV9neW5qLUxSejZteXRRRGhRaFlQOS1TeF9waWh1czEtSWlYaVo4eTUzVmJLQVNEcFBfaXVLZVdyMmozYlpTTUNDUGhUMklpZDlHQkNRMzA4OEZ4RVN3RmhTMGR6NmJuWnhXMDk1dlZSUHJIY3VQTkpoUldlVVNyMmpFckNXR0NUMmhfeUxrMktyYUFwVFhLbFV6R0hFcWFCVllFOVVoaXpQVFlxNVhpQTFaaG9xb1FQM3hoT1R1Zm9ISTkwQWZSWmw5SEJtSS04OFpkTk84VEtYYjJJZFh1cU1nV0Jfb2laT2JuUkRmQjdfVC1BckY4N1VlS2htUXhYZnlMQWdlN3c3Ry1XcHJlNVpIbVBlLV85MHhjQlp5R1AyOGVzdkYwSVFOVHY0aTljQW1pcUNMelpwa3BpbU1aWFVFT3lCMHJ5dk81UXZJEhZueHI1YXVMWkZkal9wODRQMllXNFFBGiJBSE4wRTdGRWd4bmg2dnh0Qnh1YzlqUE5zMTNyYUd4cUhR",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=EvYHCrcHQUREYldlYUFfcmotS3lGMzQtc1Z4d0RaUkRqUDVlbWN2RmlsSXdlTHQ5NU5YUlNBTXZJUVVUdlpySGNjSEJBTy02ZUltSGNETHRoUmFFcER4N3hTbTN3TURia3VMS2xxV2dLV2xlbTRjX2lCVkpSN3VGc000dDgxSDd4SnFkUUlIalpVdVBCWklVU0tKZDlFQkpGWmI0QXpUdUZHOWdTdmRBREh5VC1nOUpDR2podU1UbF9EWjd1bExsandaeURHdmRuSHpGdmNVUkgzZ2tIVlJHMi15SEtwNjM4ZkpQZ0dJeEJ6RjE0UFZySG9wR2tjLWFlOGk1ckt5S3RBVDc0RmdGSUhSaXFtdEMtWTY3MHQ5ZlhPS1ltOUNTdkZzd3BqVjNqWFo0RV9iTzFCSnNGOTMzRWkyZkdDZUNVbVp0NVo2WktRNjRvYWQ4YndsWWhTdVFqdnFkSmdXMUpRWUJSY2FMRGRydmN5UXhGekllMGFhOEJYSDZoalZPMUNMbWhCVUM0cFdTaGxlUGF0LUtILVBlUEpKeHd5Z1ZBMW9EOC0yMkI4bTUtZHpXcW5WSHY1ZEZ0ZDRuREY3MVZ0d2ktZk9uQ240eG56cUd2WlQxa3c3Sk9kbVd2TUZoVjc5bjU4VFJaWmVXZWJqUEViNjZZdVpURERJdW04TjJLaEpyU3ltc1FIbEd2VTFNNEVTOWpKOEhUQ2wzM2htcXc2M2U0aDMzZzliUHBqWEtUVU5kcXUwOThGQ0p6d0Z2azZRbm10UWw2WWZ6eVVndTRDaFhJTjZwLVdVd182d2NKNGQ2M2xIRHZWbXpRa2NMS3hEelBsUV9neW5qLUxSejZteXRRRGhRaFlQOS1TeF9waWh1czEtSWlYaVo4eTUzVmJLQVNEcFBfaXVLZVdyMmozYlpTTUNDUGhUMklpZDlHQkNRMzA4OEZ4RVN3RmhTMGR6NmJuWnhXMDk1dlZSUHJIY3VQTkpoUldlVVNyMmpFckNXR0NUMmhfeUxrMktyYUFwVFhLbFV6R0hFcWFCVllFOVVoaXpQVFlxNVhpQTFaaG9xb1FQM3hoT1R1Zm9ISTkwQWZSWmw5SEJtSS04OFpkTk84VEtYYjJJZFh1cU1nV0Jfb2laT2JuUkRmQjdfVC1BckY4N1VlS2htUXhYZnlMQWdlN3c3Ry1XcHJlNVpIbVBlLV85MHhjQlp5R1AyOGVzdkYwSVFOVHY0aTljQW1pcUNMelpwa3BpbU1aWFVFT3lCMHJ5dk81UXZJEhZueHI1YXVMWkZkal9wODRQMllXNFFBGiJBSE4wRTdGRWd4bmg2dnh0Qnh1YzlqUE5zMTNyYUd4cUhR&gl=us&hl=en"
+  }
+ ],
+ "_fetched_on": "2026-11-14",
+ "_query": "Events in Edison, NJ"
+}

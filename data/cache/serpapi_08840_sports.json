@@ -1,0 +1,23 @@
+{
+ "search_metadata": {
+  "id": "6af918a4b917c7c490cf12ab",
+  "status": "Success",
+  "json_endpoint": "https://serpapi.com/searches/xFDFGX7AHi09dJOJ1C5AYQnG2zyiEWXGntpsl_D1dIE/6af918a4b917c7c490cf12ab.json",
+  "markdown_endpoint": "https://serpapi.com/searches/xFDFGX7AHi09dJOJ1C5AYQnG2zyiEWXGntpsl_D1dIE/6af918a4b917c7c490cf12ab.md",
+  "created_at": "2026-11-15 02:27:48 UTC",
+  "processed_at": "2026-11-15 02:27:48 UTC",
+  "google_events_url": "https://www.google.com/search?q=sports+events+in+Metuchen%2C+NJ&udm=54&hl=en&gl=us",
+  "raw_html_file": "https://serpapi.com/searches/xFDFGX7AHi09dJOJ1C5AYQnG2zyiEWXGntpsl_D1dIE/6af918a4b917c7c490cf12ab.html",
+  "total_time_taken": 5.07
+ },
+ "search_parameters": {
+  "q": "sports events in Metuchen, NJ",
+  "engine": "google_events"
+ },
+ "search_information": {
+  "events_results_state": "Fully empty"
+ },
+ "error": "Google hasn't returned any results for this query.",
+ "_fetched_on": "2026-11-14",
+ "_query": "sports events in Metuchen, NJ"
+}

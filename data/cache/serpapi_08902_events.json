@@ -1,0 +1,179 @@
+{
+ "search_metadata": {
+  "id": "6af91ac094c42b4a04a95f89",
+  "status": "Success",
+  "json_endpoint": "https://serpapi.com/searches/DqlM_hhZKK1y1j2wT88r_LK_Ojcu5bVrI7Un_Yk7ILc/6af91ac094c42b4a04a95f89.json",
+  "markdown_endpoint": "https://serpapi.com/searches/DqlM_hhZKK1y1j2wT88r_LK_Ojcu5bVrI7Un_Yk7ILc/6af91ac094c42b4a04a95f89.md",
+  "created_at": "2026-11-15 02:36:48 UTC",
+  "processed_at": "2026-11-15 02:36:48 UTC",
+  "google_events_url": "https://www.google.com/search?q=Events+in+North+Brunswick%2C+NJ&udm=54&hl=en&gl=us",
+  "raw_html_file": "https://serpapi.com/searches/DqlM_hhZKK1y1j2wT88r_LK_Ojcu5bVrI7Un_Yk7ILc/6af91ac094c42b4a04a95f89.html",
+  "total_time_taken": 6.29
+ },
+ "search_parameters": {
+  "q": "Events in North Brunswick, NJ",
+  "engine": "google_events"
+ },
+ "search_information": {
+  "events_results_state": "Results for exact spelling"
+ },
+ "events_map": {
+  "image": "https://www.google.com/maps/vt/data=eUH1AXSjWUPkCfWnf_fIqiZAVN0zP39y13OnNScu1gibq5GzOLMzugwgXRYz8Y7Y2KqAiDJzR9n0Ahm18y3s8Z_2QuFgtSm7BR5vS-QmxXjochKcNEmxyCNqEZBGcSGo2QVh6m1fSY3kl9VkJZWTy2tCJ0BiGopowg54-yr_Zqf8cQIaB2EeSRSaBC9TR0RC5XQaFiKF9rHu543mFhvXE4Z85UcCW-uUenupYD4_dUVTdCbSG3EuPhvmlAWeh6uWmhTXUgFnIIehB7uRwlni5ft1mQvHRLE-QQOlaTgIFykFK1kd-kT5ltaf0-nAF0MZu5Rjz-rW-LSUBdluk1_tgvXGaHjdpiICYN6qRh3t_mLT-kD2f-yP13PMwS3bxdxyCnosOZHNzv5Q63EF_1f8M67eXvIsMtp_GJbAZ2KDVsh2BOSuPtUARxv1xqdd9paPTifxBkCyH5t-JgwEMu7FsHMC-gwRC1d4bWUEq6yyNGxJfoCmn0IVYNmqY3lLRHBwIdm8f4UGaO59seCpnVUymo_FFOXv2JyOJ4J7qa0oIfpsw4Aqce3JOLUXP6v0_TjlxmCcBUT_TmKtQRZ2JODLI3nyu2GCOcljMM4HcZGRd0k-ZxtrlHdnzb14UAz4dO9jbCzFgqhxcWyCaIU0f6EhaoKvuxk",
+  "gps_coordinates": {
+   "latitude": 40.45648277516808,
+   "longitude": -74.47872161865234
+  },
+  "zoom": 13
+ },
+ "events_results": [
+  {
+   "title": "Bobby B's Mind Magic",
+   "date": {
+    "start_date": "Nov 19",
+    "when": "Nov 19, 7:00 PM"
+   },
+   "venue": {
+    "name": "Komic Karma Entertainment",
+    "link": "https://www.google.com/search?q=Komic+Karma+Entertainment&ludocid=16960008878775747785&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=16960008878775747785&q=Komic+Karma+Entertainment"
+   },
+   "address": [
+    "Komic Karma Entertainment",
+    "North Brunswick Township, NJ"
+   ],
+   "event_location_map": {
+    "image": "https://www.google.com/maps/vt/data=id6fAX9ujf4ws3gVZT-w8GXMkhC2msgr_7SCm8tfFZhLDflwyywdXC1zhqpiQDDG4zydbm3Pr-vNljka2zFz5_9OtCHOAGiJQV15-8J0Ae434iPUbzlIpFc-4tFWi0Zi8gPXyKSpGtKsQOPiMHhGN4102RDZ5LNvw5MM0-bXYYj1",
+    "link": "https://maps.google.com/?cid=16960008878775747785",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=16960008878775747785&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "ticket_info": [
+    {
+     "source": "komickarmaclub.com",
+     "link": "https://komickarmaclub.com/__kk/events/wiseguise-buzzer-beater-a-comedy-improv-show/",
+     "link_type": "tickets"
+    }
+   ],
+   "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSsZq8DLhC9xI_PHEI_nhfuZFeIglKHxKbWMLfLa0fBKf_o_wSJzClS-CZaOtQfChu1r17T_2l89J_INnk",
+   "event_token": "EuIHCqIHQUREYldlYm9BbmhjaVlEMDU0UU9aeXBYMWtZak1FY0JCeHpfZG9HRVd6ZC1WVXprdHgzQ3ZqMHg3S19JcndtOFEwLS0yOGJCX01oTjE3RFpZMVhJcDEyRUdaREFrenM5RHgzZ3A2UG5NT2JOT2xEZG5oNHRwMHQ2RHR6SU1sSHpOdTgxVy0wcGZhU3NyTUFZdlRVLWRIOVA5NHF6MkdIN0lYSTdmMHpwb1loVThpc2cxWFpoQ3pzdFFwb01lNlhYOGZRejQ1ZEM5dVpJMjR0dlRGb1JYckRRbDNhVmgzclBtZDlWTjF4anpFMXdST3luSDFnUGVDY3p3WUNVYzdDS093ZE96cHhXZGNGUEwtSEZFbEhFdG9BSFJZdGN4cE4zazZsM0wyNm5Ma3Q1S24wOVlJVGhQSWZRSk42Vldzdm1xOENuZ0dQODJpbHU4WF9IbHl3TjRlQ1JoUk9MNGhVUVdYVzZNeURPTGZYaThBTmRfY3NEZUVPZWJoLXNEekIydWJHOFR4RmRZUEkxMVNGYldpbmR2YU1UVkhKTkp5TWVSZHozX2dsZ2NicjJadFhmN2ZfM1A4WGRZVEdQWUZuSzFub1Y2eTY3R2hqMzhsOWtKWlp3SUFMQ0VEWmo0ZkRKQmhReVIyMERJQXNRNFlmdzFKRWl6cENxZzJBbFBMVXlMZEFnR0s1VHl2TXhHTm93YnlnUmpIQXl0M2NPRGw5M3N5REo5Zm0wcVVNd0tXdFNCLTA5Umk0aGE3N2tIWl82QnhtLW9yU1gzYnJ6WXh3VjhQVzNWeFlfOTVHMTh1bEw2Y20xd1RwdzdiX21FMHpwUzNWVENFQ2FtV2FDWTRDbW1KR01oSDJnTktjQUk3VnBkUHhxSTVsQkVrRkQ4Z3VFdEZiUDhjVUItN0RxRmxzNWtBdUwtUUp6LUJwWUgwTnNaZUUzeURZNmtDT0tRakg1Q2lpOVoyVGZ0TVhiaU9WblhSTGtjYllFdVVfUDZZMDFpMG1lZ0kzSUM2WmNybVhGMkVyY3NJSk9OUUNLdnpXOExhbDdhbGpnbWpXeFRnQ1ZvVmQ4U1hldTVUZmxPem96TU9PVm5zcmxUU2dRS3pDN2J6cHEwcG1ZZHZTTFZLcmQzanJVVUg2ME1LbU9FbUMtRERRUUt0UnNDMlNrWjA5Z1lOa2lKeS1QMnBPY3JQd0o5NjhMM1M4Y1hwUHdnY2xPN1BGOHQ2R0tJdjNzTkxtZUxREhd4aHI1YW9leUs5ZWtxdHNQd0pPdXdRSRoiQUhOMEU3RVZYbjNqRFJCaFJ4U2g2SHZ0VEl4azFqSG9wUQ",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=EuIHCqIHQUREYldlYm9BbmhjaVlEMDU0UU9aeXBYMWtZak1FY0JCeHpfZG9HRVd6ZC1WVXprdHgzQ3ZqMHg3S19JcndtOFEwLS0yOGJCX01oTjE3RFpZMVhJcDEyRUdaREFrenM5RHgzZ3A2UG5NT2JOT2xEZG5oNHRwMHQ2RHR6SU1sSHpOdTgxVy0wcGZhU3NyTUFZdlRVLWRIOVA5NHF6MkdIN0lYSTdmMHpwb1loVThpc2cxWFpoQ3pzdFFwb01lNlhYOGZRejQ1ZEM5dVpJMjR0dlRGb1JYckRRbDNhVmgzclBtZDlWTjF4anpFMXdST3luSDFnUGVDY3p3WUNVYzdDS093ZE96cHhXZGNGUEwtSEZFbEhFdG9BSFJZdGN4cE4zazZsM0wyNm5Ma3Q1S24wOVlJVGhQSWZRSk42Vldzdm1xOENuZ0dQODJpbHU4WF9IbHl3TjRlQ1JoUk9MNGhVUVdYVzZNeURPTGZYaThBTmRfY3NEZUVPZWJoLXNEekIydWJHOFR4RmRZUEkxMVNGYldpbmR2YU1UVkhKTkp5TWVSZHozX2dsZ2NicjJadFhmN2ZfM1A4WGRZVEdQWUZuSzFub1Y2eTY3R2hqMzhsOWtKWlp3SUFMQ0VEWmo0ZkRKQmhReVIyMERJQXNRNFlmdzFKRWl6cENxZzJBbFBMVXlMZEFnR0s1VHl2TXhHTm93YnlnUmpIQXl0M2NPRGw5M3N5REo5Zm0wcVVNd0tXdFNCLTA5Umk0aGE3N2tIWl82QnhtLW9yU1gzYnJ6WXh3VjhQVzNWeFlfOTVHMTh1bEw2Y20xd1RwdzdiX21FMHpwUzNWVENFQ2FtV2FDWTRDbW1KR01oSDJnTktjQUk3VnBkUHhxSTVsQkVrRkQ4Z3VFdEZiUDhjVUItN0RxRmxzNWtBdUwtUUp6LUJwWUgwTnNaZUUzeURZNmtDT0tRakg1Q2lpOVoyVGZ0TVhiaU9WblhSTGtjYllFdVVfUDZZMDFpMG1lZ0kzSUM2WmNybVhGMkVyY3NJSk9OUUNLdnpXOExhbDdhbGpnbWpXeFRnQ1ZvVmQ4U1hldTVUZmxPem96TU9PVm5zcmxUU2dRS3pDN2J6cHEwcG1ZZHZTTFZLcmQzanJVVUg2ME1LbU9FbUMtRERRUUt0UnNDMlNrWjA5Z1lOa2lKeS1QMnBPY3JQd0o5NjhMM1M4Y1hwUHdnY2xPN1BGOHQ2R0tJdjNzTkxtZUxREhd4aHI1YW9leUs5ZWtxdHNQd0pPdXdRSRoiQUhOMEU3RVZYbjNqRFJCaFJ4U2g2SHZ0VEl4azFqSG9wUQ&gl=us&hl=en"
+  },
+  {
+   "title": "Third Thursday Trivia",
+   "date": {
+    "start_date": "Nov 19",
+    "when": "Nov 19, 6:30 PM"
+   },
+   "venue": {
+    "name": "Chick-fil-A",
+    "link": "https://www.google.com/search?q=Chick-fil-A&ludocid=13765045453824192227&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=13765045453824192227&q=Chick-fil-A"
+   },
+   "address": [
+    "Chick-fil-A",
+    "North Brunswick Township, NJ"
+   ],
+   "event_location_map": {
+    "image": "https://www.google.com/maps/vt/data=Hs0Y-ghId6pYAULsioWPVFOwlDyI6BIV3gTSe0cpZ9z2xMcT5Xpb-8hp8lqqIVyfjEXXQdSgZt8u4JyTa2kXeFGndU9CBFn_cWWhHSMma2aAP3RHAGEKloJuxqE57NM56iJcpXMnBc_80exMh2FLAcHs5MDBt75IsrUGcBzAYrwy",
+    "link": "https://maps.google.com/?cid=13765045453824192227",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=13765045453824192227&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "ticket_info": [
+    {
+     "source": "facebook.com",
+     "link": "https://www.facebook.com/events/2313-us-highway-1-north-brunswick-nj-08902/third-thursday-trivia/1600641618431794/",
+     "link_type": "tickets"
+    }
+   ],
+   "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQDTICdf412a5hRHzq26ajLO67DUTzy8Fk8eVuMGLX2hb8zod1LdjKeZj__VG83pMvWJq65iXa2VRXreCU",
+   "event_token": "EvcHCrcHQUREYldlYjJDYjVhbHJUb2swT3FlejhJRmlKQnpBbEtMWS01a3o2SjVTQl9EaW5USk1OdTZKYUlkSVRIWklSODUzbXdtZ2lEcE10T1NiZGpQZDJHeFJMU2pZTDcxelhvVmJWU2dkSHE0ZElLX1NORHVqdktLZWx3WTYxckxXS2xTWm5Sek41Vi1jUzRucDRSU3FGZ0hDRi1iRzVjVkotRXJreUNHV25oQnBMbEVlLWVSN2pINk1zXzd3Z2tDLTVBSmZLYW5URGxiQVFwQlAxbXJwbFdvNnhtRjhpSFViNG0ySGw5S0YyZldjTDBHRU5VSFUyUzhMbldrbVRtWlpHdHFBQ3dZWkktWVZsdVZGbFB0Tm5NLTV3aG10RmVzZ2I4d1c1eGdvY0RIc3lhRm42WTN1VnRVUzFxZWZhM2luSUY4NzNJUHhaZk5vUzhFSVFvUnYyQ3VHckQtS0R4MkcydXJVUEpwcGZNRkpYQUtyd2wzdXFYLUp1WklFYlNsOUNFNUNEeHlnQTZWcEVxek5ra3F5bDRsb0hwZHZUOUxxNU1PMWQ4TW5DSU42WHhCQURrN2hRV0E2YkdFeDNyUGxWeE5Ja2xxazVRYlVuNVRXdDJPaEp5dTlHbS1kYVZZSjZOUGZEaVVkQTluWUE4bVVtUDBRZTI0eFBfUlp3Zk1pN3lPTnRHTHptaHBEdFNjN280LVQzTUptTi1XUUpnN0VfcnU3YVQ3UzV2QnBLZHFpTG9pNHA1SUhvTy1TeGtBbG54ZEVqUXZiUkM2S3Q1WC16SG0tVXVDazdUNHlLaHJxT2V0TGJCakhsdThsSDVwMGE4LVpmRTl6cEU3N1dER00zTWFfT2xfRmw0aExIU01YZkRyM3JXMDBEclVmcHAzamtqdy1VTkNyVVlnZk1sWXd6eDVUa1h1YlNTSWJSSHpGcUtEbWF2R2RDU1ctN1JOS0J4VDFZeEpDTkJTcVo5VFlyYXNydGxaUXBaamZZV2ZuMjdhME1BWGt6VzJYYkxxUklwSEcxQWpGVmw4QWRPdmpZQWd4ZDFIa3kxUHBFNWNtbzR3Rk5WTGtWX2J4RjNINmRGMWsydEx3Yk9fZDRUZ2dJM3JyaWxNa3M1WlJPS25KdHQ5QmJZcTg5MDJFOTRtRmQ1ZWdzQ2lScmNhY2NlUW1yWXd2TDZKclBwcGRUa3BVa1dKSzI4ZXVkbkhRTnFxZVlyVmxGazZKanBIQmtuWFRLUnBfZVBlLTdwTjFfY3dWeFlLYWdyWWtVEhd4aHI1YW9leUs5ZWtxdHNQd0pPdXdRSRoiQUhOMEU3SHlWU0ZENEZrc0xRQkZMd3VrVXpROVVHdjdIUQ",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=EvcHCrcHQUREYldlYjJDYjVhbHJUb2swT3FlejhJRmlKQnpBbEtMWS01a3o2SjVTQl9EaW5USk1OdTZKYUlkSVRIWklSODUzbXdtZ2lEcE10T1NiZGpQZDJHeFJMU2pZTDcxelhvVmJWU2dkSHE0ZElLX1NORHVqdktLZWx3WTYxckxXS2xTWm5Sek41Vi1jUzRucDRSU3FGZ0hDRi1iRzVjVkotRXJreUNHV25oQnBMbEVlLWVSN2pINk1zXzd3Z2tDLTVBSmZLYW5URGxiQVFwQlAxbXJwbFdvNnhtRjhpSFViNG0ySGw5S0YyZldjTDBHRU5VSFUyUzhMbldrbVRtWlpHdHFBQ3dZWkktWVZsdVZGbFB0Tm5NLTV3aG10RmVzZ2I4d1c1eGdvY0RIc3lhRm42WTN1VnRVUzFxZWZhM2luSUY4NzNJUHhaZk5vUzhFSVFvUnYyQ3VHckQtS0R4MkcydXJVUEpwcGZNRkpYQUtyd2wzdXFYLUp1WklFYlNsOUNFNUNEeHlnQTZWcEVxek5ra3F5bDRsb0hwZHZUOUxxNU1PMWQ4TW5DSU42WHhCQURrN2hRV0E2YkdFeDNyUGxWeE5Ja2xxazVRYlVuNVRXdDJPaEp5dTlHbS1kYVZZSjZOUGZEaVVkQTluWUE4bVVtUDBRZTI0eFBfUlp3Zk1pN3lPTnRHTHptaHBEdFNjN280LVQzTUptTi1XUUpnN0VfcnU3YVQ3UzV2QnBLZHFpTG9pNHA1SUhvTy1TeGtBbG54ZEVqUXZiUkM2S3Q1WC16SG0tVXVDazdUNHlLaHJxT2V0TGJCakhsdThsSDVwMGE4LVpmRTl6cEU3N1dER00zTWFfT2xfRmw0aExIU01YZkRyM3JXMDBEclVmcHAzamtqdy1VTkNyVVlnZk1sWXd6eDVUa1h1YlNTSWJSSHpGcUtEbWF2R2RDU1ctN1JOS0J4VDFZeEpDTkJTcVo5VFlyYXNydGxaUXBaamZZV2ZuMjdhME1BWGt6VzJYYkxxUklwSEcxQWpGVmw4QWRPdmpZQWd4ZDFIa3kxUHBFNWNtbzR3Rk5WTGtWX2J4RjNINmRGMWsydEx3Yk9fZDRUZ2dJM3JyaWxNa3M1WlJPS25KdHQ5QmJZcTg5MDJFOTRtRmQ1ZWdzQ2lScmNhY2NlUW1yWXd2TDZKclBwcGRUa3BVa1dKSzI4ZXVkbkhRTnFxZVlyVmxGazZKanBIQmtuWFRLUnBfZVBlLTdwTjFfY3dWeFlLYWdyWWtVEhd4aHI1YW9leUs5ZWtxdHNQd0pPdXdRSRoiQUhOMEU3SHlWU0ZENEZrc0xRQkZMd3VrVXpROVVHdjdIUQ&gl=us&hl=en"
+  },
+  {
+   "title": "Adult LEGO Play",
+   "date": {
+    "start_date": "Nov 28",
+    "when": "Nov 28, 1:00 PM"
+   },
+   "venue": {
+    "name": "Komic Karma Entertainment",
+    "link": "https://www.google.com/search?q=Komic+Karma+Entertainment&ludocid=16960008878775747785&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=16960008878775747785&q=Komic+Karma+Entertainment"
+   },
+   "address": [
+    "Komic Karma Entertainment",
+    "North Brunswick Township, NJ"
+   ],
+   "event_location_map": {
+    "link": "https://maps.google.com/?cid=16960008878775747785",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=16960008878775747785&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "thumbnail": "https://serpapi.com/searches/6af91ac094c42b4a04a95f89/images/zyXMBaGWe-7bL88109LkCmVUE-7UAzLixwCeaCHiy0M.jpg",
+   "event_token": "EuIHCqIHQUREYldlWmt0eTZrRXJyd1JZRVhBRGNfYkFRSkE2N0xRT2llSUJZMGwwSTFCOVlVb2NWN1JIQTZFVUdVR2VfYWZnUnlMcng2bXd1T09XaERseVFZOVlMS3JlejJydG4xYmVLUkdreFZsWEJxbVFjbUhNdDR0Z0Q0b2NDVm9yWVY4eERiQUFpOHdPV0NDVHF6NENwV3o2TFdyR3dzc1pVN2ZqclY5UFliUTFHTXNadTdUc1VfU0RqTnUxelYyMHdTQzRnOTVpTGJpRmVqOHRqbmtuc0N6MG90R1UzQy1rVjR1LUp6YmtVSU1oVXNEN2RtcEUxakliVVZja3lzNi1SVk4wYnRrNkNQb0xTdjNsNDMxbEVMTmF3STlLaUpsNENLRi1MNEo1X2t3NUUwc1E1NFRVa3BsVjl5OUpJMzY3ZFdrSHVQZW05TlVrb1p4OTV0eEM0ckxncUtzM3JXeUNuN3ZNVjNRUW56V2F1am1aQjlBOGtuYzNLMWhQY0dKTlgyZjdKRDlxT21CT2VCc2lzM2lmTENQVGpRRzNCblIyOXZ3Q0FvSEJ5dkV3N0JBcVEybl8weEZRY0R6a1VwSmEtdEpmOFM2Slo5UnFQaXhUd2NQWld6RXd6aUt2bEEwZVZXakJUdHVHMXpOVGcxSnRpRzR1ZDllTlREN3FCTWk0RnRoVVF6QXg1ZVFrak9Wd1AtT0FYaUpaSzJQVXBHZDQ4YU8yaElfb0RDZlpodEZzb0x5dlc4UkxSWkt2T3V6c1VEZEsxSkphSGVJUmVFVERRamtWVGw0ZnVJRkd4YkFjQ19RZGhscEhReXJhcTZ5alRsNnI3Xy1hbl9JN0dOeWN1QldkTF9TYXV0cXVTNXNrZUJLb2hzbjBKRktRZERqSXlyY0JpOVNLZWNZWUMwZmhuNEVlZ1N2VlVrcDdURlZQZUFwNVlQRVpnTEpRelpGVUFQeGRUVnZueWpxcVNNb21JeHQ0UzlScnViY0YyRVNpa01faVctQ3I2MEljdXRRcEduN3NHQnZ3U0pDdC05UElNZ3JpZ3AxNS1DaHFHTWZEMGFkbDhiaXdGOVNxVTNMYkphdTF5c0JnQnBpTXZpS0doSW1ocm1BVF9FSU9ZOGJFeURaMnNjREZzLXRtaEZpcTVlRzFPb0I4R0x0S3pybkQ0a080bmhlRzRaUHFlWGFHMjI2MlJ3MDVnLTRwVURHLWhKTzRqdXAyYl83S3ZtMWlkb1NnEhd4aHI1YW9leUs5ZWtxdHNQd0pPdXdRSRoiQUhOMEU3RXZsVEY3Z0VlWGNpZGphMUpjN05wRW1UODNFQQ",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=EuIHCqIHQUREYldlWmt0eTZrRXJyd1JZRVhBRGNfYkFRSkE2N0xRT2llSUJZMGwwSTFCOVlVb2NWN1JIQTZFVUdVR2VfYWZnUnlMcng2bXd1T09XaERseVFZOVlMS3JlejJydG4xYmVLUkdreFZsWEJxbVFjbUhNdDR0Z0Q0b2NDVm9yWVY4eERiQUFpOHdPV0NDVHF6NENwV3o2TFdyR3dzc1pVN2ZqclY5UFliUTFHTXNadTdUc1VfU0RqTnUxelYyMHdTQzRnOTVpTGJpRmVqOHRqbmtuc0N6MG90R1UzQy1rVjR1LUp6YmtVSU1oVXNEN2RtcEUxakliVVZja3lzNi1SVk4wYnRrNkNQb0xTdjNsNDMxbEVMTmF3STlLaUpsNENLRi1MNEo1X2t3NUUwc1E1NFRVa3BsVjl5OUpJMzY3ZFdrSHVQZW05TlVrb1p4OTV0eEM0ckxncUtzM3JXeUNuN3ZNVjNRUW56V2F1am1aQjlBOGtuYzNLMWhQY0dKTlgyZjdKRDlxT21CT2VCc2lzM2lmTENQVGpRRzNCblIyOXZ3Q0FvSEJ5dkV3N0JBcVEybl8weEZRY0R6a1VwSmEtdEpmOFM2Slo5UnFQaXhUd2NQWld6RXd6aUt2bEEwZVZXakJUdHVHMXpOVGcxSnRpRzR1ZDllTlREN3FCTWk0RnRoVVF6QXg1ZVFrak9Wd1AtT0FYaUpaSzJQVXBHZDQ4YU8yaElfb0RDZlpodEZzb0x5dlc4UkxSWkt2T3V6c1VEZEsxSkphSGVJUmVFVERRamtWVGw0ZnVJRkd4YkFjQ19RZGhscEhReXJhcTZ5alRsNnI3Xy1hbl9JN0dOeWN1QldkTF9TYXV0cXVTNXNrZUJLb2hzbjBKRktRZERqSXlyY0JpOVNLZWNZWUMwZmhuNEVlZ1N2VlVrcDdURlZQZUFwNVlQRVpnTEpRelpGVUFQeGRUVnZueWpxcVNNb21JeHQ0UzlScnViY0YyRVNpa01faVctQ3I2MEljdXRRcEduN3NHQnZ3U0pDdC05UElNZ3JpZ3AxNS1DaHFHTWZEMGFkbDhiaXdGOVNxVTNMYkphdTF5c0JnQnBpTXZpS0doSW1ocm1BVF9FSU9ZOGJFeURaMnNjREZzLXRtaEZpcTVlRzFPb0I4R0x0S3pybkQ0a080bmhlRzRaUHFlWGFHMjI2MlJ3MDVnLTRwVURHLWhKTzRqdXAyYl83S3ZtMWlkb1NnEhd4aHI1YW9leUs5ZWtxdHNQd0pPdXdRSRoiQUhOMEU3RXZsVEY3Z0VlWGNpZGphMUpjN05wRW1UODNFQQ&gl=us&hl=en"
+  },
+  {
+   "title": "Pride & Pajamas",
+   "date": {
+    "start_date": "Nov 23",
+    "when": "Nov 23, 6:00 PM"
+   },
+   "venue": {
+    "name": "North Brunswick Public Library",
+    "link": "https://www.google.com/search?q=North+Brunswick+Public+Library&ludocid=2809317653789938149&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=2809317653789938149&q=North+Brunswick+Public+Library"
+   },
+   "address": [
+    "North Brunswick Public Library",
+    "North Brunswick Township, NJ"
+   ],
+   "event_location_map": {
+    "image": "https://www.google.com/maps/vt/data=eYI7tOFCeeq4_ILmwJn2aCDRikxQDRrOoSf4VyhZ8glnFHlRBzW5xMwFtcT1_PL-oOKYKk4gSzq0tTUcaUAB8lWKfTBIv29X6fUkI9ZAz_SOQsUVHOljAt2YyHG1MbJzlj4iQM5oHSjSyRWmYLa5vnQkmvwDBwKZMdRgznukFh59",
+    "link": "https://maps.google.com/?cid=2809317653789938149",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=2809317653789938149&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "ticket_info": [
+    {
+     "source": "northbrunswicklibrary.org",
+     "link": "https://northbrunswicklibrary.org/all-events/2026/11/23/pride-amp-pajamas",
+     "link_type": "tickets"
+    }
+   ],
+   "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTomVkw0uMjjiQeTyM-ScfofDYSVDFj2LC7ndEck6Kzw0D9U1J0RD95nC7ltW6DQLT3-5QyapF-WZdeHcw",
+   "event_token": "EswHCowHQUREYldlYTlaNEJJMXV6WE1aM3FxeHZPeEN6ZkJsMFlVMW84OTQ5VE82b0ltdWFvQXBwUUpOTVFuaVJxYzcwc2o4emY3MnQtTEpkaEx0ZzFvNTNXQkZqcVdDcDJzMXlUMkZqSHhuN0NSd240Y2c4YUsyZHBhVDd6OW82OXh5TjQzd2Y2TldNUU1wZ1oyMDVEODE0MXVQckJmNi1hR3FEUXkzZDhTOXJwcjZuekUzVHlyMFdEWXl6OG51aDJGZjBxeDFmMjZLQl9UeHhydEQ1TFUtYTB5R1A5dThiMFlhMWtNT2tkb2ppTG5sNE5jb0I2UGxXbTNZa1ZrbGhtbExQSXJ0Q0JUbWVaLXhyd1JPSzNWOVpXTk9SeHU3MWlqRGZHMlU5azE5U1AzR2cwN3R1T3ljbFhTZjZ2LVprWUNkdWRfczFGc0dQWlpVMEtqY2twQlhZcDRKYkVUU2d1QVpOeDRReU55VEdkOXRyMjhCTTdBNHN0WXhBd2N3NEpEWkdrNE9PbVNyN3pEdGhnOFBJYmFhYkIwa1hQclFNWmFncUtieUJxY0twbjFwenc5VldSckFiQ0l6MGRSWmc4bzFhLUVPS1VMOVo2RWRfOHJyYkgxYWIxOC0tYWZ1X1RfczU4NUpqRmRkcGZCbU9xSFN4dmVfakhFWE5oWldfdGtoaHBleGwwaHNmekdWS0hXaWtWQ01BRzFDTkxadl9raGpOZUhsRm9LQmwtcldZamZ5WHZSckQ5YTlqZ1dFcHRRRWE5NXdENTJ0SWdRN0UybnNXbWcwR2dwZk1EcHhZWTBiLXJyc0ZXR25KdVdVTEs2VEZzX2lUQno0U21Zb3ZoUlNBQVMxay1DQWk4TjBFYVJ4UlFVY21FTHJ6WGNkNEE4M1hzMkw1Xy1NcmRvZldfR1AxVFl1OVc2bEJvOUZJeVh0VmM3c3pxOXZBM1ZHWWV1ZzEzMi1JZEgwOURLS0tyc0J0cjZQNHk0WWJPT3ZXaC1rbzhoMlM5b1ZsXzBXWHNqOEI5U3MtYkhtZW5ya09RMmRxUGQ1VmRpcnFtVXpKVy1PVFA0VTFrNDNNbnY1SHFjQnBQSjdSLWdKeHVIc0hXNm9mNlE5RENscDJobVRId2RBd3pJb0ZMQkNrNG1lc1pSMHJscjBYYUdxdUcwcWV5OXdyeTdCTnJReEhFLWdIZTF6SVhQclB0TjZjVThJbVESF3hocjVhb2V5Szlla3F0c1B3Sk91d1FJGiJBSE4wRTdFaTBEZllTTEVISjdfemlobGtpLVZzQjlqb01n",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=EswHCowHQUREYldlYTlaNEJJMXV6WE1aM3FxeHZPeEN6ZkJsMFlVMW84OTQ5VE82b0ltdWFvQXBwUUpOTVFuaVJxYzcwc2o4emY3MnQtTEpkaEx0ZzFvNTNXQkZqcVdDcDJzMXlUMkZqSHhuN0NSd240Y2c4YUsyZHBhVDd6OW82OXh5TjQzd2Y2TldNUU1wZ1oyMDVEODE0MXVQckJmNi1hR3FEUXkzZDhTOXJwcjZuekUzVHlyMFdEWXl6OG51aDJGZjBxeDFmMjZLQl9UeHhydEQ1TFUtYTB5R1A5dThiMFlhMWtNT2tkb2ppTG5sNE5jb0I2UGxXbTNZa1ZrbGhtbExQSXJ0Q0JUbWVaLXhyd1JPSzNWOVpXTk9SeHU3MWlqRGZHMlU5azE5U1AzR2cwN3R1T3ljbFhTZjZ2LVprWUNkdWRfczFGc0dQWlpVMEtqY2twQlhZcDRKYkVUU2d1QVpOeDRReU55VEdkOXRyMjhCTTdBNHN0WXhBd2N3NEpEWkdrNE9PbVNyN3pEdGhnOFBJYmFhYkIwa1hQclFNWmFncUtieUJxY0twbjFwenc5VldSckFiQ0l6MGRSWmc4bzFhLUVPS1VMOVo2RWRfOHJyYkgxYWIxOC0tYWZ1X1RfczU4NUpqRmRkcGZCbU9xSFN4dmVfakhFWE5oWldfdGtoaHBleGwwaHNmekdWS0hXaWtWQ01BRzFDTkxadl9raGpOZUhsRm9LQmwtcldZamZ5WHZSckQ5YTlqZ1dFcHRRRWE5NXdENTJ0SWdRN0UybnNXbWcwR2dwZk1EcHhZWTBiLXJyc0ZXR25KdVdVTEs2VEZzX2lUQno0U21Zb3ZoUlNBQVMxay1DQWk4TjBFYVJ4UlFVY21FTHJ6WGNkNEE4M1hzMkw1Xy1NcmRvZldfR1AxVFl1OVc2bEJvOUZJeVh0VmM3c3pxOXZBM1ZHWWV1ZzEzMi1JZEgwOURLS0tyc0J0cjZQNHk0WWJPT3ZXaC1rbzhoMlM5b1ZsXzBXWHNqOEI5U3MtYkhtZW5ya09RMmRxUGQ1VmRpcnFtVXpKVy1PVFA0VTFrNDNNbnY1SHFjQnBQSjdSLWdKeHVIc0hXNm9mNlE5RENscDJobVRId2RBd3pJb0ZMQkNrNG1lc1pSMHJscjBYYUdxdUcwcWV5OXdyeTdCTnJReEhFLWdIZTF6SVhQclB0TjZjVThJbVESF3hocjVhb2V5Szlla3F0c1B3Sk91d1FJGiJBSE4wRTdFaTBEZllTTEVISjdfemlobGtpLVZzQjlqb01n&gl=us&hl=en"
+  },
+  {
+   "title": "Coffee with a Cop",
+   "date": {
+    "start_date": "Nov 20",
+    "when": "Nov 20, 10:00 AM"
+   },
+   "venue": {
+    "name": "IHOP",
+    "link": "https://www.google.com/search?q=IHOP&ludocid=11811789308681805890&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=11811789308681805890&q=IHOP"
+   },
+   "address": [
+    "IHOP",
+    "North Brunswick Township, NJ"
+   ],
+   "event_location_map": {
+    "image": "https://www.google.com/maps/vt/data=1-dYg0cBXp04-DXaYRANpNnb4VlgO37fqmoh5gN99mjBTUG_ZzUA5tvbzTpB92fpzoTfJYJo7P_xR0NwFrk7OspI3uKqyhas3DwIEIPfFC9wzRXa7aSF3O2GlFAID1nr7lOBtySvnTI57uzYFB2WZQxZYLntum6egpziLiJl-rZo",
+    "link": "https://maps.google.com/?cid=11811789308681805890",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=11811789308681805890&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "ticket_info": [
+    {
+     "source": "facebook.com",
+     "link": "https://www.facebook.com/events/ihop-north-brunswick-nj/coffee-with-a-cop/1006273491757120/",
+     "link_type": "tickets"
+    }
+   ],
+   "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTy7BJ4VWgXkFjHbDPA4BTNJTZxrD1auq7YHilo-nay_kT7ffXCpri8MGbvRUfiA6WNNYRLY7UPzatfQuA",
+   "event_token": "ErcHCvcGQUREYldlWU1vUWZwbmVtZ1pQVWp6VEszT1BaS3VoWFZWUEhyNW5LRG96eXp5NmRCVDRTUXdPTkhDUGxNT1ZESjhwUXlxVTZkZjZSeHY1RlZYenZTRnZZN2VDUk1kb2ZyMm04Q1lldWNNX1VkcUlrSkRyakdQSmxoSDY3VGlBcDdCRnU0UjBnSG5acDlSTU5YTkp3LVFGNjJpWEFEdkVZdU9DQTNMZHh1NXJkQnpMWDhObFp5QjBmc09ZYmVodGg2Z0YxU0FQSzBlbU1rektEMUltOXQxVGZEeWU5WTEtZ1gwWlVicVcwV2MxZXduY0lUV3ZTM0hiWHJCS3oyREFVV3JZWmhBU044dW9CeUIxRkVhNmwxUTRtdUtOOFNTWC04aGNycEFNazdRNlFaeDd5SlphZVY3SnU4bnlCcW5TdVUwY3hLQ2FoemZuVWtpREFtd1VYSUZqOEk3ampRUGlsb1hYUTJZTHRnWW1MSUcxbmtMa0wzaE5KcDQ5eEZVQlJRZlRfcmZFQU9ZZ1NNdGJRbFRidjNSb0FLOUZnZXVqbWZULWZFLV9uNU9NTTJjTi1wTW8xdFZmS2YxNEJueWFJcDlSNWdNY056MEhWRWpzY3hWVlhrTklIUG1CcGxLOTdDbEs1S0VEMVRzZjEtV2h2YklKbS1ESkstVWVOSDZ4NnQ5cFhrM196aF9hZTlyQXpRaGhNSFdIY21CaDROMnJ6SGdkWklQYTJMUFMwaVVWaTh4SU1SNmVZS0xGMTRxTGthRjRvYnMxNENJZlBlNWw2VkJvczdaeGE3VnJBZjFfaEgxZEJPbm51V0tubEk5SHYzSEVRbklaSTlsSEZTZDJpTk9GWTZXU2tYNVZud0NYOGk4QmNKUHI5NzZfZ2M5eThmNk5uM3IybXRab2Y5Xzd5RVRyeGpKR25ndFNLQkU1aks0REFmVGlDcFE4ZkRfMWNNd2hIZk5yNzZzOG5qY1Q3QW9uTEpQQnB5WnE0VjhfZ1l5TE5ZRktvb1FlVkFITU1xT2FLQTYwbXJJbW1EUkljTHFvS2dtc1VCakVLdEl1ak1KZzcwd0RmcnpsOUdCNU03LWoyZ0hTc20zaENQX0EwaFViZF93dm5wZWx2a0lRZGVOX3B2cWRkR211UlV5ZDVLYmhnTHNMUGE2QTdfNHBlR21QRnY2Q2cSF3hocjVhb2V5Szlla3F0c1B3Sk91d1FJGiJBSE4wRTdFQjZpaWRoNVhUTGc1VDhTZTFjSjUyTk1UaXp3",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=ErcHCvcGQUREYldlWU1vUWZwbmVtZ1pQVWp6VEszT1BaS3VoWFZWUEhyNW5LRG96eXp5NmRCVDRTUXdPTkhDUGxNT1ZESjhwUXlxVTZkZjZSeHY1RlZYenZTRnZZN2VDUk1kb2ZyMm04Q1lldWNNX1VkcUlrSkRyakdQSmxoSDY3VGlBcDdCRnU0UjBnSG5acDlSTU5YTkp3LVFGNjJpWEFEdkVZdU9DQTNMZHh1NXJkQnpMWDhObFp5QjBmc09ZYmVodGg2Z0YxU0FQSzBlbU1rektEMUltOXQxVGZEeWU5WTEtZ1gwWlVicVcwV2MxZXduY0lUV3ZTM0hiWHJCS3oyREFVV3JZWmhBU044dW9CeUIxRkVhNmwxUTRtdUtOOFNTWC04aGNycEFNazdRNlFaeDd5SlphZVY3SnU4bnlCcW5TdVUwY3hLQ2FoemZuVWtpREFtd1VYSUZqOEk3ampRUGlsb1hYUTJZTHRnWW1MSUcxbmtMa0wzaE5KcDQ5eEZVQlJRZlRfcmZFQU9ZZ1NNdGJRbFRidjNSb0FLOUZnZXVqbWZULWZFLV9uNU9NTTJjTi1wTW8xdFZmS2YxNEJueWFJcDlSNWdNY056MEhWRWpzY3hWVlhrTklIUG1CcGxLOTdDbEs1S0VEMVRzZjEtV2h2YklKbS1ESkstVWVOSDZ4NnQ5cFhrM196aF9hZTlyQXpRaGhNSFdIY21CaDROMnJ6SGdkWklQYTJMUFMwaVVWaTh4SU1SNmVZS0xGMTRxTGthRjRvYnMxNENJZlBlNWw2VkJvczdaeGE3VnJBZjFfaEgxZEJPbm51V0tubEk5SHYzSEVRbklaSTlsSEZTZDJpTk9GWTZXU2tYNVZud0NYOGk4QmNKUHI5NzZfZ2M5eThmNk5uM3IybXRab2Y5Xzd5RVRyeGpKR25ndFNLQkU1aks0REFmVGlDcFE4ZkRfMWNNd2hIZk5yNzZzOG5qY1Q3QW9uTEpQQnB5WnE0VjhfZ1l5TE5ZRktvb1FlVkFITU1xT2FLQTYwbXJJbW1EUkljTHFvS2dtc1VCakVLdEl1ak1KZzcwd0RmcnpsOUdCNU03LWoyZ0hTc20zaENQX0EwaFViZF93dm5wZWx2a0lRZGVOX3B2cWRkR211UlV5ZDVLYmhnTHNMUGE2QTdfNHBlR21QRnY2Q2cSF3hocjVhb2V5Szlla3F0c1B3Sk91d1FJGiJBSE4wRTdFQjZpaWRoNVhUTGc1VDhTZTFjSjUyTk1UaXp3&gl=us&hl=en"
+  }
+ ],
+ "_fetched_on": "2026-11-14",
+ "_query": "Events in North Brunswick, NJ"
+}

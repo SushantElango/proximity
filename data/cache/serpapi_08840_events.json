@@ -1,0 +1,212 @@
+{
+ "search_metadata": {
+  "id": "6af91920fcf0d9e7d4bc2504",
+  "status": "Success",
+  "json_endpoint": "https://serpapi.com/searches/-RlK-_lySQdQ_3MKkMT2CAgESL-h1oHzGRlVCTdhUJg/6af91920fcf0d9e7d4bc2504.json",
+  "markdown_endpoint": "https://serpapi.com/searches/-RlK-_lySQdQ_3MKkMT2CAgESL-h1oHzGRlVCTdhUJg/6af91920fcf0d9e7d4bc2504.md",
+  "created_at": "2026-11-15 02:29:52 UTC",
+  "processed_at": "2026-11-15 02:29:52 UTC",
+  "google_events_url": "https://www.google.com/search?q=Events+in+Metuchen%2C+NJ&udm=54&hl=en&gl=us",
+  "raw_html_file": "https://serpapi.com/searches/-RlK-_lySQdQ_3MKkMT2CAgESL-h1oHzGRlVCTdhUJg/6af91920fcf0d9e7d4bc2504.html",
+  "total_time_taken": 12.08
+ },
+ "search_parameters": {
+  "q": "Events in Metuchen, NJ",
+  "engine": "google_events"
+ },
+ "search_information": {
+  "events_results_state": "Results for exact spelling"
+ },
+ "events_map": {
+  "image": "https://www.google.com/maps/vt/data=sNVRRDdfynFPrcge2twoL3Vodqyro_llJL5094pSD98ePDjs5T2TYTC2e89E372vU43WuTgGuQSKspA5dlswo2nAhJbxY375tS3eO3Y5Pr5L-FzpOCrja4qzdFo0K0iR9WxPk-VaLqoJlSlDEmNSs8Bni3DYePARP4d5sLixXv44-zZR2CPC1uY922rH7_uOvxJ873RbtPTMPEW3Ck-ZpxjFJIYLnF4sZTwvrk8YOOFCyg05nSgvRJd5VNxHRzQHUO_Xg3fv_iSanbDvfZ7ngH4ivcU2NjFWvkr3SoGeeC_65CUE-lj7S26VJC13eLdHfAk2jtWfSQ6Clqw2kbybYDSrqXG4isOzisSMEzDo37ptiYnUFaRxnAzPavO9aPf6smRPWizeU1QRUwPOPw7VqaMRXxfJV0oFGC9o6Itc5O7yWIA4w6ZCB24IETVrrWhIZD5N5FizADr1FDpg6LMHzXt3zsL09YJU7KGpudPnlIkGTMoagqmHHHsWDlccVGsoBgQm6mUnGB-XZ42ZrfN0OkNGuWakmlkkY0MVVUedN11db9UsGDRb_aivrIz-6VBxns_yfvvU922B69OpV8XsgPISqBkTL7NXVTFhXv_LFdp_WnPhvi7dAjEtRRCLUIiD11KvX4hFo8kbGnjU_NqRmmdThEZfmpzUvSYTRgd1jLYXASGlfThbT-QbQwyStuYresmpk8OlJTckcqMLlUltqyIY2QiERWaI8ARc_t0xs8y4ClOKAKHmQWLiXZCRlAOp7LWtl6_PAl9czQqtEkYwFAOWmBtzRZaTcrZ4c4AgGw",
+  "gps_coordinates": {
+   "latitude": 40.547982872533964,
+   "longitude": -74.3583869934082
+  },
+  "zoom": 13
+ },
+ "events_results": [
+  {
+   "title": "Mingus Big Band at Middlesex Jazz Festival",
+   "date": {
+    "start_date": "Nov 21",
+    "when": "Nov 21, 5:00 PM"
+   },
+   "venue": {
+    "name": "Metuchen High School",
+    "link": "https://www.google.com/search?q=Metuchen+High+School&ludocid=17198773201577624326&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=17198773201577624326&q=Metuchen+High+School"
+   },
+   "address": [
+    "Metuchen High School",
+    "Metuchen, NJ"
+   ],
+   "event_location_map": {
+    "image": "https://www.google.com/maps/vt/data=hO3deyJgdU3g2zIlsl70xwHNtpg4Eqt6NOmekaovYvEOeMcMKt9Kxo9BqkBJbucR8U8QhONXtvd2ojciYwCXmnvflfcntrMbzg3a9mFDVauHy5wmEhXA0WTQYq72atpSWF5ee7b1S4GUIZxbvoOv5KzVLIavgdjkQgTwhOcjjIZ5",
+    "link": "https://maps.google.com/?cid=17198773201577624326",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=17198773201577624326&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "ticket_info": [
+    {
+     "source": "bandsintown.com",
+     "link": "https://www.bandsintown.com/e/109065597?app_id=ggl_feed&came_from=289&utm_medium=web&utm_source=ggl_feed&utm_campaign=event",
+     "link_type": "tickets"
+    }
+   ],
+   "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmhvk4nPr4-Rb0Aq-EdENIML__X8Mr1z8qtUXKPoZXmyOw3zqFoQ4qzwkiKcGHMAQlaO-vlQrSin91K1I",
+   "event_token": "ErcICvcHQUREYldlYnNNakw3c1RfbFgxUnZPZzZRQVFMNjBCcnZyX1FWUDU2M2ExNGEyeC04emVYa3FkY09lU3QxX3BacGdEZktqdXFkeGZBdENQbS1veU9mc2lwaVNGNDY5LTRVbG9oTkJXYk9EVjFQYmhxV3o3UFlnT0pNSVgxVjV5WFVnU192WXlGeGgzSjNqSTV2enFHbEluSkx3RWpIdGd3enRnQ2tQaGprMHBFWlh1Tm5YelBNcWVQNHQtNEJGTUoyTmVXazVSQ1JDVW93TDdXeEtTbWhWSDhhSkpwdXlST2s4T3pOWWNPVHlwbkY4OUx6RXdtSVZYTVM1MjBQVHVaZmNGTU9nQXBBNXhSS082ZlR5bGRLVHdXRjdac0k5bnVvZzVndHJhRndOb2d2V0dqNDJwNndvVGxRTU9ETW9OY1JON2xqclNjOTJBcEhQbWc0UGRhTmIyTmJhSFVwU0N6ZWRVMTdKTjRGWG5QdEp5UElJdWt4TTRyTUlneGRpVGpNTjNRWUN3ODB4NGs0cDNqMU03RXpZblFkeVlOczVnWjNVR3NBNndfd3p4SkFrVkpmeDFwdDBySGlHWmNyOERjZDg4YVJsZ3d1TVdSS0YxVm9KdjBnUnU2bFFuWXFvbzF5bXpzZF9Sek8yRnZfUk5XbmNnWmpLajVNVlJKa3dUWFhOSlRoZkpseDU1UDZRT2tfQWF5R1U3aWlib3ViOHpINjdTcEZZMzBzREtTY3YwRTVvZ2JlcXJnSDNWekZSNTlNc3phYlZvU1FpSmVMdkpLd1Q0cVpabWpCQmQ5ZnFBbm9fUElzbFN3MkN6ZkdOTWNtWU1FNFdiSU16NVJka01GSDlqTUtRQm9zazQ5RXJaSExVV0NHRlMzd1l5a083RUUtSDBxMGVzUW9PWWNsZmdpRV9yd0RZY01lNEVadV9SYm1IWHhjZjBiLTlqeVE4azB5N05zVTlnYUYzanU0bEdxUUtvYW5lZXpxakszWF92bnpWRGVMUkhwbjRKWGw4WnZvYzRDMjZ0U0ZpRlk2d1NwZTRiRTZqbHlKR2taeWYyZThTSURGQWlvaWg3andsMndwbTdmS29jaFFuMFRCSEJzZ3Fia0VhQU95eHBVSzA0R1FsemRWLWJaczluS0Ytc0p1MmJjZldKWHVRai11OHZGZmFVXzU1RjUxU0k5N3JLdkZUUjVEM1V3RlRmS3JSVFJmN2dTZzk2enItdlR1eE9IMERHenZuUG5kQWRFY1oybTlUeldoTGlNSlNqcVNvcUhObjFzVFZfSm91bzdpOWhsX1ZKci1RXzQ2U1I5dU5QVHRBblNyMVpaYlhOaUI4UmFfM25hMW1iRRIXS3huNWF2ZUhPS1dydzhjUGhNeVUwQW8aIkFITjBFN0dTaHk0TUNCSjBUMEVhWWlGYlJEUGJCdGM0aUE",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=ErcICvcHQUREYldlYnNNakw3c1RfbFgxUnZPZzZRQVFMNjBCcnZyX1FWUDU2M2ExNGEyeC04emVYa3FkY09lU3QxX3BacGdEZktqdXFkeGZBdENQbS1veU9mc2lwaVNGNDY5LTRVbG9oTkJXYk9EVjFQYmhxV3o3UFlnT0pNSVgxVjV5WFVnU192WXlGeGgzSjNqSTV2enFHbEluSkx3RWpIdGd3enRnQ2tQaGprMHBFWlh1Tm5YelBNcWVQNHQtNEJGTUoyTmVXazVSQ1JDVW93TDdXeEtTbWhWSDhhSkpwdXlST2s4T3pOWWNPVHlwbkY4OUx6RXdtSVZYTVM1MjBQVHVaZmNGTU9nQXBBNXhSS082ZlR5bGRLVHdXRjdac0k5bnVvZzVndHJhRndOb2d2V0dqNDJwNndvVGxRTU9ETW9OY1JON2xqclNjOTJBcEhQbWc0UGRhTmIyTmJhSFVwU0N6ZWRVMTdKTjRGWG5QdEp5UElJdWt4TTRyTUlneGRpVGpNTjNRWUN3ODB4NGs0cDNqMU03RXpZblFkeVlOczVnWjNVR3NBNndfd3p4SkFrVkpmeDFwdDBySGlHWmNyOERjZDg4YVJsZ3d1TVdSS0YxVm9KdjBnUnU2bFFuWXFvbzF5bXpzZF9Sek8yRnZfUk5XbmNnWmpLajVNVlJKa3dUWFhOSlRoZkpseDU1UDZRT2tfQWF5R1U3aWlib3ViOHpINjdTcEZZMzBzREtTY3YwRTVvZ2JlcXJnSDNWekZSNTlNc3phYlZvU1FpSmVMdkpLd1Q0cVpabWpCQmQ5ZnFBbm9fUElzbFN3MkN6ZkdOTWNtWU1FNFdiSU16NVJka01GSDlqTUtRQm9zazQ5RXJaSExVV0NHRlMzd1l5a083RUUtSDBxMGVzUW9PWWNsZmdpRV9yd0RZY01lNEVadV9SYm1IWHhjZjBiLTlqeVE4azB5N05zVTlnYUYzanU0bEdxUUtvYW5lZXpxakszWF92bnpWRGVMUkhwbjRKWGw4WnZvYzRDMjZ0U0ZpRlk2d1NwZTRiRTZqbHlKR2taeWYyZThTSURGQWlvaWg3andsMndwbTdmS29jaFFuMFRCSEJzZ3Fia0VhQU95eHBVSzA0R1FsemRWLWJaczluS0Ytc0p1MmJjZldKWHVRai11OHZGZmFVXzU1RjUxU0k5N3JLdkZUUjVEM1V3RlRmS3JSVFJmN2dTZzk2enItdlR1eE9IMERHenZuUG5kQWRFY1oybTlUeldoTGlNSlNqcVNvcUhObjFzVFZfSm91bzdpOWhsX1ZKci1RXzQ2U1I5dU5QVHRBblNyMVpaYlhOaUI4UmFfM25hMW1iRRIXS3huNWF2ZUhPS1dydzhjUGhNeVUwQW8aIkFITjBFN0dTaHk0TUNCSjBUMEVhWWlGYlJEUGJCdGM0aUE&gl=us&hl=en"
+  },
+  {
+   "title": "November Paint & Sip at Cafe Paris",
+   "date": {
+    "start_date": "Nov 20",
+    "when": "Nov 20, 6:30 PM"
+   },
+   "venue": {
+    "name": "Caf\u00e9 Paris",
+    "link": "https://www.google.com/search?q=Caf%C3%A9+Paris&ludocid=14015924314379694185&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=14015924314379694185&q=Caf%C3%A9+Paris"
+   },
+   "address": [
+    "Caf\u00e9 Paris",
+    "Metuchen, NJ"
+   ],
+   "event_location_map": {
+    "image": "https://www.google.com/maps/vt/data=yU613GZXYNlBb6t2aH2gayZLXDG1ziXViYRKCTsb_FDBHlNBumghRIit3t4Nh9275kJnci8J6pLeptMZ2uxAnXO3QsEN5BuPdQOFzVoAOvR1dIjImeksbpPGuNWQY68OlE02HIPe_oy6abtPbheFRsp2rBnb_q2NeuexetJcwqpQ",
+    "link": "https://maps.google.com/?cid=14015924314379694185",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=14015924314379694185&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "ticket_info": [
+    {
+     "source": "eventbrite.com",
+     "link": "https://www.eventbrite.com/e/1997180933936?aff=ebdiglgoogleliveevents",
+     "link_type": "tickets"
+    }
+   ],
+   "price": "$50",
+   "extracted_price": 50,
+   "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRWsiTKZpzZIHkvm5dv2mDXFzxn3cnawoMZ7b6dMNVZPmF7BT0SYTO93rkCqUewbuphqVldDY88IW2hhqQ",
+   "event_token": "EuIHCqIHQUREYldlWWNuanltM25CR1RBUWp2N3pmbV8tWnlWT3AzWVh6UXowSWdtY0xBSU42Y2V5dTdjNTZuZ0NuMFBmV3dRWnRPTF9qNURvU0tzZHBlLU9mdjNrVnI3dDQ1ZVhqM0VEV0NsLVljUnYwNDIxOUJJcUVyVlNieEpuRnFXLWNhdTRweTljdHJMRXBPR1FCUTJrQzRJcldpUG1jM1FQZTVwOWJjZ1NJRVEwSUhlTFlVRjlpbXNOWVVlTzZXb1pQLUFqTEw0b01pUTE5SGQxUW1PT1dpVjEyUmFlSEFqaXY5WHVuUDNOdU9odHFmQXRKZnlBOE1YV0V0VUJDSkNhV2lSdm5mWE1mSUI4am1MOFgxcnROdF9jTWN2OWlqOUhPZWs4UFZIaVN5Ykh1QWVYZmFhaUt1NUJKUlJuSzdjQXE3OXZhSUJFU2x4cVUzWW5ZcW9WTzgtQkFhSmlvWTlXZHYyMmJxNnF2aEswZ0ItUEM5cWtYM214eC1pVXR4Z0F4dTFoc2pxV1FGaUVPRHFMRlNOV3R3dkV2QWFDRXA5SjJCUXlNbXF3ZUw3UDhhMXg3eUpMMTNCUTFzQWlBclRIcW1hZFFqaExxTGNRck9LV0U3VXBoOVZEVTBERU9Vc2RrWmJNQ1lrZU92TWhtVEdyWi00eXkzcHhTd2ZJX3loVFg0MDFhZ1RUcmVLT1hUSjFRTzlsYU9qSHB2SmRwallRSmpyWFRfZ3ZpZXdndlVZQkozVW5OR0pscHdpNEZLZ3gtZlZUVFp3Ni0wclNCRGtaUVVTYmNmN0JVSHpsN2d3eXRkOUVBblIyMTk5RFV2WWxlRjROUkcwNnZwMkRoWm40bjNueHZKNENPMUNLQkx3cXBySVROTHRYSDFKTS1XMEVTX3oyNkd2Z3V0enVudWRvcXBNX3cwSmdtdklSY0RxZ0Yxb25TVkVEVEFZUWcxam9rbV92TXY4am9TN0UxcDJrWVNkd3BIQk0wYjZzUkRoSWFVLUdsN2xvSTR4UkZ5WDR4S00wZjJIdm5sS0NEWG9wbHhhOThtMm1kMC1PaFhxc3pGVTNKdzNYSTZ5XzVtMURrc1NWQUR1cXRpTWFDdEFzNnBKVl9ETTBFR1FPb0FGZjk5QWloWXBjaDBQMGwzclZNOFBrNV9DcTgwQmhYelBKVk5udEN3UXNBaVhTVGlSSm51V2U5QlpkVVpmMjhtMUtjNGJ0SjVWemdEekVSRXNHX213EhdLeG41YXZlSE9LV3J3OGNQaE15VTBBbxoiQUhOMEU3RmJRMFRESDk4Wjk3ZmNTcnptUXpFVzd0dGIxZw",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=EuIHCqIHQUREYldlWWNuanltM25CR1RBUWp2N3pmbV8tWnlWT3AzWVh6UXowSWdtY0xBSU42Y2V5dTdjNTZuZ0NuMFBmV3dRWnRPTF9qNURvU0tzZHBlLU9mdjNrVnI3dDQ1ZVhqM0VEV0NsLVljUnYwNDIxOUJJcUVyVlNieEpuRnFXLWNhdTRweTljdHJMRXBPR1FCUTJrQzRJcldpUG1jM1FQZTVwOWJjZ1NJRVEwSUhlTFlVRjlpbXNOWVVlTzZXb1pQLUFqTEw0b01pUTE5SGQxUW1PT1dpVjEyUmFlSEFqaXY5WHVuUDNOdU9odHFmQXRKZnlBOE1YV0V0VUJDSkNhV2lSdm5mWE1mSUI4am1MOFgxcnROdF9jTWN2OWlqOUhPZWs4UFZIaVN5Ykh1QWVYZmFhaUt1NUJKUlJuSzdjQXE3OXZhSUJFU2x4cVUzWW5ZcW9WTzgtQkFhSmlvWTlXZHYyMmJxNnF2aEswZ0ItUEM5cWtYM214eC1pVXR4Z0F4dTFoc2pxV1FGaUVPRHFMRlNOV3R3dkV2QWFDRXA5SjJCUXlNbXF3ZUw3UDhhMXg3eUpMMTNCUTFzQWlBclRIcW1hZFFqaExxTGNRck9LV0U3VXBoOVZEVTBERU9Vc2RrWmJNQ1lrZU92TWhtVEdyWi00eXkzcHhTd2ZJX3loVFg0MDFhZ1RUcmVLT1hUSjFRTzlsYU9qSHB2SmRwallRSmpyWFRfZ3ZpZXdndlVZQkozVW5OR0pscHdpNEZLZ3gtZlZUVFp3Ni0wclNCRGtaUVVTYmNmN0JVSHpsN2d3eXRkOUVBblIyMTk5RFV2WWxlRjROUkcwNnZwMkRoWm40bjNueHZKNENPMUNLQkx3cXBySVROTHRYSDFKTS1XMEVTX3oyNkd2Z3V0enVudWRvcXBNX3cwSmdtdklSY0RxZ0Yxb25TVkVEVEFZUWcxam9rbV92TXY4am9TN0UxcDJrWVNkd3BIQk0wYjZzUkRoSWFVLUdsN2xvSTR4UkZ5WDR4S00wZjJIdm5sS0NEWG9wbHhhOThtMm1kMC1PaFhxc3pGVTNKdzNYSTZ5XzVtMURrc1NWQUR1cXRpTWFDdEFzNnBKVl9ETTBFR1FPb0FGZjk5QWloWXBjaDBQMGwzclZNOFBrNV9DcTgwQmhYelBKVk5udEN3UXNBaVhTVGlSSm51V2U5QlpkVVpmMjhtMUtjNGJ0SjVWemdEekVSRXNHX213EhdLeG41YXZlSE9LV3J3OGNQaE15VTBBbxoiQUhOMEU3RmJRMFRESDk4Wjk3ZmNTcnptUXpFVzd0dGIxZw&gl=us&hl=en"
+  },
+  {
+   "title": "Seth Adam",
+   "date": {
+    "start_date": "Nov 28",
+    "when": "Nov 28, 7:30 PM"
+   },
+   "venue": {
+    "name": "The Parlor at Hailey's",
+    "link": "https://www.google.com/search?q=The+Parlor+at+Hailey%27s&ludocid=500039207012307622&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=500039207012307622&q=The+Parlor+at+Hailey%27s"
+   },
+   "address": [
+    "The Parlor at Hailey's",
+    "Metuchen, NJ"
+   ],
+   "event_location_map": {
+    "image": "https://www.google.com/maps/vt/data=rsi4nSPyMp75Ryt9v8WhAtfnEIT0VOx6njYBjDDW3RyU73kyJOvwnlwHXPrHVLMcGu-TyKB-3X4AAdyUdtTJQGGewoKgO_yevzTM1Y8zXfMXaziHHAFueK3rBhIWDV5f_9wDYmCW8sRgtvz8jc68zP5eXmm9-WxWHIiqHllFkYQl",
+    "link": "https://maps.google.com/?cid=500039207012307622",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=500039207012307622&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "ticket_info": [
+    {
+     "source": "bandsintown.com",
+     "link": "https://www.bandsintown.com/e/109106081?app_id=ggl_feed&came_from=289&utm_medium=web&utm_source=ggl_feed&utm_campaign=event",
+     "link_type": "tickets"
+    }
+   ],
+   "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc6roqHQqi0MUdU1KKS8W1F1NF52wxl0nzzdQ_qq-jmuV81JA7Q_zdCuF0HuU5zYiKmSI0nIIBSl7Ek4E",
+   "event_token": "EvcHCrcHQUREYldlWXVtbDBGbnpkM29ZMWlvYmsxUGg2Q1JrWl9Xd09vUHl3QnZIOExwUlNHYzlqVnJMUDREMGNsbVhvTEZqbEViNDNUSUpPbDlreHBKaFBUUnNVTEhLWW4yOW1pOXJtb0FLSmZ2djZ6d2ZCOWc4UmJGTmJpaWpJNWpLaW9nRnpiaFJ4N3pQWmQ0YjdGckxYM2FGWUFGMzFKallMYVJmTElELS1VNUt4cW13bFlLamZ5c0RudGJtZlY0N3VZLUk3SU8wNTBDUmhHVkRhWXdZSDVPQTNzSDUxd3hKNnBEMjlaYkdIRnF3dGJ3RjhQU1NPU3MtY1hnbGljbkFoTkh4RkRSekxjMHNJNW0xVGg3eFRQQVdvcGcyTkZEQk1zZURONXoxbEgxTEotVGMyc18xQWdTLTVnbzZHSTJxYms5VWExVDVxQ0N6cmNVUDJzRldHbUdpTk1wLV80VVVRSGstRWY1c3pTMERQUVFoTDJrVHdjYkRGclprTUZWYzZjSDJXN2NlMFNnT1FnR0g3WGhianpTUzBrQ2RHbVNOZVZidmpRQ3BfQ3FuUXJwY2JsdVAxQk9Kc2NnVVdGeS1UelFzTFVsM2VPQnVzT0FJRExZVnVNaTJpbHN4YmlaTDZ4LWhRcWFzNzFsX1E2SUxiN1Z4dmxvTEl3WnpDNU4tbV96U3FINUQzQldKWHl3eF83Qjl0WjNvRGFodlp5dlJlY19BV2NEa1NSX2ZNUUg4VzZIWGQ3SzE4eGRBQW1yZ0d0RlV3UFdiT0QtOEUxWUktdmFFeFNaTzR5X184YjhxdE5EaEkzME5IemJ5LUV1RFNHWVFkbUIwSTd4NktXclc2Zjh6UlhoLXZudXdWblIxV1NuOGMwT2U3ci13MnlodXM0ckZQVHlZTDdoTUxHLVhnLTk0RTVCbVQ5QUttbHdEMHZwYlZFRGh5UG1ZZGMyWmZkR2FOOVJnWWZwRFdtSmtJSkdJRkI5cU9uTURPNnIzdkVSNlB4X0NFSVFDRWgtQ3loX2pIRFVDd0NMUHJIMHlCUEE5bFljb1dKbC1tX00xT240VW5qYzJlcnZvczc1VGlKMkRmVFp6bFVaVEQyaGNqRnNqazRHYnphT3VSMXZxcndKRWpqa2dnMEU1Umw0UHhzTVlGcExKbnJmQUx3Y2hqbER0WWVZRklxSzVjaUViRXU3UDJUeTVfUG9wTjhsZFRxSVdSeUF6MDZfM3BFMXAyTi1MdG5pU2JUUFVkTVVYQ09qT1RfQzlVEhdLeG41YXZlSE9LV3J3OGNQaE15VTBBbxoiQUhOMEU3SHN2bmoxVWhidjc0ZC1JcmVTdExzZGNfY1JQUQ",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=EvcHCrcHQUREYldlWXVtbDBGbnpkM29ZMWlvYmsxUGg2Q1JrWl9Xd09vUHl3QnZIOExwUlNHYzlqVnJMUDREMGNsbVhvTEZqbEViNDNUSUpPbDlreHBKaFBUUnNVTEhLWW4yOW1pOXJtb0FLSmZ2djZ6d2ZCOWc4UmJGTmJpaWpJNWpLaW9nRnpiaFJ4N3pQWmQ0YjdGckxYM2FGWUFGMzFKallMYVJmTElELS1VNUt4cW13bFlLamZ5c0RudGJtZlY0N3VZLUk3SU8wNTBDUmhHVkRhWXdZSDVPQTNzSDUxd3hKNnBEMjlaYkdIRnF3dGJ3RjhQU1NPU3MtY1hnbGljbkFoTkh4RkRSekxjMHNJNW0xVGg3eFRQQVdvcGcyTkZEQk1zZURONXoxbEgxTEotVGMyc18xQWdTLTVnbzZHSTJxYms5VWExVDVxQ0N6cmNVUDJzRldHbUdpTk1wLV80VVVRSGstRWY1c3pTMERQUVFoTDJrVHdjYkRGclprTUZWYzZjSDJXN2NlMFNnT1FnR0g3WGhianpTUzBrQ2RHbVNOZVZidmpRQ3BfQ3FuUXJwY2JsdVAxQk9Kc2NnVVdGeS1UelFzTFVsM2VPQnVzT0FJRExZVnVNaTJpbHN4YmlaTDZ4LWhRcWFzNzFsX1E2SUxiN1Z4dmxvTEl3WnpDNU4tbV96U3FINUQzQldKWHl3eF83Qjl0WjNvRGFodlp5dlJlY19BV2NEa1NSX2ZNUUg4VzZIWGQ3SzE4eGRBQW1yZ0d0RlV3UFdiT0QtOEUxWUktdmFFeFNaTzR5X184YjhxdE5EaEkzME5IemJ5LUV1RFNHWVFkbUIwSTd4NktXclc2Zjh6UlhoLXZudXdWblIxV1NuOGMwT2U3ci13MnlodXM0ckZQVHlZTDdoTUxHLVhnLTk0RTVCbVQ5QUttbHdEMHZwYlZFRGh5UG1ZZGMyWmZkR2FOOVJnWWZwRFdtSmtJSkdJRkI5cU9uTURPNnIzdkVSNlB4X0NFSVFDRWgtQ3loX2pIRFVDd0NMUHJIMHlCUEE5bFljb1dKbC1tX00xT240VW5qYzJlcnZvczc1VGlKMkRmVFp6bFVaVEQyaGNqRnNqazRHYnphT3VSMXZxcndKRWpqa2dnMEU1Umw0UHhzTVlGcExKbnJmQUx3Y2hqbER0WWVZRklxSzVjaUViRXU3UDJUeTVfUG9wTjhsZFRxSVdSeUF6MDZfM3BFMXAyTi1MdG5pU2JUUFVkTVVYQ09qT1RfQzlVEhdLeG41YXZlSE9LV3J3OGNQaE15VTBBbxoiQUhOMEU3SHN2bmoxVWhidjc0ZC1JcmVTdExzZGNfY1JQUQ&gl=us&hl=en"
+  },
+  {
+   "title": "Wolf Creek @ Hailey's Harp & Pub",
+   "date": {
+    "start_date": "Nov 20",
+    "when": "Nov 20, 8:30 PM"
+   },
+   "venue": {
+    "name": "Hailey's Harp & Pub",
+    "link": "https://www.google.com/search?q=Hailey%27s+Harp+%26+Pub&ludocid=8477878002749730517&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=8477878002749730517&q=Hailey%27s+Harp+%26+Pub"
+   },
+   "address": [
+    "Hailey's Harp & Pub",
+    "Metuchen, NJ"
+   ],
+   "event_location_map": {
+    "image": "https://www.google.com/maps/vt/data=8e89X5oRwcMOaCbh161NyZAqYzob6yFp8OPAFoYFhFxKEdntRJMyi_j-QHnWBraceNwvZtS9Yqc4_16PKZmcANdP5YtJ4WvMovHKrb_Etgz849uAsH2pd8zsXoaSXB6Em7EXhJkA2sPkOizn7gmOnNtzr9TdvE38F3dLDLakbz49",
+    "link": "https://maps.google.com/?cid=8477878002749730517",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=8477878002749730517&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "ticket_info": [
+    {
+     "source": "facebook.com",
+     "link": "https://www.facebook.com/events/haileys-harp-pub/wolf-creek-haileys-harp-pub/1617821996095870/",
+     "link_type": "tickets"
+    }
+   ],
+   "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTOdkQA0fULWdcz5K8f0MgeLUft_ppE8PJlJ763Ntso7WVzx2IBJdA7Xo_xsv4Aj-0JX3QcJ1hSsA7NbA",
+   "event_token": "EvcHCrcHQUREYldlYmhzTVVCaFdFQlpsMHRuTkY0b002UVdKU0g2R1BwMkNlTHFlTUtDWXFSZ0tmRFFJNDZtdjZlemtzTTVjem53TzRtd2ZiRHpqY01aeDZoaHZjeTN5bmxGZWFEczhWNE9RaXR3RWo1LVYxd0NnZ1NhaHZGbWYwQVU0UFNBOWVLWmx0eTVVYkY1MjJtLXEzR3Q1Wnp2bWRPcGhyMXdfckFEbjlmTnZPUVM0V2gxTElud2xoanFuS1ZoMXdlM1VpYnZ4UHZRaHNrVVZYMk5iUlhSLTh3a25ydUcwWU5pLUJkSkJieWNIUXBENVVta1k5Y1JLQ1oxeFlDNm4yQTQzTTFGcDdYNUZyYkFMaTFxbjlaQllXZkM2M2lIWno3ZGRDd0otQ1M5dU1iaFMycUZDOUJic1liWUtiWHg1TFNkVlZQbzhsQ3dCZjRmWjE3MmF5aFg4NGNjTms4ZXR2ekJPXzZRbHJhT0IzbDQyZW1TaGFzZm50ZHd6TkE1X01FRldMcjhOZVNGcE1heFlPV2xxU3gzUi1paERpOWEtX1pIa1dmdk5Qa2g5TFFnR3BjVmw3VHhmSFM2UlNVakxvaWdER21Fck5vZm9pd1JVQkVVZlpvVm5MRGN5U0psVEhFckE3enV3UUhMX013b2tnQlNLeE1PaFVzU3p1bTY2ZUtzMlp6WnhscEpBTjdzaThfemcyN2tFQjRYbERYNnNSbF9NSU1fWWR1V2RZUEk5RldFQTUtMm1LQ25sQUNhc0VlWDUxOVF3ZkdIVzFqSkNwWXYzSmhiM2wxejFIbXdfUzU0c19VZTRLcV81c2pnV2NvT0o3QWFqSzBDNkNsLWlyaFBrbFViTllRWk1oZHRIQWlUT05aYVBxc1FsaUZIYXdkTHd3UE0zNDN4UHRWb211YXdtTGVseEFmMUVBUUptbjNORk9hYlRMd29FUjZiNEQ3MXhxZENaZFM2aFd2dGw1Um95QmpKWVEwWlA1VkxqeXE4R0s0c0ZlUm42UldpUDZSUWxZUUpZWm96eGM1UUloOExmcWRaNVJrelN2OHAzSUQ2U3dVLXVCUEduZmlnYmFkc1N0ek1DQU1NdUsyNEd1clVaaFhpdHBZTHY5emVKRHpmQU1wUDBNWnZYU0loMkh0YXZCUjR1Y2lDUF9DWUphZENiMDFzbEpuU0lrRGhrUlFnTnlQUFRHY0hHTWYzUUFKSzNCdzhkcXpXWllpV09ua0dzSTVMSk9FbVpJM253aU5pV1luTG9REhdLeG41YXZlSE9LV3J3OGNQaE15VTBBbxoiQUhOMEU3R3Fla1o5SVpIN0EwcmNlM3Zxam9TZWxrY3pTUQ",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=EvcHCrcHQUREYldlYmhzTVVCaFdFQlpsMHRuTkY0b002UVdKU0g2R1BwMkNlTHFlTUtDWXFSZ0tmRFFJNDZtdjZlemtzTTVjem53TzRtd2ZiRHpqY01aeDZoaHZjeTN5bmxGZWFEczhWNE9RaXR3RWo1LVYxd0NnZ1NhaHZGbWYwQVU0UFNBOWVLWmx0eTVVYkY1MjJtLXEzR3Q1Wnp2bWRPcGhyMXdfckFEbjlmTnZPUVM0V2gxTElud2xoanFuS1ZoMXdlM1VpYnZ4UHZRaHNrVVZYMk5iUlhSLTh3a25ydUcwWU5pLUJkSkJieWNIUXBENVVta1k5Y1JLQ1oxeFlDNm4yQTQzTTFGcDdYNUZyYkFMaTFxbjlaQllXZkM2M2lIWno3ZGRDd0otQ1M5dU1iaFMycUZDOUJic1liWUtiWHg1TFNkVlZQbzhsQ3dCZjRmWjE3MmF5aFg4NGNjTms4ZXR2ekJPXzZRbHJhT0IzbDQyZW1TaGFzZm50ZHd6TkE1X01FRldMcjhOZVNGcE1heFlPV2xxU3gzUi1paERpOWEtX1pIa1dmdk5Qa2g5TFFnR3BjVmw3VHhmSFM2UlNVakxvaWdER21Fck5vZm9pd1JVQkVVZlpvVm5MRGN5U0psVEhFckE3enV3UUhMX013b2tnQlNLeE1PaFVzU3p1bTY2ZUtzMlp6WnhscEpBTjdzaThfemcyN2tFQjRYbERYNnNSbF9NSU1fWWR1V2RZUEk5RldFQTUtMm1LQ25sQUNhc0VlWDUxOVF3ZkdIVzFqSkNwWXYzSmhiM2wxejFIbXdfUzU0c19VZTRLcV81c2pnV2NvT0o3QWFqSzBDNkNsLWlyaFBrbFViTllRWk1oZHRIQWlUT05aYVBxc1FsaUZIYXdkTHd3UE0zNDN4UHRWb211YXdtTGVseEFmMUVBUUptbjNORk9hYlRMd29FUjZiNEQ3MXhxZENaZFM2aFd2dGw1Um95QmpKWVEwWlA1VkxqeXE4R0s0c0ZlUm42UldpUDZSUWxZUUpZWm96eGM1UUloOExmcWRaNVJrelN2OHAzSUQ2U3dVLXVCUEduZmlnYmFkc1N0ek1DQU1NdUsyNEd1clVaaFhpdHBZTHY5emVKRHpmQU1wUDBNWnZYU0loMkh0YXZCUjR1Y2lDUF9DWUphZENiMDFzbEpuU0lrRGhrUlFnTnlQUFRHY0hHTWYzUUFKSzNCdzhkcXpXWllpV09ua0dzSTVMSk9FbVpJM253aU5pV1luTG9REhdLeG41YXZlSE9LV3J3OGNQaE15VTBBbxoiQUhOMEU3R3Fla1o5SVpIN0EwcmNlM3Zxam9TZWxrY3pTUQ&gl=us&hl=en"
+  },
+  {
+   "title": "Seth Adam at The Parlor at Hailey\u2019s",
+   "date": {
+    "start_date": "Nov 28",
+    "when": "Nov 28, 7:30 PM"
+   },
+   "venue": {
+    "name": "The Parlor at Hailey's",
+    "link": "https://www.google.com/search?q=The+Parlor+at+Hailey%27s&ludocid=500039207012307622&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=500039207012307622&q=The+Parlor+at+Hailey%27s"
+   },
+   "address": [
+    "The Parlor at Hailey's",
+    "Metuchen, NJ"
+   ],
+   "event_location_map": {
+    "link": "https://maps.google.com/?cid=500039207012307622",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=500039207012307622&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "thumbnail": "https://serpapi.com/searches/6af91920fcf0d9e7d4bc2504/images/2ExSDiO5cp0Bwo8wiyIotk0xxjJcppJXbx2cTJ7tHAE.jpg",
+   "event_token": "EqIICuIHQUREYldlWi1LNmZ1YXgzUEJWSFlzTzVfSmhGbGp0SHo3UFZ1SzJkeTZqRjM2amRLN2J1V1RHLUJDMldZTzc4MHVtc1hybjBhOWh1dHgxX3I5ak4weTJJTHFzN1ZELU1HcHlHUlFtRjZJZ0txYjRCX0o3NlRmMVVPWlN2LUJMNm8xd185VlI0OC1pOHhiN1ZjOXZqMXBzaC1SNDNOY09aanpUeWg1SmRmcGpWMnVOZXJNSXhiblluZTYxelRvWHRiQS1YYms1bXFYQ1lsWlRCMFJUQ3RiQ3hneUh6TUZHWXBvWVpwdDRfT29nVmwyWExNeUVOb3FBRWphZG9NelNHU3pmMHY0SF84SVN6RlB6NzZkakV6WXBXSG1OUHRlQWEtejE4NXJIeWcxUkFRTVNiRi1lNXpkTHZRTUJQOHdaXzFSZXMtNmItc0I4eV9uajMyc2Z1anE3ZTFMZTNuY2pMeTJQclV3Qk9JWm9jS2Rmam9TY3F3c2JxVmNyaFBrN0JFbGRNbEdHLXFFcWlJUHk1T1B6ekFhcnBCbG1EY3ROdkNxbTNWN0lGV3B3Mm9UdzFhRm9lN0pwRmZfanU1UUtVejZ0bkxDZVZzVDZ0VnVUVTFUWk9kT1lZVmRYQlVYZ3dMT2dRdWl3YTk2V053VkJGU1dqV2hub3NzNDUwUlpTUHBpeVk0S2pvbDJfWllEZUpSOV9sYjhFWTBkZWc3NlE0OE1WRUtWdFBRRkpDRkQ3LUZBV3hmZF9JYTJZakVOcmt4M1RDZngtdWVUQU5tLXlqcTZDQUlWMFdWR1hncnhzXzZxS2lFVUtGc3lGV2wzMnZHMlV4RmgxQkx3UHBWTzlfT0ZiZk42d01pT2ZGZWYtMVY5aWFLT01nNVRDcDN1d05JRi1pUGZYang1eDh4X2p5cG1Tc3phcXhieWdYNGk3OXlncVhmRlBaZ3hkSm9IdkRsbngwVC03QU5qWFlma213UWRqRUk1dmVSZ09QOWx5ekpDangzVEM3c29Nb0ktZ1NJTGNIaEdLcDhuVFZnbVlFTjNfY0YtUUpydV9wWkt4MDhFMHdEbUZhWXlkYk1wQlNXX0djX2hINmpPbE4zLTdjVk5XWnlTd0QwU0xlcnEtMmZCTmhtWEtBMDVyTFlHcWpMVTA2Z2hDOHdfVUR3UU94Rlk0aHF5YlRud09rN0FMeENvVllYREUxQ1g4R0F3UEpjX042NFZJU3c4clhvSlhFMENObmRaU28wXzBJOFBNN19sX3JuWkliTG9DTnI5N08wUHF6X3BNNGJQbjh1WWpVZ0tVMUpGZFBGakk5bUZOUy1sURIXS3huNWF2ZUhPS1dydzhjUGhNeVUwQW8aIkFITjBFN0ZfQkMxT242UDdmWkQ1eEJ3MnlYUFJxenRaZ2c",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=EqIICuIHQUREYldlWi1LNmZ1YXgzUEJWSFlzTzVfSmhGbGp0SHo3UFZ1SzJkeTZqRjM2amRLN2J1V1RHLUJDMldZTzc4MHVtc1hybjBhOWh1dHgxX3I5ak4weTJJTHFzN1ZELU1HcHlHUlFtRjZJZ0txYjRCX0o3NlRmMVVPWlN2LUJMNm8xd185VlI0OC1pOHhiN1ZjOXZqMXBzaC1SNDNOY09aanpUeWg1SmRmcGpWMnVOZXJNSXhiblluZTYxelRvWHRiQS1YYms1bXFYQ1lsWlRCMFJUQ3RiQ3hneUh6TUZHWXBvWVpwdDRfT29nVmwyWExNeUVOb3FBRWphZG9NelNHU3pmMHY0SF84SVN6RlB6NzZkakV6WXBXSG1OUHRlQWEtejE4NXJIeWcxUkFRTVNiRi1lNXpkTHZRTUJQOHdaXzFSZXMtNmItc0I4eV9uajMyc2Z1anE3ZTFMZTNuY2pMeTJQclV3Qk9JWm9jS2Rmam9TY3F3c2JxVmNyaFBrN0JFbGRNbEdHLXFFcWlJUHk1T1B6ekFhcnBCbG1EY3ROdkNxbTNWN0lGV3B3Mm9UdzFhRm9lN0pwRmZfanU1UUtVejZ0bkxDZVZzVDZ0VnVUVTFUWk9kT1lZVmRYQlVYZ3dMT2dRdWl3YTk2V053VkJGU1dqV2hub3NzNDUwUlpTUHBpeVk0S2pvbDJfWllEZUpSOV9sYjhFWTBkZWc3NlE0OE1WRUtWdFBRRkpDRkQ3LUZBV3hmZF9JYTJZakVOcmt4M1RDZngtdWVUQU5tLXlqcTZDQUlWMFdWR1hncnhzXzZxS2lFVUtGc3lGV2wzMnZHMlV4RmgxQkx3UHBWTzlfT0ZiZk42d01pT2ZGZWYtMVY5aWFLT01nNVRDcDN1d05JRi1pUGZYang1eDh4X2p5cG1Tc3phcXhieWdYNGk3OXlncVhmRlBaZ3hkSm9IdkRsbngwVC03QU5qWFlma213UWRqRUk1dmVSZ09QOWx5ekpDangzVEM3c29Nb0ktZ1NJTGNIaEdLcDhuVFZnbVlFTjNfY0YtUUpydV9wWkt4MDhFMHdEbUZhWXlkYk1wQlNXX0djX2hINmpPbE4zLTdjVk5XWnlTd0QwU0xlcnEtMmZCTmhtWEtBMDVyTFlHcWpMVTA2Z2hDOHdfVUR3UU94Rlk0aHF5YlRud09rN0FMeENvVllYREUxQ1g4R0F3UEpjX042NFZJU3c4clhvSlhFMENObmRaU28wXzBJOFBNN19sX3JuWkliTG9DTnI5N08wUHF6X3BNNGJQbjh1WWpVZ0tVMUpGZFBGakk5bUZOUy1sURIXS3huNWF2ZUhPS1dydzhjUGhNeVUwQW8aIkFITjBFN0ZfQkMxT242UDdmWkQ1eEJ3MnlYUFJxenRaZ2c&gl=us&hl=en"
+  },
+  {
+   "title": "mignolo ARTWEEK 2026 \u2014 mignolo arts",
+   "date": {
+    "start_date": "Dec 6",
+    "when": "Dec 6, 12:00 PM"
+   },
+   "venue": {
+    "name": "mignolo",
+    "link": "https://www.google.com/search?q=mignolo&ludocid=13276973961329414740&gl=us&hl=en&ibp=gwp;0,7",
+    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=13276973961329414740&q=mignolo"
+   },
+   "address": [
+    "mignolo",
+    "Metuchen, NJ"
+   ],
+   "event_location_map": {
+    "image": "https://www.google.com/maps/vt/data=MnYKxVFWrHkXbLT0jFok-XZhWWhzzOONFP8IKJVIzcF6t1b0bVpkjE9XokhPkrf9jD1A3tso-mvTgZAC6V9-pZfGW3hxo3hCozewInp8BqhHa0rftYDDet_HdvUOY1qyOauCb6JClBYc4gtQVXe7K35t5mlBFHLN4LnpwaHtiOwU",
+    "link": "https://maps.google.com/?cid=13276973961329414740",
+    "serpapi_link": "https://serpapi.com/search.json?data_cid=13276973961329414740&engine=google_maps&google_domain=google.com&hl=en&type=search"
+   },
+   "ticket_info": [
+    {
+     "source": "mignolo.art",
+     "link": "https://www.mignolo.art/events/artweek26",
+     "link_type": "tickets"
+    }
+   ],
+   "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSgn6xn4vlUJtXTv2OBLAvhqfF8pvb6ht_siTdW6T98wFg67KHiMc-_nwUsCN3AkXGwERpabnkh9jWkNgY",
+   "event_token": "ErcHCvcGQUREYldlYW03MFA1NkNadXdWUUtxSmNDT1ZCTzRIZ1pSYm11SUJVZ2N0ZEI0MzFqSjhULXZCb3lYNlVDUzdhU1Q1SlFZcTViMkFwNTFGS2dwektPdVJJbUpsdGJVS2lGeXZiZjVEdzBNZXpGaDBoclAwSFg2bFlMclZZZzZ2RzVfX0FiZFl6V3pxLXkySE9ZNU9pWHRQN2wxeG5TWlRTbUFuWXVHZmRvbV80Q01BZkYwd1FhVGt1ODFtZjB6UXpQY19jTzlkQ0hCOUdFRXFVWkNOekVvZE9LajQ3bVlVSlA4aGVRZzJ5ZXQxTHY4QWN4R2VaWW9zNTdKVDFpWHU4a0FXc01lS0xCV0xuOHFySG9VQTVJY0NnVkJZQ19wbTRmT19lWUpVcGhmSTQyNHlKRENGVjJnbWNPcHlYX3RGbFIxczREMFJHbTdSclZpNHhGbGVkSUp4R0FZWUxWLVc2WWd1Rm9iU1piTU91djNNNHZhYU5mOE9FeG1ad0hzREFWcW9XSWJkMDhsTHdKMElucVloaVdLdlhaYmxLUHNDWk9vV0RDVkswRzFUdlNhNndIMXlRTXJLMjZyZXl5blRQY04xRWlJcHFHb1BCc0hUZ0tSX21NSXcxSXIydVRZWWtmRWtwclVIOTdxSXlhaXNnVUR6TG9UNGN0T1ZobTl3WlpnZmZWQktSYVJ4ejIybEZTQk0zbHFvVDhmdjE2M1IzV2hQdWxzUjNNT2JKd2Z1eXVRRGp5eTVqUHVobk5TbTlHV080QVREdDRfazdsdTFNR09VV194MFVuRmFseTU4SjRMbS1RS200OWdhVVZwc0pyS1JMdHdYbF9Hbnd2OURvTFZ5eW1TWDdNekgySFZDRldvaDFONzNHNUNMT1U3T3ZLSDYzT1hLNDZnUDVHOUNabm1QNlJlOTZsVEJWakppN1lKaGp3V0dGUlFTVEM3YXByZTJOc084T1AzUmVRd3J2anFaZmFOaTBxbU14U1lSVGJvTDc2UGw1UTFBNXV3VnVPVWIwbWEtWDQtS1M5LVdRSUFWeVY3c0RFU3NfdWFvamtEbEcxVDFFNTgwVzdfNnFJN01uYlJEcG1yZFFOVExCNC1JMm5aeldsbmMxX1JGNWVIWjJvQjhURWZ1cjAtelhsR3k1RDluNG9CMEM4LTlwZmdGOGNWeFUSF0t4bjVhdmVIT0tXcnc4Y1BoTXlVMEFvGiJBSE4wRTdHUm9oQnA5Rzg3T1cwQU5nZWtpSkVERGVoajBB",
+   "serpapi_event_details_link": "https://serpapi.com/search.json?engine=google_event_details&event_token=ErcHCvcGQUREYldlYW03MFA1NkNadXdWUUtxSmNDT1ZCTzRIZ1pSYm11SUJVZ2N0ZEI0MzFqSjhULXZCb3lYNlVDUzdhU1Q1SlFZcTViMkFwNTFGS2dwektPdVJJbUpsdGJVS2lGeXZiZjVEdzBNZXpGaDBoclAwSFg2bFlMclZZZzZ2RzVfX0FiZFl6V3pxLXkySE9ZNU9pWHRQN2wxeG5TWlRTbUFuWXVHZmRvbV80Q01BZkYwd1FhVGt1ODFtZjB6UXpQY19jTzlkQ0hCOUdFRXFVWkNOekVvZE9LajQ3bVlVSlA4aGVRZzJ5ZXQxTHY4QWN4R2VaWW9zNTdKVDFpWHU4a0FXc01lS0xCV0xuOHFySG9VQTVJY0NnVkJZQ19wbTRmT19lWUpVcGhmSTQyNHlKRENGVjJnbWNPcHlYX3RGbFIxczREMFJHbTdSclZpNHhGbGVkSUp4R0FZWUxWLVc2WWd1Rm9iU1piTU91djNNNHZhYU5mOE9FeG1ad0hzREFWcW9XSWJkMDhsTHdKMElucVloaVdLdlhaYmxLUHNDWk9vV0RDVkswRzFUdlNhNndIMXlRTXJLMjZyZXl5blRQY04xRWlJcHFHb1BCc0hUZ0tSX21NSXcxSXIydVRZWWtmRWtwclVIOTdxSXlhaXNnVUR6TG9UNGN0T1ZobTl3WlpnZmZWQktSYVJ4ejIybEZTQk0zbHFvVDhmdjE2M1IzV2hQdWxzUjNNT2JKd2Z1eXVRRGp5eTVqUHVobk5TbTlHV080QVREdDRfazdsdTFNR09VV194MFVuRmFseTU4SjRMbS1RS200OWdhVVZwc0pyS1JMdHdYbF9Hbnd2OURvTFZ5eW1TWDdNekgySFZDRldvaDFONzNHNUNMT1U3T3ZLSDYzT1hLNDZnUDVHOUNabm1QNlJlOTZsVEJWakppN1lKaGp3V0dGUlFTVEM3YXByZTJOc084T1AzUmVRd3J2anFaZmFOaTBxbU14U1lSVGJvTDc2UGw1UTFBNXV3VnVPVWIwbWEtWDQtS1M5LVdRSUFWeVY3c0RFU3NfdWFvamtEbEcxVDFFNTgwVzdfNnFJN01uYlJEcG1yZFFOVExCNC1JMm5aeldsbmMxX1JGNWVIWjJvQjhURWZ1cjAtelhsR3k1RDluNG9CMEM4LTlwZmdGOGNWeFUSF0t4bjVhdmVIT0tXcnc4Y1BoTXlVMEFvGiJBSE4wRTdHUm9oQnA5Rzg3T1cwQU5nZWtpSkVERGVoajBB&gl=us&hl=en"
+  }
+ ],
+ "_fetched_on": "2026-11-14",
+ "_query": "Events in Metuchen, NJ"
+}

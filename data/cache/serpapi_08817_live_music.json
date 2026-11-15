@@ -1,0 +1,23 @@
+{
+ "search_metadata": {
+  "id": "6af91aa2655956e6de25ae64",
+  "status": "Success",
+  "json_endpoint": "https://serpapi.com/searches/BiSXaILd95QNeij0OSXchr3sBQZHIU6kYCqNgCvoinE/6af91aa2655956e6de25ae64.json",
+  "markdown_endpoint": "https://serpapi.com/searches/BiSXaILd95QNeij0OSXchr3sBQZHIU6kYCqNgCvoinE/6af91aa2655956e6de25ae64.md",
+  "created_at": "2026-11-15 02:36:18 UTC",
+  "processed_at": "2026-11-15 02:36:18 UTC",
+  "google_events_url": "https://www.google.com/search?q=Live+music+events+in+Edison%2C+NJ&udm=54&hl=en&gl=us",
+  "raw_html_file": "https://serpapi.com/searches/BiSXaILd95QNeij0OSXchr3sBQZHIU6kYCqNgCvoinE/6af91aa2655956e6de25ae64.html",
+  "total_time_taken": 7.82
+ },
+ "search_parameters": {
+  "q": "Live music events in Edison, NJ",
+  "engine": "google_events"
+ },
+ "search_information": {
+  "events_results_state": "Fully empty"
+ },
+ "error": "Google hasn't returned any results for this query.",
+ "_fetched_on": "2026-11-14",
+ "_query": "Live music events in Edison, NJ"
+}
