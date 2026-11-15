@@ -29,7 +29,7 @@ from typing import Literal, Optional
 from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
 from .models import BEDROOM_LABELS, DESTINATIONS, INTERESTS, DestinationPref, InterestPref, Profile
-from .refine import AI, Proposal, diff_profiles, mentions_demographics, starter_profile
+from .refine import AI, Proposal, diff_profiles, keyword_refine, mentions_demographics, starter_profile
 
 MODEL = "gemini-3.5-flash"
 # Used in order, only when the model before reports its quota is used up or is unavailable.
@@ -65,7 +65,7 @@ class _ApiReason(BaseModel):
 
 
 class _ApiOut(BaseModel):
-    budget: int
+    budget: int | None = None
     bedroom: str
     rent_importance: str
     destinations: list[_ApiDestination]
@@ -98,7 +98,7 @@ class _Reason(BaseModel):
 
 class LLMOut(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    budget: int = Field(ge=500, le=6000)
+    budget: int | None = Field(default=None, ge=500, le=6000)
     bedroom: _Bedroom
     rent_importance: _Importance
     destinations: list[_Destination] = Field(max_length=len(DESTINATIONS))
@@ -168,7 +168,7 @@ _RULES = f"""You help a renter describe what they need from a neighborhood. You 
 Code, not you, scores and ranks neighborhoods. Never mention scores, rankings or specific neighborhoods.
 
 The profile has exactly these fields:
-- budget: whole dollars per month, 500 to 6000.
+- budget: whole dollars per month, 500 to 6000, or null if the person did not give an amount.
 - bedroom: one of {list(BEDROOM_LABELS)} (shared2br = a room in a shared 2-bedroom, 0br = studio).
 - rent_importance: how much room under budget matters. One of "Nice", "Important", "Must-have".
 - destinations: places the person must travel to. name must be one of {DESTINATIONS}.
@@ -208,7 +208,7 @@ _DRAFT = (
 
 TASK: write a first profile from the person's description.
 Only include destinations and interests the person mentions. Do not invent any.
-If no budget is given use 1500. If they mention sharing or roommates use bedroom "shared2br"; if no housing
+If no budget is given return null. If they mention sharing or roommates use bedroom "shared2br"; if no housing
 type is given use "shared2br". No car means mode "transit". Use rent_importance "Important" unless they say how much saving money matters.
 A trip they make most days (for example classes) is "Must-have"; if no time limit is given use max_minutes 40.
 A trip they make only a few days a week is "Important"; if no time limit is given use max_minutes 80.
@@ -360,6 +360,9 @@ def refine(text: str, profile: Profile, client=None, timeout: float = TIMEOUT_S,
     out = _ask("refine", _REFINE, user, text, profile, client, timeout, cache_path, save)
     if out is None:
         return None
+    explicit_budget = keyword_refine(text, starter_profile(), draft=True).profile.budget
+    if explicit_budget is None:
+        out = out.model_copy(update={"budget": profile.budget})
     new = to_profile(out)
     return Proposal(profile=new, changes=_with_reasons(profile, new, out), source=AI, not_used=out.not_used)
 
@@ -372,6 +375,21 @@ def draft(text: str, client=None, timeout: float = TIMEOUT_S, cache_path: Path =
     base = starter_profile()
     user = f"The person's description:\n{text.strip()[:1200]}"
     out = _ask("draft", _DRAFT, user, text, base, client, timeout, cache_path, save)
+    explicit_budget = keyword_refine(text, base, draft=True).profile.budget
+    if out is not None and explicit_budget is None:
+        out = out.model_copy(update={"budget": None})
+    if out is None and base.budget is None:
+        # Older cached answers are only safe to reuse when the description contains a parsed amount.
+        if explicit_budget is not None:
+            legacy_base = base.model_copy(update={"budget": 1500})
+            cached = _read_cache(cache_path).get(cache_key("draft", text, legacy_base))
+            if cached is not None:
+                try:
+                    legacy = validate(json.dumps(cached["output"]))
+                    if legacy.budget == explicit_budget:
+                        out = legacy
+                except (LLMRejected, KeyError, TypeError):
+                    pass
     if out is None:
         return None
     new = to_profile(out)

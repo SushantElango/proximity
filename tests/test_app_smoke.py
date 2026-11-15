@@ -82,6 +82,25 @@ def test_explore_shows_not_used_items_under_banner_and_in_match_card():
     assert "Distance radius" in body
 
 
+def test_description_without_budget_leaves_budget_empty_and_rent_informational():
+    at = start()
+    text = "I have classes on College Ave and I love music."
+    at.text_area(key="landing_text").set_value(text)
+    click(at, "Find my neighborhood")
+
+    assert at.session_state["profile"]["budget"] is None
+    assert at.number_input(key="budget").value is None
+    assert at.segmented_control(key="rent_importance").disabled
+    body = "\n".join(str(element.value) for element in at.markdown)
+    captions = "\n".join(element.value for element in at.caption)
+    assert "Optional — add one to filter by rent." in captions
+    assert "Budget: not given — rent shown for information only." in body
+    assert "Rent estimate:" in body
+    assert "Estimate" in captions
+    assert "under budget" not in body.lower()
+    assert "your $" not in body.lower()
+
+
 def test_selected_area_shows_matched_and_unmatched_priorities_above_hot_news():
     at = open_priya()
     values = [element.value for element in at.markdown]

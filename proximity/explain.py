@@ -24,6 +24,8 @@ def fmt_value(c: Component) -> str:
 def _sentence(c: Component) -> str:
     """One short line for a priority, leading with its number (markdown bold)."""
     if c.kind == "rent":
+        if c.limit is None:
+            return f"**{fmt_value(c)}/mo** rent estimate (information only)"
         gap = c.limit - c.raw
         side = f"${gap:,.0f} under budget" if gap >= 0 else f"${-gap:,.0f} over budget"
         return f"**{fmt_value(c)}/mo** rent, {side}"

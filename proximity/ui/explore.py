@@ -104,10 +104,11 @@ def _rank_title(rank: int | None, name: str, size: str = "1.15rem") -> None:
 # Left: Prompt Zone
 # --------------------------------------------------------------------------
 
-def _importance(label: str, key: str, visible: bool = True) -> str:
+def _importance(label: str, key: str, visible: bool = True, disabled: bool = False) -> str:
     value = st.segmented_control(
         label, IMPORTANCE_LEVELS, required=True, key=key,
         label_visibility="visible" if visible else "collapsed",
+        disabled=disabled,
     )
     return value or "Important"
 
@@ -224,10 +225,15 @@ def profile_form(available_interests: list[str], applied: Profile) -> None:
         ensure("bedroom")
         bedroom = st.selectbox("Housing", list(BEDROOM_LABELS), format_func=BEDROOM_LABELS.get, key="bedroom")
         ensure("budget")
-        budget = st.number_input("Budget ($/mo)", min_value=500, max_value=6000, step=50, key="budget")
+        budget = st.number_input(
+            "Budget ($/mo)", min_value=500, max_value=6000, value=None, step=50, key="budget",
+        )
         ensure("rent_importance")
-        rent_importance = _importance("Room under budget matters", "rent_importance")
-        st.caption("Your budget is always a hard limit.")
+        rent_importance = _importance(
+            "Room under budget matters", "rent_importance", disabled=budget is None,
+        )
+        st.caption("Optional — add one to filter by rent.")
+        st.caption("When set, your budget is a hard limit.")
 
     destinations: list[DestinationPref] = []
     with st.expander("Where you need to get to", expanded=False, icon=":material/commute:"):
@@ -260,7 +266,7 @@ def profile_form(available_interests: list[str], applied: Profile) -> None:
             interests.append(InterestPref(category=cat, importance=importance))
 
     pending = Profile(
-        budget=int(budget), bedroom=bedroom, rent_importance=rent_importance,
+        budget=int(budget) if budget is not None else None, bedroom=bedroom, rent_importance=rent_importance,
         destinations=destinations, interests=interests,
     )
     with head:
@@ -460,6 +466,11 @@ def _match_card(r: AreaResult, n_areas: int, matches: list[AreaResult]) -> None:
     with st.expander("Every priority, with its source"):
         st.caption(f"ZIP {r.zip} · {r.status} · {ex.coverage(r).lower()}")
         for c in r.components:
+            if c.kind == "rent" and c.limit is None:
+                rent_value = f"${c.raw:,.0f}/mo rent estimate" if c.raw is not None else "Rent estimate: Not checked / no data"
+                st.markdown(f"{c.label}: **{rent_value}**")
+                st.caption(fact_caption(c.fact))
+                continue
             if c.met is None:
                 st.markdown(f":gray[:material/help:] {c.label}: **{c.flag or 'Not checked / no data'}** · :gray[{c.importance}]")
                 continue
@@ -471,7 +482,8 @@ def _match_card(r: AreaResult, n_areas: int, matches: list[AreaResult]) -> None:
 def _priority_breakdown(r: AreaResult) -> None:
     """Show every selected priority as met, not met, or not checked."""
     st.markdown("**Matched**")
-    matched = [c for c in r.components if c.met is True]
+    priorities = [c for c in r.components if not (c.kind == "rent" and c.limit is None)]
+    matched = [c for c in priorities if c.met is True]
     if not matched:
         st.caption("No priorities matched.")
     for c in matched:
@@ -479,7 +491,7 @@ def _priority_breakdown(r: AreaResult) -> None:
         st.caption(fact_caption(c.fact))
 
     st.markdown("**Not matched / not checked**")
-    unmatched = [c for c in r.components if c.met is not True]
+    unmatched = [c for c in priorities if c.met is not True]
     if not unmatched:
         st.caption("No unmatched priorities.")
     for c in unmatched:

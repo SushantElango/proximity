@@ -83,9 +83,9 @@ class InterestPref(BaseModel):
 
 
 class Profile(BaseModel):
-    budget: int = Field(ge=1)
+    budget: int | None = Field(default=None, ge=1)
     bedroom: Bedroom = "1br"
-    # Budget is always a hard limit. This sets how much room under budget matters.
+    # When a budget is set, this controls how much headroom matters.
     rent_importance: Importance = "Important"
     destinations: list[DestinationPref] = []
     interests: list[InterestPref] = []

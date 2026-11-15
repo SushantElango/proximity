@@ -130,7 +130,9 @@ def diff_profiles(old: Profile, new: Profile, reasons: dict[str, str] | None = N
             reason = next((v for k, v in reasons.items() if key.startswith(k + ":")), "")
         out.append(Change(key=key, field=label, old=a, new=b, reason=reason))
 
-    add("budget", "Budget", f"${old.budget:,}", f"${new.budget:,}")
+    old_budget = f"${old.budget:,}" if old.budget is not None else "not set"
+    new_budget = f"${new.budget:,}" if new.budget is not None else "not set"
+    add("budget", "Budget", old_budget, new_budget)
     add("bedroom", "Housing", BEDROOM_LABELS[old.bedroom], BEDROOM_LABELS[new.bedroom])
     add("rent_importance", "Room under budget", old.rent_importance, new.rent_importance)
 
@@ -404,4 +406,4 @@ def keyword_refine(text: str, profile: Profile, draft: bool = False) -> Proposal
 
 def starter_profile() -> Profile:
     """A neutral starting point for someone who describes themselves on the landing page."""
-    return Profile(budget=1500, bedroom="shared2br", rent_importance="Important", destinations=[], interests=[])
+    return Profile(budget=None, bedroom="shared2br", rent_importance="Important", destinations=[], interests=[])

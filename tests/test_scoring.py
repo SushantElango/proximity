@@ -154,6 +154,54 @@ def test_no_eligible_area_message_appears_when_it_should():
     assert info["suggestion"]["area"] == "Middle"
 
 
+def test_missing_budget_keeps_rent_informational_and_out_of_scoring():
+    areas = make_areas()
+    areas[0].rent_hud.clear()
+    profile = make_profile()
+    profile.budget = None
+    profile.rent_importance = "Must-have"
+
+    results = score_areas(areas, profile)
+    assert all(r.status == ELIGIBLE for r in results)
+    for r in results:
+        rent = r.component("rent")
+        assert rent is not None and rent.score is None and rent.met is None and rent.weight == 0
+        assert r.evaluated == 3 and r.total == 3
+        assert "Budget: not given — rent shown for information only." in r.missing
+
+    changed_rents = copy.deepcopy(areas)
+    for item in changed_rents:
+        item.rent_hud["1br"] = f(10000)
+    assert [(r.area, r.score) for r in results] == [
+        (r.area, r.score) for r in score_areas(changed_rents, profile)
+    ]
+
+    from proximity.explain import compare_rows, main_compromise, why_matched
+
+    result = by_area(results)["Near Campus"]
+    text = " ".join(why_matched(result) + [main_compromise(result)])
+    assert "under budget" not in text and "your $" not in text
+    rent_row = next(row for row in compare_rows(results) if row[""] == "Rent estimate ($/mo)")
+    assert rent_row["Near Campus"] == "Not checked / no data"
+    assert rent_row["Near Train"] == "$1,500"
+
+
+def test_budget_none_is_safe_in_profile_diffs_and_re_rank_notes():
+    from proximity.explain import what_changed
+    from proximity.scoring import profile_changes
+
+    areas = make_areas()
+    without = make_profile()
+    without.budget = None
+    with_budget = without.model_copy(update={"budget": 1600})
+    assert "you set your budget to $1,600" in profile_changes(without, with_budget)[0]["text"]
+    assert "you removed your $1,600 budget" in profile_changes(with_budget, without)[0]["text"]
+    diff = diff_rankings(
+        score_areas(areas, without), score_areas(areas, with_budget), without, with_budget,
+    )
+    assert any("budget" in line for line in what_changed(diff))
+
+
 def test_scoring_does_not_mutate_inputs():
     areas = make_areas()
     snapshot = copy.deepcopy(areas)

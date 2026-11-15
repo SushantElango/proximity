@@ -51,6 +51,16 @@ def test_valid_answer_becomes_an_ai_proposal_with_the_models_reason(cache):
     assert p.changes[0].reason == "You said Newark matters more than gyms."
 
 
+def test_gemini_cannot_insert_a_budget_not_given_by_the_person(cache):
+    profile = demo_profile()
+    profile.budget = None
+    refined = llm.refine(TEXT, profile, client=FakeClient(answer(budget=1500)), cache_path=cache)
+    assert refined is not None and refined.profile.budget is None
+
+    draft = llm.draft("I want a gym near Rutgers", client=FakeClient(answer(budget=1500)), cache_path=cache)
+    assert draft is not None and draft[0].profile.budget is None
+
+
 @pytest.mark.parametrize("bad", [
     "this is not json",
     "",
@@ -164,6 +174,17 @@ def test_draft_returns_a_profile_and_at_most_one_question(cache):
     assert fallback.proposal.profile.budget == 1400
 
 
+def test_cached_draft_without_a_budget_does_not_apply_the_legacy_default(cache, monkeypatch):
+    from proximity.refine import starter_profile
+
+    text = "I want a gym near Rutgers"
+    legacy_base = starter_profile().model_copy(update={"budget": 1500})
+    key = llm.cache_key("draft", text, legacy_base)
+    cache.write_text(json.dumps({key: {"output": answer(budget=1500)}}), encoding="utf-8")
+    monkeypatch.setattr(llm, "get_client", lambda: None)
+    assert llm.draft(text, cache_path=cache) is None
+
+
 def test_shipped_demo_cache_answers_the_demo_inputs_without_a_client(monkeypatch):
     """The three demo inputs must work with no network and no key."""
     from proximity.ui.landing import EXAMPLE
@@ -215,8 +236,15 @@ def test_the_demo_rerank_line_changes_number_one_offline(monkeypatch):
     monkeypatch.setenv("DEMO_MODE", "1")
     monkeypatch.setattr(llm, "_client", None)
     areas = build_area_facts(load_all())
+    base = demo_profile()
+    before_top_three = [r.area for r in score_areas(areas, base) if r.rank is not None][:3]
+    assert before_top_three == ["Metuchen", "Highland Park", "New Brunswick"]
+    grocery = assistant.propose_refine(llm.DEMO_RERANK, base)
+    after_top_three = [r.area for r in score_areas(areas, grocery.profile) if r.rank is not None][:3]
+    assert after_top_three == ["Highland Park", "Metuchen", "New Brunswick"]
+
     # Both ways into the demo: the "Try Priya's example" button and her typed description.
-    for base in (demo_profile(), llm.draft(EXAMPLE)[0].profile):
+    for base in (base, llm.draft(EXAMPLE)[0].profile):
         proposal = assistant.propose_refine(llm.DEMO_RERANK, base)
         assert proposal.changes, "the demo re-rank sentence was not understood"
         before = next(r.area for r in score_areas(areas, base) if r.rank == 1)

@@ -100,17 +100,18 @@ def _build_components(area: AreaFacts, areas: list[AreaFacts], profile: Profile)
         kind="rent",
         label=f"Rent for a {BEDROOM_LABELS[profile.bedroom].lower()}",
         importance=profile.rent_importance,
-        weight=WEIGHTS[profile.rent_importance],
+        weight=WEIGHTS[profile.rent_importance] if profile.budget is not None else 0,
         unit="$",
-        limit=float(profile.budget),
+        limit=float(profile.budget) if profile.budget is not None else None,
         fact=fact,
     )
     if fact is not None:
         rent.raw = fact.value
-        rent.score = min(1.0, max(0.0, (profile.budget - fact.value) / profile.budget))
-        rent.met = fact.value <= profile.budget
-        rents = [f.value for f in (choose_rent(a, profile.bedroom)[0] for a in areas) if f is not None]
-        rent.relative = _minmax(fact.value, rents, lower_is_better=True)
+        if profile.budget is not None:
+            rent.score = min(1.0, max(0.0, (profile.budget - fact.value) / profile.budget))
+            rent.met = fact.value <= profile.budget
+            rents = [f.value for f in (choose_rent(a, profile.bedroom)[0] for a in areas) if f is not None]
+            rent.relative = _minmax(fact.value, rents, lower_is_better=True)
     comps.append(rent)
 
     # Commute: lower is better, min-max across all areas that have the value
@@ -173,6 +174,8 @@ def check_eligibility(components: list[Component]) -> tuple[str, list[str]]:
     failed: list[str] = []
     unknown: list[str] = []
     for c in components:
+        if c.kind == "rent" and c.limit is None:
+            continue
         hard = c.kind == "rent" or c.importance == "Must-have"
         if not hard:
             continue
@@ -211,9 +214,18 @@ def score_areas(areas: list[AreaFacts], profile: Profile) -> list[AreaResult]:
                 score=weighted / total_w if total_w else 0.0,
                 score_evaluated=weighted / eval_w if eval_w else None,
                 evaluated=len(done),
-                total=len(comps),
+                total=len(comps) - (1 if profile.budget is None else 0),
                 met=sum(1 for c in done if c.met),
-                missing=[f"{c.label}: {c.flag}" if c.flag else c.label for c in comps if not c.evaluated],
+                missing=[
+                    *[
+                        f"{c.label}: {c.flag}" if c.flag else c.label
+                        for c in comps if not c.evaluated and not (c.kind == "rent" and c.limit is None)
+                    ],
+                    *(
+                        ["Budget: not given — rent shown for information only."]
+                        if profile.budget is None else []
+                    ),
+                ],
                 unchecked=[LATE_NIGHT_NOTE] if any(d.name == NEWARK for d in profile.destinations) else [],
                 rent_basis=basis,
                 rent_other=other,
@@ -254,6 +266,8 @@ def no_eligible_info(results: list[AreaResult]) -> Optional[dict]:
     for r in results:
         fails = []
         for c in r.components:
+            if c.kind == "rent" and c.limit is None:
+                continue
             hard = c.kind == "rent" or c.importance == "Must-have"
             if not hard or c.raw is None:
                 continue
@@ -303,8 +317,14 @@ def profile_changes(before: Profile, after: Profile) -> list[dict]:
             out.append({"key": key, "text": f"you {verb} the importance of {label} ({a} → {b})"})
 
     if before.budget != after.budget:
-        verb = "raised" if after.budget > before.budget else "lowered"
-        out.append({"key": "rent", "text": f"you {verb} your budget (${before.budget:,} → ${after.budget:,})"})
+        if before.budget is None:
+            text = f"you set your budget to ${after.budget:,}"
+        elif after.budget is None:
+            text = f"you removed your ${before.budget:,} budget"
+        else:
+            verb = "raised" if after.budget > before.budget else "lowered"
+            text = f"you {verb} your budget (${before.budget:,} → ${after.budget:,})"
+        out.append({"key": "rent", "text": text})
     if before.bedroom != after.bedroom:
         out.append({"key": "rent", "text": f"you changed the bedroom type ({BEDROOM_LABELS[before.bedroom]} → {BEDROOM_LABELS[after.bedroom]})"})
     importance_change("rent", "room under budget", before.rent_importance, after.rent_importance)
