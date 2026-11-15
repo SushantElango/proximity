@@ -188,6 +188,36 @@ def test_what_changed_always_gives_a_note_for_any_priority_change():
         assert "you " in notes[0]  # names what the user changed
 
 
+def test_what_changed_names_the_areas_it_has_no_room_to_explain():
+    from proximity.explain import what_changed
+
+    areas, base = make_areas(), make_profile()
+    p = make_profile()
+    p.destinations[1].importance = "Must-have"
+    p.interests = []
+    diff = diff_rankings(score_areas(areas, base), score_areas(areas, p), base, p)
+    assert len(diff["moves"]) >= 2, "this profile change should move at least two areas"
+    notes = what_changed(diff, limit=1)
+    assert notes[-1].endswith("also changed position.") and "other area" not in notes[-1]
+    explained = [m["area"] for m in diff["moves"] if f"**{m['area']}**" in notes[0]]
+    for m in diff["moves"]:
+        if m["area"] not in explained:
+            assert m["area"] in notes[-1]
+
+
+def test_an_empty_hot_news_section_says_none_found(monkeypatch):
+    from types import SimpleNamespace
+
+    from proximity.hotnews import Section
+    from proximity.ui import explore
+
+    captions = []
+    fake = SimpleNamespace(markdown=lambda *a, **k: None, divider=lambda: None, caption=captions.append)
+    monkeypatch.setattr(explore, "st", fake)
+    explore._hot_news(SimpleNamespace(area="Test"), [Section(key="gym", label="Gyms")])
+    assert captions == ["None found within 1.5 km."]
+
+
 def test_why_matched_lists_a_count_for_every_selected_interest():
     from proximity.explain import why_matched
     from proximity.models import INTERESTS

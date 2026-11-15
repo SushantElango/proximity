@@ -185,9 +185,10 @@ def what_changed(diff: dict, limit: int = 4) -> list[str]:
         if m["new_status"] == UNVERIFIED and m["old_status"] != UNVERIFIED:
             text += f". It is now unverified ({m['reasons'][0]})"
         notes.append(text + ".")
-    extra = len(moves) - limit
-    if extra > 0:
-        notes.append(f"{extra} other area{'s' if extra > 1 else ''} also changed position.")
+    others = [m["area"] for m in moves[limit:]]
+    if others:
+        names = others[0] if len(others) == 1 else ", ".join(others[:-1]) + " and " + others[-1]
+        notes.append(f"{names} also changed position.")
     return notes or [f"The order stayed the same after {because}."]
 
 

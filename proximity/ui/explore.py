@@ -486,6 +486,9 @@ def _show(lines: list[str], more_label: str) -> None:
                 st.markdown(line)
 
 
+EMPTY_SECTION_TEXT = "None found within 1.5 km."
+
+
 def _hot_news(r: AreaResult, sections: list[Section]) -> None:
     """Events and places for this area, per interest. Every item links to its source."""
     st.markdown(f"**:material/local_fire_department: Hot News in {r.area}**")
@@ -493,6 +496,10 @@ def _hot_news(r: AreaResult, sections: list[Section]) -> None:
         if i:
             st.divider()
         st.markdown(f"**{s.label}**")
+
+        if s.empty and s.has_places:
+            st.caption(EMPTY_SECTION_TEXT)
+            continue
 
         if s.events:
             _show([_event_line(e) for e in s.events], f"Show all {len(s.events)} events")
