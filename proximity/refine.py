@@ -30,6 +30,7 @@ DEMOGRAPHIC_REPLY = (
     "Proximity doesn't filter by who lives in an area. I can use commute, budget, places and events instead."
 )
 NOT_UNDERSTOOD = "I couldn't map that — edit your profile directly."
+AT_LIMIT = "Already at the {end} level, so nothing changed: {items}."
 
 BUDGET_RANGE = (500, 6000)
 MINUTES_RANGE = (5, 180)
@@ -52,6 +53,14 @@ INTEREST_WORDS: dict[str, list[str]] = {
     "place_of_worship": ["place of worship", "places of worship", "temple", "church", "mosque", "synagogue", "gurdwara"],
 }
 RENT_WORDS = ["rent", "cheap", "price", "cost", "saving money", "save money", "affordable"]
+# Words for "my trips" in general: they reach every destination in the profile ("transit" only the transit ones).
+TRAVEL_WORDS = ["commute", "commutes", "commuting", "travel", "travel time", "getting around", "trips"]
+TRANSIT_WORDS = ["transit", "public transport", "public transportation", "bus", "buses", "train", "trains"]
+# "make X more important", "X matters less", "prioritize X", "give X more weight"
+_PRIORITY = re.compile(
+    r"\b(?:(more|less)\s+(?:important|weight|priority|of a priority)|matters?\s+(more|less)|"
+    r"(prioriti[sz]e|focus on|care more about|raise|increase|bump up)|(deprioriti[sz]e|care less about|lower|decrease))\b"
+)
 
 # People, not places. Any of these means the request is about who lives somewhere.
 _GROUPS = (
@@ -249,6 +258,28 @@ def keyword_refine(text: str, profile: Profile, draft: bool = False) -> Proposal
             for kind, key in down:
                 ed.shift(kind, key, -1, f"{quoted}, so this moves down one level")
 
+    # 1b. "make X more/less important" (no "than"): move every named item one level
+    p = None if compared else _PRIORITY.search(low)
+    at_limit = ""
+    if p:
+        down = bool(p.group(4)) or "less" in (p.group(1), p.group(2))
+        targets = _entities(low)
+        # "transit"/"commute" with no place named means every trip ("transit": the trips made by transit)
+        if not any(kind == "dest" for kind, _ in targets):
+            if any(re.search(rf"\b{re.escape(w)}\b", low) for w in TRANSIT_WORDS):
+                by_transit = [d.name for d in ed.p.destinations if d.mode == "transit"]
+                targets += [("dest", n) for n in by_transit or [d.name for d in ed.p.destinations]]
+            elif any(re.search(rf"\b{re.escape(w)}\b", low) for w in TRAVEL_WORDS):
+                targets += [("dest", d.name) for d in ed.p.destinations]
+        level = "down" if down else "up"
+        for kind, key in targets:
+            ed.shift(kind, key, -1 if down else +1, f"{quoted}, so this moves {level} one level")
+        if targets:
+            names = list(dict.fromkeys(
+                "Room under budget" if kind == "rent" else INTERESTS.get(key, key) for kind, key in targets
+            ))
+            at_limit = AT_LIMIT.format(items=", ".join(names), end="lowest" if down else "highest")
+
     # 2. budget
     b = (
         re.search(r"\bbudget\b[^$\d]{0,20}\$?\s?(\d[\d,]{2,})", low)
@@ -328,7 +359,7 @@ def keyword_refine(text: str, profile: Profile, draft: bool = False) -> Proposal
     if refused:
         message = DEMOGRAPHIC_REPLY
     elif not changes:
-        message = NOT_UNDERSTOOD
+        message = at_limit or NOT_UNDERSTOOD
     return Proposal(profile=ed.p, changes=changes, source=KEYWORD, message=message)
 
 

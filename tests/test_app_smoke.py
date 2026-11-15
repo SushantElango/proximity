@@ -90,3 +90,12 @@ def test_changing_each_profile_widget_is_safe():
     # Changes are pending until applied: click whatever buttons the edits revealed.
     for label in [b.label for b in at.button if b.label.startswith("Apply") and not b.disabled]:
         click(at, label)
+
+
+def test_refine_make_transit_more_important_offers_apply_and_explains():
+    at = open_priya()
+    at.text_input[0].set_value("make transit more important")
+    click(at, "Suggest changes")
+    click(at, "Apply")
+    notes = " ".join(str(el.value) for el in [*at.info, *at.success, *at.warning, *at.markdown])
+    assert "What changed" in notes and "Newark Penn Station" in notes

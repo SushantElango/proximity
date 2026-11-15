@@ -151,3 +151,34 @@ def test_first_description_adds_what_is_mentioned_but_an_edit_does_not():
     assert keyword_refine("I work in Newark", starter_profile()).changes == []
     drive = keyword_refine("I have a car and study at Busch", starter_profile(), draft=True)
     assert [(x.name, x.mode) for x in drive.profile.destinations] == [("Rutgers Busch", "drive")]
+
+
+@pytest.mark.parametrize(
+    "text", ["make transit more important", "Make transit more important.", "transit matters more", "make my commute more important"]
+)
+def test_make_transit_more_important_raises_the_transit_trips(text):
+    base = demo_profile()  # College Ave: Must-have (already top), Newark: Important, both by transit
+    p = keyword_refine(text, base)
+    assert p.message == ""
+    assert dest(p.profile, NEWARK).importance == "Must-have"
+    assert dest(p.profile, CAMPUS).importance == "Must-have"
+    assert [c.key for c in p.changes] == [f"dest:{NEWARK}:importance"]
+
+
+def test_naming_a_place_moves_only_that_place():
+    p = keyword_refine("make the commute to Newark less important", demo_profile())
+    assert dest(p.profile, NEWARK).importance == "Nice"
+    assert dest(p.profile, CAMPUS).importance == "Must-have"
+
+
+def test_make_interest_or_rent_more_important():
+    p = keyword_refine("make rent more important", demo_profile())
+    assert p.profile.rent_importance == "Must-have"
+    p = keyword_refine("prioritize gyms", demo_profile())
+    assert interest(p.profile, "gym").importance == "Important"
+
+
+def test_already_at_the_limit_says_so_instead_of_not_understood():
+    p = keyword_refine("make gyms less important", demo_profile())  # gyms are already Nice
+    assert not p.changes
+    assert p.message != NOT_UNDERSTOOD and "lowest" in p.message and "Gyms" in p.message
