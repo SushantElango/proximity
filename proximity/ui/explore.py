@@ -61,9 +61,11 @@ MAP_HEIGHT = 600
 HOT_NEWS_TOP = 3  # items shown per list before "show all"
 NOTE_SHRINK = 150  # the map gives up this much height while "What changed" is showing
 
-PERSONA_SUMMARY = (
-    "Rutgers junior sharing a 2-bed, classes on College Ave, works in Newark until 10:30pm Tue/Thu, "
-    "no car, $1,600."
+# Shown as a reply, only for the known demo persona: the app never invents a name for anyone else.
+PERSONA_GREETING = (
+    "**Hi Priya!** Here's what I understood: you're a Rutgers junior sharing a 2-bed, with classes on "
+    "College Ave and work in Newark until 10:30pm Tue/Thu. No car, and $1,600 a month. "
+    "Your best matches are on the right."
 )
 PANEL_HEIGHT = 640  # side panels scroll inside this height so the page fits one screen
 
@@ -302,7 +304,8 @@ def profile_form(available_interests: list[str], applied: Profile) -> None:
             if not_used:
                 st.warning("**I couldn't use:**\n\n" + "\n".join(f"- {item}" for item in not_used))
         elif applied == demo_profile():
-            st.markdown(f"**Priya:** {PERSONA_SUMMARY}")
+            with st.chat_message("assistant", avatar=":material/location_on:"):
+                st.markdown(PERSONA_GREETING)
         if pending != applied:
             st.caption("You have edits that are not applied yet.")
             a, b = st.columns(2)

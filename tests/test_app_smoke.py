@@ -254,3 +254,12 @@ def test_start_over_returns_to_landing():
     at = open_priya()
     click(at, "Start over")
     assert at.session_state["stage"] == "landing"
+
+
+def test_priya_gets_a_greeting_but_nobody_else_is_named():
+    at = open_priya()
+    assert any("Hi Priya!" in str(m.value) for m in at.markdown)
+    at = start()
+    at.text_area(key="landing_text").set_value("Classes on College Ave, no car, $1,500 a month, I like cafes.")
+    click(at, "Find my neighborhood")
+    assert not any("Priya" in str(m.value) for m in at.markdown)
