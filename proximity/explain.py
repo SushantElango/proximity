@@ -69,13 +69,16 @@ def main_compromise(r: AreaResult, matches: list[AreaResult] | None = None) -> s
     if worst is None:
         return "No compromise among the priorities we could evaluate."
     if worst.kind == "rent" and worst.met:
-        left = worst.limit - worst.raw
-        money = f"{fmt_value(worst)}/mo (leaves ${left:,.0f} of your ${worst.limit:,.0f})"
-        rents = [m.component("rent").raw for m in (matches or []) if m.component("rent") and m.component("rent").raw is not None]
-        in_matches = any(m.area == r.area for m in (matches or []))
-        if in_matches and len(rents) > 1 and worst.raw >= max(rents):
-            return f"Most expensive of your matches: {money}"
-        return f"Rent is on the high side: {money}"
+        top_matches = [m for m in (matches or []) if m.rank is not None and m.rank <= 3]
+        rents = [m.component("rent").raw for m in top_matches if m.component("rent") and m.component("rent").raw is not None]
+        is_most_expensive_top_match = (
+            r.rank is not None and r.rank <= 3 and len(rents) > 1 and worst.raw >= max(rents)
+        )
+        ending = "it's the most expensive of your top matches" if is_most_expensive_top_match else "it's the main compromise"
+        return (
+            f"Rent: {fmt_value(worst)}/mo is within your ${worst.limit:,.0f} budget, "
+            f"but {ending}."
+        )
     text = _sentence(worst)
     if worst.met:
         # Only claim "most areas do better" when that is true of the numbers.

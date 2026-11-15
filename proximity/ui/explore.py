@@ -492,24 +492,27 @@ def _match_card(r: AreaResult, n_areas: int, matches: list[AreaResult]) -> None:
 
 def _priority_breakdown(r: AreaResult) -> None:
     """Show every selected priority as met, not met, or not checked."""
+    compromise = ex._compromise(r)
     st.markdown("**Matched**")
     priorities = [c for c in r.components if not (c.kind == "rent" and c.limit is None)]
     matched = [c for c in priorities if c.met is True]
     if not matched:
         st.caption("No priorities matched.")
     for c in matched:
-        st.markdown(f"- {ex._sentence(c)} · :gray[{c.importance}] · {fact_badge(c.fact)}")
+        marker = " · main compromise" if compromise is not None and c.key == compromise.key else ""
+        st.markdown(f"- {ex._sentence(c)} · :gray[{c.importance}]{marker} · {fact_badge(c.fact)}")
 
     st.markdown("**Not matched / not checked**")
     unmatched = [c for c in priorities if c.met is not True]
     if not unmatched:
         st.caption("No unmatched priorities.")
     for c in unmatched:
+        marker = " · main compromise" if compromise is not None and c.key == compromise.key else ""
         if c.met is False:
-            st.markdown(f"- {ex._sentence(c)} · :gray[{c.importance}] · {fact_badge(c.fact)}")
+            st.markdown(f"- {ex._sentence(c)} · :gray[{c.importance}]{marker} · {fact_badge(c.fact)}")
         else:
             detail = c.flag or "Not checked / no data"
-            st.markdown(f"- {c.label}: {detail} · :gray[{c.importance}]")
+            st.markdown(f"- {c.label}: {detail} · :gray[{c.importance}]{marker}")
 
 
 def _event_date(iso: str) -> str:

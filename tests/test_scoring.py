@@ -325,7 +325,7 @@ def test_late_night_note_is_listed_for_every_area_when_newark_is_a_destination()
     assert all(r.unchecked == [] for r in score_areas(make_areas(), no_newark))
 
 
-def test_ineligible_fit_is_a_dash_and_rent_compromise_names_the_most_expensive_match():
+def test_ineligible_fit_is_a_dash_and_met_rent_compromise_is_explicit():
     from proximity.explain import fit_or_dash, main_compromise
 
     areas = [
@@ -340,4 +340,6 @@ def test_ineligible_fit_is_a_dash_and_rent_compromise_names_the_most_expensive_m
     matches = [r for r in results if r.status == ELIGIBLE]
     assert fit_or_dash(got["Too Dear"]) == "Fit —"
     assert fit_or_dash(got["Cheap"]).startswith("Fit ") and "—" not in fit_or_dash(got["Cheap"])
-    assert main_compromise(got["Dear"], matches) == "Most expensive of your matches: $1,550/mo (leaves $50 of your $1,600)"
+    assert main_compromise(got["Dear"], matches) == (
+        "Rent: $1,550/mo is within your $1,600 budget, but it's the most expensive of your top matches."
+    )

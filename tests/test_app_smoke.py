@@ -138,6 +138,14 @@ def test_match_card_groups_each_long_source_once_in_collapsed_expander():
     assert body.count("Zillow index: $") == 1
 
 
+def test_priya_match_card_explains_met_rent_compromise_consistently():
+    at = open_priya()
+    body = "\n".join(str(element.value) for element in at.markdown)
+
+    assert "Rent: $1,420/mo is within your $1,600 budget, but it's the most expensive of your top matches." in body
+    assert "$1,420/mo** rent, $180 under budget · :gray[Important] · main compromise" in body
+
+
 def test_selected_area_shows_matched_and_unmatched_priorities_above_hot_news():
     at = open_priya()
     values = [element.value for element in at.markdown]
