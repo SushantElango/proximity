@@ -10,6 +10,7 @@ import streamlit as st
 
 from .. import explain as ex
 from ..assistant import propose_refine
+from ..llm import DEMO_RERANK
 from ..refine import AI
 from . import session
 from ..hotnews import Section, distance_text, hot_news, place_detail, unnamed_line
@@ -199,7 +200,7 @@ def profile_form(available_interests: list[str], applied: Profile) -> None:
     with st.form("refine_form", border=True):
         st.text_input(
             "Refine in your own words", key="refine_text",
-            placeholder="Getting to Newark matters more than live music",
+            placeholder=DEMO_RERANK,
         )
         if st.form_submit_button("Suggest changes", use_container_width=True):
             _suggest(applied)
@@ -619,6 +620,12 @@ def render(
                         selected.zip, [i.category for i in profile.interests], events, places, date.today().isoformat(),
                     )
                     _hot_news(selected, sections)
+
+    compared = sorted(top_matches(results), key=lambda r: r.rank or 0)
+    if len(compared) > 1:
+        with st.expander(f"Compare your top {len(compared)} matches side by side", icon=":material/compare_arrows:"):
+            st.dataframe(pd.DataFrame(ex.compare_rows(compared)), hide_index=True, use_container_width=True)
+            st.caption("Same priorities and units in every column. Sources and dates are on each match's card.")
 
     with st.expander("See all 8 areas in a table"):
         table = pd.DataFrame([

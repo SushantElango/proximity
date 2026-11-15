@@ -218,6 +218,24 @@ def test_an_empty_hot_news_section_says_none_found(monkeypatch):
     assert captions == ["None found within 1.5 km."]
 
 
+def test_compare_rows_have_the_same_rows_for_every_area_and_never_a_blank():
+    from proximity.explain import compare_rows
+
+    areas = make_areas() + [area("No Gym Data", 1400, 12, 50, None)]
+    matches = top_matches(score_areas(areas, make_profile()), n=5)
+    rows = compare_rows(matches)
+    names = [r.area for r in matches]
+    assert "No Gym Data" in names
+    for row in rows:
+        assert list(row) == [""] + names
+        assert all(str(v).strip() for v in row.values())
+    labels = [row[""] for row in rows]
+    assert labels[0].startswith("Fit") and "Rent estimate ($/mo)" in labels and labels[-1] == "Missing / not checked"
+    gym = next(row for row in rows if "gym" in row[""].lower())
+    assert gym["No Gym Data"] == "Not checked / no data"
+    assert compare_rows([]) == []
+
+
 def test_why_matched_lists_a_count_for_every_selected_interest():
     from proximity.explain import why_matched
     from proximity.models import INTERESTS

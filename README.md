@@ -3,17 +3,18 @@
 **Proximity is power.** Find neighborhoods that fit your life, not just your budget.
 Built at HackPrinceton Fall 2026 for students and early-career renters moving near Rutgers–New Brunswick, NJ.
 
-> Status: layers 1 to 3 of 4. All data in the app is real: rent, area locations, commute times, events and place counts.
+> Status: all four layers except live Ticketmaster events. All data in the app is real: rent, area locations, commute times, events and place counts.
 
 ## What works now
 
 - A landing page: describe your situation in your own words, or load Priya's example. If you name nowhere you need to get to, it asks one question, once.
 - An editable profile (housing, budget, destinations, travel mode, max commute, interests, importance per item). Edits take effect when you click Apply.
-- A refine box: type something like "Getting to Newark matters more than gyms", see the proposed changes as a table with a reason for each, then Apply or Cancel.
+- A refine box: type something like "I need a grocery store nearby", see the proposed changes as a table with a reason for each, then Apply or Cancel.
 - 8 candidate areas on a map, with the top 3 matches numbered.
 - A card per match: why it matched, the main compromise, what is missing, and the rent estimate with its source.
 - Hot News for the selected area: upcoming curated events and nearby OpenStreetMap places for each interest you picked, plus local events. Every item links to its source.
 - Change any setting and the ranking recomputes, with a "What changed" note that gives the reason.
+- A side-by-side table of your top matches: rent, each commute, each place count and what is missing, with the same rows and units for every area.
 
 ## Where AI is used, and where it is not
 
@@ -44,6 +45,8 @@ python -m venv .venv
 .venv/Scripts/python -m pytest -q
 ```
 
+To run with no network calls (cached answers and the keyword parser only), set `DEMO_MODE=1` in the shell before starting the app. In PowerShell: `$env:DEMO_MODE = "1"`.
+
 ## Data sources
 
 | File | Source | Status |
@@ -61,9 +64,9 @@ The app reads `data/<file>.csv` first and falls back to `data/placeholder/<file>
 
 ## Limitations
 
-- "In an area" means within 1,500 m of the area's centre point, not the real ZIP boundary. Neighbouring circles overlap, so a place can count for two areas, and an area whose centre point is away from its downtown is undercounted.
+- "In an area" means within 1,500 m of the area's centre point, not the real ZIP boundary. Where neighbouring circles overlap, a place counts only for the area whose centre point is nearest. An area whose centre point is away from its downtown is undercounted.
 - Sports facilities are mostly unnamed pitches in OpenStreetMap, so that count is large and coarse.
 - Commute lookups all depart on a weekday morning. A late-night trip home from Newark has not been checked, and the app says so on every area.
 - Commute values that are not numbers ("Not found") count as missing. Transit times over 120 minutes are flagged "Unusual: please verify" and are not used.
 - The map background needs an internet connection; the markers and everything else work offline.
-- Live Ticketmaster events and the compare table are not built yet.
+- Live Ticketmaster events are not built yet.

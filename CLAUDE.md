@@ -197,25 +197,30 @@ Written Sat Nov 14, 23:20 ET. Code is at commit `6463870` on `main`, in sync wit
 | L3 Phase C: one clarifying question when no commute destination is given | `3017529` |
 | Demo opener that re-sorts the ranking, cached; fallback models when a quota is used up | `6463870` |
 
-### Not started (Phase A follow-ups, requested but interrupted before any work)
+### Update, Sat Nov 14 late evening (after the handoff above)
 
-Nothing is half-done: no file is in a partial state. These five items are untouched.
+**97 tests pass.** Done since `6463870`:
+
+- Empty Hot News sections say "None found within 1.5 km."; "What changed" names the other areas (`3655cbb`).
+- Each place now counts only for its nearest area centre (`nearest_area_only` in `proximity/data.py`, `4457175`). **This changed the ranking:** Priya's default is now Metuchen 73, Highland Park 70, New Brunswick 57 (was Highland Park 77, Metuchen 70, New Brunswick 51).
+- **The demo re-rank line is now "I need a grocery store nearby"** (`DEMO_RERANK` in `proximity/llm.py`). Highland Park goes #2 to #1, 69 to 67. It runs on the keyword parser ("Keyword match"), so run the demo with `DEMO_MODE=1`: a live model call could propose a different importance. The Newark sentences are still cached but no longer change #1. `tests/test_llm.py` fails if the grocery line stops flipping #1.
+- Compare table for the top matches (`compare_rows` in `proximity/explain.py`, an expander under the map).
+- Full demo script checked offline with `DEMO_MODE=1` (set it in the shell; it is read before `.env` is loaded, so putting it in `.env` does nothing).
+
+### Not started
 
 1. **Siddhesh's parser test cases.** His 10 sentences and the refusal case were never pasted into the request (it still held the placeholder text). Add them to `tests/test_refine.py`. Where a sentence needs a field the profile does not have, the expected result is "I couldn't map that", not a new field.
-2. **Places counted for several areas.** See known bugs. Fix in `scripts/fetch_osm.py` or `proximity/data.py` (`build_area_facts`, `build_places`): assign each place to its nearest area centre only. Then re-run tests and report whether the top 3 changes.
-3. **Empty Hot News section.** Add "None found within 1.5 km." in `_hot_news` in `proximity/ui/explore.py`.
-4. **"1 other area also changed position".** Name the areas, in `what_changed` in `proximity/explain.py`.
-5. **Pending Sushant's OK:** change the cached demo opener to "I run every morning, so I need parks nearby" and keep the Newark ones cached. Needs model calls to cache (see quota below). Lists are `DEMO_OPENERS` / `DEMO_FOLLOW_UP` in `proximity/llm.py`; warm with `python -m proximity.llm`.
+2. **Not done, Sushant has not approved:** change the cached demo opener to "I run every morning, so I need parks nearby" and keep the Newark ones cached. Needs model calls to cache (see quota below). Lists are `DEMO_OPENERS` / `DEMO_FOLLOW_UP` in `proximity/llm.py`; warm with `python -m proximity.llm`.
 
-Also not built: L4 (compare table, polish, full `DEMO_MODE` pass, demo video) and Ticketmaster.
+Also not built: demo video, further polish, and Ticketmaster.
 
 ### Known bugs and limits, not fixed
 
-- **Overlapping circles.** A place within 1.5 km of two area centres counts for both, so Highland Park shows New Brunswick bars. New Brunswick's centre point is south of its downtown, so it is undercounted.
+- **New Brunswick is undercounted.** Its centre point is south of its downtown. (The double counting between overlapping circles is fixed, see the update above.)
 - **Sports counts are coarse.** 93% of sports rows are unnamed pitches; only one place is tagged cricket.
 - **Gemini free tier: 20 requests a day per model.** `gemini-3.5-flash` was used up on Nov 14 (the error said it resets around 03:00 ET). Fallbacks `gemini-3.8-flash` then `gemini-3.5-flash-lite` are wired in but were returning 503 / 504 that evening. Every uncached sentence spends one request.
 - **Follow-up sentence not cached on the new path.** "Actually I could stretch to $1,800 if it's walkable to music venues" is cached only after the old "gyms" opener. After the "live music" opener it makes a live call, or falls back to the keyword parser (budget only, labeled "Keyword match").
-- **The re-sort margin is thin.** "Getting to Newark matters more than live music" moves Metuchen to #1 by 76 to 74. `tests/test_llm.py` fails if a data change stops it flipping #1.
+- **The re-sort margin is thin.** "I need a grocery store nearby" moves Highland Park to #1 by 69 to 67. A sturdier backup line is "Actually my budget is $1,400": Metuchen ($1,420) drops out and Highland Park becomes #1.
 - **Late-night Newark trip is not measured.** All commute lookups depart Tue 08:30. The app lists this under Missing on every area.
 - **HUD `as_of` (2026-05-21)** may be a download date. Unconfirmed, so it still reads "as of".
 - **Map:** scrolling with the cursor over it zooms it; labels can overlap if zoomed far out by hand; height is a fixed 600 px.

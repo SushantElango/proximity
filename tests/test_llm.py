@@ -200,10 +200,15 @@ def test_the_demo_rerank_line_changes_number_one_offline(monkeypatch):
     from proximity.data import build_area_facts, load_all
     from proximity.scoring import score_areas
 
+    from proximity.ui.landing import EXAMPLE
+
     monkeypatch.setenv("DEMO_MODE", "1")
-    proposal = assistant.propose_refine(llm.DEMO_RERANK, demo_profile())
-    assert proposal.changes, "the demo re-rank sentence was not understood"
+    monkeypatch.setattr(llm, "_client", None)
     areas = build_area_facts(load_all())
-    before = next(r.area for r in score_areas(areas, demo_profile()) if r.rank == 1)
-    after = next(r.area for r in score_areas(areas, proposal.profile) if r.rank == 1)
-    assert before != after  # with today's data files, this sentence changes who is #1
+    # Both ways into the demo: the "Try Priya's example" button and her typed description.
+    for base in (demo_profile(), llm.draft(EXAMPLE)[0].profile):
+        proposal = assistant.propose_refine(llm.DEMO_RERANK, base)
+        assert proposal.changes, "the demo re-rank sentence was not understood"
+        before = next(r.area for r in score_areas(areas, base) if r.rank == 1)
+        after = next(r.area for r in score_areas(areas, proposal.profile) if r.rank == 1)
+        assert before != after  # with today's data files, this sentence changes who is #1

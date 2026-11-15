@@ -192,6 +192,32 @@ def what_changed(diff: dict, limit: int = 4) -> list[str]:
     return notes or [f"The order stayed the same after {because}."]
 
 
+def compare_rows(matches: list[AreaResult]) -> list[dict]:
+    """Side-by-side rows for the given areas: one row per priority, same units in every column.
+
+    Each row is {"": row label, <area name>: value, ...}. A value that was not
+    checked reads "Not checked / no data"; it is never left blank or guessed.
+    """
+    if not matches:
+        return []
+    rows: list[dict] = [{"": "Fit (relative to all areas)"} | {r.area: fit_or_dash(r).replace("Fit ", "") for r in matches}]
+    by_area = {r.area: {c.key: c for c in r.components} for r in matches}
+    seen: list[tuple[str, str, str]] = []  # (key, label, kind) in the first area's order, then any extras
+    for r in matches:
+        for c in r.components:
+            if all(c.key != k for k, _, _ in seen):
+                seen.append((c.key, c.label, c.kind))
+    for key, label, kind in seen:
+        row = {"": "Rent estimate ($/mo)" if kind == "rent" else label}
+        for r in matches:
+            c = by_area[r.area].get(key)
+            row[r.area] = (c.flag or fmt_value(c)) if c is not None else "Not checked / no data"
+        rows.append(row)
+    rows.append({"": "Priorities met"} | {r.area: f"{r.met} of {r.evaluated} evaluated" for r in matches})
+    rows.append({"": "Missing / not checked"} | {r.area: "; ".join(r.missing + r.unchecked) or "Nothing" for r in matches})
+    return rows
+
+
 def no_eligible_message(info: dict) -> list[str]:
     """Which constraints conflict and which one to relax."""
     lines = ["No area meets all of your must-haves with verified data."]
