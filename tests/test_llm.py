@@ -186,3 +186,18 @@ def test_one_clarifying_question_when_no_destination_is_given_and_never_a_second
 def test_no_question_when_the_description_already_names_a_destination(cache):
     d = assistant.draft_profile("classes on College Ave, budget $1,500", client=FakeClient("not json"), cache_path=cache)
     assert d.question == "" and d.proposal.profile.destinations
+
+
+def test_the_cached_opener_that_changes_number_one_works_offline(monkeypatch):
+    """'Getting to Newark matters more than live music' is the demo line that re-sorts the ranking."""
+    from proximity.data import build_area_facts, load_all
+    from proximity.scoring import score_areas
+
+    monkeypatch.setattr(llm, "get_client", lambda: None)
+    proposal = llm.refine(llm.DEMO_OPENERS[0], demo_profile())
+    assert proposal is not None and proposal.source == AI, "the re-sorting demo sentence is not cached"
+    assert all(c.reason for c in proposal.changes)
+    areas = build_area_facts(load_all())
+    before = next(r.area for r in score_areas(areas, demo_profile()) if r.rank == 1)
+    after = next(r.area for r in score_areas(areas, proposal.profile) if r.rank == 1)
+    assert before != after  # with today's data files, this sentence changes who is #1

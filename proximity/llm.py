@@ -32,6 +32,9 @@ from .models import BEDROOM_LABELS, DESTINATIONS, INTERESTS, DestinationPref, In
 from .refine import AI, Proposal, diff_profiles, mentions_demographics, starter_profile
 
 MODEL = "gemini-3.5-flash"
+# Used in order, only when the model before reports its quota is used up or is unavailable.
+# Checked 2026-11-14 with client.models.list(): each has its own free-tier quota of 20 requests a day.
+FALLBACK_MODELS = ("gemini-3.8-flash", "gemini-3.5-flash-lite")
 TIMEOUT_S = 8.0  # what the user waits, at most
 # The API refuses a deadline under 10 s ("Minimum allowed deadline is 10s"), so the SDK gets 10 s
 # and our own wall clock cuts the wait off at TIMEOUT_S.
@@ -268,22 +271,47 @@ def get_client():
         return None
 
 
-def _generate(client, system: str, user: str) -> str:
+_exhausted: set[str] = set()  # models that answered "quota exceeded" in this run; skipped afterwards
+
+
+def _config(model: str, system: str):
     try:
         from google.genai import types
 
-        config = types.GenerateContentConfig(
+        # Measured 2026-11-14 on gemini-3.5-flash: default thinking ~6 s per call, "low" ~2 s.
+        thinking = (
+            types.ThinkingConfig(thinking_budget=0) if model.startswith("gemini-2.")
+            else types.ThinkingConfig(thinking_level="low")
+        )
+        return types.GenerateContentConfig(
             system_instruction=system,
             response_mime_type="application/json",
             response_schema=_ApiOut,
             temperature=0,
-            # Measured 2026-11-14: default thinking took ~6 s per call, "low" ~2 s. The task is simple.
-            thinking_config=types.ThinkingConfig(thinking_level="low"),
+            thinking_config=thinking,
         )
     except Exception:  # a stand-in client in tests does not need the real config object
-        config = None
-    response = client.models.generate_content(model=MODEL, contents=user, config=config)
-    return response.text
+        return None
+
+
+def _generate(client, system: str, user: str) -> str:
+    """Ask MODEL; if its quota is used up or it is unavailable, try the fallback models in turn."""
+    last: Exception | None = None
+    for model in (MODEL, *FALLBACK_MODELS):
+        if model in _exhausted:
+            continue
+        try:
+            return client.models.generate_content(model=model, contents=user, config=_config(model, system)).text
+        except Exception as exc:
+            last = exc
+            text = str(exc)
+            if "429" in text or "RESOURCE_EXHAUSTED" in text or "404" in text or "NOT_FOUND" in text:
+                _exhausted.add(model)  # the free tier allows 20 requests a day per model
+                continue
+            if "503" in text or "UNAVAILABLE" in text:
+                continue  # busy right now: try the next model, but do not rule this one out
+            raise
+    raise last if last is not None else RuntimeError("every model's quota is used up")
 
 
 def _ask(kind: str, system: str, user: str, text: str, base: Profile, client, timeout: float, cache_path: Path,
@@ -353,6 +381,10 @@ def _with_reasons(old: Profile, new: Profile, out: LLMOut):
 
 
 # ------------------------------------------------------- demo cache warm-up
+# The first sentence of each pair is the opener; the second follows it. The "live music" opener
+# changes who is #1 on the current data; the "gyms" one does not.
+DEMO_OPENERS = ["Getting to Newark matters more than live music", "Getting to Newark matters more than gyms"]
+DEMO_FOLLOW_UP = "Actually I could stretch to $1,800 if it's walkable to music venues"
 DEMO_REFINES = [
     "Getting to Newark matters more than gyms",
     "Actually I could stretch to $1,800 if it's walkable to music venues",
@@ -375,13 +407,14 @@ def warm_demo_cache() -> None:
     if result:
         bases.append(("AI draft", result[0].profile))
     for name, base in bases:
-        current = base
-        for text in DEMO_REFINES:
-            proposal = refine(text, current, save=True)
-            print(f"{name} -> {text[:40]!r}:", f"{len(proposal.changes)} change(s)" if proposal else f"FAILED ({last_failure})")
-            if proposal is None:
-                break
-            current = proposal.profile
+        for opener in DEMO_OPENERS:
+            current = base
+            for text in (opener, DEMO_FOLLOW_UP):
+                proposal = refine(text, current, save=True)
+                print(f"{name} -> {text[:46]!r}:", f"{len(proposal.changes)} change(s)" if proposal else f"FAILED ({last_failure})")
+                if proposal is None:
+                    break
+                current = proposal.profile
 
 
 if __name__ == "__main__":

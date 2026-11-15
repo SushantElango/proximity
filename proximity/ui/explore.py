@@ -199,7 +199,7 @@ def profile_form(available_interests: list[str], applied: Profile) -> None:
     with st.form("refine_form", border=True):
         st.text_input(
             "Refine in your own words", key="refine_text",
-            placeholder="Getting to Newark matters more than gyms",
+            placeholder="Getting to Newark matters more than live music",
         )
         if st.form_submit_button("Suggest changes", use_container_width=True):
             _suggest(applied)

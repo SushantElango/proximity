@@ -158,5 +158,53 @@
    "rent_importance": "Important"
   },
   "text": "Actually I could stretch to $1,800 if it's walkable to music venues"
+ },
+ "ce5e4ff1fbea8a436d504d38f72f0df9": {
+  "kind": "refine",
+  "output": {
+   "bedroom": "shared2br",
+   "budget": 1600,
+   "destinations": [
+    {
+     "importance": "Must-have",
+     "max_minutes": 40,
+     "mode": "transit",
+     "name": "Rutgers College Ave"
+    },
+    {
+     "importance": "Must-have",
+     "max_minutes": 80,
+     "mode": "transit",
+     "name": "Newark Penn Station"
+    }
+   ],
+   "interests": [
+    {
+     "category": "live_music",
+     "importance": "Nice"
+    },
+    {
+     "category": "gym",
+     "importance": "Nice"
+    },
+    {
+     "category": "sports",
+     "importance": "Nice"
+    }
+   ],
+   "question": "",
+   "reasons": [
+    {
+     "field": "destination:Newark Penn Station",
+     "reason": "Commuting to Newark Penn Station matters more to you now."
+    },
+    {
+     "field": "interest:live_music",
+     "reason": "Live music importance was lowered to prioritize getting to Newark."
+    }
+   ],
+   "rent_importance": "Important"
+  },
+  "text": "Getting to Newark matters more than live music"
  }
 }
