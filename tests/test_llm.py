@@ -250,3 +250,33 @@ def test_the_demo_rerank_line_changes_number_one_offline(monkeypatch):
         before = next(r.area for r in score_areas(areas, base) if r.rank == 1)
         after = next(r.area for r in score_areas(areas, proposal.profile) if r.rank == 1)
         assert before != after  # with today's data files, this sentence changes who is #1
+
+
+def test_demo_cards_never_contradict_themselves(monkeypatch):
+    """On real data, before and after the demo re-rank: a top-3 card's main compromise is never a
+    priority it is best at among the eligible areas, and never also listed under Why it matched."""
+    from proximity.data import build_area_facts, load_all
+    from proximity.explain import _best_among, _compromise, _sentence, main_compromise, why_matched
+    from proximity.scoring import ELIGIBLE, score_areas
+
+    monkeypatch.setenv("DEMO_MODE", "1")
+    monkeypatch.setattr(llm, "_client", None)
+    areas = build_area_facts(load_all())
+    base = demo_profile()
+    for profile in (base, assistant.propose_refine(llm.DEMO_RERANK, base).profile):
+        results = score_areas(areas, profile)
+        matches = [r for r in results if r.status == ELIGIBLE]
+        for r in [m for m in matches if m.rank is not None and m.rank <= 3]:
+            worst = _compromise(r, matches)
+            if worst is None:
+                continue
+            assert not _best_among(r, worst, matches), f"{r.area}: compromise is a priority it leads on"
+            assert _sentence(worst) not in why_matched(r, matches=matches), f"{r.area}: compromise also in Why"
+            assert main_compromise(r, matches)
+
+    # The demo moment itself: Highland Park's compromise is its Newark trip, not groceries.
+    after = score_areas(areas, assistant.propose_refine(llm.DEMO_RERANK, base).profile)
+    hp = next(r for r in after if r.area == "Highland Park")
+    matches = [r for r in after if r.status == ELIGIBLE]
+    assert hp.rank == 1
+    assert "Newark" in main_compromise(hp, matches)

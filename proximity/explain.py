@@ -38,23 +38,43 @@ def _sentence(c: Component) -> str:
     return f"**{n if n else 'No'}** {c.label.lower()} in this area"
 
 
-def _compromise(r: AreaResult) -> Component | None:
-    """The evaluated priority where this area stands worst against the others, by weight."""
+def _best_among(r: AreaResult, c: Component, matches: list[AreaResult]) -> bool:
+    """True when no other eligible match beats this area on this priority (ties count as best)."""
+    others = [m.component(c.key) for m in matches if m.area != r.area]
+    values = [o.raw for o in others if o is not None and o.evaluated and o.raw is not None]
+    if c.raw is None or not values:
+        return False
+    if c.kind == "interest":
+        return c.raw >= max(values)
+    return c.raw <= min(values)  # rent and commute: lower is better
+
+
+def _compromise(r: AreaResult, matches: list[AreaResult] | None = None) -> Component | None:
+    """The evaluated priority where this area stands worst against the others, by weight.
+
+    With `matches` (the eligible areas), a priority on which this area is best or tied-best
+    among them is never called its compromise: the card would contradict "What changed".
+    """
     done = [c for c in r.components if c.evaluated]
+    if matches:
+        done = [c for c in done if not _best_among(r, c, matches)]
     if not done:
         return None
     worst = sorted(done, key=lambda c: (-(c.weight * (1 - c.relative)), c.key))[0]
     return worst if worst.weight * (1 - worst.relative) > 0 else None
 
 
-def why_matched(r: AreaResult, limit: int = 2) -> list[str]:
-    """The strongest met rent/commute priorities, then a count for every selected interest."""
-    skip = _compromise(r)
+def why_matched(r: AreaResult, limit: int = 2, matches: list[AreaResult] | None = None) -> list[str]:
+    """The strongest met rent/commute priorities, then a count for every selected interest.
+
+    The main compromise is never also listed here.
+    """
+    skip = _compromise(r, matches)
     good = [c for c in r.components if c.kind != "interest" and c.evaluated and c.met and c is not skip]
     good.sort(key=lambda c: (-(c.weight * c.relative), -c.weight, c.key))
     lines = [_sentence(c) for c in good[:limit]]
     for c in r.components:
-        if c.kind != "interest":
+        if c.kind != "interest" or c is skip:
             continue
         # Every interest the user picked is listed, including zero and "no data".
         lines.append(_sentence(c) if c.evaluated else f"{c.label}: not checked / no data")
@@ -65,7 +85,7 @@ def main_compromise(r: AreaResult, matches: list[AreaResult] | None = None) -> s
     """The priority where this area stands worst. `matches` are the eligible areas, for rent wording."""
     if not any(c.evaluated for c in r.components):
         return "Nothing could be evaluated for this area."
-    worst = _compromise(r)
+    worst = _compromise(r, matches)
     if worst is None:
         return "No compromise among the priorities we could evaluate."
     if worst.kind == "rent" and worst.met:

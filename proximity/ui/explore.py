@@ -251,8 +251,7 @@ def profile_form(available_interests: list[str], applied: Profile) -> None:
         rent_importance = _importance(
             "Room under budget matters", "rent_importance", disabled=budget is None,
         )
-        st.caption("Optional — add one to filter by rent.")
-        st.caption("When set, your budget is a hard limit.")
+        st.caption("Your budget is a hard limit." if budget is not None else "Optional — add one to filter by rent.")
 
     destinations: list[DestinationPref] = []
     with st.expander("Where you need to get to", expanded=False, icon=":material/commute:"):
@@ -456,7 +455,7 @@ def _match_card(r: AreaResult, n_areas: int, matches: list[AreaResult]) -> None:
         (st.warning if r.status == UNVERIFIED else st.error)(ex.status_note(r))
 
     st.markdown("**:green[:material/check_circle:] Why it matched**")
-    bullets = ex.why_matched(r)
+    bullets = ex.why_matched(r, matches=matches)
     tagged_bullets = []
     for line in bullets:
         fact = next((c.fact for c in r.components if c.fact is not None and ex._sentence(c) == line), None)
@@ -465,7 +464,7 @@ def _match_card(r: AreaResult, n_areas: int, matches: list[AreaResult]) -> None:
 
     st.markdown("**:orange[:material/balance:] Main compromise**")
     compromise = ex.main_compromise(r, matches)
-    compromise_component = ex._compromise(r)
+    compromise_component = ex._compromise(r, matches)
     tag = fact_badge(compromise_component.fact) if compromise_component else ""
     st.markdown(f"- {compromise}" + (f" · {tag}" if tag else ""))
 
@@ -475,24 +474,12 @@ def _match_card(r: AreaResult, n_areas: int, matches: list[AreaResult]) -> None:
 
     _rent_block(r)
 
-    with st.expander("Every priority, with its source"):
-        st.caption(f"ZIP {r.zip} · {r.status} · {ex.coverage(r).lower()}")
-        for c in r.components:
-            if c.kind == "rent" and c.limit is None:
-                rent_value = f"${c.raw:,.0f}/mo rent estimate" if c.raw is not None else "Rent estimate: Not checked / no data"
-                st.markdown(f"{c.label}: **{rent_value}** · {fact_badge(c.fact)}")
-                continue
-            if c.met is None:
-                st.markdown(f":gray[:material/help:] {c.label}: **{c.flag or 'Not checked / no data'}** · :gray[{c.importance}]")
-                continue
-            icon = ":green[:material/check_circle:]" if c.met else ":red[:material/cancel:]"
-            st.markdown(f"{icon} {ex._sentence(c)} · :gray[{c.importance}] · {fact_badge(c.fact)}")
     _sources_and_dates(r)
 
 
-def _priority_breakdown(r: AreaResult) -> None:
+def _priority_breakdown(r: AreaResult, matches: list[AreaResult]) -> None:
     """Show every selected priority as met, not met, or not checked."""
-    compromise = ex._compromise(r)
+    compromise = ex._compromise(r, matches)
     st.markdown("**Matched**")
     priorities = [c for c in r.components if not (c.kind == "rent" and c.limit is None)]
     matched = [c for c in priorities if c.met is True]
@@ -643,7 +630,7 @@ def render(
                     with st.container(border=True):
                         _unverified_list(unverified, selected)
                 with st.container(border=True):
-                    _priority_breakdown(selected)
+                    _priority_breakdown(selected, matches)
                 with st.container(border=True):
                     sections = hot_news(
                         selected.zip, [i.category for i in profile.interests], events, places, date.today().isoformat(),
